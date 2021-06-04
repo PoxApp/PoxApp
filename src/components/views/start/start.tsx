@@ -8,7 +8,7 @@ import {
   Prop,
 } from '@stencil/core';
 import { ROUTES, MOBILE_ORIGINS } from '../../../global/constants';
-import { IS_CHARITE, IS_CUSTOM, IS_D4L } from '../../../global/layouts';
+import { IS_CUSTOM } from '../../../global/layouts';
 import { RouterHistory } from '@stencil/router';
 import i18next from '../../../global/utils/i18n';
 import { trackEvent, TRACKING_EVENTS } from '../../../global/utils/track';
@@ -166,11 +166,6 @@ export class Start {
                   : i18next.t('start_legal_paragraph_partners')
               }
             ></div>
-            {(!IS_CHARITE || !IS_D4L) && (
-              <div class="u-text-align--center">
-                <ia-logo-d4l-powered-by />
-              </div>
-            )}
           </div>
         </d4l-card>
 

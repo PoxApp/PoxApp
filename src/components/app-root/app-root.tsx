@@ -8,9 +8,7 @@ import {
   IS_BZGA,
   IS_RKI,
   IS_BMG,
-  IS_D4L,
 } from '../../global/layouts';
-import { TRACKING_IS_ENABLED } from '../../global/custom';
 import settings, {
   SHOW_D4L_BANNER,
   COMPLETED,
@@ -21,7 +19,7 @@ import { Language } from '@d4l/web-components-library/dist/types/components/Lang
 import { trackEvent, TRACKING_EVENTS } from '../../global/utils/track';
 import { RouterHistory, injectHistory } from '@stencil/router';
 
-const dnt = navigator.doNotTrack === '1';
+navigator.doNotTrack === '1';
 
 @Component({
   tag: 'app-root',
@@ -156,52 +154,10 @@ export class AppRoot {
   }
 
   render() {
-    const {
-      language,
-      showLogoHeader,
-      showD4lBanner,
-      showErrorBanner,
-      isEmbedded,
-      saveSettings,
-      hasMadeCookieChoice,
-    } = this;
+    const { language, showLogoHeader, showErrorBanner, isEmbedded } = this;
 
     return (
       <connect-translations ref={el => (this.connectTranslationsEl = el)}>
-        {TRACKING_IS_ENABLED && !hasMadeCookieChoice && !dnt && !isEmbedded && (
-          <d4l-cookie-bar
-            classes="cookie-bar app__cookie-bar"
-            acceptText={i18next.t('cookie_bar_accept')}
-            rejectText={i18next.t('cookie_bar_reject')}
-            handleAccept={() =>
-              saveSettings({ acceptCookies: true, acceptTracking: !dnt })
-            }
-            handleReject={() =>
-              saveSettings({ acceptCookies: false, acceptTracking: !dnt })
-            }
-          >
-            <div class="cookie-bar__content" slot="cookie-bar-text">
-              {i18next.t('cookie_bar_text')}{' '}
-              <stencil-route-link url={ROUTES.DATA_PRIVACY}>
-                {i18next.t('cookie_bar_data_privacy')}
-              </stencil-route-link>
-            </div>
-          </d4l-cookie-bar>
-        )}
-        {showD4lBanner && (
-          <d4l-banner
-            noreferrer={false}
-            classes="banner--slim"
-            handleClick={() => this.handleBannerClick()}
-            handleClose={() => this.handleBannerClose()}
-            closeButtonText={i18next.t('d4l_banner_close_button_text')}
-          >
-            <div class="d4l-banner__content">
-              <ia-logo-d4l link={false} compact={true} />
-              <div innerHTML={i18next.t('d4l_banner_text')}></div>
-            </div>
-          </d4l-banner>
-        )}
         {showErrorBanner && (
           <d4l-banner
             noreferrer={false}
@@ -221,8 +177,7 @@ export class AppRoot {
           <header class="c-header">
             {showLogoHeader && !IS_CUSTOM && (
               <div class="app__logo-container">
-                {(IS_CHARITE || IS_D4L) && <ia-logo-charite big />}
-                {(IS_CHARITE || IS_D4L) && <ia-logo-d4l />}
+                {IS_CHARITE && <ia-logo-charite big />}
                 {IS_BZGA && <ia-logo-bzga big />}
                 {IS_BMG && <ia-logo-bmg big />}
                 {IS_RKI && <ia-logo-rki big />}

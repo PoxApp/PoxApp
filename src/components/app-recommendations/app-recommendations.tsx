@@ -35,21 +35,6 @@ export class AppRecommendationsComponent {
   render() {
     const slides = [
       {
-        headerContent: `<ia-logo-d4l-bordered></ia-logo-d4l-bordered><p class="app-recommendation__name--with-byline">${i18next.t(
-          'app_recommendation_d4l_app_name'
-        )}</p><p class="app-recommendation__byline">${i18next.t(
-          'app_recommendation_d4l_app_byline'
-        )}</p><ia-logo-charite></ia-logo-charite><p class="app-recommendation__paragraph">${i18next.t(
-          'app_recommendation_d4l_app_paragraph'
-        )}</p>`,
-        text: '',
-        label: i18next.t('app_recommendation_d4l_app_name'),
-        ctaText: i18next.t('app_recommendation_learn_more_button'),
-        ctaLink: `${DATA4LIFE_URL}?source=CovApp&lng=${this.language}`,
-        ctaEventHandler: () =>
-          trackEvent(TRACKING_EVENTS.SUMMARY_DATA4LIFE_NO_ACCOUNT),
-      },
-      {
         headerContent: `<img src="/assets/images/rki-app.png" class="app-recommendation__icon" alt="RKI diary app logo — coronavirus cell colored in blue" /><p class="app-recommendation__name">${i18next.t(
           'app_recommendation_rki_app_name'
         )}</p><ia-logo-rki></ia-logo-rki><p class="app-recommendation__paragraph">${i18next.t(

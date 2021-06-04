@@ -113,8 +113,6 @@ export namespace Components {
     interface IaLogoD4lBordered {
         "size": "medium" | "small";
     }
-    interface IaLogoD4lPoweredBy {
-    }
     interface IaLogoHeader {
     }
     interface IaLogoOpenSource {
@@ -313,12 +311,6 @@ declare global {
         prototype: HTMLIaLogoD4lBorderedElement;
         new (): HTMLIaLogoD4lBorderedElement;
     };
-    interface HTMLIaLogoD4lPoweredByElement extends Components.IaLogoD4lPoweredBy, HTMLStencilElement {
-    }
-    var HTMLIaLogoD4lPoweredByElement: {
-        prototype: HTMLIaLogoD4lPoweredByElement;
-        new (): HTMLIaLogoD4lPoweredByElement;
-    };
     interface HTMLIaLogoHeaderElement extends Components.IaLogoHeader, HTMLStencilElement {
     }
     var HTMLIaLogoHeaderElement: {
@@ -413,7 +405,6 @@ declare global {
         "ia-logo-component": HTMLIaLogoComponentElement;
         "ia-logo-d4l": HTMLIaLogoD4lElement;
         "ia-logo-d4l-bordered": HTMLIaLogoD4lBorderedElement;
-        "ia-logo-d4l-powered-by": HTMLIaLogoD4lPoweredByElement;
         "ia-logo-header": HTMLIaLogoHeaderElement;
         "ia-logo-open-source": HTMLIaLogoOpenSourceElement;
         "ia-logo-rki": HTMLIaLogoRkiElement;
@@ -544,8 +535,6 @@ declare namespace LocalJSX {
     interface IaLogoD4lBordered {
         "size"?: "medium" | "small";
     }
-    interface IaLogoD4lPoweredBy {
-    }
     interface IaLogoHeader {
     }
     interface IaLogoOpenSource {
@@ -613,7 +602,6 @@ declare namespace LocalJSX {
         "ia-logo-component": IaLogoComponent;
         "ia-logo-d4l": IaLogoD4l;
         "ia-logo-d4l-bordered": IaLogoD4lBordered;
-        "ia-logo-d4l-powered-by": IaLogoD4lPoweredBy;
         "ia-logo-header": IaLogoHeader;
         "ia-logo-open-source": IaLogoOpenSource;
         "ia-logo-rki": IaLogoRki;
@@ -658,7 +646,6 @@ declare module "@stencil/core" {
             "ia-logo-component": LocalJSX.IaLogoComponent & JSXBase.HTMLAttributes<HTMLIaLogoComponentElement>;
             "ia-logo-d4l": LocalJSX.IaLogoD4l & JSXBase.HTMLAttributes<HTMLIaLogoD4lElement>;
             "ia-logo-d4l-bordered": LocalJSX.IaLogoD4lBordered & JSXBase.HTMLAttributes<HTMLIaLogoD4lBorderedElement>;
-            "ia-logo-d4l-powered-by": LocalJSX.IaLogoD4lPoweredBy & JSXBase.HTMLAttributes<HTMLIaLogoD4lPoweredByElement>;
             "ia-logo-header": LocalJSX.IaLogoHeader & JSXBase.HTMLAttributes<HTMLIaLogoHeaderElement>;
             "ia-logo-open-source": LocalJSX.IaLogoOpenSource & JSXBase.HTMLAttributes<HTMLIaLogoOpenSourceElement>;
             "ia-logo-rki": LocalJSX.IaLogoRki & JSXBase.HTMLAttributes<HTMLIaLogoRkiElement>;
