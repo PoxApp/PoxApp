@@ -320,6 +320,7 @@ export class Questionnaire {
                     {currentQuestion.type === 'number' && (
                       <ia-input-number
                         inputId={currentQuestion.id}
+                        inputLabel={currentQuestion.text}
                         required={!currentQuestion.optional}
                         inputMax={currentQuestion.numericOptions.max}
                         inputMin={currentQuestion.numericOptions.min}

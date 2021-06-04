@@ -19,6 +19,7 @@ export class InputNumber {
   @Prop() required: boolean = false;
   @Prop() inputStep: number = 1;
   @Prop() inputMin: number = 0;
+  @Prop() inputLabel: string = i18next.t('input_number_label');
   @Prop() inputMax: number;
   @State() language?: string;
 
@@ -36,7 +37,15 @@ export class InputNumber {
   }
 
   render() {
-    const { inputId, value, required, inputStep, inputMin, inputMax } = this;
+    const {
+      inputId,
+      value,
+      required,
+      inputStep,
+      inputMin,
+      inputMax,
+      inputLabel,
+    } = this;
 
     const onInputChange = (event: Event) => {
       const target = event.target as HTMLInputElement;
@@ -52,7 +61,7 @@ export class InputNumber {
           inputmode="numeric"
           type="number"
           required={required}
-          label={i18next.t('input_number_label')}
+          label={inputLabel}
           step={inputStep}
           min={inputMin}
           max={inputMax}

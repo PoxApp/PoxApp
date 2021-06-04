@@ -71,6 +71,7 @@ export namespace Components {
     }
     interface IaInputNumber {
         "inputId": string;
+        "inputLabel": string;
         "inputMax": number;
         "inputMin": number;
         "inputStep": number;
@@ -489,6 +490,7 @@ declare namespace LocalJSX {
     }
     interface IaInputNumber {
         "inputId"?: string;
+        "inputLabel"?: string;
         "inputMax"?: number;
         "inputMin"?: number;
         "inputStep"?: number;
