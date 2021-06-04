@@ -1488,26 +1488,26 @@
             "var": "q_outbreak.option.yes"
           },
           "id": "priority_3",
-          "text": "Priorität 3: In Ihrem Umfeld sind Infektionen aufgetreten. Es wird ein PCR Test empfohlen. Ein Antigen-Test kann zur Kohorten-Isolation oder zur Entlastung von Laborkapazitäten durchgeführt werden."
+          "text": "English"
         },
         {
           "expression": {
             "var": "q_work.option.medical"
           },
           "id": "priority_4",
-          "text": "Priorität 4: Ein Antigen-Test wird in Abstimmung mit der lokalen Gesundheitsbehörde oder bei einer erhöhten 7-Tages Inzidenz (> 50 Fälle/100.000 Einwohner) empfohlen. Eine PCR ist möglich ohne Kostenerstattung."
+          "text": "English"
         },
         {
           "expression": {
             "var": "q_work.option.medical2"
           },
           "id": "priority_5",
-          "text": "Priorität 5: Ein Point-of-Care Antigen-Test in regelmäßigen Intervallen wird empfohlen, sofern die 7-Tages-Inzidenz oberhalb von 50 liegt. Eine PCR ist möglich ohne Kostenerstattung."
+          "text": "English"
         },
         {
           "expression": true,
           "id": "no_priority",
-          "text": "Keine Priorität: Keine Testung nach der nationalen Teststrategie empfohlen."
+          "text": "English"
         }
       ],
       "id": "rc_rki_priority",

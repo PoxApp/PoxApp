@@ -21,7 +21,7 @@ import {
 import { QUESTION_SHARE_DATA } from './utils';
 import { trackEvent, TRACKING_EVENTS } from '../../../global/utils/track';
 import { getQuestionnaire } from '../../../global/questions';
-
+import DOMPurify from 'dompurify';
 export type Scores = { [key: string]: number };
 export type Answers = { [key: string]: string | string[] };
 
@@ -265,7 +265,7 @@ export class Questionnaire {
                 {currentQuestion && currentQuestion.details && (
                   <p
                     class="questionnaire__comment"
-                    innerHTML={currentQuestion.details}
+                    innerHTML={DOMPurify.sanitize(currentQuestion.details)}
                   ></p>
                 )}
                 {currentQuestion ? (

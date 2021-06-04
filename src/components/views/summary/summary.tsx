@@ -16,6 +16,7 @@ import settings from '../../../global/utils/settings';
 import { IS_COLLABORATION } from '../../../global/layouts';
 import { QuestionnaireEngine, Result } from '@covopen/covquestions-js';
 import { getQuestionnaire } from '../../../global/questions';
+import DOMPurify from 'dompurify';
 
 @Component({
   styleUrl: 'summary.css',
@@ -109,7 +110,7 @@ export class Summary {
               {result.map(r => (
                 <ia-accordion headline={r.resultCategory.description} open={true}>
                   <div slot="accordion-children">
-                    <div innerHTML={r.result.text} />
+                    <div innerHTML={DOMPurify.sanitize(r.result.text)} />
                   </div>
                 </ia-accordion>
               ))}
