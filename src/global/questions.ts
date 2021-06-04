@@ -21,7 +21,7 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   }
   // Make sure it is ending with a slash
   if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';
-  return fetch(`${baseUrl}/${language}.json`)
+  return fetch(`${baseUrl}${language}.json`)
     .then((response: Response) => response.json())
     .then(response => {
       response.questions.push(QUESTION_SHARE_DATA);
