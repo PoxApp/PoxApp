@@ -102,7 +102,7 @@ export class Summary {
             <div class="summary__content" slot="card-content">
               <h2>{i18next.t('summary_headline')}</h2>
               {result.map(r => (
-                <ia-accordion headline={r.resultCategory.description}>
+                <ia-accordion headline={r.resultCategory.description} open={true}>
                   <div slot="accordion-children">
                     <div innerHTML={r.result.text} />
                   </div>
