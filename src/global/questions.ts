@@ -38,7 +38,6 @@ export function getQuestionnaire(
   //   });
 }
 
-export const NO_XML = 'X';
 export const QUESTION = {
   POSTAL_CODE: 'V1',
   ABOVE_65: 'P1',
