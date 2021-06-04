@@ -6,10 +6,9 @@ import {
 import { LOCAL_STORAGE_KEYS } from './constants';
 
 export let questionnaire: Questionnaire = undefined;
-
-export function getQuestionnaire(
-  url = '/assets/questionnaire.json'
-): Promise<Questionnaire> {
+export let cacheKey: string = '';
+export let baseUrl = '/assets/questionnaire/';
+export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   // TODO implement Update Mechanism
   //   let cachedQuestionnaire = JSON.parse(
   //     localStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
@@ -17,10 +16,12 @@ export function getQuestionnaire(
   //   if (cachedQuestionnaire) {
   //     return new Promise(() => cachedQuestionnaire);
   //   }
-  if (questionnaire != undefined) {
+  if (questionnaire != undefined && cacheKey === language) {
     return new Promise(resolve => resolve(questionnaire));
   }
-  return fetch(url)
+  // Make sure it is ending with a slash
+  if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';
+  return fetch(`${baseUrl}/${language}.json`)
     .then((response: Response) => response.json())
     .then(response => {
       response.questions.push(QUESTION_SHARE_DATA);
@@ -30,6 +31,7 @@ export function getQuestionnaire(
         JSON.stringify(response)
       );
       questionnaire = response;
+      cacheKey = language;
 
       return response;
     });

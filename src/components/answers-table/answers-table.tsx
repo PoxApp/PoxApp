@@ -17,6 +17,7 @@ export class AnswersTable {
   })
   changedLanguageHandler(event: CustomEvent) {
     this.language = event.detail.code;
+    this.loadQuestions();
   }
 
   get currentLanguage() {
@@ -24,10 +25,14 @@ export class AnswersTable {
   }
 
   componentWillLoad = () => {
-    getQuestionnaire().then(questionnaire => {
+    this.loadQuestions();
+  };
+
+  private loadQuestions() {
+    getQuestionnaire(this.currentLanguage).then(questionnaire => {
       this.questions = questionnaire.questions;
     });
-  };
+  }
 
   generateQuestionRow = (id: string) => {
     const question = this.questions.find(e => e.id === id);

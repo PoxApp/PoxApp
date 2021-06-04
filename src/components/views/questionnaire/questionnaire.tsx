@@ -47,6 +47,10 @@ export class Questionnaire {
   })
   changedLanguageHandler(event: CustomEvent) {
     this.language = event.detail.code;
+    this.newQuestionnaire();
+  }
+  get currentLanguage() {
+    return this.language || 'en';
   }
 
   @Listen('popstate', {
@@ -126,7 +130,8 @@ export class Questionnaire {
   };
 
   moveToPreviousStep = () => {
-    if (this.questionnaireEngine.getProgress() === 0) {
+    this.progress = this.questionnaireEngine.getProgress();
+    if (this.progress === 0) {
       this.history.push(`/`, {});
       localStorage.removeItem(LOCAL_STORAGE_KEYS.ANSWERS);
     } else {
@@ -185,7 +190,7 @@ export class Questionnaire {
   };
 
   newQuestionnaire = () => {
-    getQuestionnaire()
+    getQuestionnaire(this.currentLanguage)
       .then(questionnaire => {
         this.questionnaireEngine = new QuestionnaireEngine(questionnaire);
         // TODO:https://github.com/CovOpen/CovQuestions/issues/148
@@ -200,7 +205,20 @@ export class Questionnaire {
           version: 2,
           timeOfExecution: 23,
         });
+        // debugger;
+        const previousQuestionId =
+          this.currentQuestion == undefined ? undefined : this.currentQuestion.id;
         this.currentQuestion = this.questionnaireEngine.nextQuestion();
+        // Go back to previous Question if language is changed
+        // TODO: https://github.com/CovOpen/CovQuestions/issues/190
+        if (
+          previousQuestionId != undefined &&
+          this.currentQuestion.id != previousQuestionId
+        ) {
+          this.currentQuestion = this.questionnaireEngine.previousQuestion(
+            this.currentQuestion.id
+          ).question;
+        }
         this.progress = this.questionnaireEngine.getProgress();
       })
       .catch(() => {

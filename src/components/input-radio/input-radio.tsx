@@ -29,7 +29,7 @@ export class InputRadio {
     return (
       <span>
         {options.map(option => {
-          let id = `${inputId}-option${option.text}`;
+          let id = `${inputId}-option-${option.value}`;
           return (
             <p>
               <d4l-radio

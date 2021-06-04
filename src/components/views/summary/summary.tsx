@@ -33,6 +33,7 @@ export class Summary {
   })
   changedLanguageHandler(event: CustomEvent) {
     this.language = event.detail.code;
+    this.loadSummary();
   }
 
   @Listen('popstate', {
@@ -64,7 +65,12 @@ export class Summary {
       localStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
     );
     this.answers = availableAnswers ? availableAnswers : {};
-    getQuestionnaire().then(questionnaire => {
+    this.loadSummary();
+    settings.completed = true;
+  };
+
+  private loadSummary() {
+    getQuestionnaire(this.language).then(questionnaire => {
       const engine = new QuestionnaireEngine(questionnaire);
       // TODO:https://github.com/CovOpen/CovQuestions/issues/148
       engine.setAnswersPersistence({
@@ -80,8 +86,7 @@ export class Summary {
       });
       this.result = engine.getResults().results;
     });
-    settings.completed = true;
-  };
+  }
 
   render() {
     const { result } = this;
