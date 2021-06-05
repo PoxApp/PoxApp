@@ -26,6 +26,7 @@ jobs:
         run: npm run build
         env:
           LAYOUT: CHARITE
+          SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
 
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
