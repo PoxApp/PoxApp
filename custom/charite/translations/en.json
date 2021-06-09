@@ -41,7 +41,7 @@
     "call_to_action_widget": "<strong>For doctors: use CovApp in your practice</strong>\nIf you prefer a simple implementation, use our CovApp widget to integrate the app and help as many patients as possible. Find information about <a href=\"https://www.data4life.care/de/corona/#coronavirus-test\">implementation here</a>.",
     "call_to_action_open_source": "<strong>CovApp open source</strong>\nCovApp is open source under MIT license. Find the <a href=\"https://github.com/d4l-data4life/covapp\">code here</a> and the <a href=\"https://www.d4l.io/blog/covapp-faq/\">FAQ here</a>. Create your own version and help fight COVID-19.",
     "start_block_3_headline": "What data is sent over the internet?",
-    "start_headline": "Do you have symptoms? CovApp shows you potential next steps.",
+    "start_headline": "Do you suspect an infection with the novel coronavirus? CovApp shows you potential next steps.",
     "app_recommendation_d4l_app_paragraph": "Keep a record of symptoms commonly experienced by people with COVID-19 and be fully prepared for when you need it.",
     "q_D5_comment": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19.",
     "q_D6_comment": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19.",
