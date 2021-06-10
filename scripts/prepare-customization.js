@@ -37,9 +37,9 @@ function tryToReadLogo() {
 }
 
 function getTranslationsForLanguageCode(code) {
-  const sourcePath = '../src';
-  const defaultTranslationPath = `${sourcePath}/global/i18n/${code}.json`;
-  const customTranslationsPath = `${sourcePath}/custom/translations/${code}.json`;
+  const rootPath = '..';
+  const defaultTranslationPath = `${rootPath}/src/global/i18n/${code}.json`;
+  const customTranslationsPath = `${rootPath}/custom/translations/${code}.json`;
 
   const defaultTranslations = tryToReadTranslationFile(defaultTranslationPath);
   const customTranslations = tryToReadTranslationFile(customTranslationsPath);
@@ -48,13 +48,13 @@ function getTranslationsForLanguageCode(code) {
 
   if (!translations.keys) {
     throw new Error(
-      `The translations for "${code}" are missing a "keys" property.\nPlease add it in "${customTranslationsPath}"`
+      `The translations for "${code}" is missing the "keys" property.\nPlease add it in "${customTranslationsPath}"`
     );
   }
 
   if (!translations.label) {
     throw new Error(
-      `The translations for "${code}" are missing a "label" property.\nPlease add it in ${customTranslationsPath}`
+      `The translations for "${code}" is missing the "label" property.\nPlease add it in ${customTranslationsPath}`
     );
   }
 
@@ -85,7 +85,7 @@ function writeCustomizationAppFile({
 
   const fileContent = prettier.format(
     `
-  // THIS FILE IS GENERATED VIA 'npm run prepare-translations'
+  // THIS FILE IS GENERATED VIA 'npm run prepare-customization'
   // IT IS BASED ON CONTENT under /src/custom
   // ! DON'T EDIT IT – EDITS WILL BE OVERWRITTEN !
 
@@ -131,6 +131,36 @@ function writeCustomizationAppFile({
   writeFileSync(appFilePath, fileContent);
 }
 
+function writeStyleOverwrite() {
+  const styleFilePath = join(
+    __dirname,
+    '..',
+    'src',
+    'global',
+    'styles',
+    'overwrite.css'
+  );
+  let readContent = readFileSync(
+    join(__dirname, '..', 'custom', 'overwrite.css'),
+    'utf8'
+  );
+
+  const fileContent = prettier.format(
+    `
+      /* THIS FILE IS GENERATED VIA 'npm run prepare-customization'
+       * IT IS BASED ON CONTENT under /custom/
+       * ! DON'T EDIT IT – EDITS WILL BE OVERWRITTEN !
+       */
+
+      ${readContent}
+    
+      `,
+    prettierOptions
+  );
+
+  writeFileSync(styleFilePath, fileContent);
+}
+
 const {
   LAYOUT,
   MATOMO_URL,
@@ -163,3 +193,5 @@ writeCustomizationAppFile({
   data4lifeIosBaseUrl: DATA4LIFE_IOS_BASEURL,
   whitelistedData4LifeOrigins: WHITELISTED_DATA4LIFE_ORIGINS,
 });
+
+writeStyleOverwrite();

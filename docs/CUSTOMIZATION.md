@@ -1,12 +1,12 @@
 # Customization options
 
-**⚠️ We do not support changes in the semantic meaning or evaluation logic of the questionnaire.**
+> You can change the semantic meaning or evaluation logic by editing the questionnaire with [CovQuestions](https://github.com/CovOpen/CovQuestions/) and pasting the Questionnaire Logic as described.
 
 **⚠️ Before you have a look at how to customize the application, make sure you followed [the development instruction](./DEVELOPMENT.md).**
 
 The following instructions require a local development environment of this application including a functional `npm start` and `npm run build` command.
 
-**⚠️ It is highly recommended to only use described customization options. Any other source code changes will break the ability to receive updates of the application.**
+**⚠️ It is highly recommended to only use described customization options. Any other source code changes will make it much harder for you to update the application.**
 
 To apply and see below described changes of your environment or changes to the `custom` directory during development, you have to restart the `npm start` command.
 
@@ -20,7 +20,7 @@ Translations are key-value mappings. A key like `button_start_now` is defined an
 
 You can control all the translation values in the application. The app provides two default translation files (`en.json`/`de.json`), that are located at `src/global/i18n/`. **These files don't need to be changed to make translation changes in these languages.**
 
-To adjust keys, wording, addresses, ... create a new JSON file with the matching language code (`en.json`/`de.json`/`it.json`/...) in `src/custom/translations/`. Files in the `custom` directory overwrite possibly provided default translations.
+To adjust keys, wording, addresses, ... create a new JSON file with the matching language code (`en.json`/`de.json`/`it.json`/...) in `/custom/translations/`. Files in there will overwrite provided default translations.
 
 To overwrite the value of the translation key `button_start_now` in English, add the file `src/custom/translations/en.json` to your project like the following:
 
@@ -35,19 +35,18 @@ To overwrite the value of the translation key `button_start_now` in English, add
 The folder structure with adjusted keys for English should look as follows:
 
 ```
-/src
-  |_ custom
-      |_ translations
-          |_ en.json
+/custom
+    |_ translations
+        |_ en.json
 ```
 
-The best approach to find translation keys for strings in the application is to search for a value like `Start questionnaire` in the provided default file (e.g. `src/global/i18n/en.json`) . This way, you can find the translation key and provide your new translation value in `src/custom/translations/*.json`.
+The best approach to find translation keys for strings in the application is to search for a value like `Start questionnaire` in the provided default file (e.g. `src/global/i18n/en.json`) . This way, you can find the translation key and provide your new translation value in `/custom/translations/*.json`.
 
 ### Existing placeholders
 
 Several keys in the application have placeholder content because their original content applies only to the original use case at the Charité-Unversitätsmedizin Berlin. You have to provide your own content and translations.
 
-These keys are listed in the [`example.json`](../src/custom/translations/example.json) translation file as described above.
+These keys are listed in the [`example.json`](/custom/translations/example.json) translation file as described above.
 
 ### Adding a new language
 
@@ -99,18 +98,13 @@ The files follow the `example.{language-id}.json` naming pattern, for example, `
 
 If you want to add more languages, open a pull request with your example JSON file which follows the naming pattern and is saved in the described file location.
 
-## Changing of colors
+## Changing of colors or adding CSS
 
-To adjust the colors or do minor style tweaks, you can edit `src/custom/styles/app.css`. This stylesheet loads all the default styling included in the app but also gives you the possibility to add your own CSS.
+To adjust the colors or do minor style tweaks, you can add or edit `/custom/overwrite.css`. This stylesheet is appended to the apps main CSS and gives you the possibility to add your own CSS or overwrite any predefined variable.
 
-**Make sure not to remove the line `@import '../../global/app.css';` or the styling of the application will be broken!**
-
-An example `app.css` with adjusted colores could look as follows.
+An example `overwrite.css` with adjusted colors could look as follows:
 
 ```css
-/* REMOVING THE FOLLOWING LINE WILL BREAK THE STYLING OF THE APPLICATION */
-@import '../../global/app.css';
-
 :root {
   --color-primary: #ff3f97;
   --color-primary-light: #ff4ebb;
@@ -125,14 +119,13 @@ While you can apply styles to other elements, too, **it is recommended to use th
 
 ## How to add a custom logo
 
-To set up a custom logo change `/src/custom/logo.svg`. This logo file will be automatically picked up and be included in the header index navigation.
+To set up a custom logo change `/custom/logo.svg`. This logo file will be automatically picked up and be included in the header index navigation.
 
 The folder structure with a custom logo should look as follows:
 
 ```
-/src
-  |_ custom
-      |_ logo.svg
+/custom
+    |_ logo.svg
 ```
 
 ⚠️ Currently, the application only supports SVG logos.

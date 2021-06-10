@@ -120,3 +120,8 @@ body {
 .is-ie + app-root {
   display: none;
 }
+
+/**
+ * Add CSS from customization
+**/
+@import './styles/overwrite.css';

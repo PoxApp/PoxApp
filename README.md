@@ -1,11 +1,12 @@
 Preview: https://covappquestions.z19.web.core.windows.net/
+
 # CovApp
 
 > 😷 Solution for assessing the risk of contagious viral infections (COVID-19)
 
 ![Screenshots of the CovApp showing the start of a questionnaire, the risk assessment and the generated QR code holding the collected information](./docs/img/screenshot.png)
 
-[The CovApp](https://covapp.charite.de/) is an application developed in collaboration by [Charité – Universitätsmedizin Berlin](https://www.charite.de/) and [Data4Life](https://www.data4life.care/). It can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions.
+[The CovApp](https://covapp.charite.de/) is an application developed in collaboration by [Charité – Universitätsmedizin Berlin](https://www.charite.de/). It can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. Initial development was done by [Data4Life](https://www.data4life.care/).
 
 Additionally, every filled out questionnaire summarizes relevant medical information for future doctor’s consultation in the form of a summary page, printout or a QR code. Institutions with the technical setup can scan the provided QR code and retrieve the patient information quickly and without any physical contact.
 

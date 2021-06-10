@@ -10,7 +10,6 @@
     "build": "stencil build && echo $(date) > www/version.txt",
     "prestart": "npm run prepare-customization",
     "start": "stencil build --dev --watch --serve --no-open",
-    "import-translations": "node ./scripts/import-translations.js",
     "prepare-customization": "node ./scripts/prepare-customization.js",
     "test": "stencil test --spec",
     "test:watch": "stencil test --spec --watchAll",
@@ -18,7 +17,7 @@
     "test:all": "stencil test --spec --e2e",
     "test:all:watch": "stencil test --spec --e2e --watchAll",
     "code-format": "npx prettier --write 'src/**/*.{tsx,css,ts}'",
-    "prepare-charite": "copyfiles -f ./custom/charite/translations/* ./src/custom/translations"
+    "prepare-charite": "rm -r ./custom && copyfiles -f ./deploy/charite/* ./custom/"
   },
   "devDependencies": {
     "@lokalise/node-api": "^6.0.0",
