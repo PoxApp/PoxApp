@@ -2,7 +2,7 @@
   "id": "covapp_original",
   "schemaVersion": "1",
   "version": 1,
-  "language": "en",
+  "language": "de",
   "title": "CovApp",
   "meta": {
     "availableLanguages": [
@@ -516,7 +516,7 @@
       "id": "q_immunosuppressants",
       "text": "Do you currently receive one or more of the following treatments?",
       "type": "multiselect",
-      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease, or during chemotherapy. Chemo and/or radiotherapy is used as treatment for cancer. If you don't receive any of these treamts, choose the “Next” button without selecting a treatment.",
+      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease. Chemo and/or radiotherapy is used as treatment for cancer. If you don't receive any of these treatments, choose the “Next” button without selecting a treatment.",
       "optional": true
     },
     {
