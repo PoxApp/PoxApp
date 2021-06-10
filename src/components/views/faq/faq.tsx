@@ -9,6 +9,7 @@ import {
 } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import i18next from '../../../global/utils/i18n';
+import settings from '../../../global/utils/settings';
 
 @Component({
   tag: 'ia-faq',
@@ -17,7 +18,7 @@ export class Faq {
   @Prop() history: RouterHistory;
   @Event() showLogoHeader: EventEmitter;
 
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

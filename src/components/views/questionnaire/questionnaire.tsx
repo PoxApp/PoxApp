@@ -32,7 +32,7 @@ export type Answers = { [key: string]: string | string[] };
 export class Questionnaire {
   @Prop() history: RouterHistory;
 
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @State() previousStep: number;
   // TODO: Export DataType from CovQuestions
   @State() answerData: { [key: string]: any } = undefined;
@@ -48,9 +48,6 @@ export class Questionnaire {
   changedLanguageHandler(event: CustomEvent) {
     this.language = event.detail.code;
     this.newQuestionnaire();
-  }
-  get currentLanguage() {
-    return this.language || 'en';
   }
 
   @Listen('popstate', {
@@ -190,7 +187,7 @@ export class Questionnaire {
   };
 
   newQuestionnaire = () => {
-    getQuestionnaire(this.currentLanguage)
+    getQuestionnaire(this.language)
       .then(questionnaire => {
         this.questionnaireEngine = new QuestionnaireEngine(questionnaire);
         // TODO:https://github.com/CovOpen/CovQuestions/issues/148

@@ -37,7 +37,7 @@ export class Export {
 
   @Prop() history: RouterHistory;
 
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @State() hasFinishedQuestionnaire: boolean;
   @State() submitted: boolean = false;
   @State() imported: boolean = false;

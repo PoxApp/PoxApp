@@ -2,13 +2,15 @@ import { Component, h, State, Listen } from '@stencil/core';
 import i18next from 'i18next';
 import { CUSTOM_LOGO } from '../../global/custom';
 import { IS_CUSTOM, IS_COLLABORATION } from '../../global/layouts';
+import settings from '../../global/utils/settings';
+
 @Component({
   styleUrl: ' logo-header.css',
   tag: 'ia-logo-header',
   assetsDirs: ['assets'],
 })
 export class LogoHeader {
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

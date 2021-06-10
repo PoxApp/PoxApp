@@ -16,6 +16,7 @@ type IAChangeHandlers = Function[];
 class Settings {
   protected _pending: IASettings = {};
   protected _changeHandlers: IAChangeHandlers = [];
+  private _languageCode: string = null;
 
   get acceptsCookies() {
     return this.getLocalStorageValue(ACCEPTS_COOKIES) === 'true';
@@ -38,11 +39,15 @@ class Settings {
     );
   }
 
-  get language() {
+  get languageCode(): string {
+    if (!this.getLocalStorageValue(USER_LANGUAGE)) {
+      return this._languageCode;
+    }
     return this.getLocalStorageValue(USER_LANGUAGE);
   }
-  set language(language: string) {
-    this.setLocalStorageValue(USER_LANGUAGE, language);
+  set languageCode(languageCode: string) {
+    this._languageCode = languageCode;
+    this.setLocalStorageValue(USER_LANGUAGE, languageCode, false);
   }
 
   get showD4lBanner() {

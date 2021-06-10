@@ -1,5 +1,6 @@
 import { Component, h, Listen, Prop, State } from '@stencil/core';
 import { getRootCSSPropertyValue } from '../../global/utils/css-properties';
+import settings from '../../global/utils/settings';
 
 @Component({
   styleUrl: 'accordion.css',
@@ -12,7 +13,7 @@ export class Accordion {
   @Prop() buttonProps?: { [key: string]: string };
   @Prop() open?: boolean = false;
   @Prop() handleToggle?: (boolean) => void;
-  @State() language: string;
+  @State() language: string = settings.languageCode;
 
   @Listen('changedLanguage', {
     target: 'window',

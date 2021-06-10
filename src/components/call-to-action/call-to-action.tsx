@@ -1,5 +1,7 @@
 import { Component, h, State, Prop, Listen } from '@stencil/core';
 import i18next from 'i18next';
+import settings from '../../global/utils/settings';
+
 @Component({
   styleUrl: ' call-to-action.css',
   tag: 'ia-call-to-action',
@@ -8,7 +10,7 @@ import i18next from 'i18next';
 export class CallToActionComponent {
   @Prop() type: 'OPEN_SOURCE' | 'WIDGET';
   @Prop() showCard = true;
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

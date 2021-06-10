@@ -18,12 +18,12 @@ languageDetector.addDetector({
     );
     return (
       (queryMatch || []).pop() ||
-      settings.language ||
+      settings.languageCode ||
       (navigator.language || '').split('-').shift()
     );
   },
   cacheUserLanguage(lng: string) {
-    settings.language = lng;
+    settings.languageCode = lng;
   },
 });
 

@@ -1,12 +1,13 @@
 import { Component, h, State, Listen, Event, EventEmitter } from '@stencil/core';
 import i18next from '../../../global/utils/i18n';
 import { ROUTES } from '../../../global/constants';
+import settings from '../../../global/utils/settings';
 
 @Component({
   tag: 'ia-disclaimer',
 })
 export class Disclaimer {
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Event() showLogoHeader: EventEmitter;
   @Listen('changedLanguage', {
     target: 'window',

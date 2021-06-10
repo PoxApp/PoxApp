@@ -39,7 +39,7 @@ const NEXT_ROUTE = {
 export class Start {
   @Prop() history: RouterHistory;
 
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @State() started: boolean = false;
   @State() completed: boolean = false;
   @Event() showLogoHeader: EventEmitter;

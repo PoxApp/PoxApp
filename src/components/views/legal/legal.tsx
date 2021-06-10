@@ -17,6 +17,7 @@ import {
   IS_RKI,
   IS_D4L,
 } from '../../../global/layouts';
+import settings from '../../../global/utils/settings';
 
 @Component({
   tag: 'ia-legal',
@@ -25,7 +26,7 @@ export class Legal {
   @Prop() history: RouterHistory;
   @Event() showLogoHeader: EventEmitter;
 
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

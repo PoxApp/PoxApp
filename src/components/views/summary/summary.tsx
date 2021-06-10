@@ -24,7 +24,7 @@ import DOMPurify from 'dompurify';
 })
 export class Summary {
   @Prop() history: RouterHistory;
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @State() answers: Answers = {};
   @State() result: Result[] = [];
   @Event() showLogoHeader: EventEmitter;
@@ -45,10 +45,6 @@ export class Summary {
     delete this.answers[answerKeys[answerKeys.length - 1]];
     localStorage.setItem(LOCAL_STORAGE_KEYS.ANSWERS, JSON.stringify(this.answers));
     settings.completed = false;
-  }
-
-  get currentLanguage() {
-    return this.language || 'en';
   }
 
   resetFormAndStartAgain = () => {

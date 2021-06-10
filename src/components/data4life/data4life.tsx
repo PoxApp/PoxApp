@@ -10,7 +10,7 @@ import settings from '../../global/utils/settings';
   tag: 'ia-data4life',
 })
 export class Data4LifeComponent {
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

@@ -4,6 +4,7 @@ import i18next from 'i18next';
 import { APP_RECOMMENDATIONS_ID } from '../../global/constants';
 import { DATA4LIFE_URL } from '../../global/custom';
 import { trackEvent, TRACKING_EVENTS } from '../../global/utils/track';
+import settings from '../../global/utils/settings';
 
 @Component({
   styleUrl: 'app-recommendations.css',
@@ -14,7 +15,7 @@ export class AppRecommendationsComponent {
   protected containerElement: HTMLElement;
 
   @Prop() history: RouterHistory;
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

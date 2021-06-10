@@ -2,6 +2,7 @@ import { isQuestionWithOptions, Question } from '@covopen/covquestions-js';
 import { Component, h, Listen, Prop, State } from '@stencil/core';
 import { getQuestionnaire } from '../../global/questions';
 import i18next from '../../global/utils/i18n';
+import settings from '../../global/utils/settings';
 
 @Component({
   styleUrl: 'answers-table.css',
@@ -9,7 +10,7 @@ import i18next from '../../global/utils/i18n';
 })
 export class AnswersTable {
   @Prop() answers: any = {};
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @State() questions: Question[];
 
   @Listen('changedLanguage', {
@@ -46,7 +47,7 @@ export class AnswersTable {
           <td>{i18next.t(question.text)}</td>
           <td>
             {Number.isInteger(this.answers[id])
-              ? new Date(this.answers[id]).toLocaleDateString()
+              ? new Date(this.answers[id] * 1000).toLocaleDateString()
               : this.answers[id]
                   .split('.')
                   .reverse()

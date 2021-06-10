@@ -23,7 +23,6 @@ export class InputBoolean implements ComponentInterface {
   updateFormData: EventEmitter;
   updateFormDataEmitter(key: string, value: boolean) {
     this.updateFormData.emit({ key, value });
-    debugger;
   }
 
   updateFormDataAction = (event: CustomEvent) => {

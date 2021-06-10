@@ -10,6 +10,8 @@ import {
   IS_RKI,
   IS_D4L,
 } from '../../global/layouts';
+import settings from '../../global/utils/settings';
+
 @Component({
   styleUrl: ' logo-component.css',
   tag: 'ia-logo-component',
@@ -17,7 +19,7 @@ import {
 })
 export class LogoComponent {
   @Prop() classes?: string;
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @Listen('changedLanguage', {
     target: 'window',
   })

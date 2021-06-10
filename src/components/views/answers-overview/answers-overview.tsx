@@ -14,7 +14,7 @@ import { Answers } from '../questionnaire/questionnaire';
 })
 export class AnswersOverview {
   @Prop() history: RouterHistory;
-  @State() language: string;
+  @State() language: string = settings.languageCode;
   @State() answers: Answers = {};
 
   componentWillLoad = () => {

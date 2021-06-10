@@ -12,6 +12,8 @@ import { trackEvent, TRACKING_EVENTS } from '../../global/utils/track';
 import { RouterHistory } from '@stencil/router';
 import { QUESTION_SHARE_DATA } from '../views/questionnaire/utils';
 import { QuestionnaireEngine } from '@covopen/covquestions-js';
+import settings from '../../global/utils/settings';
+
 export type KeyValue = { key: string; value: string | number };
 
 @Component({
@@ -22,7 +24,7 @@ export class QRCode {
   @Prop() history: RouterHistory;
   @Prop() answers: any = {};
   @State() qr_values: { [id: string]: string };
-  @State() language: string;
+  @State() language: string = settings.languageCode;
 
   @Listen('changedLanguage', {
     target: 'window',

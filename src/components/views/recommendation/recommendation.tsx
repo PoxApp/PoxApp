@@ -2,13 +2,14 @@ import { Component, h, State, Listen } from '@stencil/core';
 import i18next from '../../../global/utils/i18n';
 import { getRootCSSPropertyValue } from '../../../global/utils/css-properties';
 import { IS_COLLABORATION } from '../../../global/layouts';
+import settings from '../../../global/utils/settings';
 
 @Component({
   styleUrl: 'recommendation.css',
   tag: 'ia-recommendation',
 })
 export class Recommendation {
-  @State() language: string;
+  @State() language: string = settings.languageCode;
 
   @Listen('changedLanguage', {
     target: 'window',
