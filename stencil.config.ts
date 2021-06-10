@@ -11,10 +11,7 @@ export const config: Config = {
   // the defined custom stylesheet loads /src/global/app.css
   // this approach makes it possible to make the CSS adjustable
   // without the need of switching another environment/config flag
-  globalStyle:
-    process.env.LAYOUT === 'OFFICIAL_COLLABORATION_BZGA'
-      ? 'src/global/app-collaboration-bzga.css'
-      : 'src/custom/styles/app.css',
+  globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   outputTargets: [
     {
