@@ -1,7 +1,7 @@
 {
   "label": "English",
   "keys": {
-    "start_headline": "Do you have symptoms? Or a risk encounter? Did you perform a rapid test? CovApp shows you potential next steps.",
+    "start_headline": "Do you have symptoms? Did you encounter a risk contact? Did you perform a rapid test? CovApp shows you potential next steps.",
     "questionnaire_progress_bar_label": "Your progress with the questionnaire",
     "d4l_banner_close_button_text": "Close banner",
     "q_P4_option1": "Working in a community facility (school, day care center, university, care home, etc.)",
