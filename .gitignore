@@ -29,4 +29,5 @@ stats.html
 # Customization
 src/global/custom.ts
 src/global/styles/overwrite.css
-src/custom/translations/**
+custom/**/*
+!custom/.gitkeep

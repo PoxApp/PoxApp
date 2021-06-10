@@ -17,7 +17,7 @@
     "test:all": "stencil test --spec --e2e",
     "test:all:watch": "stencil test --spec --e2e --watchAll",
     "code-format": "npx prettier --write 'src/**/*.{tsx,css,ts}'",
-    "prepare-charite": "rm -r ./custom && copyfiles -f ./deploy/charite/* ./custom/"
+    "prepare-charite": "rimraf custom && mkdir custom && copyfiles ./deploy/charite/**/* custom -u 2 -V"
   },
   "devDependencies": {
     "@lokalise/node-api": "^6.0.0",

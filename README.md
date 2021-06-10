@@ -101,3 +101,6 @@ The CovApp is [MIT licensed](./LICENSE).
 Copyright 2020 by Charité Universitaetsmedizin Berlin and [D4L data4life gGmbH](https://www.data4life.care)
 
 Contributors: Dr. Alexander Henry Thieme and others
+
+TODO: Fix data consent language
+TODO: PLZ fix

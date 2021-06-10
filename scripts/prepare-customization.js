@@ -140,10 +140,16 @@ function writeStyleOverwrite() {
     'styles',
     'overwrite.css'
   );
-  let readContent = readFileSync(
-    join(__dirname, '..', 'custom', 'overwrite.css'),
-    'utf8'
-  );
+  let readContent = '';
+  try {
+    readContent = readFileSync(
+      join(__dirname, '..', 'custom', 'overwrite.css'),
+      'utf8'
+    );
+  } catch (error) {
+    // No custom overwrite.css
+    console.log('Info - no custom CSS provided.');
+  }
 
   const fileContent = prettier.format(
     `
