@@ -2,10 +2,11 @@
   "id": "covapp_original",
   "schemaVersion": "1",
   "version": 1,
-  "language": "de",
+  "language": "en",
   "title": "CovApp",
   "meta": {
     "availableLanguages": [
+      "en",
       "de"
     ],
     "author": "Alexander Thieme",
@@ -218,7 +219,7 @@
       ],
       "id": "q_contact",
       "text": "Hatten Sie engen Kontakt zu einem bestätigten Fall?",
-      "details": "Enger Kontakt mit einem bestätigten Fall bedeutet: <ul><li>Kontakt von Angesicht zu Angesicht länger als 15 Minuten</li><li>Direkter, physischer Kontakt (Berührung, Händeschütteln, Küssen)</li><li>Länger als 15 Minuten direkt neben einer infizierten Person (weniger als 1,5 Meter Abstand) verbracht</li><li>Kontakt mit oder Austausch von Körperflüssigkeiten</li><li>Teilen einer Wohnung</li></ul>  Falls Sie Kontakt hatten, aber adäquate Schutzmaßnahmen (Maske, Kittel) getragen haben, wählen Sie \"Nein\".",
+      "details": "Enger Kontakt mit einem bestätigten Fall bedeutet: <ul><li>Kontakt von Angesicht zu Angesicht länger als 15 Minuten</li><li>Direkter, physischer Kontakt (Berührung, Händeschütteln, Küssen)</li><li>Länger als 15 Minuten direkt neben einer infizierten Person (weniger als 1,5 Meter Abstand) verbracht</li><li>Kontakt mit oder Austausch von Körperflüssigkeiten</li><li>Teilen einer Wohnung</li></ul>  Falls Sie Kontakt hatten, aber adäquate Schutzmaßnahmen (Maske) getragen haben, wählen Sie \"Nein\".",
       "type": "select"
     },
     {
@@ -1762,7 +1763,7 @@
             "var": "has_positive_pcr"
           },
           "id": "has_positive_pcr_not_vaccinated",
-          "text": "Die meisten Benutzer mit einem positiven PCR-Test sind mit dem Coronavirusinfektion infiziert. Schwach/Stark positiv. Bei weiteren Fragen wenden Sie sich bitte an die Stelle, bei der Sie den PCR-Test durchgeführt haben."
+          "text": "Die meisten Benutzer mit einem positiven PCR-Test sind mit dem Coronavirusinfektion infiziert. Insbesondere zu Beginn und am Ende der Erkrankung kann es außerdem zu positiven PCR-Ergebnissen kommen, bei denen die Viruslast unterhalb des aktuell gängigen Schwellenwertes von 1.000.000 Kopien/ml liegt. Auch solche Befunde bedürfen einer umfassenden medizinischen Betrachtung und sollten grundsätzlich mit einem Arzt besprochen werden. Bei weiteren Fragen wenden Sie sich bitte an die Stelle, bei der Sie den PCR-Test durchgeführt haben."
         },
         {
           "expression": {
@@ -2239,7 +2240,7 @@
             "var": "has_infection"
           },
           "id": "rc_infected",
-          "text": "Bitte isolieren Sie sich von anderen Personen, um eine Weitergabe des Virus zu verhindern."
+          "text": "Bitte begeben Sie sich in Selbstisolation, um eine Weitergabe des Virus zu verhindern."
         },
         {
           "expression": {
@@ -2255,7 +2256,7 @@
               }
             ]
           },
-          "text": "Nach Ihren Angaben haben Sie beruflich und/oder privat zahlreiche soziale Kontakte. Sie sind geimpft, aber eine Infektion mit dem Coronavirus erscheint dennoch möglich. Bitte reduzieren Sie Ihre sozialen Kontakte, wann immer dies möglich ist, bis eine Coronavirusinfektion durch einen Test ausgeschlossen wurde.",
+          "text": "Nach Ihren Angaben haben Sie beruflich und/oder privat zahlreiche soziale Kontakte. Sie sind geimpft, aber eine Infektion mit dem Coronavirus erscheint dennoch möglich. Bitte reduzieren Sie Ihre sozialen Kontakte, wann immer dies möglich ist, bis eine Coronavirusinfektion ausgeschlossen wurde.",
           "id": "probable_infection_and_vaccination"
         },
         {
@@ -2275,7 +2276,7 @@
             ]
           },
           "id": "probable_infection_and_no_vaccination",
-          "text": "Nach Ihren Angaben haben Sie beruflich und/oder privat zahlreiche soziale Kontakte. Bei Ihnen ist eine Coronavirusinfektion möglich. Bitte begeben Sie sich in Selbstisolation, bis eine Coronavirusinfektion durch einen Test ausgeschlossen wurde."
+          "text": "Nach Ihren Angaben haben Sie beruflich und/oder privat zahlreiche soziale Kontakte. Bei Ihnen ist eine Coronavirusinfektion möglich. Bitte begeben Sie sich in Selbstisolation, bis eine Infektion ausgeschlossen wurde."
         }
       ],
       "description": "Handlungsempfehlungen Verbreitungspotential",
