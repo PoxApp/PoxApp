@@ -2,11 +2,12 @@
   "id": "covapp_original",
   "schemaVersion": "1",
   "version": 1,
-  "language": "en",
+  "language": "de",
   "title": "CovApp",
   "meta": {
     "availableLanguages": [
-      "en"
+      "en",
+      "de"
     ],
     "author": "Alexander Thieme",
     "creationDate": "2021-06-09"
@@ -218,7 +219,7 @@
       ],
       "id": "q_contact",
       "text": "Have you had close contact with a confirmed case?",
-      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 15 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 1.5 meters of the person for more than 15 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask, smock) on contact.",
+      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 15 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 1.5 meters of the person for more than 15 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask) on contact.",
       "type": "select"
     },
     {
@@ -1758,7 +1759,7 @@
             "var": "has_positive_pcr"
           },
           "id": "has_positive_pcr_not_vaccinated",
-          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
@@ -1993,7 +1994,7 @@
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
-          "text": "Your responses indicate shortness of breath. Your condition requires immediate medical attention."
+          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service (116117). If your shortness of breath becomes severe, please seek medical help."
         },
         {
           "expression": {
@@ -2235,7 +2236,7 @@
             "var": "has_infection"
           },
           "id": "rc_infected",
-          "text": "Please isolate yourself form other persons to prevent transmission of the virus."
+          "text": "Please self-isolate form other persons to prevent transmission of the virus."
         },
         {
           "expression": {
@@ -2271,7 +2272,7 @@
             ]
           },
           "id": "probable_infection_and_no_vaccination",
-          "text": "Your responses indicate many social interactions due to work or privately. Please reduce your social interactions as much as possible, until an infection has been excluded."
+          "text": "Your responses indicate many social interactions due to work or privately. Please self-isolate until an infection has been excluded."
         }
       ],
       "description": "Recommendations to prevent spread of virus",
