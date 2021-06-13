@@ -1,6 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { h } from '@stencil/core';
-import { getStorageString } from '../../global/utils/date';
 import { KeyValue, QRCode } from './qr-code';
 
 describe('qr-code', () => {

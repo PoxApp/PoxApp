@@ -17,15 +17,13 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   //     return new Promise(() => cachedQuestionnaire);
   //   }
   if (questionnaire != undefined && cacheKey === language) {
-    return new Promise(resolve => resolve(questionnaire));
+    return new Promise(resolve => resolve(addAdditionalQuestions(questionnaire)));
   }
   // Make sure it is ending with a slash
   if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';
   return fetch(`${baseUrl}${language}.json`)
     .then((response: Response) => response.json())
     .then(response => {
-      response.questions.push(QUESTION_SHARE_DATA);
-      response.questions.push(QUESTION_SHARE_DATA_PLZ);
       localStorage.setItem(
         LOCAL_STORAGE_KEYS.QUESTIONNAIRE,
         JSON.stringify(response)
@@ -33,11 +31,17 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
       questionnaire = response;
       cacheKey = language;
 
-      return response;
+      return addAdditionalQuestions(response);
     });
   // .catch(() => {
   //     // do nothing for now
   //   });
+}
+
+function addAdditionalQuestions(questionnaire: Questionnaire): Questionnaire {
+  questionnaire.questions.push(QUESTION_SHARE_DATA());
+  questionnaire.questions.push(QUESTION_SHARE_DATA_PLZ());
+  return questionnaire;
 }
 
 export const QUESTION = {

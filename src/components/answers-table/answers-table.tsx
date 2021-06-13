@@ -44,7 +44,7 @@ export class AnswersTable {
     if (question.type === 'date') {
       return (
         <tr class="answers-table__row">
-          <td>{i18next.t(question.text)}</td>
+          <td>{question.text}</td>
           <td>
             {Number.isInteger(this.answers[id])
               ? new Date(this.answers[id] * 1000).toLocaleDateString()
@@ -59,28 +59,28 @@ export class AnswersTable {
       const response = question.options.find(o => o.value === this.answers[id]);
       return (
         <tr class="answers-table__row">
-          <td>{i18next.t(question.text)}</td>
-          <td>{i18next.t(response.text)}</td>
+          <td>{question.text}</td>
+          <td>{response.text}</td>
         </tr>
       );
     } else if (question.type === 'number') {
       return (
         <tr class="answers-table__row">
-          <td>{i18next.t(question.text)}</td>
+          <td>{question.text}</td>
           <td>{this.answers[id]}</td>
         </tr>
       );
     } else if (question.type === 'text') {
       return (
         <tr class="answers-table__row">
-          <td>{i18next.t(question.text)}</td>
+          <td>{question.text}</td>
           <td>{this.answers[id]}</td>
         </tr>
       );
     } else if (question.type === 'multiselect') {
       return (
         <tr class="answers-table__row">
-          <td>{i18next.t(question.text)}</td>
+          <td>{question.text}</td>
           <td>
             {this.answers[id].map(
               (option, index) =>

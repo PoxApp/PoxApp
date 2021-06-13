@@ -1,9 +1,6 @@
-import { IS_CHARITE, IS_D4L } from '../layouts';
-
 export const ACCEPTS_COOKIES = 'accepts_cookies';
 export const ACCEPTS_TRACKING = 'accepts_tracking';
 export const USER_LANGUAGE = 'user_language';
-export const SHOW_D4L_BANNER = 'show_d4l_banner';
 export const SOURCE = 'source';
 export const COMPLETED = 'completed';
 
@@ -48,17 +45,6 @@ class Settings {
   set languageCode(languageCode: string) {
     this._languageCode = languageCode;
     this.setLocalStorageValue(USER_LANGUAGE, languageCode, false);
-  }
-
-  get showD4lBanner() {
-    return (
-      (IS_CHARITE || IS_D4L) &&
-      this.getLocalStorageValue(SHOW_D4L_BANNER) !== 'false'
-    );
-  }
-  set showD4lBanner(isTrue: boolean) {
-    (IS_CHARITE || IS_D4L) &&
-      this.setLocalStorageValue(SHOW_D4L_BANNER, `${isTrue}`, false);
   }
 
   get source() {

@@ -15,7 +15,6 @@ import { trackEvent, TRACKING_EVENTS } from '../../../global/utils/track';
 import version from '../../../global/utils/version';
 import { WHITELISTED_DATA4LIFE_ORIGINS } from '../../../global/custom';
 import settings, { SOURCE } from '../../../global/utils/settings';
-import { IS_COLLABORATION } from '../../../global/layouts';
 
 const NEXT_ROUTE = {
   DEFAULT: {
@@ -160,11 +159,7 @@ export class Start {
             )}
             <div
               class="start__legal-note u-padding-vertical--normal u-text-align--center"
-              innerHTML={
-                !IS_COLLABORATION
-                  ? i18next.t('start_legal_paragraph')
-                  : i18next.t('start_legal_paragraph_partners')
-              }
+              innerHTML={i18next.t('start_legal_paragraph')}
             ></div>
           </div>
         </d4l-card>

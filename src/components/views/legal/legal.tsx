@@ -9,14 +9,6 @@ import {
 } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import i18next from '../../../global/utils/i18n';
-import {
-  IS_CHARITE,
-  IS_CUSTOM,
-  IS_BMG,
-  IS_BZGA,
-  IS_RKI,
-  IS_D4L,
-} from '../../../global/layouts';
 import settings from '../../../global/utils/settings';
 
 @Component({
@@ -53,13 +45,7 @@ export class Legal {
             />
           </div>
           <div class="legal__content u-text-align--left" slot="card-content">
-            {(IS_CHARITE || IS_CUSTOM) && (
-              <p innerHTML={i18next.t('legal_content')} />
-            )}
-            {IS_BMG && <p innerHTML={i18next.t('legal_content_bmg')} />}
-            {IS_BZGA && <p innerHTML={i18next.t('legal_content_bzga')} />}
-            {IS_RKI && <p innerHTML={i18next.t('legal_content_rki')} />}
-            {IS_D4L && <p innerHTML={i18next.t('legal_content_d4l')} />}
+            <p innerHTML={i18next.t('legal_content')} />
           </div>
         </d4l-card>
       </div>

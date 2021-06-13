@@ -118,7 +118,7 @@ export class Questionnaire {
     }
     this.persistStateToLocalStorage();
 
-    if (this.currentQuestion.id === QUESTION_SHARE_DATA.id) {
+    if (this.currentQuestion.id === QUESTION_SHARE_DATA().id) {
       trackEvent([
         ...TRACKING_EVENTS.DATA_DONATION_CONSENT,
         this.currentAnswerValue === 'yes' ? '1' : '0',

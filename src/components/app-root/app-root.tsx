@@ -9,11 +9,7 @@ import {
   IS_RKI,
   IS_BMG,
 } from '../../global/layouts';
-import settings, {
-  SHOW_D4L_BANNER,
-  COMPLETED,
-  SOURCE,
-} from '../../global/utils/settings';
+import settings, { COMPLETED, SOURCE } from '../../global/utils/settings';
 
 import { Language } from '@d4l/web-components-library/dist/types/components/LanguageSwitcher/language-switcher';
 import { trackEvent, TRACKING_EVENTS } from '../../global/utils/track';
@@ -61,15 +57,6 @@ export class AppRoot {
   @Listen('isEmbedded')
   isEmbeddedListener(event: CustomEvent) {
     this.isEmbedded = !!event.detail;
-  }
-
-  get showD4lBanner() {
-    return (
-      settings.showD4lBanner &&
-      settings.completed &&
-      !this.isEmbedded &&
-      !settings.source
-    );
   }
 
   saveSettings = ({ acceptCookies, acceptTracking }) => {
@@ -120,11 +107,6 @@ export class AppRoot {
     trackEvent(TRACKING_EVENTS.HEADER_BANNER_CLICK);
   }
 
-  handleBannerClose() {
-    settings.showD4lBanner = false;
-    trackEvent(TRACKING_EVENTS.HEADER_BANNER_CLOSE);
-  }
-
   async componentWillLoad() {
     // check for native date picker support
     // inspired by https://github.com/Modernizr/Modernizr/blob/master/feature-detects/inputtypes.js
@@ -143,7 +125,7 @@ export class AppRoot {
     this.hasMadeCookieChoice = IS_DEV || settings.hasMadeCookieChoice;
     settings.onChange(
       key =>
-        [SHOW_D4L_BANNER, COMPLETED, SOURCE].includes(key) &&
+        [COMPLETED, SOURCE].includes(key) &&
         (this.d4lBannerIdentity = new Date().getTime())
     );
   }

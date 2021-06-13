@@ -44,8 +44,6 @@ export namespace Components {
     interface IaDataPrivacy {
         "history": RouterHistory;
     }
-    interface IaData4life {
-    }
     interface IaDisclaimer {
     }
     interface IaExport {
@@ -203,12 +201,6 @@ declare global {
     var HTMLIaDataPrivacyElement: {
         prototype: HTMLIaDataPrivacyElement;
         new (): HTMLIaDataPrivacyElement;
-    };
-    interface HTMLIaData4lifeElement extends Components.IaData4life, HTMLStencilElement {
-    }
-    var HTMLIaData4lifeElement: {
-        prototype: HTMLIaData4lifeElement;
-        new (): HTMLIaData4lifeElement;
     };
     interface HTMLIaDisclaimerElement extends Components.IaDisclaimer, HTMLStencilElement {
     }
@@ -388,7 +380,6 @@ declare global {
         "ia-call-to-action": HTMLIaCallToActionElement;
         "ia-covapp-to-data4life": HTMLIaCovappToData4lifeElement;
         "ia-data-privacy": HTMLIaDataPrivacyElement;
-        "ia-data4life": HTMLIaData4lifeElement;
         "ia-disclaimer": HTMLIaDisclaimerElement;
         "ia-export": HTMLIaExportElement;
         "ia-faq": HTMLIaFaqElement;
@@ -456,8 +447,6 @@ declare namespace LocalJSX {
     interface IaDataPrivacy {
         "history"?: RouterHistory;
         "onShowLogoHeader"?: (event: CustomEvent<any>) => void;
-    }
-    interface IaData4life {
     }
     interface IaDisclaimer {
         "onShowLogoHeader"?: (event: CustomEvent<any>) => void;
@@ -586,7 +575,6 @@ declare namespace LocalJSX {
         "ia-call-to-action": IaCallToAction;
         "ia-covapp-to-data4life": IaCovappToData4life;
         "ia-data-privacy": IaDataPrivacy;
-        "ia-data4life": IaData4life;
         "ia-disclaimer": IaDisclaimer;
         "ia-export": IaExport;
         "ia-faq": IaFaq;
@@ -630,7 +618,6 @@ declare module "@stencil/core" {
             "ia-call-to-action": LocalJSX.IaCallToAction & JSXBase.HTMLAttributes<HTMLIaCallToActionElement>;
             "ia-covapp-to-data4life": LocalJSX.IaCovappToData4life & JSXBase.HTMLAttributes<HTMLIaCovappToData4lifeElement>;
             "ia-data-privacy": LocalJSX.IaDataPrivacy & JSXBase.HTMLAttributes<HTMLIaDataPrivacyElement>;
-            "ia-data4life": LocalJSX.IaData4life & JSXBase.HTMLAttributes<HTMLIaData4lifeElement>;
             "ia-disclaimer": LocalJSX.IaDisclaimer & JSXBase.HTMLAttributes<HTMLIaDisclaimerElement>;
             "ia-export": LocalJSX.IaExport & JSXBase.HTMLAttributes<HTMLIaExportElement>;
             "ia-faq": LocalJSX.IaFaq & JSXBase.HTMLAttributes<HTMLIaFaqElement>;

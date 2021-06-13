@@ -69,7 +69,7 @@ export class QRCode {
   };
 
   generateCode = (): string => {
-    console.log(this.generateXML(this.qr_values));
+    // console.log(this.generateXML(this.qr_values));
     const svgString = qrcode({
       content: this.generateXML(this.qr_values),
       padding: 0,
@@ -115,7 +115,7 @@ export class QRCode {
     if (
       PANDEMIC_TRACKING_IS_ENABLED &&
       !dataSent &&
-      this.answers[QUESTION_SHARE_DATA.id] === 'yes'
+      this.answers[QUESTION_SHARE_DATA().id] === 'yes'
     ) {
       this.sendData();
     }
@@ -136,7 +136,7 @@ export class QRCode {
       this.qr_values = engine
         .getResults()
         .exports.filter(x => x.id == 'covapp_qr')[0].mapping;
-      console.log(engine.getVariables());
+      //   console.log(engine.getVariables());
     });
   };
 

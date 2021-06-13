@@ -40,6 +40,10 @@ export const initialLanguage: Promise<string> = new Promise(resolve => {
       fallbackLng: SUPPORTED_LANGUAGES[0].code,
       whitelist: LANGUAGES.map(({ code }) => code),
       resources: LANGUAGE_RESOURCES,
+      saveMissing: true,
+      missingKeyHandler: (ng, ns, key, fallbackValue) => {
+        throw new Error(`Key not found ${key}, ${ng}, ${ns}, ${fallbackValue}`);
+      },
     })
     .then(() => resolve(i18n.language));
 });
