@@ -93,7 +93,15 @@ export class Summary {
           <div slot="card-content">
             <div class="summary__content" slot="card-content">
               <h2>{i18next.t('summary_headline')}</h2>
-              {result.map(r => (
+              <ia-accordion
+                headline={result[0].resultCategory.description}
+                open={false}
+              >
+                <div slot="accordion-children">
+                  <div innerHTML={DOMPurify.sanitize(result[0].result.text)} />
+                </div>
+              </ia-accordion>
+              {result.slice(1).map(r => (
                 <ia-accordion headline={r.resultCategory.description} open={true}>
                   <div slot="accordion-children">
                     <div innerHTML={DOMPurify.sanitize(r.result.text)} />
