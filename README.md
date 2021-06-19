@@ -1,5 +1,7 @@
 Preview: https://covappquestions.z19.web.core.windows.net/
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CovOpen/CovApp)
+
 # CovApp
 
 > 😷 Solution for assessing the risk of contagious viral infections (COVID-19)
