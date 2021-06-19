@@ -28,7 +28,7 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
         LOCAL_STORAGE_KEYS.QUESTIONNAIRE,
         JSON.stringify(response)
       );
-      questionnaire = response;
+      questionnaire = { ...response };
       cacheKey = language;
 
       return addAdditionalQuestions(response);
@@ -38,10 +38,17 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   //   });
 }
 
-function addAdditionalQuestions(questionnaire: Questionnaire): Questionnaire {
-  questionnaire.questions.push(QUESTION_SHARE_DATA());
-  questionnaire.questions.push(QUESTION_SHARE_DATA_PLZ());
-  return questionnaire;
+function addAdditionalQuestions(
+  functionQuestionnaire: Questionnaire
+): Questionnaire {
+  return {
+    ...functionQuestionnaire,
+    questions: [
+      ...functionQuestionnaire.questions,
+      QUESTION_SHARE_DATA(),
+      QUESTION_SHARE_DATA_PLZ(),
+    ],
+  };
 }
 
 export const QUESTION = {

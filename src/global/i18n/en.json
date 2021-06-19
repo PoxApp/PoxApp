@@ -107,6 +107,8 @@
     "summary_show_doctor_content": "<p>You can print your answers and present the QR code at Charité Berlin.</p>",
     "summary_show_doctor_content_2": "<p>Or import your answers into a Data4Life account.</p><p>Data4Life is a nonprofit organization dedicated to developing secure digital health solutions.</p>",
     "summary_show_doctor_headline": "Show your answers to a doctor if needed",
+    "summary_feedback_headline": "Feedback",
+    "summary_feedback_content": "<p>Add a way to provide Feedback</p>",
     "q_X1_text": "Consent to the transmission of your postal code and recommended action",
     "q_X1_option0": "Yes, I would like to donate my postal code and my recommended action",
     "q_X1_option1": "No, I do not want to transfer my data and I only want to see my recommended action",

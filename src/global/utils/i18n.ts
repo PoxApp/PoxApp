@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { LANGUAGES as SUPPORTED_LANGUAGES, LANGUAGE_RESOURCES } from '../custom';
+import * as Sentry from '@sentry/browser';
 
 import { Language } from '@d4l/web-components-library/dist/types/components/LanguageSwitcher/language-switcher';
 
@@ -42,7 +43,9 @@ export const initialLanguage: Promise<string> = new Promise(resolve => {
       resources: LANGUAGE_RESOURCES,
       saveMissing: true,
       missingKeyHandler: (ng, ns, key, fallbackValue) => {
-        throw new Error(`Key not found ${key}, ${ng}, ${ns}, ${fallbackValue}`);
+        Sentry.captureException(
+          new Error(`Key not found ${key}, ${ng}, ${ns}, ${fallbackValue}`)
+        );
       },
     })
     .then(() => resolve(i18n.language));

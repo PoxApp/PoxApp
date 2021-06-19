@@ -119,7 +119,7 @@ export class Export {
     }, 2000);
   }
 
-  componentDidUnload() {
+  disconnectedCallback() {
     clearInterval(this.timeout);
   }
 

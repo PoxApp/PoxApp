@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { RouterHistory, } from "@stencil/router";
-import { Language, } from "@d4l/web-components-library/dist/types/components/LanguageSwitcher/language-switcher";
+import { RouterHistory } from "@stencil/router";
+import { Language } from "@d4l/web-components-library/dist/types/components/LanguageSwitcher/language-switcher";
 export namespace Components {
     interface AppRoot {
         "history": RouterHistory;
@@ -15,9 +15,7 @@ export namespace Components {
         "changedLanguageHandler": (language: Language) => Promise<void>;
     }
     interface IaAccordion {
-        "buttonProps"?: {
-            [key: string]: string;
-        };
+        "buttonProps"?: { [key: string]: string };
         "elementId"?: string;
         "handleToggle"?: (boolean) => void;
         "headline": string;
@@ -36,7 +34,7 @@ export namespace Components {
     }
     interface IaCallToAction {
         "showCard": boolean;
-        "type": "OPEN_SOURCE" | "WIDGET";
+        "type": 'OPEN_SOURCE' | 'WIDGET';
     }
     interface IaCovappToData4life {
         "success": boolean;
@@ -62,9 +60,9 @@ export namespace Components {
     interface IaInputMultipleChoice {
         "inputId": string;
         "options": {
-            value: string;
-            text: string;
-        }[];
+    value: string;
+    text: string;
+  }[];
         "value": string[];
     }
     interface IaInputNumber {
@@ -83,9 +81,9 @@ export namespace Components {
     interface IaInputRadio {
         "inputId": string;
         "options": {
-            value: string;
-            text: string;
-        }[];
+    value: string;
+    text: string;
+  }[];
         "value": string;
     }
     interface IaLegal {
@@ -110,7 +108,7 @@ export namespace Components {
         "link": boolean;
     }
     interface IaLogoD4lBordered {
-        "size": "medium" | "small";
+        "size": 'medium' | 'small';
     }
     interface IaLogoHeader {
     }
@@ -418,9 +416,7 @@ declare namespace LocalJSX {
         "onChangedLanguage"?: (event: CustomEvent<any>) => void;
     }
     interface IaAccordion {
-        "buttonProps"?: {
-            [key: string]: string;
-        };
+        "buttonProps"?: { [key: string]: string };
         "elementId"?: string;
         "handleToggle"?: (boolean) => void;
         "headline"?: string;
@@ -439,7 +435,7 @@ declare namespace LocalJSX {
     }
     interface IaCallToAction {
         "showCard"?: boolean;
-        "type"?: "OPEN_SOURCE" | "WIDGET";
+        "type"?: 'OPEN_SOURCE' | 'WIDGET';
     }
     interface IaCovappToData4life {
         "success"?: boolean;
@@ -472,9 +468,9 @@ declare namespace LocalJSX {
         "inputId"?: string;
         "onUpdateFormData"?: (event: CustomEvent<any>) => void;
         "options"?: {
-            value: string;
-            text: string;
-        }[];
+    value: string;
+    text: string;
+  }[];
         "value"?: string[];
     }
     interface IaInputNumber {
@@ -496,9 +492,9 @@ declare namespace LocalJSX {
         "inputId"?: string;
         "onUpdateFormData"?: (event: CustomEvent<any>) => void;
         "options"?: {
-            value: string;
-            text: string;
-        }[];
+    value: string;
+    text: string;
+  }[];
         "value"?: string;
     }
     interface IaLegal {
@@ -524,7 +520,7 @@ declare namespace LocalJSX {
         "link"?: boolean;
     }
     interface IaLogoD4lBordered {
-        "size"?: "medium" | "small";
+        "size"?: 'medium' | 'small';
     }
     interface IaLogoHeader {
     }

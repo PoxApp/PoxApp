@@ -35,7 +35,7 @@ jobs:
           path: ./www
 
       - name: Publish to blob storage
-        uses: bacongobbler/azure-blob-storage-upload@v1.0.0
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
           source_dir: ./www
           container_name: $web
