@@ -1,0 +1,119 @@
+{
+  "branches": ["master"],
+  "verifyConditions": ["@semantic-release/changelog", "@semantic-release/github"],
+  "verifyConfig": ["@semantic-release/github"],
+  "prepare": [
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "node ./scripts/getChangelog.js ${lastRelease.version}"
+    },
+    {
+      "path": "@semantic-release/changelog",
+      "changelogFile": "src/assets/changelog.md"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "node ./scripts/version.js ${nextRelease.version} ${commits[0].commit.short} ${commits[0].commit.long}"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run prepare-charite"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run build"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "cd www; zip -r ../release-charite.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run prepare-bmg"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run build"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "cd www; zip -r ../release-bmg.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run prepare-bzga"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run build"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "cd www; zip -r ../release-bzga.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run prepare-rki"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run build"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "cd www; zip -r ../release-rki.zip *"
+    }
+  ],
+  "publish": [
+    {
+      "path": "@semantic-release/github",
+      "assets": [
+        {
+          "path": "src/assets/changelog.md",
+          "label": "Changelog"
+        },
+        {
+          "path": "release-charite.zip",
+          "label": "WebApp-charite-${nextRelease.gitTag}.zip"
+        },
+        {
+          "path": "release-bmg.zip",
+          "label": "WebApp-bmg-${nextRelease.gitTag}.zip"
+        },
+        {
+          "path": "release-bzga.zip",
+          "label": "WebApp-bzga-${nextRelease.gitTag}.zip"
+        },
+        {
+          "path": "release-rki.zip",
+          "label": "WebApp-rki-${nextRelease.gitTag}.zip"
+        }
+      ]
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "echo \"::set-output name=RELEASED::true\""
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "echo \"::set-output name=VERSION::${nextRelease.version}\""
+    }
+  ],
+  "fail": ["@semantic-release/github"],
+  "success": ["@semantic-release/github"],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          {
+            "type": "trans",
+            "release": "patch"
+          }
+        ]
+      }
+    ],
+    "@semantic-release/release-notes-generator"
+  ]
+}

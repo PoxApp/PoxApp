@@ -26,6 +26,10 @@ UserInterfaceState.xcuserstate
 .env
 stats.html
 
+# Auto generated 
+src/global/version.ts
+src/assets/changelog.md
+
 # Customization
 src/global/custom.ts
 src/global/styles/overwrite.css
