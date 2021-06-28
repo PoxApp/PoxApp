@@ -73,3 +73,11 @@ main.layout--embedded {
 .d4l-banner__content > * + * {
   margin-left: 1rem;
 }
+
+.version {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

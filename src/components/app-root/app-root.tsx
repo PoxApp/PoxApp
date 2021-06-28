@@ -14,6 +14,7 @@ import settings, { COMPLETED, SOURCE } from '../../global/utils/settings';
 import { Language } from '@d4l/web-components-library/dist/types/components/LanguageSwitcher/language-switcher';
 import { trackEvent, TRACKING_EVENTS } from '../../global/utils/track';
 import { RouterHistory, injectHistory } from '@stencil/router';
+import { HASH_LONG, VERSION } from '../../global/version';
 
 navigator.doNotTrack === '1';
 
@@ -207,6 +208,13 @@ export class AppRoot {
             </stencil-route-switch>
           </stencil-router>
         </main>
+        <div class="c-footer version">
+            Version &#8287;<a href={"https://github.com/CovOpen/CovApp/commit/" + HASH_LONG}
+                     target="_blank"
+                     rel="noopener"
+                     aria-label="Link to the Version on Github"
+                     >{VERSION}</a>
+        </div>
         {!isEmbedded && (
           <footer class="c-footer">
             <ul class="u-list-reset">
