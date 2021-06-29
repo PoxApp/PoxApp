@@ -109,7 +109,7 @@
     "summary_show_doctor_content": "<p>Sie können Ihre Antworten drucken und den QR-Code bei der Charité Berlin vorlegen.</p>",
     "summary_show_doctor_headline": "Zeigen Sie bei Bedarf Ihre Antworten einem Arzt",
     "summary_feedback_headline": "Rechtlicher Hinweis und Feedback",
-    "summary_feedback_content": "<p>Die Nutzung dieser App ersetzt keine ärztliche Behandlung und erbringt keine diagnostische Leistung. CovApp dient der Verbesserung der Handlungsabläufe in der Untersuchungsstelle der Charité und anderen Ambulanzen im Zusammenhang mit dem neuartigen Coronavirus SARS-CoV-2. Wenn Sie sich aktuell schwer krank fühlen, rufen Sie umgehend eine Ärztin/einen Arzt an. Falls Sie Fragen, Verbesserungsvorschläge oder Anmerkungen haben, so freuen wir uns auf Ihr Feedback per Email: <a href="mailto:covapp@charite.de">covapp@charite.de</a>.</p>",
+    "summary_feedback_content": "<p>Die Nutzung dieser App ersetzt keine ärztliche Behandlung und erbringt keine diagnostische Leistung. CovApp dient der Verbesserung der Handlungsabläufe in der Untersuchungsstelle der Charité und anderen Ambulanzen im Zusammenhang mit dem neuartigen Coronavirus SARS-CoV-2. Wenn Sie sich aktuell schwer krank fühlen, rufen Sie umgehend eine Ärztin/einen Arzt an. Falls Sie Fragen, Verbesserungsvorschläge oder Anmerkungen haben, so freuen wir uns auf Ihr Feedback per Email: <a href=\"mailto:covapp@charite.de\">covapp@charite.de</a>.</p>",
     "q_X1_text": "Einwilligung in die Übermittlung Ihrer Postleitzahl und der Handlungsempfehlung",
     "q_X1_option0": "Ja, ich möchte meine Postleitzahl und meine Daten spenden",
     "q_X1_option1": "Nein, ich möchte meine Daten nicht übertragen und nur meine Handlungsempfehlung sehen",
