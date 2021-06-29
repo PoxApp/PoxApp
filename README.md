@@ -8,7 +8,7 @@ Preview: https://covappquestions.z19.web.core.windows.net/
 
 ![Screenshots of the CovApp showing the start of a questionnaire, the risk assessment and the generated QR code holding the collected information](./docs/img/screenshot.png)
 
-[The CovApp] can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. 
+CovApp can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. 
 
 Additionally, every filled out questionnaire summarizes relevant medical information for future doctor’s consultation in the form of a summary page, printout or a QR code. Institutions with the technical setup can scan the provided QR code and retrieve the patient information quickly and without any physical contact.
 
