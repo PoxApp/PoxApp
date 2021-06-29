@@ -1677,18 +1677,6 @@
           {
             "and": [
               {
-                "var": "has_low_exposition"
-              },
-              {
-                "!": {
-                  "var": "is_fully_vaccinated"
-                }
-              }
-            ]
-          },
-          {
-            "and": [
-              {
                 "var": "has_high_exposition"
               },
               {
@@ -1717,6 +1705,206 @@
         ]
       },
       "id": "has_probable_infection"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_symptoms"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "+": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_symptoms"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.623727
+                    ]
+                  },
+                  0.202406
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_symptoms_user_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_exposition"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "-": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_exposition"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.830482
+                    ]
+                  },
+                  0.201839
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_exposition_user_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_severity"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "+": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_severity"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.463314
+                    ]
+                  },
+                  0.360529
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_severity_user_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_dissemination"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "+": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_dissemination"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.900623
+                    ]
+                  },
+                  0.238886
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_dissemination_user_score"
+    },
+    {
+      "expression": {
+        "<=": [
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "var": "q_symptoms_date"
+              }
+            ]
+          },
+          259200
+        ]
+      },
+      "id": "v_symptoms_max_3d"
+    },
+    {
+      "expression": {
+        "<=": [
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "var": "q_symptoms_date"
+              }
+            ]
+          },
+          345600
+        ]
+      },
+      "id": "v_symptoms_max_4d"
     }
   ],
   "resultCategories": [
@@ -1725,7 +1913,7 @@
         {
           "expression": true,
           "id": "print_risk_profile",
-          "text": "Your personal risk profile:<br> <br> Based on your responses CovApp has created a personal risk profil which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower scores implies a lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to Covid-19.<br> <br> 2. Exposition: This score increases, if you have visits, encounters or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases, if your responses indicate any circumstances (e.g. chronic diseases, medications or similiar) that increase your chance of a severe course, if you are infected by the novel coronavirus.<br> <br> 4. Dissemination potential: This score increases, if you have private or work related environment that favours the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe Course of Covid-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> Your personal risk profile:<br> <br> Symptoms: %(v_symptoms_normalized)d of 100<br> Exposition: %(v_exposition_normalized)d of 100<br> Severe Course: %(v_severity_normalized)d of 100<br> Dissemination potential: %(v_dissemination_normalized)d of 100<br>"
+          "text": "Your personal risk profile:<br> <br> Based on your responses CovApp has created a personal risk profil which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower scores implies a lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to Covid-19.<br> <br> 2. Exposition: This score increases, if you have visits, encounters or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases, if your responses indicate any circumstances (e.g. chronic diseases, medications or similiar) that increase your chance of a severe course, if you are infected by the novel coronavirus.<br> <br> 4. Dissemination potential: This score increases, if you have private or work related environment that favours the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe Course of Covid-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> Your personal risk profile:<br> <br> Symptoms: %(v_symptoms_user_score)d of 100<br> Exposition: %(v_exposition_user_score)d of 100<br> Severe Course: %(v_severity_user_score)d of 100<br> Dissemination potential: %(v_dissemination_user_score)d of 100<br>"
         }
       ],
       "id": "rc_profil",
@@ -2277,6 +2465,85 @@
       ],
       "description": "Recommendations to prevent spread of virus",
       "id": "rc_dissemination"
+    },
+    {
+      "results": [
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "v_symptoms_max_3d"
+              },
+              {
+                "var": "q_vaccine.option.yes"
+              },
+              {
+                "or": [
+                  {
+                    "var": "has_positive_pcr"
+                  },
+                  {
+                    "var": "has_positive_antigen"
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "study_1",
+          "text": "Suggestion for Vaccination Study<br>\nSince you state that you were vaccinated (fully or partially) before the currently possible SARS-CoV-2, it makes sense from a scientific point of view to investigate this more closely. Researchers at the Charité are currently conducting such studies.<br>\nIf you decide to participate in such study (and live in the greater Berlin area), further tests, including antibody tests to clarify the vaccine effect, would be necessary, which are usually carried out in a special outpatient department of the Charité.<br>\nIf necessary, please contact covac-studie@charite.de immediately - send a short email such as: ´I have a positive antigen test today despite the vaccination and symptoms have been typical of covid-19 for a maximum of 3 days. Please contact me by email or phone number…. \""
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_positive_antigen"
+              },
+              {
+                "!": {
+                  "var": "q_pregnant.option.yes"
+                }
+              },
+              {
+                "var": "q_vaccine.option.no"
+              },
+              {
+                "or": [
+                  {
+                    "var": "q_immunosuppressants.option.chemo"
+                  },
+                  {
+                    "var": "q_immunosuppressants.option.immunosuppressiva"
+                  },
+                  {
+                    "var": "q_age.option.yes"
+                  },
+                  {
+                    "var": "q_chronic_illnesses.option.lung"
+                  },
+                  {
+                    "var": "q_chronic_illnesses.option.kidney"
+                  },
+                  {
+                    "var": "q_chronic_illnesses.option.downsyndrome"
+                  },
+                  {
+                    ">": [
+                      {
+                        "var": "v_bmi"
+                      },
+                      35
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "study_2",
+          "text": "Suggestion for Antibody Study<br>\nUsers with your answer constellation can possibly benefit from an approved, special treatment for SARS-CoV-2 infection, since their risk of becoming seriously ill is comparatively high. Such treatments (antibody therapy) are currently only available at a few specialized clinics - including the Charité. If you live in the greater Berlin area, please contact the Charité immediately yourself or through your family doctor:<br>\n- By telephone hotline: 030 450 576 888 (available on weekdays from 8 a.m. to 4 p.m.).<br>\n- By email: corona-ak-ambulanz@charite.de - a short text is enough - e.g. \"The Charité-CovApp recommends that I visit the antibody therapy outpatient clinic because of my immunosuppression - please contact me by email or phone number: ... ''<br>\nYou can also find more information at:<br>\nhttps://www.charite.de/klinikum/themen_klinikum/themenschwerpunkt_coronavirus/corona_ticker/"
+        }
+      ],
+      "description": "Suggestion for study",
+      "id": "rc_study"
     }
   ],
   "testCases": [
