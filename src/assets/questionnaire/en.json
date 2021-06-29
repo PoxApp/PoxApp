@@ -1926,7 +1926,7 @@
             "var": "has_negative_pcr"
           },
           "id": "negative_pcr",
-          "text": "Most users with a negative PCR-test are not infected with the novel coronavirus. PCR-tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your PCR-test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "Most users with a negative PCR-test are not infected with the novel coronavirus. PCR-tests (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your PCR-test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
@@ -1940,14 +1940,14 @@
             ]
           },
           "id": "positive_pcr_vaccinated",
-          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. You are fully vaccinated, however vaccine breakthrough infection can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "Most users with a positive PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") are infection with the novel coronavirus. You are fully vaccinated, however vaccine breakthrough infection can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
             "var": "has_positive_pcr"
           },
           "id": "has_positive_pcr_not_vaccinated",
-          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
@@ -1961,14 +1961,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "Some users with your constellation of answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Some users with your constellation of answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "Most users with your answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Most users with your answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
         },
         {
           "expression": {
@@ -2022,7 +2022,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test."
+          "text": "Some users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\")."
         },
         {
           "expression": {
@@ -2039,7 +2039,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_is_fully_vaccinated",
-          "text": "Most users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a PCR-test can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "Most users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -2058,7 +2058,7 @@
             ]
           },
           "id": "negative_antigen_high_exposition_not_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test."
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity than an antigen test."
         },
         {
           "expression": {
@@ -2074,7 +2074,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  ",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  ",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -2093,7 +2093,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test.",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity than an antigen test.",
           "id": "negative_antigen_symptoms_not_vaccinated"
         },
         {
@@ -2108,14 +2108,14 @@
             ]
           },
           "id": "symptoms_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
         },
         {
           "expression": {
             "var": "has_symptoms"
           },
           "id": "symptoms_not_vaccinated",
-          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test."
+          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\")."
         },
         {
           "expression": {
@@ -2164,7 +2164,7 @@
             ]
           },
           "id": "high_exposition_not_vaccinated",
-          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test."
+          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\")."
         },
         {
           "expression": true,
@@ -2182,7 +2182,7 @@
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
-          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service (116117). If your shortness of breath becomes severe, please seek medical help."
+          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service (<a href=\"tel:116117\">116117</a>). If your shortness of breath becomes severe, please seek medical help."
         },
         {
           "expression": {
@@ -2542,7 +2542,7 @@
           "text": "Some users with your responses can possibly benefit from an approved, special treatment for a SARS-CoV-2 infection, since their risk of becoming seriously ill is comparatively high. Such treatments (antibody therapy) are currently only available at a few specialized clinics - including the Charité.<br><br>If you live in the greater Berlin area, please contact the Charité immediately by yourself or through your family doctor:<br>\n- By telephone hotline: <a href=\"tel:+4930450576888\">030 450 576 888</a> (available on weekdays from 8 a.m. to 4 p.m.).<br>\n- By email: <a href=\"mailto:corona-ak-ambulanz@charite.de\">corona-ak-ambulanz@charite.de</a>.<br><br>A short text is enough, e.g.:<br>The Charité-CovApp recommends to contact the antibody ambulance. Please contact me: \"Your email address and telephone number\"'.<br><br>\nYou can find more information here:<br>\n<a href=\"https://www.charite.de/klinikum/themen_klinikum/themenschwerpunkt_coronavirus/corona_ticker/\">Charité Corona Ticker</a>"
         }
       ],
-      "description": "Suggestion for study",
+      "description": "Suggestion for special treatments or studies",
       "id": "rc_study"
     }
   ],
