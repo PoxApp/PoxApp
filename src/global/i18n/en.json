@@ -108,7 +108,7 @@
     "summary_show_doctor_content_2": "<p>Or import your answers into a Data4Life account.</p><p>Data4Life is a nonprofit organization dedicated to developing secure digital health solutions.</p>",
     "summary_show_doctor_headline": "Show your answers to a doctor if needed",
     "summary_feedback_headline": "Legal disclaimer und feedback",
-    "summary_feedback_content": "<p>Usage of this app does not substitute medical treatment by a physician or clinical diagnostics. CovApp serves to improve the procedures at the Charité examination centre and other outpatient clinics in connection with the novel coronavirus SARS-CoV-2. If you currently feel seriously ill, please seek medical help. If you have questions, suggestions for improvements or comments, please contact us by email: <a href="mailto:covapp@charite.de">covapp@charite.de</a></p>",
+    "summary_feedback_content": "<p>Usage of this app does not substitute medical treatment by a physician or clinical diagnostics. CovApp serves to improve the procedures at the Charité examination centre and other outpatient clinics in connection with the novel coronavirus SARS-CoV-2. If you currently feel seriously ill, please seek medical help. If you have questions, suggestions for improvements or comments, please contact us by email: <a href=\"mailto:covapp@charite.de\">covapp@charite.de</a></p>",
     "q_X1_text": "Consent to the transmission of your postal code and recommended action",
     "q_X1_option0": "Yes, I would like to donate my postal code and my recommended action",
     "q_X1_option1": "No, I do not want to transfer my data and I only want to see my recommended action",
