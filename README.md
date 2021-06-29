@@ -84,10 +84,6 @@ While the development of the original CovApp continues internally, we'll provide
 
 Additionally, [GitHub provides documentation on how to sync forks manually](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
 
-## Frequently asked questions
-
-If you have further questions, you can find additional [information on d4l.io](https://d4l.io/blog/covapp-faq).
-
 ## Code of conduct
 
 [Contributor Code of Conduct](./CODE-OF-CONDUCT.md). By participating in this project, you agree to abide by its terms.
