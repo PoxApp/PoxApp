@@ -8,7 +8,7 @@ Preview: https://covappquestions.z19.web.core.windows.net/
 
 ![Screenshots of the CovApp showing the start of a questionnaire, the risk assessment and the generated QR code holding the collected information](./docs/img/screenshot.png)
 
-[The CovApp](https://covapp.charite.de/) is an application developed in collaboration by [Charité – Universitätsmedizin Berlin](https://www.charite.de/). It can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. Initial development was done by [Data4Life](https://www.data4life.care/).
+[The CovApp] can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. 
 
 Additionally, every filled out questionnaire summarizes relevant medical information for future doctor’s consultation in the form of a summary page, printout or a QR code. Institutions with the technical setup can scan the provided QR code and retrieve the patient information quickly and without any physical contact.
 
@@ -93,16 +93,6 @@ If you have further questions, you can find additional [information on d4l.io](h
 ## Code of conduct
 
 [Contributor Code of Conduct](./CODE-OF-CONDUCT.md). By participating in this project, you agree to abide by its terms.
-
-## License
-
-The CovApp is [MIT licensed](./LICENSE).
-
-## Copyright
-
-Copyright 2020 by Charité Universitaetsmedizin Berlin and [D4L data4life gGmbH](https://www.data4life.care)
-
-Contributors: Dr. Alexander Henry Thieme and others
 
 TODO: Fix data consent language
 TODO: PLZ fix
