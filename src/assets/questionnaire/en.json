@@ -1961,14 +1961,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "Some users with your constellation of answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Some users with your constellation of answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  <br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "Most users with your answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Most users with your answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  <br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": {
@@ -2022,7 +2022,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\")."
+          "text": "Some users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\").<br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": {
@@ -2058,7 +2058,7 @@
             ]
           },
           "id": "negative_antigen_high_exposition_not_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity than an antigen test."
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity than an antigen test.<br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": {
@@ -2074,7 +2074,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  ",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  <br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below.",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -2093,7 +2093,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity than an antigen test.",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity than an antigen test.<br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below.",
           "id": "negative_antigen_symptoms_not_vaccinated"
         },
         {
@@ -2108,14 +2108,14 @@
             ]
           },
           "id": "symptoms_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\") for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  <br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": {
             "var": "has_symptoms"
           },
           "id": "symptoms_not_vaccinated",
-          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\")."
+          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\").<br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": {
@@ -2164,7 +2164,7 @@
             ]
           },
           "id": "high_exposition_not_vaccinated",
-          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\")."
+          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test (Polymerase Chain Reaction-test, also sometimes simply called \"laboratory test\").<br><br>Contact your local health department or call a local public hotline to learn how SARS-CoV-2 virus tests are organized in your area.<br> \nYou can find contact information for the regional health authorities on the <a href=\"https://tools.rki.de/PLZTool/\">Robert Koch Institute website</a>.<br>\n<br>\nA person’s entitlement to a test is a medical decision and may depend on local testing capacities.<br>\n<br>\nYou'll find contact information for coronavirus hotlines in your area and links for video consultation below."
         },
         {
           "expression": true,
@@ -2204,7 +2204,7 @@
             ]
           },
           "id": "has_high_severity_and_infection",
-          "text": "You have risk factors for severe covid-19. Your responses already indicate symptoms of the infection. Your condition required immediate medical attention."
+          "text": "Many users with your responses have risk factors to develop severe covid-19. Your responses already indicate symptoms of the infection. We recommend immediate medical advice."
         },
         {
           "expression": {
@@ -2224,7 +2224,7 @@
             ]
           },
           "id": "has_high_severity_and_has_infection_and_is_fully_vaccinated_but_is_immunocompromised",
-          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If you have symptoms or your condition deteriorates, please immediately seek for medical advice."
+          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented the creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If you have symptoms or your condition deteriorates, please immediately seek medical advice."
         },
         {
           "expression": {
@@ -2241,7 +2241,7 @@
             ]
           },
           "id": "has_severity_and_has_infection_and_is_fully_vaccinated",
-          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+          "text": "Many users with your responses are infected with the novel coronavirus and have risk factors for a severe course of covid-19. In most cases, vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
         },
         {
           "expression": {
@@ -2263,7 +2263,7 @@
             ]
           },
           "id": "has_high_severity_and_probable_infection_and_is_not_fully_vaccinated",
-          "text": "You have risk factors for severe covid-19. Your responses already indicate symptoms of the infection. If your infection is confirmed, please immediately seek for medical advice."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. Your responses already indicate symptoms of the infection. If your infection is confirmed, please immediately seek medical advice."
         },
         {
           "expression": {
@@ -2283,7 +2283,7 @@
             ]
           },
           "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated_and_is_immunocompromised",
-          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If an infection with the novel coronavirus is verified and you have symptoms or your condition deteriorates, please immediately seek for medical advice."
+          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented the creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If an infection with the novel coronavirus is verified and you have symptoms or your condition deteriorates, please immediately seek medical advice."
         },
         {
           "expression": {
@@ -2300,7 +2300,7 @@
             ]
           },
           "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your infection is confirmed and your condition deteriorates, please immediately seek for medical advice."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. In most cases, vaccination should protect you from developing severe covid-19 despite having risk factors. If your infection is confirmed and your condition deteriorates, please immediately seek medical advice."
         },
         {
           "expression": {
@@ -2322,7 +2322,7 @@
             ]
           },
           "id": "has_medium_severity_and_probable_infection",
-          "text": "Your responses indicate a moderate risk to develop severe covid-19. You already report symptoms which might be related to the infection. Please seek for medical advice."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. You already report symptoms that might be related to the infection. Please seek medical advice."
         },
         {
           "expression": {
@@ -2344,7 +2344,7 @@
             ]
           },
           "id": "has_medium_severity_and_infection",
-          "text": "Your responses indicate a moderate risk to develop severe covid-19. You already report symptoms which might be related to the infection. If your infection is confirmed, please seek for medical advice."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. You already report symptoms that might be related to the infection. If your infection is confirmed, please seek medical advice."
         },
         {
           "expression": {
@@ -2361,7 +2361,7 @@
             ]
           },
           "id": "has_low_severity_and_has_infection_and_is_vaccinated",
-          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. In most cases, vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek medical advice."
         },
         {
           "expression": {
@@ -2378,7 +2378,7 @@
             ]
           },
           "id": "has_low_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "You are potentially infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. In most cases, vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek medical advice."
         },
         {
           "expression": {
@@ -2392,7 +2392,7 @@
             ]
           },
           "id": "has_high_severity_and_no_vaccination",
-          "text": "Your responses indicate a high risk to develop severe covid-19. We strongly recommend vaccination in your situation, which can prevent development of severe covid-19 in most cases."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. We strongly recommend vaccination in your situation, which can prevent the development of severe covid-19 in most cases."
         },
         {
           "expression": {
@@ -2406,12 +2406,12 @@
             ]
           },
           "id": "has_medium_severity_and_no_vaccination",
-          "text": "Your responses indicate a moderate risk to develop severe covid-19. We strongly recommend vaccination in your situation, which can prevent development of severe covid-19 in most cases."
+          "text": "Many users with your responses have risk factors for a severe course of covid-19. We strongly recommend vaccination in your situation, which can prevent the development of severe covid-19 in most cases."
         },
         {
           "expression": true,
           "id": "no_severity",
-          "text": "Most users with your responses don't have an increased risk to develope a severe course of covid-19."
+          "text": "Most users with your responses don't have an increased risk to develop a severe course of covid-19."
         }
       ],
       "description": "Recommendations for Severe Course of Covid-19",
