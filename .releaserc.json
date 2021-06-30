@@ -21,7 +21,7 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "npm run build"
+      "cmd": "npm run build-charite"
     },
     {
       "path": "@semantic-release/exec",

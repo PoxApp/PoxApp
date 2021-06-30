@@ -9,6 +9,7 @@
     "generate": "stencil generate",
     "prebuild": "npm run prepare-customization",
     "build": "stencil build && echo $(date) > www/version.txt",
+    "build-charite": "cross-env LAYOUT=CHARITE npm run build",
     "prestart": "npm run prepare-customization",
     "start": "stencil build --dev --watch --serve --no-open",
     "prepare-customization": "node ./scripts/prepare-customization.js",
@@ -22,7 +23,7 @@
     "prepare-bzga": "rimraf custom && mkdir custom && copyfiles ./deploy/bzga/**/* custom -u 2 -V",
     "prepare-charite": "rimraf custom && mkdir custom && copyfiles ./deploy/charite/**/* custom -u 2 -V",
     "prepare-rki": "rimraf custom && mkdir custom && copyfiles ./deploy/rki/**/* custom -u 2 -V",
-    "start-charite": "npm run prepare-charite && npm run start",
+    "start-charite": "npm run prepare-charite && cross-env LAYOUT=CHARITE npm run start",
     "release": "semantic-release"
   },
   "devDependencies": {
@@ -54,6 +55,7 @@
     "@covopen/covquestions-js": "1.5.0",
     "@d4l/web-components-library": "^2.22.4",
     "@sentry/browser": "6.7.1",
+    "cross-env": "^7.0.3",
     "dompurify": "^2.2.9",
     "i18next": "^20.3.2",
     "i18next-browser-languagedetector": "6.1.2",
