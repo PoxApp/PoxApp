@@ -1966,14 +1966,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\"). "
+          "text": "Einige Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\").\n\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann."
+          "text": "Viele Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann.\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": {
@@ -2027,7 +2027,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Es ist zu einem Risikokontakt gekommen und Sie sind geimpft. Da bei Ihnen Faktoren vorliegen, die die Impfwirkung beeinträchtigen können, empfehlen wir die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Es ist zu einem Risikokontakt gekommen und Sie sind geimpft. Da bei Ihnen Faktoren vorliegen, die die Impfwirkung beeinträchtigen können, empfehlen wir die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": {
@@ -2044,7 +2044,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_is_fully_vaccinated",
-          "text": "Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt und sind durch die Impfung in den meisten Fällen geschützt. Zum jetzigen Zeitpunkt ist keine weitere Testdurchführung notwendig (Ausnahme: Bei dem Risikokontakt wurde eine Mutante des Coronavirus nachgewiesen; In diesem Fall lassen Sie sich bitte ärztlich beraten). Falls Sie Symptome entwickeln, ist ein PCR-Test (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt) ggf. sinnvoll. Führen Sie in diesem Fall die CovApp für eine individuelle Bewertung erneut aus."
+          "text": "Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt und sind durch die Impfung in den meisten Fällen geschützt. Zum jetzigen Zeitpunkt ist keine weitere Testdurchführung notwendig (Ausnahme: Bei dem Risikokontakt wurde eine Mutante des Coronavirus nachgewiesen; In diesem Fall lassen Sie sich bitte ärztlich beraten). Falls Sie Symptome entwickeln, ist ein PCR-Test (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt) ggf. sinnvoll. Führen Sie in diesem Fall die CovApp für eine individuelle Bewertung erneut aus.\n"
         },
         {
           "expression": {
@@ -2063,7 +2063,7 @@
             ]
           },
           "id": "negative_antigen_high_exposition_not_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann."
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann.<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": {
@@ -2079,7 +2079,7 @@
               }
             ]
           },
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der zuverlässiger eine Infektion nachweisen bzw. ausschließen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\").",
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der zuverlässiger eine Infektion nachweisen bzw. ausschließen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\").\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend.",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -2098,7 +2098,7 @@
               }
             ]
           },
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann.",
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann.<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend.",
           "id": "negative_antigen_symptoms_not_vaccinated"
         },
         {
@@ -2113,14 +2113,14 @@
             ]
           },
           "id": "symptoms_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\"). Wir empfehlen daher die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\"). Wir empfehlen daher die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": {
             "var": "has_symptoms"
           },
           "id": "symptoms_not_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": {
@@ -2169,7 +2169,7 @@
             ]
           },
           "id": "high_exposition_not_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt, bei dem Sie sich mit dem Coronavirus infiziert haben könnten. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt, bei dem Sie sich mit dem Coronavirus infiziert haben könnten. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
         },
         {
           "expression": true,
