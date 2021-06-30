@@ -1,5 +1,5 @@
 {
   "labels": ["dependencies"],
-  "onboarding": false,
+  "onboarding": true,
   "requireConfig": false
 }
