@@ -10,7 +10,7 @@
       "de"
     ],
     "author": "Alexander Thieme",
-    "creationDate": "2021-06-28"
+    "creationDate": "2021-06-29"
   },
   "questions": [
     {
@@ -2187,7 +2187,7 @@
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
-          "text": "Sie geben akute Atemnot an. Bitte begeben Sie sich in ärztliche Behandlung."
+          "text": "<b>Sie geben an, unter Atemnot zu leiden.</b> Bitte melden Sie sich telefonisch bei Ihrem Hausarzt/Ihrer Hausärztin oder dem Ärztlichen Bereitschaftsdienst (<a href=\"tel:116117\">116117</a>). Bei Zunahme der Atemnot holen Sie sich bitte ärztliche Hilfe."
         },
         {
           "expression": {
@@ -2209,7 +2209,7 @@
             ]
           },
           "id": "has_high_severity_and_infection",
-          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie geben bereits Symptome an. Bitte begeben Sie sich in ärztliche Behandlung."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine stark erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Wir empfehlen, dass Sie sich ärztlich beraten lassen."
         },
         {
           "expression": {
@@ -2246,7 +2246,7 @@
             ]
           },
           "id": "has_severity_and_has_infection_and_is_fully_vaccinated",
-          "text": "Sie sind mit dem Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert und haben Risikofaktoren für einen schweren Verlauf. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
         },
         {
           "expression": {
@@ -2268,7 +2268,7 @@
             ]
           },
           "id": "has_high_severity_and_probable_infection_and_is_not_fully_vaccinated",
-          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann begeben Sie sich bitte in ärztliche Behandlung."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine stark erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann begeben Sie sich bitte in ärztliche Behandlung."
         },
         {
           "expression": {
@@ -2305,7 +2305,7 @@
             ]
           },
           "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "Sie sind möglicherweise mit den Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Sollte sich die Infektion bestätigen, dann begeben Sie sich bitte bei einer Verschlechterung Ihres Zustands umgehend in ärztliche Behandlung."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine stark erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Sollte sich die Infektion bestätigen, dann begeben Sie sich bitte bei einer Verschlechterung Ihres Zustands umgehend in ärztliche Behandlung."
         },
         {
           "expression": {
@@ -2327,7 +2327,7 @@
             ]
           },
           "id": "has_medium_severity_and_probable_infection",
-          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen mäßig erhöht. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann lassen Sie sich bitte ärztlich beraten."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine mäßig erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann lassen Sie sich bitte ärztlich beraten."
         },
         {
           "expression": {
@@ -2349,7 +2349,7 @@
             ]
           },
           "id": "has_medium_severity_and_infection",
-          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen mäßig erhöht. Sie geben bereits Symptome an. Bitte lassen Sie sich ärztlich beraten."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine mäßig erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Bitte lassen Sie sich ärztlich beraten."
         },
         {
           "expression": {
@@ -2366,7 +2366,7 @@
             ]
           },
           "id": "has_low_severity_and_has_infection_and_is_vaccinated",
-          "text": "Sie sind mit den Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
+          "text": "Bei Benutzern mit Ihrer Antwortkonstellation liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
         },
         {
           "expression": {
@@ -2383,7 +2383,7 @@
             ]
           },
           "id": "has_low_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "Sie sind möglicherweise mit den Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
+          "text": "Bei Benutzern mit Ihrer Antwortkonstellation liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
         },
         {
           "expression": {
@@ -2397,7 +2397,7 @@
             ]
           },
           "id": "has_high_severity_and_no_vaccination",
-          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine stark erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
         },
         {
           "expression": {
@@ -2411,7 +2411,7 @@
             ]
           },
           "id": "has_medium_severity_and_no_vaccination",
-          "text": "Die Wahrscheinlichkeit für einen mäßigen Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben eine erhöhte Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
         },
         {
           "expression": true,
