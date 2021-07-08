@@ -10,20 +10,30 @@
       "de"
     ],
     "author": "Alexander Thieme",
-    "creationDate": "2021-06-29"
+    "creationDate": "2021-07-07"
   },
   "questions": [
     {
       "options": [
         {
           "scores": {
-            "Severity": 2,
             "Exposition": 0,
             "Symptoms": 0,
-            "Dissemination": 0
+            "Dissemination": 0,
+            "Severity": 0
           },
-          "text": "Ja",
-          "value": "yes"
+          "text": "Unter 30 Jahre",
+          "value": "under30"
+        },
+        {
+          "scores": {
+            "Severity": 0,
+            "Symptoms": 0,
+            "Dissemination": 0,
+            "Exposition": 0
+          },
+          "text": "30 bis 49 Jahre",
+          "value": "30till49"
         },
         {
           "scores": {
@@ -32,12 +42,42 @@
             "Symptoms": 0,
             "Dissemination": 0
           },
-          "text": "Nein",
-          "value": "no"
+          "text": "50 bis 59 Jahre",
+          "value": "50till59"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "60 bis 69 Jahre",
+          "value": "60till69"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "70 bis 79 Jahre",
+          "value": "70till79"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "80 Jahre oder älter",
+          "value": "above80"
         }
       ],
       "id": "q_age",
-      "text": "Sind Sie 65 Jahre oder älter?",
+      "text": "Wie alt sind Sie?",
       "type": "select"
     },
     {
@@ -1193,7 +1233,7 @@
             "var": "q_steroids.option.yes"
           },
           {
-            "var": "q_age.option.yes"
+            "var": "v_older_than_60"
           }
         ]
       },
@@ -1272,7 +1312,7 @@
       "expression": {
         "if": [
           {
-            "var": "q_age.option.yes"
+            "var": "v_older_than_60"
           },
           1,
           2
@@ -1910,6 +1950,41 @@
         ]
       },
       "id": "v_symptoms_max_4d"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "q_age.option.50till59"
+          },
+          {
+            "var": "q_age.option.60till69"
+          },
+          {
+            "var": "q_age.option.70till79"
+          },
+          {
+            "var": "q_age.option.above80"
+          }
+        ]
+      },
+      "id": "v_older_than_50"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "q_age.option.60till69"
+          },
+          {
+            "var": "q_age.option.70till79"
+          },
+          {
+            "var": "q_age.option.above80"
+          }
+        ]
+      },
+      "id": "v_older_than_60"
     }
   ],
   "resultCategories": [
@@ -1918,7 +1993,7 @@
         {
           "expression": true,
           "id": "print_risk_profile",
-          "text": "CovApp hat aus Ihren Antworten Ihr persönliches Risikoprofil erstellt. Es dient als Grundlage für die weiteren Empfehlungen.<br>\n<br>\nEin Risikoprofil besteht aus vier Risikodimensionen, die mit jeweils 0 – 100 Punkten bewertet werden. Eine niedrige Punktzahl bedeutet, dass Ihr Risiko als eher gering eingeschätzt wird. Eine hohe Punktzahl deutet auf ein größeres Risiko hin. Diese Angaben dienen der groben Orientierung und sind ohne Gewähr.<br>\n<br>\nDie vier Risikodimensionen<br>\n<br>\n1. Symptome: Die Punktzahl erhöht sich, wenn Sie Symptome angegeben haben, die für eine Covid-19-Erkrankung sprechen.<br>\n<br>\n2. Exposition: Die Punktzahl erhöht sich, wenn Sie Aufenthalte, Kontakte oder andere Umstände angegeben haben, die dafür sprechen, dass Sie mit dem Coronavirus SARS-CoV-2 in Kontakt gekommen sein könnten.<br>\n<br>\n3. Schwerer Verlauf: Die Punktzahl erhöht sich, wenn Sie Umstände (z.B. Vorerkrankungen, Medikamente oder ähnliches) angegeben haben, die das Risiko eines schweren Krankheitsverlaufs, falls Sie an Covid-19 erkrankt sind oder erkranken sollten, erhöhen könnten.<br>\n<br>\n4. Verbreitungspotential: Die Punktzahl erhöht sich, wenn Ihr berufliches oder privates Umfeld so beschaffen ist, dass Sie, falls Sie infiziert und ansteckend sind, andere Personen durch die Weitergabe des Coronavirus SARS-CoV-2 besonders gefährden könnten.<br>\n<br>\nDie Risikodimensionen „Symptome“ und „Exposition“ werden in Zusammenschau mit Testergebnissen und Ihrem Impfstatus für die „Testempfehlung“ verwendet. Die Risikodimension „Schwerer Verlauf“ dient in Kombination mit Ihrem Impfstatus als Basis für die „Empfehlungen hinsichtlich „Schwerer Verlauf Covid-19“. Die Risikodimension Verbreitungspotential in Kombination mit der Wahrscheinlichkeit für eine Infektion mündet in die „Handlungsempfehlung Verbreitungspotential“.<br>\n<br>\nIhr persönliches Risikoprofil:\n<br> <br> Symptome: %(v_symptoms_user_score)d von 100 Punkten<br> Exposition: %(v_exposition_user_score)d von 100 Punkten<br> Schwerer Verlauf: %(v_severity_user_score)d von 100 Punkten<br> Verbreitungspotential: %(v_dissemination_user_score)d von 100 Punkten<br>"
+          "text": "Ihr persönliches Risikoprofil:<br> <br> Die CovApp hat aus Ihren Antworten auf die im Fragebogen gestellten Fragen und als Grundlage für die weiteren Empfehlungen Ihr persönliches Risikoprofil erstellt.<br> <br> Dieses besteht aus vier Risiko-Dimensionen, in denen Sie jeweils zwischen 0 und 100 Punkten erhalten haben. Eine niedrige Punktzahl bedeutet, dass ihr diesbezügliches Risiko als eher gering eingeschätzt wird, während eine hohe Punktzahl auf ein entsprechend größeres Risiko hinweist. Diese Angaben dienen nur der groben Orientierung und sind natürlich ohne Gewähr.<br> <br> Die vier Risiko-Dimensionen sind:<br> <br>  1. Symptome: Dieser Score erhöht sich, wenn Sie Symptome angegeben haben, die für eine Covid-19-Erkrankung sprechen. <br> <br> 2. Exposition: Dieser Score erhöht sich, wenn Sie Aufenthalte, Kontakte oder andere Umstände angegeben haben, die dafür sprechen, dass Sie mit dem neuartigen Coronavirus in Kontakt gekommen sein könnten.<br> <br> 3. Schwerer Verlauf: Dieser Score erhöht sich, wenn Sie Umstände (z.B. Vorerkrankungen, Medikamente oder ähnliches) angegeben haben, die das Risiko eines schweren Krankheitsverlaufs, falls Sie an Covid-19 erkrankt sind oder erkranken sollten, erhöhen könnten.<br> <br> 4. Verbreitungspotential: Dieser Score erhöht sich, wenn Ihr berufliches oder privates Umfeld so beschaffen ist, dass Sie, falls Sie infiziert und ansteckend sind, andere Personen durch die Weitergabe des Coronavirus SARS-CoV-2 besonders gefährden könnten.<br> <br> Die Scores dienen als Basis für die Handlungsempfehlungen. Wichtig dabei ist, dass die CovApp bei den Handlungsempfehlungen neben der Höhe des Scores zusätzliche Faktoren zur Interpretation heranzieht, d.h. dass ein hoher Score nicht immer mit einem hohen Risiko einhergeht (Beispiel: ein Benutzer hat viele Risikofaktoren für einen schweren Verlauf und daher einen hohen Score für diesen Bereich, er ist jedoch durch eine vollständig Impfung geschützt). Die Scores Symptome und Exposition werden in Zusammenschau mit Testergebnissen und Ihrem Impfstatus für die \"Testempfehlung\" verwendet. Der Score Schwerer Verlauf dient in Kombination mit Ihrem Impfstatus als Basis für die \"Empfehlungen hinsichtlicher schwerer Verlauf Covid-19\". Der Score Verbreitungspotential in Kombination mit der Wahrscheinlichkeit für eine Infektion mündet in die \"Handlungsempfehlung Verbreitungspotential\". <br> <br> Ihr persönliches Risikoprofil:<br> <br> Symptome: %(v_symptoms_user_score)d von 100 Punkten<br> Exposition: %(v_exposition_user_score)d von 100 Punkten<br> Schwerer Verlauf: %(v_severity_user_score)d von 100 Punkten<br> Verbreitungspotential: %(v_dissemination_user_score)d von 100 Punkten<br>"
         }
       ],
       "id": "rc_profil",
@@ -1966,14 +2041,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\").\n\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Einige Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\"). "
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann.\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Viele Benutzer mit Ihrer Antwortenkonstellation sind mit dem Coronavirus infiziert. Wir empfehlen die Durchführung eines PCR-Bestätigungstests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion verlässlicher als ein Antigen-Test nachweisen kann."
         },
         {
           "expression": {
@@ -2027,7 +2102,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Es ist zu einem Risikokontakt gekommen und Sie sind geimpft. Da bei Ihnen Faktoren vorliegen, die die Impfwirkung beeinträchtigen können, empfehlen wir die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Es ist zu einem Risikokontakt gekommen und Sie sind geimpft. Da bei Ihnen Faktoren vorliegen, die die Impfwirkung beeinträchtigen können, empfehlen wir die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
         },
         {
           "expression": {
@@ -2044,7 +2119,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_is_fully_vaccinated",
-          "text": "Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt und sind durch die Impfung in den meisten Fällen geschützt. Zum jetzigen Zeitpunkt ist keine weitere Testdurchführung notwendig (Ausnahme: Bei dem Risikokontakt wurde eine Mutante des Coronavirus nachgewiesen; In diesem Fall lassen Sie sich bitte ärztlich beraten). Falls Sie Symptome entwickeln, ist ein PCR-Test (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt) ggf. sinnvoll. Führen Sie in diesem Fall die CovApp für eine individuelle Bewertung erneut aus.\n"
+          "text": "Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt und sind durch die Impfung in den meisten Fällen geschützt. Zum jetzigen Zeitpunkt ist keine weitere Testdurchführung notwendig (Ausnahme: Bei dem Risikokontakt wurde eine Mutante des Coronavirus nachgewiesen; In diesem Fall lassen Sie sich bitte ärztlich beraten). Falls Sie Symptome entwickeln, ist ein PCR-Test (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt) ggf. sinnvoll. Führen Sie in diesem Fall die CovApp für eine individuelle Bewertung erneut aus."
         },
         {
           "expression": {
@@ -2063,7 +2138,7 @@
             ]
           },
           "id": "negative_antigen_high_exposition_not_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann.<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann."
         },
         {
           "expression": {
@@ -2079,7 +2154,7 @@
               }
             ]
           },
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der zuverlässiger eine Infektion nachweisen bzw. ausschließen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\").\n<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend.",
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der zuverlässiger eine Infektion nachweisen bzw. ausschließen kann. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\").",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -2098,7 +2173,7 @@
               }
             ]
           },
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann.<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend.",
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Trotz negativem Antigen-Test ist bei Ihnen eine Infektion mit dem Coronavirus möglich. Sie geben typische Symptome einer Coronavirusinfektion an. Wir empfehlen daher zusätzlich die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt), der eine Infektion zuverlässiger nachweisen kann.",
           "id": "negative_antigen_symptoms_not_vaccinated"
         },
         {
@@ -2113,14 +2188,14 @@
             ]
           },
           "id": "symptoms_vaccinated",
-          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\"). Wir empfehlen daher die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Sie haben eine vollständige Impfung für das Coronavirus erhalten, jedoch kann eine Infektion in Einzelfällen auftreten (\"Impfdurchbruch\"). Wir empfehlen daher die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
         },
         {
           "expression": {
             "var": "has_symptoms"
           },
           "id": "symptoms_not_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie geben multiple Symptome an, die mit einer Coronavirusinfektion vergesellschaftet sind. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
         },
         {
           "expression": {
@@ -2169,7 +2244,7 @@
             ]
           },
           "id": "high_exposition_not_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt, bei dem Sie sich mit dem Coronavirus infiziert haben könnten. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt).<br><br>Wenden Sie sich an Ihr zuständiges Gesundheitsamt oder eine lokale, öffentliche Hotline um zu erfahren, wie in Ihrer Region Untersuchungen auf das Coronavirus organisiert werden.<br>Kontaktinformationen zu den regionalen Gesundheitsämtern finden Sie auf der <a href=\"https://tools.rki.de/PLZTool/\">Website des Robert Koch-Instituts</a>.<br>\n<br>\nBeachten Sie: Es besteht kein Anspruch auf einen Test. Dies ist eine ärztliche Entscheidung und kann auch von den Testkapazitäten vor Ort abhängen.<br>\n<br>\nInformationen zu einer Coronavirus-Hotline in Ihrem Bundesland und Links zu medizinischen Videosprechstunden finden Sie nachfolgend."
+          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert. Sie hatte einen Risikokontakt, bei dem Sie sich mit dem Coronavirus infiziert haben könnten. Wir empfehlen die Durchführung eines PCR-Tests (Polymerase-Kettenreaktion-Test, häufig auch \"Labortest\" genannt)."
         },
         {
           "expression": true,
@@ -2187,7 +2262,7 @@
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
-          "text": "<b>Sie geben an, unter Atemnot zu leiden.</b> Bitte melden Sie sich telefonisch bei Ihrem Hausarzt/Ihrer Hausärztin oder dem Ärztlichen Bereitschaftsdienst (<a href=\"tel:116117\">116117</a>). Bei Zunahme der Atemnot holen Sie sich bitte ärztliche Hilfe."
+          "text": "Sie geben akute Atemnot an. Bitte begeben Sie sich in ärztliche Behandlung."
         },
         {
           "expression": {
@@ -2209,7 +2284,7 @@
             ]
           },
           "id": "has_high_severity_and_infection",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Wir empfehlen, dass Sie sich ärztlich beraten lassen."
+          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie geben bereits Symptome an. Bitte begeben Sie sich in ärztliche Behandlung."
         },
         {
           "expression": {
@@ -2246,7 +2321,7 @@
             ]
           },
           "id": "has_severity_and_has_infection_and_is_fully_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Coronavirus infiziert und haben Risikofaktoren für einen schweren Verlauf. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
+          "text": "Sie sind mit dem Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
         },
         {
           "expression": {
@@ -2268,7 +2343,7 @@
             ]
           },
           "id": "has_high_severity_and_probable_infection_and_is_not_fully_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann begeben Sie sich bitte in ärztliche Behandlung."
+          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann begeben Sie sich bitte in ärztliche Behandlung."
         },
         {
           "expression": {
@@ -2305,7 +2380,7 @@
             ]
           },
           "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Sollte sich die Infektion bestätigen, dann begeben Sie sich bitte bei einer Verschlechterung Ihres Zustands umgehend in ärztliche Behandlung."
+          "text": "Sie sind möglicherweise mit den Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Sollte sich die Infektion bestätigen, dann begeben Sie sich bitte bei einer Verschlechterung Ihres Zustands umgehend in ärztliche Behandlung."
         },
         {
           "expression": {
@@ -2327,7 +2402,7 @@
             ]
           },
           "id": "has_medium_severity_and_probable_infection",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann lassen Sie sich bitte ärztlich beraten."
+          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen mäßig erhöht. Sie geben bereits Symptome an. Falls sich die Coronavirusinfektion in einem weiteren Test bestätigt, dann lassen Sie sich bitte ärztlich beraten."
         },
         {
           "expression": {
@@ -2349,7 +2424,7 @@
             ]
           },
           "id": "has_medium_severity_and_infection",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Sie geben bereits Symptome an. Bitte lassen Sie sich ärztlich beraten."
+          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen mäßig erhöht. Sie geben bereits Symptome an. Bitte lassen Sie sich ärztlich beraten."
         },
         {
           "expression": {
@@ -2366,7 +2441,7 @@
             ]
           },
           "id": "has_low_severity_and_has_infection_and_is_vaccinated",
-          "text": "Bei Benutzern mit Ihrer Antwortkonstellation liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
+          "text": "Sie sind mit den Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
         },
         {
           "expression": {
@@ -2383,7 +2458,7 @@
             ]
           },
           "id": "has_low_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "Bei Benutzern mit Ihrer Antwortkonstellation liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
+          "text": "Sie sind möglicherweise mit den Coronavirus trotz Impfung infiziert und es liegen Risikofaktoren für einen schweren Verlauf vor. Durch die Impfung wird ein schwerer Verlauf in den meisten Fällen verhindert. Bei einer Verschlechterung Ihres Zustands, suchen Sie bitte umgehend ärztliche Hilfe auf."
         },
         {
           "expression": {
@@ -2397,7 +2472,7 @@
             ]
           },
           "id": "has_high_severity_and_no_vaccination",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
+          "text": "Die Wahrscheinlichkeit für einen schweren Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
         },
         {
           "expression": {
@@ -2411,7 +2486,7 @@
             ]
           },
           "id": "has_medium_severity_and_no_vaccination",
-          "text": "Viele Benutzer mit Ihrer Antwortkonstellation haben Risikofaktoren für einen schweren Verlauf einer Coronavirusinfektion. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
+          "text": "Die Wahrscheinlichkeit für einen mäßigen Verlauf einer Coronavirusinfektion ist bei Ihnen stark erhöht. Sie sind derzeit nicht vollständig gegen das Coronavirus geimpft. Sie profitieren besonders von einer Impfung, da dadurch bei den meisten Patienten ein schwerer Verlauf (z.B. Beatmung) vermieden werden kann."
         },
         {
           "expression": true,
@@ -2495,7 +2570,7 @@
             ]
           },
           "id": "study_1",
-          "text": "Möglicherweise können Sie an einer Impfstudie teilnehmen.<br> \nViele Benutzer mit Ihrer Antwortkonstellation haben eine Infektion mit SARS-CoV-2, obwohl Sie geimpft sind. Forschende an der Charité führen gegenwärtig Studien durch, die diese Fälle untersuchen.<br>\nFalls Sie sich zur Studienteilnahme entscheiden (und im Großraum Berlin wohnen), wären weitere Untersuchungen, u.a. Antikörperuntersuchungen zur Klärung der Impfwirkung notwendig, die üblicherweise in einer speziellen Ambulanz der Charite durchgeführt werden.<br>\nBitte nehmen Sie ggf. umgehend unter <a href=\"mailto:covac-studie@charite.de\">covac-studie@charite.de</a> Kontakt auf.<br> Es reicht eine kurze Email, z.B.:<br>Ich interessiere mich für eine Studienteilnahme, da ich trotz  Impfung seit maximal 3 Tagen covid-19-typische Symptome und aktuell auch einen positiven Antigentest habe. Bitte kontaktieren Sie mich unter: \"Ihre Telefonnummer und Emailadresse\""
+          "text": "Möglicherweise können Sie an einer Impfstudie teilnehmen.<br> \nDa Sie angeben, vor der jetzt möglichen SARS-CoV-2-Infektion geimpft worden zu sein (vollständig oder teilweise), ist es aus wissenschaftlicher Sicht sinnvoll, dies näher zu untersuchen. Forschende an der Charité führen gegenwärtig solche Studien durch.<br>\nFalls Sie sich zur Studienteilnahme entscheiden (und im Großraum Berlin wohnen), wären weitere Untersuchungen, u.a. Antikörperuntersuchungen zur Klärung der Impfwirkung notwendig, die üblicherweise in einer speziellen Ambulanz der Charite durchgeführt werden.<br>\nBitte nehmen Sie ggf. umgehend unter <a href=\"mailto:covac-studie@charite.de\">covac-studie@charite.de</a> Kontakt auf.<br> Es reicht eine kurze Email, z.B.:<br>Ich habe trotz Impfung heute einen positiven Antigentest und seit maximal als 3 Tagen covid-19-typische Symptome. Bitte kontaktieren Sie mich unter: \"Ihre Telefonnummer und Emailadresse\""
         },
         {
           "expression": {
@@ -2520,7 +2595,7 @@
                     "var": "q_immunosuppressants.option.immunosuppressiva"
                   },
                   {
-                    "var": "q_age.option.yes"
+                    "var": "v_older_than_50"
                   },
                   {
                     "var": "q_chronic_illnesses.option.lung"
@@ -2544,10 +2619,10 @@
             ]
           },
           "id": "study_2",
-          "text": "Einige Nutzer mit Ihrer Antwortkonstellation können möglicherweise von einer zugelassenen, speziellen Behandlung der SARS-CoV-2-Infektion profitieren, da ihr Risiko, schwer zu erkranken, vergleichsweise hoch ist. Solche Behandlungen (Antikörpertherapie) stehen aktuell nur an wenigen spezialisierten Kliniken zu Verfügung – u.a. an der Charité.<br><br>Falls Sie im Großraum Berlin leben, empfehlen wir eine Kontaktaufnahme mit der Charité, um über ein ärztliches Gespräch zu klären, ob eine derartige Therapie für Sie in Frage kommt:<br>\n- Per telefonischer Hotline: <a href=\"tel:+4930450576\">030 450 576 888</a> (Erreichbarkeit werktags 08.-16.00 Uhr).<br>\n- Per Email: <a href=\"mailto:corona-ak-ambulanz@charite.de\">corona-ak-ambulanz@charite.de</a><br><br>Ein kurzer Text genügt, z.B.:<br> Die Charité-CovApp empfiehlt mir die Kontaktaufnahme mit der Antikörpertherapieambulanz. Bitte nehmen Sie mit mir Kontakt auf unter: \"Ihre Rufnummer und Emailadresse\"<br><br>\nNähere Informationen finden Sie auch unter: <br>\n<a href=\"https://www.charite.de/klinikum/themen_klinikum/themenschwerpunkt_coronavirus/corona_ticker/\">Corona Ticker der Charité</a>"
+          "text": "Möglicherweise können Sie an einer Antikörperstudie teilnehmen.<br><br>\nNutzer mit Ihrer Antwortkonstellation können möglicherweise von einer zugelassenen, speziellen Behandlung der SARS-CoV-2-Infektion profitieren, da ihr Risiko, schwer zu erkranken, vergleichsweise hoch ist. Solche Behandlungen (Antikörpertherapie) stehen aktuell nur an wenigen spezialisierten Kliniken zu Verfügung – u.a. an der Charité. Falls Sie im Großraum Berlin leben, nehmen Sie bitte umgehend selbst oder über z.B. Ihren Hausarzt Kontakt zur Charité auf unter:<br>\n- Telefonisch Hotline: <a href=\"+4930450576\">030 450 576 888</a> (Erreichbarkeit werktags 08.-16.00 Uhr).<br>\n- Per Email: <a href=\"mailto:corona-ak-ambulanz@charite.de\">corona-ak-ambulanz@charite.de</a><br><br>Ein kurzer Text genügt, z.B.:<br> Die Charité-CovApp empfiehlt mir wegen meiner Immunsuppression die Vorstellung in der Antikörpertherapieambulanz. Bitte nehmen Sie mit mir Kontakt auf unter: \"Ihre Rufnummer und Emailadresse\"<br><br>\nNähere Informationen finden Sie auch unter: <br>\n<a href=\"https://www.charite.de/klinikum/themen_klinikum/themenschwerpunkt_coronavirus/corona_ticker/\">Corona Ticker der Charité</a>"
         }
       ],
-      "description": "Hinweis für Spezialtherapien und Studien",
+      "description": "Hinweis für Studie",
       "id": "rc_study"
     }
   ],
@@ -2686,7 +2761,7 @@
       "results": {
         "rc_test": "high_exposition_no_symptoms_immunocompromised_vaccinated"
       },
-      "description": "High exposition, vaccinated by compromised immunesystem should result in pcr test",
+      "description": "High exposition, vaccinated but compromised immunesystem should result in pcr test",
       "options": {
         "randomRuns": 1000
       },
@@ -2705,7 +2780,7 @@
         "q_vaccine_date": 1617926400,
         "q_symptoms_date": 1617235200,
         "q_breath": "no",
-        "q_age": "no",
+        "q_age": "50till59",
         "q_steroids": "no",
         "q_chronic_illnesses": []
       },
@@ -2884,7 +2959,7 @@
         "q_breath": "no",
         "q_antigentest": "yes",
         "q_antigentestresult": "positive",
-        "q_age": "yes",
+        "q_age": "60till69",
         "q_pcrtest": "no",
         "q_symptoms": [
           "chills"
@@ -2904,7 +2979,7 @@
       "answers": {
         "q_breath": "no",
         "q_antigentest": "no",
-        "q_age": "yes",
+        "q_age": "60till69",
         "q_pcrtest": "no",
         "q_symptoms": [
           "chills"
