@@ -1,6 +1,6 @@
 Preview: https://covappquestions.z19.web.core.windows.net/
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CovOpen/CovApp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CovOpen/CovApp-2.0)
 
 # CovApp
 
