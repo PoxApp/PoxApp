@@ -10,7 +10,7 @@ export function donateAnswers(answers: any): Promise<undefined> {
     },
     body: JSON.stringify(answers),
   })
-    .then((response: Response) => {
+    .then(() => {
       return undefined;
     })
     .catch((err: any) => {
