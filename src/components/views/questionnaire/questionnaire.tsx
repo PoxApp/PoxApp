@@ -22,6 +22,7 @@ import { QUESTION_SHARE_DATA } from './utils';
 import { trackEvent, TRACKING_EVENTS } from '../../../global/utils/track';
 import { getQuestionnaire } from '../../../global/questions';
 import DOMPurify from 'dompurify';
+import { donateAnswers } from '../../../global/utils/dataDonation';
 export type Scores = { [key: string]: number };
 export type Answers = { [key: string]: string | string[] };
 
@@ -111,6 +112,14 @@ export class Questionnaire {
     const nextQuestion = this.questionnaireEngine.nextQuestion();
     this.progress = this.questionnaireEngine.getProgress();
     if (nextQuestion === undefined) {
+      let answers = this.questionnaireEngine.getAnswersPersistence();
+      if (
+        answers.answers.find((q) => q.questionId === QUESTION_SHARE_DATA().id)
+          .rawAnswer === 'yes'
+      ) {
+        // User is sharing data
+        donateAnswers(answers);
+      }
       this.history.push(ROUTES.SUMMARY, {});
       trackEvent(TRACKING_EVENTS.FINISH);
     } else {
@@ -188,7 +197,7 @@ export class Questionnaire {
 
   newQuestionnaire = () => {
     getQuestionnaire(this.language)
-      .then(questionnaire => {
+      .then((questionnaire) => {
         this.questionnaireEngine = new QuestionnaireEngine(questionnaire);
         // TODO:https://github.com/CovOpen/CovQuestions/issues/148
         this.questionnaireEngine.setAnswersPersistence({
@@ -235,8 +244,8 @@ export class Questionnaire {
     return (
       <div class="questionnaire c-card-wrapper">
         <form
-          onSubmit={event => submitForm(event)}
-          ref={el => (this.formElement = el as HTMLFormElement)}
+          onSubmit={(event) => submitForm(event)}
+          ref={(el) => (this.formElement = el as HTMLFormElement)}
           data-test="questionnaireForm"
         >
           <d4l-card classes="card--desktop card--text-center">
@@ -327,9 +336,7 @@ export class Questionnaire {
                       />
                     )}
                   </div>
-                ) : (
-                  undefined
-                )}
+                ) : undefined}
               </fieldset>
             </div>
             <div slot="card-footer">
