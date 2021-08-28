@@ -51,43 +51,16 @@ The CovApp provides the following customization options:
 
 To learn more about these options, see the [customization documentation](./docs/CUSTOMIZATION.md).
 
-### Questionnaire answers in FHIR format
-
-In addition to the XML representation of the questionnaire answers that is stored in the QR code, there is the possibility to generate a [FHIR R4](http://hl7.org/fhir/R4/) representation. You find documentation for the FHIR version of the questionnaire and its resources on [Simplifier.net](https://simplifier.net/guide/Covid-19Pre-TestPatientAssessment/Home).
-In the `src/global/fhir` folder, you find a module that lets you create a [FHIR R4 QuestionnaireResponse](http://hl7.org/fhir/R4/questionnaireresponse.html) resource which contains the answers.
-
-To generate the FHIR format, add the following code to the `src/components/qr-code/qr-code.tsx` file:
-
-```typescript
-import { createFHIRQuestionnaireResponse } from '../../global/fhir';
-
-createFHIR = () => {
-  const valuePairs = this.generateValuePairs(this.answers);
-  const fhir = createFHIRQuestionnaireResponse(valuePairs, this.language);
-  return fhir;
-};
-```
-
-Note: Since you’re changing the code outside of the general customization process, this might bring merge conflicts for future app updates.
-
 ## Support and contributing
-
-Due to today's urgency and dynamic nature, **we cannot offer support for this repository**. We'll continue the development of the official CovApp internally. Changes and releases will be white-labeled and propagated into this repository.
-
-We won't be able to react to issues and/or pull requests, but **we would still encourage you to provide feedback**. We will monitor the appearing problems, new ideas and possible feature requests and might consider them for future releases. **Feel free to collaborate and work on your forks to move forward with custom development.**
 
 Before you open an issue, see the [customization documentation](./docs/CUSTOMIZATION.md).
 
 ## Application updates
 
-While the development of the original CovApp continues internally, we'll provide regularly updated GitHub releases. If you followed [the setup instructions and created a fork of this repository on GitHub](./docs/DEVELOPMENT.md), an automation process will open pull requests in your repository whenever then application and the underlying questionnaire received an update. This way, you'll be informed about updates and the development process stays as easy as possible.
-
-Additionally, [GitHub provides documentation on how to sync forks manually](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
+As long as your are staying withing the guards set by the [customization documentation](./docs/CUSTOMIZATION.md) you can easily pull updates from this repository. [GitHub provides documentation on how to sync forks](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
 
 ## Code of conduct
 
 [Contributor Code of Conduct](./CODE-OF-CONDUCT.md). By participating in this project, you agree to abide by its terms.
 
-TODO: Fix data consent language
-TODO: PLZ fix
 We are currently using https://storybook.d4l.io/?path=/story/screens-welcome--welcome
