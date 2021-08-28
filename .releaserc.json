@@ -29,6 +29,10 @@
     },
     {
       "path": "@semantic-release/exec",
+      "cmd": "rm www -r"
+    },
+    {
+      "path": "@semantic-release/exec",
       "cmd": "npm run prepare-bmg"
     },
     {
@@ -38,6 +42,10 @@
     {
       "path": "@semantic-release/exec",
       "cmd": "cd www; zip -r ../release-bmg.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "rm www -r"
     },
     {
       "path": "@semantic-release/exec",
@@ -53,6 +61,10 @@
     },
     {
       "path": "@semantic-release/exec",
+      "cmd": "rm www -r"
+    },
+    {
+      "path": "@semantic-release/exec",
       "cmd": "npm run prepare-rki"
     },
     {
@@ -62,6 +74,10 @@
     {
       "path": "@semantic-release/exec",
       "cmd": "cd www; zip -r ../release-rki.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "rm www -r"
     },
     {
       "path": "@semantic-release/exec",
