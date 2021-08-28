@@ -17,10 +17,6 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-charite"
-    },
-    {
-      "path": "@semantic-release/exec",
       "cmd": "npm run build-charite"
     },
     {
@@ -81,11 +77,7 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-stanford"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run build"
+      "cmd": "npm run build-stanford"
     },
     {
       "path": "@semantic-release/exec",
