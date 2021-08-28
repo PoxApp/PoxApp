@@ -10,6 +10,7 @@
     "prebuild": "npm run prepare-customization",
     "build": "stencil build && echo $(date) > www/version.txt",
     "build-charite": "cross-env LAYOUT=CHARITE npm run build",
+    "build-stanford": "cross-env SUPPORTED_LANGUAGES=en npm run build",
     "prestart": "npm run prepare-customization",
     "start": "stencil build --dev --watch --serve --no-open",
     "prepare-customization": "node ./scripts/prepare-customization.js",
