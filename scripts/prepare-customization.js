@@ -168,7 +168,8 @@ function writeStyleOverwrite() {
       ${readContent}
     
       `,
-    prettierOptions
+    {...prettierOptions,
+    parser: "css"}
   );
 
   writeFileSync(styleFilePath, fileContent);
