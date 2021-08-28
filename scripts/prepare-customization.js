@@ -23,6 +23,12 @@ function tryToReadTranslationFile(filePath) {
         `The translation file '${filePath}' does not include valid JSON`
       );
     }
+    if (error.code === 'MODULE_NOT_FOUND') {
+      console.info(
+        `Info - The translation file '${filePath}' was not provided`
+      );
+    }
+    //console.warn(`Something went wrong while reading the Translation file (${error.code})`)
 
     return {};
   }
@@ -30,8 +36,9 @@ function tryToReadTranslationFile(filePath) {
 
 function tryToReadLogo() {
   try {
-    return readFileSync(join(__dirname, '..', 'src', 'custom', 'logo.svg'), 'utf8');
+    return readFileSync(join(__dirname, '..', 'custom', 'logo.svg'), 'utf8');
   } catch (error) {
+    console.info('Info - no custom Logo provided.');
     return '';
   }
 }
@@ -148,7 +155,7 @@ function writeStyleOverwrite() {
     );
   } catch (error) {
     // No custom overwrite.css
-    console.log('Info - no custom CSS provided.');
+    console.info('Info - no custom CSS provided.');
   }
 
   const fileContent = prettier.format(
