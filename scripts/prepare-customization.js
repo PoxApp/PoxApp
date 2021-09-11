@@ -5,7 +5,8 @@ const { readFileSync, writeFileSync } = require('fs');
 const { stringify } = require('javascript-stringify');
 const deepAssign = require('deep-assign');
 const prettier = require('prettier');
-
+const fs = require('fs-extra');
+ 
 const prettierOptions = {
   ...JSON.parse(readFileSync(join(__dirname, '..', '.prettierrc'), 'utf8')),
   parser: 'typescript',
@@ -209,3 +210,12 @@ writeCustomizationAppFile({
 });
 
 writeStyleOverwrite();
+
+// Copy Questionnaires
+let sourceDir = './custom/questionnaire';
+let destDir = './src/assets/questionnaire';
+try {
+  fs.copySync(sourceDir, destDir, { recursive: true, overwrite: true })
+} catch (err) {
+  console.error(err)
+}

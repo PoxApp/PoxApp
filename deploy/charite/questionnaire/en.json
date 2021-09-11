@@ -1,0 +1,3012 @@
+{
+  "id": "covapp_original",
+  "schemaVersion": "1",
+  "version": 1,
+  "language": "de",
+  "title": "CovApp",
+  "meta": {
+    "availableLanguages": [
+      "en",
+      "de"
+    ],
+    "author": "Alexander Thieme",
+    "creationDate": "2021-08-04"
+  },
+  "questions": [
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0,
+            "Severity": 0
+          },
+          "text": "Under 30 years",
+          "value": "under30"
+        },
+        {
+          "scores": {
+            "Severity": 0,
+            "Symptoms": 0,
+            "Dissemination": 0,
+            "Exposition": 0
+          },
+          "text": "30 till 49 years",
+          "value": "30till49"
+        },
+        {
+          "scores": {
+            "Severity": 0,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "50 till 59 years",
+          "value": "50till59"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "60 till 69 years",
+          "value": "60till69"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "70 till 79 years",
+          "value": "70till79"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 0,
+            "Symptoms": 0,
+            "Dissemination": 0
+          },
+          "text": "80 years or older",
+          "value": "above80"
+        }
+      ],
+      "id": "q_age",
+      "text": "How old are you?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Living alone",
+          "value": "alone"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Living together with family, in a shared flat, or in a supervised community facility",
+          "value": "together"
+        }
+      ],
+      "id": "q_living",
+      "text": "What is your current living situation?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Dissemination": 1
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_caring",
+      "text": "At least once a week, do you privately care for people with age-related conditions, chronic illnesses, or frailty?",
+      "type": "select",
+      "details": "This doesn't include care services or support that you provide professionally."
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Working in the medical field (care, doctor's office, hospital, or similiar)",
+          "value": "medical"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Cared for or accomodated in the medical sector (care or hospital)",
+          "value": "medical2"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Working in a community facility (school, day care center, university, home etc.)",
+          "value": "community"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Cared for or accomodated in a community facility (school, day care center, university, home etc.)",
+          "value": "community2"
+        },
+        {
+          "scores": {},
+          "text": "No, in none of the above",
+          "value": "none"
+        }
+      ],
+      "id": "q_work",
+      "text": "Do you work or are you cared for/accommodated in one of the following areas?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 7
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_outbreak",
+      "text": "Have two or more persons been tested positively for the novel coronavirus in the facility you live in or work for in the last 14 days?",
+      "type": "select",
+      "enableWhenExpression": {
+        "or": [
+          {
+            "var": "q_work.option.medical"
+          },
+          {
+            "var": "q_work.option.medical2"
+          },
+          {
+            "var": "q_work.option.community"
+          },
+          {
+            "var": "q_work.option.community2"
+          }
+        ]
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_smoke",
+      "text": "Do you smoke?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        },
+        {
+          "scores": {},
+          "text": "I don't know",
+          "value": "dont_know"
+        }
+      ],
+      "id": "q_pregnant",
+      "text": "Are you pregnant?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 7
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_contact",
+      "text": "Have you had close contact with a confirmed case?",
+      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 15 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 1.5 meters of the person for more than 15 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask) on contact.",
+      "type": "select"
+    },
+    {
+      "id": "q_contact_date",
+      "text": "What day was the last contact?",
+      "type": "date",
+      "enableWhenExpression": {
+        "var": "q_contact.option.yes"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 7
+          },
+          "text": "Yes, with high risk",
+          "value": "yes_high_risk"
+        },
+        {
+          "scores": {
+            "Exposition": 1
+          },
+          "text": "Yes, with low risk",
+          "value": "yes_low_risk"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        },
+        {
+          "scores": {},
+          "text": "I don't use the Corona Warn App",
+          "value": "no_usage"
+        }
+      ],
+      "id": "q_contact_tracing_risk_contacts",
+      "text": "Has there been a risk encounter detected by the Corona Warn App in the last 14 days?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Fever above 38°C",
+          "value": "fever"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Chills",
+          "value": "chills"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Body aches",
+          "value": "aches"
+        },
+        {
+          "scores": {
+            "Symptoms": 3
+          },
+          "text": "Loss of taste or smell",
+          "value": "tastesmell"
+        }
+      ],
+      "id": "q_symptoms",
+      "text": "In the last days, which of the following symptoms have you had? (multiple selection possible)",
+      "type": "multiselect",
+      "details": "The question relates to acute or exacerbated symptoms and excludes chronic complaints or seasonal or allergic complaints. If you have a chronic illness, compare your current symptoms with your previous problems to answer the question.  If you haven't had any of the symptoms, choose the “Next” button without selecting a symptom.",
+      "optional": true
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Feeling tired or weak",
+          "value": "tired"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Persistent cough",
+          "value": "cough"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Runny nose",
+          "value": "nose"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Diarrhea",
+          "value": "diarrhea"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Sore throat",
+          "value": "sorethroat"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Headache",
+          "value": "headache"
+        }
+      ],
+      "id": "q_symptoms2",
+      "text": "In the last days, which of the following symptoms have you had? (multiple selection possible)",
+      "type": "multiselect",
+      "details": "If you haven't had any of the symptoms, choose the “Next” button without selecting a symptom.",
+      "optional": true
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Severity": 3
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_breath",
+      "text": "In the past 24 hours, did you feel that you were more quickly out of breath than usual?",
+      "type": "select",
+      "details": "Choose “Yes“ if you have difficulty breathing or shortness of breath: <ul><li>While sitting or lying down</li><li>When getting up from a bed or a chair</li><li>After light activity, such as going for a walk or climbing some stairs.</li></ul>If you have chronic lung disease, compare your current breathing problems with your previous breathing problems."
+    },
+    {
+      "id": "q_symptoms_date",
+      "text": "With regard to all questions about symptoms: since when have you had the symptoms you specified?",
+      "type": "date",
+      "enableWhenExpression": {
+        ">": [
+          {
+            "var": "score.Symptoms"
+          },
+          0
+        ]
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Chronic lung disease",
+          "value": "lung"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Diabetes",
+          "value": "diabetes"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Heart disease",
+          "value": "heart"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "High blood pressure",
+          "value": "pressure"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Kidney disease",
+          "value": "kidney"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Down-Syndrom",
+          "value": "downsyndrome"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Cancer",
+          "value": "cancer"
+        }
+      ],
+      "id": "q_chronic_illnesses",
+      "text": "Has a doctor diagnosed with any of the following illnesses?",
+      "type": "multiselect",
+      "details": "If you don't have any of the illnesses, choose the “Next” button without selecting a symptom.",
+      "optional": true
+    },
+    {
+      "numericOptions": {
+        "max": 220,
+        "min": 100,
+        "step": 1
+      },
+      "id": "q_height",
+      "text": "What is your height? (in cm)",
+      "type": "number",
+      "details": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19."
+    },
+    {
+      "numericOptions": {
+        "max": 300,
+        "min": 20,
+        "step": 1
+      },
+      "id": "q_weight",
+      "text": "What is your weight? (in kg)",
+      "type": "number",
+      "details": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 2
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        },
+        {
+          "scores": {},
+          "text": "I don't know",
+          "value": "dont_know"
+        }
+      ],
+      "id": "q_steroids",
+      "text": "Have you taken steroid tablets for more than 2 weeks?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 2
+          },
+          "text": "Immunosuppressants (for organ transplants or autoimmune diseases)",
+          "value": "immunosuppressiva"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 1
+          },
+          "text": "Chemotherapy",
+          "value": "chemo"
+        },
+        {
+          "scores": {
+            "Severity": 2,
+            "Exposition": 1
+          },
+          "text": "Radiotherapy",
+          "value": "radiotherapy"
+        }
+      ],
+      "id": "q_immunosuppressants",
+      "text": "Do you currently receive one or more of the following treatments?",
+      "type": "multiselect",
+      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease. Chemo and/or radiotherapy is used as treatment for cancer. If you don't receive any of these treatments, choose the “Next” button without selecting a treatment.",
+      "optional": true
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_flu",
+      "text": "Have you been vaccinated against flu between August 2020 and today?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_vaccine",
+      "text": "Have you been vaccinated for the novel coronavirus?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_vaccine_completed",
+      "text": "Did you receive all intended doses of your vaccine?",
+      "type": "select",
+      "enableWhenExpression": {
+        "var": "q_vaccine.option.yes"
+      }
+    },
+    {
+      "id": "q_vaccine_date",
+      "text": "When did you receive your last dose?",
+      "type": "date",
+      "enableWhenExpression": {
+        "var": "q_vaccine_completed.option.yes"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_antigentest",
+      "text": "Did you perform an antigen test in the last 7 days?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 3
+          },
+          "text": "Yes",
+          "value": "positive"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "negative"
+        }
+      ],
+      "id": "q_antigentestresult",
+      "text": "Has the result of this antigen test been positive?",
+      "type": "select",
+      "enableWhenExpression": {
+        "var": "q_antigentest.option.yes"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_pcrtest",
+      "text": "Was a PCR test performed in the last 7 days?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "positive"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "negative"
+        }
+      ],
+      "type": "select",
+      "id": "q_pcrtestresult",
+      "text": "Was this PCR test positive?",
+      "enableWhenExpression": {
+        "var": "q_pcrtest.option.yes"
+      }
+    }
+  ],
+  "variables": [
+    {
+      "id": "v_contact_relevant",
+      "expression": {
+        "<=": [
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "var": "q_contact_date"
+              }
+            ]
+          },
+          1209600
+        ]
+      }
+    },
+    {
+      "id": "v_symptoms_relevant",
+      "expression": {
+        "<=": [
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "var": "q_symptoms_date"
+              }
+            ]
+          },
+          1209600
+        ]
+      }
+    },
+    {
+      "id": "v_symptoms_after_contact",
+      "expression": {
+        "and": [
+          {
+            "<": [
+              {
+                "var": "q_contact_date"
+              },
+              {
+                "var": "q_symptoms_date"
+              }
+            ]
+          },
+          {
+            "var": "v_symptoms_relevant"
+          },
+          {
+            "var": "v_contact_relevant"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_bmi",
+      "expression": {
+        "/": [
+          {
+            "*": [
+              {
+                "var": "q_weight"
+              },
+              10000
+            ]
+          },
+          {
+            "*": [
+              {
+                "var": "q_height"
+              },
+              {
+                "var": "q_height"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_respiratory_symptoms",
+      "expression": {
+        "or": [
+          {
+            "var": "q_symptoms2.option.nose"
+          },
+          {
+            "var": "q_symptoms2.option.sorethroat"
+          },
+          {
+            "var": "q_symptoms2.option.cough"
+          },
+          {
+            "var": "q_breath.option.yes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_symptoms_help",
+      "expression": {
+        "if": [
+          {
+            "var": "v_symptoms_relevant"
+          },
+          {
+            "if": [
+              {
+                "and": [
+                  {
+                    "var": "q_flu.option.yes"
+                  },
+                  {
+                    ">": [
+                      {
+                        "var": "score.Symptoms"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              },
+              {
+                "+": [
+                  {
+                    "var": "score.Symptoms"
+                  },
+                  1
+                ]
+              },
+              {
+                "var": "score.Symptoms"
+              }
+            ]
+          },
+          {
+            "if": [
+              {
+                "var": "q_breath.option.yes"
+              },
+              1,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_symptoms",
+      "expression": {
+        "if": [
+          {
+            "var": "v_symptoms_after_contact"
+          },
+          {
+            "+": [
+              {
+                "var": "v_symptoms_help"
+              },
+              1
+            ]
+          },
+          {
+            "var": "v_symptoms_help"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_exposition",
+      "expression": {
+        "if": [
+          {
+            "and": [
+              {
+                "var": "q_contact.option.yes"
+              },
+              {
+                "!": {
+                  "var": "v_contact_relevant"
+                }
+              }
+            ]
+          },
+          {
+            "-": [
+              {
+                "var": "score.Exposition"
+              },
+              7
+            ]
+          },
+          {
+            "var": "score.Exposition"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_severity",
+      "expression": {
+        "if": [
+          {
+            ">=": [
+              {
+                "var": "v_bmi"
+              },
+              40
+            ]
+          },
+          {
+            "+": [
+              {
+                "var": "score.Severity"
+              },
+              2
+            ]
+          },
+          {
+            "if": [
+              {
+                ">=": [
+                  {
+                    "var": "v_bmi"
+                  },
+                  30
+                ]
+              },
+              {
+                "+": [
+                  {
+                    "var": "score.Severity"
+                  },
+                  1
+                ]
+              },
+              {
+                "var": "score.Severity"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "v_dissemination",
+      "expression": {
+        "var": "score.Dissemination"
+      }
+    },
+    {
+      "id": "has_high_symptoms",
+      "expression": {
+        ">=": [
+          {
+            "var": "v_symptoms"
+          },
+          2
+        ]
+      }
+    },
+    {
+      "id": "has_low_symptoms",
+      "expression": {
+        "and": [
+          {
+            ">": [
+              {
+                "var": "v_symptoms"
+              },
+              0
+            ]
+          },
+          {
+            "!": {
+              "var": "has_high_symptoms"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "and": [
+              {
+                "var": "q_symptoms.tastesmell"
+              },
+              {
+                "var": "v_symptoms_relevant"
+              }
+            ]
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_taste_or_smell_symptom"
+    },
+    {
+      "expression": {
+        "var": "q_breath.option.yes"
+      },
+      "id": "has_problems_breathing_symptom"
+    },
+    {
+      "expression": {
+        ">": [
+          {
+            "var": "v_symptoms"
+          },
+          0
+        ]
+      },
+      "id": "has_symptoms"
+    },
+    {
+      "expression": {
+        "==": [
+          {
+            "var": "v_symptoms"
+          },
+          0
+        ]
+      },
+      "id": "has_no_symptoms"
+    },
+    {
+      "id": "has_high_exposition",
+      "expression": {
+        ">=": [
+          {
+            "var": "v_exposition"
+          },
+          7
+        ]
+      }
+    },
+    {
+      "id": "has_low_exposition",
+      "expression": {
+        "and": [
+          {
+            ">": [
+              {
+                "var": "v_exposition"
+              },
+              0
+            ]
+          },
+          {
+            "!": {
+              "var": "has_high_exposition"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expression": {
+        "==": [
+          {
+            "var": "v_exposition"
+          },
+          0
+        ]
+      },
+      "id": "has_no_exposition"
+    },
+    {
+      "id": "has_high_severity",
+      "expression": {
+        ">=": [
+          {
+            "var": "v_severity"
+          },
+          2
+        ]
+      }
+    },
+    {
+      "id": "has_low_severity",
+      "expression": {
+        "and": [
+          {
+            ">": [
+              {
+                "var": "v_severity"
+              },
+              0
+            ]
+          },
+          {
+            "!": {
+              "var": "has_high_severity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "has_dissemination",
+      "expression": {
+        ">": [
+          {
+            "var": "v_dissemination"
+          },
+          0
+        ]
+      }
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "q_pcrtestresult.option.positive"
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_positive_pcr"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "q_pcrtestresult.option.negative"
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_negative_pcr"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "q_pcrtest.option.no"
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_no_pcr"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "q_antigentestresult.option.positive"
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_positive_antigen"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "q_antigentestresult.option.negative"
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_negative_antigen"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "q_antigentest.option.no"
+          },
+          true,
+          false
+        ]
+      },
+      "id": "has_no_antigen"
+    },
+    {
+      "expression": {
+        "and": [
+          {
+            "var": "q_vaccine.option.yes"
+          },
+          {
+            "var": "q_vaccine_completed.option.yes"
+          },
+          {
+            ">=": [
+              {
+                "-": [
+                  {
+                    "var": "now"
+                  },
+                  {
+                    "var": "q_vaccine_date"
+                  }
+                ]
+              },
+              1209600
+            ]
+          }
+        ]
+      },
+      "id": "is_fully_vaccinated"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "q_immunosuppressants.option.immunosuppressiva"
+          },
+          {
+            "var": "q_immunosuppressants.option.chemo"
+          },
+          {
+            "var": "q_immunosuppressants.option.radiotherapy"
+          },
+          {
+            "var": "q_steroids.option.yes"
+          },
+          {
+            "var": "v_older_than_60"
+          }
+        ]
+      },
+      "id": "is_immunocompromised"
+    },
+    {
+      "id": "v_symptoms_normalized",
+      "expression": {
+        "*": [
+          {
+            "/": [
+              {
+                "var": "v_symptoms"
+              },
+              18
+            ]
+          },
+          100
+        ]
+      }
+    },
+    {
+      "id": "v_exposition_normalized",
+      "expression": {
+        "*": [
+          {
+            "/": [
+              {
+                "var": "v_exposition"
+              },
+              27
+            ]
+          },
+          100
+        ]
+      }
+    },
+    {
+      "id": "v_severity_normalized",
+      "expression": {
+        "*": [
+          {
+            "/": [
+              {
+                "var": "v_severity"
+              },
+              23
+            ]
+          },
+          100
+        ]
+      }
+    },
+    {
+      "id": "v_dissemination_normalized",
+      "expression": {
+        "*": [
+          {
+            "/": [
+              {
+                "var": "v_dissemination"
+              },
+              3
+            ]
+          },
+          100
+        ]
+      }
+    },
+    {
+      "id": "qr_V0",
+      "expression": 300
+    },
+    {
+      "id": "qr_P1",
+      "expression": {
+        "if": [
+          {
+            "var": "v_older_than_60"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_P2",
+      "expression": {
+        "if": [
+          {
+            "var": "q_living.alone"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_P3",
+      "expression": {
+        "if": [
+          {
+            "var": "q_caring.option.yes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_P4",
+      "expression": {
+        "if": [
+          {
+            "var": "q_work.option.medical"
+          },
+          1,
+          {
+            "if": [
+              {
+                "var": "q_work.option.medical2"
+              },
+              2,
+              {
+                "if": [
+                  {
+                    "var": "q_work.option.community"
+                  },
+                  3,
+                  {
+                    "if": [
+                      {
+                        "var": "q_work.option.community2"
+                      },
+                      4,
+                      5
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "qr_P5",
+      "expression": {
+        "if": [
+          {
+            "var": "qr_smoke.option.yes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_P6",
+      "expression": {
+        "if": [
+          {
+            "var": "q_pregnant.option.yes"
+          },
+          1,
+          {
+            "if": [
+              {
+                "var": "q_pregnant.option.no"
+              },
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "qr_C0",
+      "expression": {
+        "if": [
+          {
+            "var": "q_contact.option.yes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_CZ",
+      "expression": {
+        "var": "q_contact_date.value"
+      }
+    },
+    {
+      "id": "qr_S0",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms.option.fever"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S3",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms.option.chills"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S4",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms2.option.tired"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S5",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms.option.aches"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S6",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms2.option.cough"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S7",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms2.option.nose"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S8",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms2.option.diarrhea"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_S9",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms.option.sorethroat"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_SA",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms2.option.headache"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_SB",
+      "expression": {
+        "if": [
+          {
+            "var": "q_breath.option.yes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_SC",
+      "expression": {
+        "if": [
+          {
+            "var": "q_symptoms.option.tastesmell"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_SZ",
+      "expression": {
+        "var": "q_symptoms_date.value"
+      }
+    },
+    {
+      "id": "qr_D0",
+      "expression": {
+        "if": [
+          {
+            "var": "q_chronic_illnesses.option.lung"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_D1",
+      "expression": {
+        "if": [
+          {
+            "var": "q_chronic_illnesses.option.diabetes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_D2",
+      "expression": {
+        "if": [
+          {
+            "var": "q_chronic_illnesses.option.heart"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_D3",
+      "expression": {
+        "if": [
+          {
+            ">": [
+              {
+                "var": "v_bmi"
+              },
+              24
+            ]
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_D4",
+      "expression": {
+        "if": [
+          {
+            "var": "q_chronic_illnesses.option.pressure"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_D5",
+      "expression": {
+        "var": "q_weight.value"
+      }
+    },
+    {
+      "id": "qr_D6",
+      "expression": {
+        "var": "q_height.value"
+      }
+    },
+    {
+      "id": "qr_D7",
+      "expression": {
+        "var": "v_bmi"
+      }
+    },
+    {
+      "id": "qr_M0",
+      "expression": {
+        "if": [
+          {
+            "var": "q_steroids.option.yes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_M1",
+      "expression": {
+        "if": [
+          {
+            "var": "q_immunosuppressants.option.immunosuppressiva"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "qr_M2",
+      "expression": {
+        "if": [
+          {
+            "var": "q_flu.option.yes"
+          },
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "expression": {
+        "var": "has_positive_pcr"
+      },
+      "id": "has_infection"
+    },
+    {
+      "expression": {
+        "and": [
+          {
+            "!": {
+              "var": "has_infection"
+            }
+          },
+          {
+            "!": {
+              "var": "has_probable_infection"
+            }
+          }
+        ]
+      },
+      "id": "has_no_infection"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "has_symptoms"
+          },
+          {
+            "and": [
+              {
+                "var": "has_high_exposition"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          {
+            "and": [
+              {
+                "var": "has_high_exposition"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              },
+              {
+                "var": "is_immunocompromised"
+              }
+            ]
+          },
+          {
+            "var": "has_positive_antigen"
+          }
+        ]
+      },
+      "id": "has_probable_infection"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_symptoms"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "+": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_symptoms"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.623727
+                    ]
+                  },
+                  0.202406
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_symptoms_user_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_exposition"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "-": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_exposition"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.830482
+                    ]
+                  },
+                  0.201839
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_exposition_user_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_severity"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "+": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_severity"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.463314
+                    ]
+                  },
+                  0.360529
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_severity_user_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_dissemination"
+              },
+              0
+            ]
+          },
+          0,
+          {
+            "*": [
+              {
+                "+": [
+                  {
+                    "*": [
+                      {
+                        "log10": {
+                          "+": [
+                            {
+                              "var": "v_dissemination"
+                            },
+                            1
+                          ]
+                        }
+                      },
+                      0.900623
+                    ]
+                  },
+                  0.238886
+                ]
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "id": "v_dissemination_user_score"
+    },
+    {
+      "expression": {
+        "<=": [
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "var": "q_symptoms_date"
+              }
+            ]
+          },
+          259200
+        ]
+      },
+      "id": "v_symptoms_max_3d"
+    },
+    {
+      "expression": {
+        "<=": [
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "var": "q_symptoms_date"
+              }
+            ]
+          },
+          345600
+        ]
+      },
+      "id": "v_symptoms_max_4d"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "q_age.option.50till59"
+          },
+          {
+            "var": "q_age.option.60till69"
+          },
+          {
+            "var": "q_age.option.70till79"
+          },
+          {
+            "var": "q_age.option.above80"
+          }
+        ]
+      },
+      "id": "v_older_than_50"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "q_age.option.60till69"
+          },
+          {
+            "var": "q_age.option.70till79"
+          },
+          {
+            "var": "q_age.option.above80"
+          }
+        ]
+      },
+      "id": "v_older_than_60"
+    }
+  ],
+  "resultCategories": [
+    {
+      "results": [
+        {
+          "expression": true,
+          "id": "print_risk_profile",
+          "text": "Based on your responses CovApp has created a personal risk profil which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower scores implies a lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to Covid-19.<br> <br> 2. Exposition: This score increases, if you have visits, encounters or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases, if your responses indicate any circumstances (e.g. chronic diseases, medications or similiar) that increase your chance of a severe course, if you are infected by the novel coronavirus.<br> <br> 4. Dissemination potential: This score increases, if you have private or work related environment that favours the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe Course of Covid-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> Your personal risk profile:<br> <br> Symptoms: %(v_symptoms_user_score)d of 100 Points<br> Exposition: %(v_exposition_user_score)d of 100 Points<br> Severe Course: %(v_severity_user_score)d of 100 Points<br> Dissemination potential: %(v_dissemination_user_score)d of 100 Points<br>"
+        }
+      ],
+      "id": "rc_profil",
+      "description": "Your personal risk profile:"
+    },
+    {
+      "results": [
+        {
+          "expression": {
+            "var": "has_negative_pcr"
+          },
+          "id": "negative_pcr",
+          "text": "Most users with a negative PCR-test are not infected with the novel coronavirus. PCR-tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your PCR-test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the PCR-test."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_positive_pcr"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "positive_pcr_vaccinated",
+          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. You are fully vaccinated, however vaccine breakthrough infection can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
+        },
+        {
+          "expression": {
+            "var": "has_positive_pcr"
+          },
+          "id": "has_positive_pcr_not_vaccinated",
+          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_positive_antigen"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "positive_antigen_vaccinated",
+          "text": "Some users with your constellation of answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+        },
+        {
+          "expression": {
+            "var": "has_positive_antigen"
+          },
+          "id": "positive_antigen_not_vaccinated",
+          "text": "Most users with your answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_negative_antigen"
+              },
+              {
+                "var": "has_no_symptoms"
+              },
+              {
+                "var": "has_no_exposition"
+              }
+            ]
+          },
+          "id": "negative_antigen_no_exposition_no_symptoms",
+          "text": "Most users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_negative_antigen"
+              },
+              {
+                "var": "has_low_exposition"
+              },
+              {
+                "var": "has_no_symptoms"
+              }
+            ]
+          },
+          "id": "negative_antigen_low_exposition_no_symptoms",
+          "text": "Most users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_exposition"
+              },
+              {
+                "var": "has_no_symptoms"
+              },
+              {
+                "var": "is_immunocompromised"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
+          "text": "Some users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_exposition"
+              },
+              {
+                "var": "has_no_symptoms"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "high_exposition_no_symptoms_is_fully_vaccinated",
+          "text": "Most users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a PCR-test can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_negative_antigen"
+              },
+              {
+                "var": "has_high_exposition"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "negative_antigen_high_exposition_not_vaccinated",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_negative_antigen"
+              },
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  ",
+          "id": "negative_antigen_symptoms_vaccinated"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_negative_antigen"
+              },
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test.",
+          "id": "negative_antigen_symptoms_not_vaccinated"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "symptoms_vaccinated",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+        },
+        {
+          "expression": {
+            "var": "has_symptoms"
+          },
+          "id": "symptoms_not_vaccinated",
+          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_exposition"
+              },
+              {
+                "var": "has_no_symptoms"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "low_exposition_no_symptoms_not_vaccinated",
+          "text": "Your responses indicated that you have many social contacts due to your work or at home. There is no evidence for a risk contact. In your situation, regular antigen-tests might be senseful. If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_exposition"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "text": "Most users with your answers are not infected with the novel coronavirus. You might have a higher than average exposition, but you are fully vaccinated and should be protected in most situation. If you develop new symptoms, please complete the questionnaire of CovApp again to get an individualized recommendation.",
+          "id": "low_exposition_vaccinated"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_exposition"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "high_exposition_not_vaccinated",
+          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test."
+        },
+        {
+          "expression": true,
+          "id": "no_test",
+          "text": "Most users with your answers are not infected with the novel coronavirus. Currently, there is no necessity to conduct a test.  If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
+        }
+      ],
+      "description": "Test Recommendation",
+      "id": "rc_test"
+    },
+    {
+      "results": [
+        {
+          "expression": {
+            "var": "has_problems_breathing_symptom"
+          },
+          "id": "problems_breathing",
+          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service (116117). If your shortness of breath becomes severe, please seek medical help."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "has_infection"
+              },
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "has_high_severity_and_infection",
+          "text": "You have risk factors for severe covid-19. Your responses already indicate symptoms of the infection. Your condition required immediate medical attention."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "has_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              },
+              {
+                "var": "is_immunocompromised"
+              }
+            ]
+          },
+          "id": "has_high_severity_and_has_infection_and_is_fully_vaccinated_but_is_immunocompromised",
+          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If you have symptoms or your condition deteriorates, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "has_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "has_severity_and_has_infection_and_is_fully_vaccinated",
+          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "has_high_severity_and_probable_infection_and_is_not_fully_vaccinated",
+          "text": "You have risk factors for severe covid-19. Your responses already indicate symptoms of the infection. If your infection is confirmed, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              },
+              {
+                "var": "is_immunocompromised"
+              }
+            ]
+          },
+          "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated_and_is_immunocompromised",
+          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If an infection with the novel coronavirus is verified and you have symptoms or your condition deteriorates, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated",
+          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your infection is confirmed and your condition deteriorates, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_severity"
+              },
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "has_medium_severity_and_probable_infection",
+          "text": "Your responses indicate a moderate risk to develop severe covid-19. You already report symptoms which might be related to the infection. Please seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_severity"
+              },
+              {
+                "var": "has_infection"
+              },
+              {
+                "var": "has_symptoms"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "id": "has_medium_severity_and_infection",
+          "text": "Your responses indicate a moderate risk to develop severe covid-19. You already report symptoms which might be related to the infection. If your infection is confirmed, please seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_severity"
+              },
+              {
+                "var": "has_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "has_low_severity_and_has_infection_and_is_vaccinated",
+          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_severity"
+              },
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              }
+            ]
+          },
+          "id": "has_low_severity_and_has_probable_infection_and_is_fully_vaccinated",
+          "text": "You are potentially infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "q_vaccine.option.no"
+              }
+            ]
+          },
+          "id": "has_high_severity_and_no_vaccination",
+          "text": "Your responses indicate a high risk to develop severe covid-19. We strongly recommend vaccination in your situation, which can prevent development of severe covid-19 in most cases."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_high_severity"
+              },
+              {
+                "var": "q_vaccine.option.no"
+              }
+            ]
+          },
+          "id": "has_medium_severity_and_no_vaccination",
+          "text": "Your responses indicate a moderate risk to develop severe covid-19. We strongly recommend vaccination in your situation, which can prevent development of severe covid-19 in most cases."
+        },
+        {
+          "expression": true,
+          "id": "no_severity",
+          "text": "Most users with your responses don't have an increased risk to develope a severe course of covid-19."
+        }
+      ],
+      "description": "Recommendations for Severe Course of Covid-19",
+      "id": "rc_severity"
+    },
+    {
+      "results": [
+        {
+          "expression": {
+            "var": "has_infection"
+          },
+          "id": "rc_infected",
+          "text": "Please self-isolate form other persons to prevent transmission of the virus."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "var": "is_fully_vaccinated"
+              },
+              {
+                "var": "has_dissemination"
+              }
+            ]
+          },
+          "text": "Your responses indicate many social interactions due to work or privately. You are vaccinated, however a vaccine breakthrough infection might be possible in your case. Please reduce your social interactions as much as possible, until an infection has been excluded.",
+          "id": "probable_infection_and_vaccination"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_probable_infection"
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              },
+              {
+                "var": "has_dissemination"
+              }
+            ]
+          },
+          "id": "probable_infection_and_no_vaccination",
+          "text": "Your responses indicate many social interactions due to work or privately. Please self-isolate until an infection has been excluded."
+        }
+      ],
+      "description": "Recommendations to prevent spread of virus",
+      "id": "rc_dissemination"
+    },
+    {
+      "results": [
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "v_symptoms_max_3d"
+              },
+              {
+                "var": "q_vaccine.option.yes"
+              },
+              {
+                "or": [
+                  {
+                    "var": "has_positive_pcr"
+                  },
+                  {
+                    "var": "has_positive_antigen"
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "study_1",
+          "text": "Suggestion for Vaccination Study<br>\nSince you state that you were vaccinated (fully or partially) before the currently possible SARS-CoV-2, it makes sense from a scientific point of view to investigate this more closely. Researchers at the Charité are currently conducting such studies.<br>\nIf you decide to participate in such study (and live in the greater Berlin area), further tests, including antibody tests to clarify the vaccine effect, would be necessary, which are usually carried out in a special outpatient department of the Charité.<br>\nIf necessary, please contact <a href=\"mailto:covac-studie@charite.de\">covac-studie@charite.de</a> immediately. Send a short email such as: \"I have a positive coronavirus test today despite the vaccination and symptoms have been typical of covid-19 for a maximum of 3 days. Please contact me by \"your email and telephone number\"."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_positive_antigen"
+              },
+              {
+                "!": {
+                  "var": "q_pregnant.option.yes"
+                }
+              },
+              {
+                "var": "q_vaccine.option.no"
+              },
+              {
+                "or": [
+                  {
+                    "var": "q_immunosuppressants.option.chemo"
+                  },
+                  {
+                    "var": "q_immunosuppressants.option.immunosuppressiva"
+                  },
+                  {
+                    "var": "v_older_than_50"
+                  },
+                  {
+                    "var": "q_chronic_illnesses.option.lung"
+                  },
+                  {
+                    "var": "q_chronic_illnesses.option.kidney"
+                  },
+                  {
+                    "var": "q_chronic_illnesses.option.downsyndrome"
+                  },
+                  {
+                    ">": [
+                      {
+                        "var": "v_bmi"
+                      },
+                      35
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "study_2",
+          "text": "Suggestion for Antibody Study<br>\nUsers with your answer constellation can possibly benefit from an approved, special treatment for SARS-CoV-2 infection, since their risk of becoming seriously ill is comparatively high. Such treatments (antibody therapy) are currently only available at a few specialized clinics - including the Charité. If you live in the greater Berlin area, please contact the Charité immediately by yourself or through your family doctor:<br>\n- By telephone hotline: <a href=\"tel:+4930450576888\">030 450 576 888</a> (available on weekdays from 8 a.m. to 4 p.m.).<br>\n- By email: <a href=\"mailto:corona-ak-ambulanz@charite.de\">corona-ak-ambulanz@charite.de</a>. A short text is enough, e.g.: The Charité-CovApp recommends that I visit the antibody therapy outpatient clinic because of my immunosuppression. Please contact me: \"Your email address and telephone number\"'.<br><br>\nYou can find more information here:<br>\n<a href=\"https://www.charite.de/klinikum/themen_klinikum/themenschwerpunkt_coronavirus/corona_ticker/\">Charité Corona Ticker</a>"
+        }
+      ],
+      "description": "Suggestion for study",
+      "id": "rc_study"
+    }
+  ],
+  "testCases": [
+    {
+      "answers": {
+        "q_pcrtest": "yes",
+        "q_pcrtestpositive": "no",
+        "q_pcrtestresult": "negative"
+      },
+      "results": {
+        "rc_test": "negative_pcr"
+      },
+      "description": "Negative PCR should not receive further tests.",
+      "options": {
+        "randomRuns": 1000
+      }
+    },
+    {
+      "answers": {
+        "q_pcrtest": "yes",
+        "q_pcrtestresult": "positive",
+        "q_vaccine": "yes",
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1619049600
+      },
+      "results": {
+        "rc_test": "positive_pcr_vaccinated"
+      },
+      "description": "Positive PCR and vaccinated should conclude infection, warning and no further test.",
+      "options": {
+        "randomRuns": 1000
+      }
+    },
+    {
+      "answers": {
+        "q_vaccine": "no",
+        "q_pcrtest": "yes",
+        "q_pcrtestresult": "positive"
+      },
+      "results": {
+        "rc_test": "has_positive_pcr_not_vaccinated"
+      },
+      "description": "Positive PCR and not vaccinated should conculde infection and result in no further testing",
+      "options": {
+        "randomRuns": 1000
+      }
+    },
+    {
+      "answers": {
+        "q_antigentest": "yes",
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_vaccine": "yes",
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1617840000,
+        "q_antigentestresult": "positive"
+      },
+      "results": {
+        "rc_test": "positive_antigen_vaccinated"
+      },
+      "description": "Positive Antigen and vaccination should conclude warning and PCR test.",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentest": "yes",
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_symptoms": [],
+        "q_symptoms2": [],
+        "q_breath": "0",
+        "q_contact": "no",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_outbreak": "no",
+        "q_living": "alone",
+        "q_caring": "no",
+        "q_work": "none",
+        "q_immunosuppressants": []
+      },
+      "results": {
+        "rc_test": "negative_antigen_no_exposition_no_symptoms"
+      },
+      "description": "Negative Antigen, no exposition and no symptoms should result in no test.",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentest": "yes",
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_symptoms": [],
+        "q_symptoms2": [],
+        "q_breath": "0",
+        "q_contact": "no",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_outbreak": "no",
+        "q_living": "together",
+        "q_caring": "no",
+        "q_work": "none",
+        "q_immunosuppressants": []
+      },
+      "results": {
+        "rc_test": "negative_antigen_low_exposition_no_symptoms"
+      },
+      "description": "Negative Antigen, low exposition and no symptoms should result in no test.",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_contact_tracing_risk_contacts": "yes_high_risk",
+        "q_immunosuppressants": [
+          "chemo"
+        ],
+        "q_antigentest": "yes",
+        "q_vaccine": "yes",
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1617926400,
+        "q_symptoms_date": 1617235200,
+        "q_breath": "no"
+      },
+      "results": {
+        "rc_test": "high_exposition_no_symptoms_immunocompromised_vaccinated"
+      },
+      "description": "High exposition, vaccinated by compromised immunesystem should result in pcr test",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_contact_tracing_risk_contacts": "yes_high_risk",
+        "q_immunosuppressants": [],
+        "q_antigentest": "yes",
+        "q_vaccine": "yes",
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1617926400,
+        "q_symptoms_date": 1617235200,
+        "q_breath": "no",
+        "q_age": "no",
+        "q_steroids": "no",
+        "q_chronic_illnesses": []
+      },
+      "results": {
+        "rc_test": "high_exposition_no_symptoms_is_fully_vaccinated"
+      },
+      "description": "High exposition, vaccinated and normal immunesystem should result in no test",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_contact_tracing_risk_contacts": "yes_high_risk",
+        "q_antigentest": "yes",
+        "q_vaccine": "no"
+      },
+      "results": {
+        "rc_test": "negative_antigen_high_exposition_not_vaccinated"
+      },
+      "description": "Negative Antigen, high exposition, not vaccinated should result in PCR test",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_antigentest": "yes",
+        "q_vaccine": "yes",
+        "q_contact": "no",
+        "q_outbreak": "no",
+        "q_breath": "yes",
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1617926400
+      },
+      "results": {
+        "rc_test": "negative_antigen_symptoms_vaccinated"
+      },
+      "description": "No high exposition, negative Antigen, symptoms, vaccinated should result in PCR",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_antigentestresult": "negative",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_antigentest": "yes",
+        "q_vaccine": "no",
+        "q_contact": "no",
+        "q_outbreak": "no",
+        "q_breath": "yes"
+      },
+      "results": {
+        "rc_test": "negative_antigen_symptoms_not_vaccinated"
+      },
+      "description": "No high exposition, negative Antigen, symptoms, not vaccinated should result in PCR",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_antigentest": "no",
+        "q_vaccine": "yes",
+        "q_contact": "no",
+        "q_outbreak": "no",
+        "q_breath": "yes",
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1617753600
+      },
+      "results": {
+        "rc_test": "symptoms_vaccinated"
+      },
+      "description": "No PCR, no Antigen, symptoms, vaccinated should result in PCR",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_antigentest": "no",
+        "q_vaccine": "no",
+        "q_contact": "no",
+        "q_outbreak": "no",
+        "q_breath": "no",
+        "q_living": "together",
+        "q_symptoms_date": 1614902400
+      },
+      "results": {
+        "rc_test": "low_exposition_no_symptoms_not_vaccinated"
+      },
+      "description": "No PCR, no Antigen, low exposition, no symptoms, not vaccinated should result in Antigen",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_contact_tracing_risk_contacts": "no",
+        "q_antigentest": "no",
+        "q_vaccine": "yes",
+        "q_contact": "no",
+        "q_outbreak": "no",
+        "q_breath": "no",
+        "q_living": "together",
+        "q_symptoms_date": 1614902400,
+        "q_vaccine_completed": "yes",
+        "q_vaccine_date": 1617235200
+      },
+      "results": {
+        "rc_test": "low_exposition_vaccinated"
+      },
+      "description": "No PCR, no Antigen, low exposition, no symptoms, vaccinated should result in no testing",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_antigentestpositive": "yes",
+        "q_pcrtest": "no",
+        "q_contact_tracing_risk_contacts": "yes_high_risk",
+        "q_antigentest": "no",
+        "q_vaccine": "no",
+        "q_symptoms_date": 1617321600,
+        "q_breath": "no"
+      },
+      "results": {
+        "rc_test": "high_exposition_not_vaccinated"
+      },
+      "description": "No Antigen, No PCR, high exposition, no symptoms, not vaccinated should result in PCR test",
+      "options": {
+        "randomRuns": 1000
+      },
+      "variables": {}
+    },
+    {
+      "answers": {
+        "q_breath": "yes"
+      },
+      "results": {
+        "rc_severity": "problems_breathing"
+      },
+      "description": "Problems breathing should result in physician consultation.",
+      "options": {
+        "randomRuns": 1000
+      }
+    },
+    {
+      "answers": {
+        "q_breath": "no",
+        "q_antigentest": "yes",
+        "q_antigentestresult": "positive",
+        "q_age": "60till69",
+        "q_pcrtest": "no",
+        "q_symptoms": [
+          "chills"
+        ],
+        "q_symptoms_date": 1620259200
+      },
+      "results": {
+        "rc_severity": "has_high_severity_and_infection"
+      },
+      "description": "High risk for severe covid-19 and symptoms present, test indicates infection",
+      "options": {
+        "randomRuns": 1000,
+        "fillInDate": "2021-05-12"
+      }
+    },
+    {
+      "answers": {
+        "q_breath": "no",
+        "q_antigentest": "no",
+        "q_age": "yes",
+        "q_pcrtest": "no",
+        "q_symptoms": [
+          "chills"
+        ],
+        "q_symptoms_date": 1620259200
+      },
+      "results": {
+        "rc_severity": "has_high_severity_and_probable_infection"
+      },
+      "description": "high risk for severe covid-19 and symptoms present and probable infection",
+      "options": {
+        "randomRuns": 1000,
+        "fillInDate": "2021-05-12"
+      }
+    },
+    {
+      "answers": {
+        "q_breath": "no",
+        "q_antigentest": "no",
+        "q_age": "yes",
+        "q_pcrtest": "no",
+        "q_symptoms_date": 1617235200,
+        "q_vaccine": "no"
+      },
+      "results": {
+        "rc_severity": "has_high_severity_and_no_vaccination"
+      },
+      "description": "High risk for severe covid-19, no symptoms, no vaccination",
+      "options": {
+        "randomRuns": 1000,
+        "fillInDate": "2021-05-12"
+      }
+    }
+  ]
+}
