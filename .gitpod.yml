@@ -2,6 +2,7 @@
 tasks:
   - init: |
       npm install
+      npm run prepare-charite
     command: npm start
   - name: Backend
     before: | 
