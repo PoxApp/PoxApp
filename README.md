@@ -1,4 +1,4 @@
-Preview: https://covappquestions.z19.web.core.windows.net/
+Preview: https://covappcharite.z13.web.core.windows.net/
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CovOpen/CovApp-2.0)
 

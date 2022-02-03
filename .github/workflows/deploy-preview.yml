@@ -18,26 +18,46 @@ jobs:
       - name: Install Packages
         run: npm install
 
-      
-      - name: Prepare for Charite
-        run: npm run prepare-charite
-
       - name: Build package
-        run: npm run build
+        run: npm run build-charite
         env:
-          LAYOUT: CHARITE
           SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: app
-          path: ./www
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v1.0.0
+      #   with:
+      #     name: app
+      #     path: ./www
 
       - name: Publish to blob storage
         uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
           source_dir: ./www
           container_name: $web
-          connection_string: ${{ secrets.AZURE_CREDENTIALS }}
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING_CHARITE }}
+          extra_args: ""
+
+  stanford:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Packages
+        run: npm install
+
+      - name: Build package
+        run: npm run build-stanford
+        env:
+          SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
+
+      - name: Publish to blob storage
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        with:
+          source_dir: ./www
+          container_name: $web
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING_STANFORD }}
           extra_args: ""
