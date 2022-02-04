@@ -10,7 +10,7 @@
       "de"
     ],
     "author": "Alexander Thieme",
-    "creationDate": "2021-08-04"
+    "creationDate": "2022-02-04"
   },
   "questions": [
     {
@@ -28,18 +28,17 @@
       ],
       "type": "select",
       "id": "q_intro",
-      "text": "Access to CovApp is restricted.",
-      "details": "Please confirm that you are residing in the United States and are at least 18 years old."
+      "text": "Do you reside in the United States and are at least 18 years old?",
+      "details": "Access to CovApp is restricted to US citizen of full age."
     },
     {
       "type": "multiselect",
       "id": "new_question_id",
-      "text": "We are sorry, but CovApp may only be used if you reside in the US and are at least 18 years old.",
-      "options": [],
+      "text": "Access to CovApp is restricted.",
       "enableWhenExpression": {
         "var": "q_intro.option.no"
       },
-      "details": "Click <a href=\"https://covapp.stanford.edu\">here</a> to return to the CovApp mainpage."
+      "details": "We are sorry, but CovApp Stanford can currently only be offered to US citizen who are at least 18 years old.<br><br>Click <a href=\"https://covapp.stanford.edu\">here</a> to return to the CovApp mainpage."
     },
     {
       "options": [
@@ -2229,6 +2228,18 @@
         ]
       },
       "id": "v_cdc_has_high_risk"
+    },
+    {
+      "expression": "<img src=\"https://covappstanford.z13.web.core.windows.net/assets/images/recommendation-green.svg\" alt=\"green\" width=\"20\" height=\"20\"><br>",
+      "id": "v_green"
+    },
+    {
+      "expression": "<img src=\"https://covappstanford.z13.web.core.windows.net/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"><br>",
+      "id": "v_orange"
+    },
+    {
+      "expression": "<img src=\"https://covappstanford.z13.web.core.windows.net/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"><br>",
+      "id": "v_red"
     }
   ],
   "resultCategories": [
@@ -2250,7 +2261,7 @@
             "var": "has_negative_pcr"
           },
           "id": "negative_pcr",
-          "text": "Most users with a negative PCR-test are not infected with the novel coronavirus. PCR-tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your PCR-test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "%(v_green)sMost users with a negative PCR-test are not infected with the novel coronavirus. PCR-tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your PCR-test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
@@ -2264,14 +2275,14 @@
             ]
           },
           "id": "positive_pcr_vaccinated",
-          "text": "Most users with a positive PCR-test are infected with the novel coronavirus. You are fully vaccinated, however breakthrough infections can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "%(v_red)sMost users with a positive PCR-test are infected with the novel coronavirus. You are fully vaccinated, however breakthrough infections can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
             "var": "has_positive_pcr"
           },
           "id": "has_positive_pcr_not_vaccinated",
-          "text": "Most users with a positive PCR-test are infected with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "%(v_red)sMost users with a positive PCR-test are infected with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
@@ -2285,14 +2296,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "Some users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.  "
+          "text": "%(v_orange)sSome users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.  "
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "Many users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. "
+          "text": "%(v_red)sMany users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. "
         },
         {
           "expression": {
@@ -2309,7 +2320,7 @@
             ]
           },
           "id": "negative_antigen_no_exposition_no_symptoms",
-          "text": "Most users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -2326,7 +2337,7 @@
             ]
           },
           "id": "negative_antigen_low_exposition_no_symptoms",
-          "text": "Most users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -2346,7 +2357,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test."
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test."
         },
         {
           "expression": {
@@ -2363,7 +2374,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_is_fully_vaccinated",
-          "text": "Most users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a PCR-test can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_orange)sMost users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a PCR-test can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -2382,7 +2393,7 @@
             ]
           },
           "id": "negative_antigen_high_exposition_not_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test."
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test."
         },
         {
           "expression": {
@@ -2398,7 +2409,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however breakthrough infection can occur.  ",
+          "text": "%(v_red)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however breakthrough infection can occur.  ",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -2417,7 +2428,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test.",
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test.",
           "id": "negative_antigen_symptoms_not_vaccinated"
         },
         {
@@ -2432,14 +2443,14 @@
             ]
           },
           "id": "symptoms_vaccinated",
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
         },
         {
           "expression": {
             "var": "has_symptoms"
           },
           "id": "symptoms_not_vaccinated",
-          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test."
+          "text": "%(v_red)sMany users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test."
         },
         {
           "expression": {
@@ -2458,7 +2469,7 @@
             ]
           },
           "id": "low_exposition_no_symptoms_not_vaccinated",
-          "text": "Your responses indicated that you have many social contacts due to your work or at home. There is no evidence for a risk contact. In your situation, regular antigen-tests might be senseful. If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_orange)sYour responses indicated that you have many social contacts due to your work or at home. There is no evidence for a risk contact. In your situation, regular antigen-tests might be senseful. If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -2471,7 +2482,7 @@
               }
             ]
           },
-          "text": "Most users with your answers are not infected with the novel coronavirus. You might have a higher than average exposition, but you are fully vaccinated and should be protected in most situation. If you develop new symptoms, please complete the questionnaire of CovApp again to get an individualized recommendation.",
+          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. You might have a higher than average exposition, but you are fully vaccinated and should be protected in most situation. If you develop new symptoms, please complete the questionnaire of CovApp again to get an individualized recommendation.",
           "id": "low_exposition_vaccinated"
         },
         {
@@ -2488,12 +2499,12 @@
             ]
           },
           "id": "high_exposition_not_vaccinated",
-          "text": "Many users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test."
+          "text": "%(v_red)sMany users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test."
         },
         {
           "expression": true,
           "id": "no_test",
-          "text": "Most users with your answers are not infected with the novel coronavirus. Currently, there is no necessity to conduct a test.  If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. Currently, there is no necessity to conduct a test.  If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
         }
       ],
       "description": "Test Recommendation",
@@ -2506,7 +2517,7 @@
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
-          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service. If your shortness of breath becomes severe, please seek medical help immediately or call <a href=\"tel:911\">911</a>."
+          "text": "%(v_red)sYou reported shortness of breath. Please call your general practitioner or the medical on-call service. If your shortness of breath becomes severe, please seek medical help immediately or call <a href=\"tel:911\">911</a>."
         },
         {
           "expression": {
@@ -2539,7 +2550,7 @@
             ]
           },
           "id": "has_high_severity_and_infection_and_symptoms_no_vaccination",
-          "text": "Many users with your responses have a high risk to develop severe COVID-19. <br><br>Please seek for medical care immediately, if you have or develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>.<br><br>"
+          "text": "%(v_red)sMany users with your responses have a high risk to develop severe COVID-19. <br><br>Please seek for medical care immediately, if you have or develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>.<br><br>"
         },
         {
           "expression": {
@@ -2573,7 +2584,7 @@
             ]
           },
           "id": "has_high_severity_and_has_infection_and_is_fully_vaccinated_but_is_immunocompromised",
-          "text": "Most of the time, vaccination can prevent a severe course of COVID-19. Some users with your responses have an immune system with reduced activity and the inability to create sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. <br><br>Please seek medical care immediately, if your condition deteriorates or you develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>."
+          "text": "%(v_orange)sMost of the time, vaccination can prevent a severe course of COVID-19. Some users with your responses have an immune system with reduced activity and the inability to create sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. <br><br>Please seek medical care immediately, if your condition deteriorates or you develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -2604,7 +2615,7 @@
             ]
           },
           "id": "has_severity_and_has_infection_and_is_fully_vaccinated",
-          "text": "For most users with your responses vaccination should prevent developing severe COVID-19 despite having risk factors. <br><br>Please seek for medical care immediately, if your condition deteriorates or you develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>."
+          "text": "%(v_orange)sFor most users with your responses vaccination should prevent developing severe COVID-19 despite having risk factors. <br><br>Please seek for medical care immediately, if your condition deteriorates or you develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -2625,7 +2636,7 @@
             ]
           },
           "id": "has_severity_and_is_fully_vaccinated",
-          "text": "Most users with your responses have a low risk to develop severe COVID-19. A modest percentage of people who are fully vaccinated can still get Covid-19 if they are exposed to the novel coronavirus but will most likely develop only mild symptoms."
+          "text": "%(v_green)sMost users with your responses have a low risk to develop severe COVID-19. A modest percentage of people who are fully vaccinated can still get Covid-19 if they are exposed to the novel coronavirus but will most likely develop only mild symptoms."
         },
         {
           "expression": {
@@ -2639,7 +2650,7 @@
             ]
           },
           "id": "has_severity",
-          "text": "Many users with your responses have a high risk for severe COVID-19.<br><br>High-risk patients benefit particularly from vaccination:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
+          "text": "%(v_red)sMany users with your responses have a high risk for severe COVID-19.<br><br>High-risk patients benefit particularly from vaccination:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         },
         {
           "expression": {
@@ -2648,11 +2659,11 @@
             }
           },
           "id": "no_severity_and_not_vaccinated",
-          "text": "Most users with your responses have a low risk to develop severe COVID-19. You may still benefit from getting vaccinated:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you, particulary people with an increased risk of severe illness.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
+          "text": "%(v_red)sMost users with your responses have a low risk to develop severe COVID-19. You may still benefit from getting vaccinated:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you, particulary people with an increased risk of severe illness.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         },
         {
           "expression": true,
-          "text": "Most users with your responses have a low risk to develop severe COVID-19.",
+          "text": "%(v_green)sMost users with your responses have a low risk to develop severe COVID-19.",
           "id": "no_severity"
         }
       ],
@@ -2666,7 +2677,7 @@
             "var": "has_positive_test"
           },
           "id": "rc_infected",
-          "text": "Please self-isolate from other persons to prevent transmission of the virus and follow these rules:<br><br>\n1.) Please stay home except to get medical care. If you need to leave your home, avoid public transportation and wear a mask.<br>\n2.) Stay in a separate room and away from other people in your home.<br>\n3.) Notify close contacts that they may have been exposed to COVID-19. The novel coronavirus can spread 48 hours before you have developed symptoms or tested positive. By letting your friends and colleagues know, you can prevent further infections and help to protect everyone.<br>\n4.) Follow instructions from your healthcare provider and local health department.<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>."
+          "text": "%(v_red)sPlease self-isolate from other persons to prevent transmission of the virus and follow these rules:<br><br>\n1.) Please stay home except to get medical care. If you need to leave your home, avoid public transportation and wear a mask.<br>\n2.) Stay in a separate room and away from other people in your home.<br>\n3.) Notify close contacts that they may have been exposed to COVID-19. The novel coronavirus can spread 48 hours before you have developed symptoms or tested positive. By letting your friends and colleagues know, you can prevent further infections and help to protect everyone.<br>\n4.) Follow instructions from your healthcare provider and local health department.<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -2682,7 +2693,7 @@
               }
             ]
           },
-          "text": "Your responses indicate many work-related or private social contacts. Some users with your responses have a breakthrough infection. Please reduce your social interactions as much as possible, until an infection has been ruled out.\n<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>.",
+          "text": "%(v_red)sYour responses indicate many work-related or private social contacts. Some users with your responses have a breakthrough infection. Please reduce your social interactions as much as possible, until an infection has been ruled out.\n<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>.",
           "id": "probable_infection_and_vaccination"
         },
         {
@@ -2702,7 +2713,7 @@
             ]
           },
           "id": "probable_infection_and_no_vaccination",
-          "text": "Your responses indicate many work-related or private social contacts. Please reduce your social interactions as much as possible, until an infection has been ruled out.\n<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>."
+          "text": "%(v_orange)sYour responses indicate many work-related or private social contacts. Please reduce your social interactions as much as possible, until an infection has been ruled out.\n<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>."
         }
       ],
       "description": "Recommendations to prevent spread of virus",
@@ -2745,7 +2756,7 @@
             ]
           },
           "id": "study_2",
-          "text": "Suggestion for Monoclonal Antibody Therapy<br><br>\nUsers with your responses may benefit from an approved, special treatment with monoclonal antibodies for the novel coronavirus due to a high risk of developing severe COVID-19. Such treatment is currently only available at <a href=\\\"https://protect-public.hhs.gov/pages/therapeutics-distribution\\\">specialized clinics</a>.<br><br>Please coordinate with your respective physician or care provider before contacting a location to receive treatment. A call center is available to answer questions and provide information related to monoclonal antibody therapeutic treatments at the following phone numbers: <a href=\\\"tel:+18773326585\\\">1-877-332-6585</a> (English Language); <a href=\\\"tel:+18773660310\\\">1-877-366-0310</a> (Spanish Language).\n\n"
+          "text": "%(v_red)sSuggestion for Monoclonal Antibody Therapy<br><br>\nUsers with your responses may benefit from an approved, special treatment with monoclonal antibodies for the novel coronavirus due to a high risk of developing severe COVID-19. Such treatment is currently only available at <a href=\\\"https://protect-public.hhs.gov/pages/therapeutics-distribution\\\">specialized clinics</a>.<br><br>Please coordinate with your respective physician or care provider before contacting a location to receive treatment. A call center is available to answer questions and provide information related to monoclonal antibody therapeutic treatments at the following phone numbers: <a href=\\\"tel:+18773326585\\\">1-877-332-6585</a> (English Language); <a href=\\\"tel:+18773660310\\\">1-877-366-0310</a> (Spanish Language).\n\n"
         }
       ],
       "description": "Suggestion for Special Treatments",
