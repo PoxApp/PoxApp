@@ -29,7 +29,7 @@
       "type": "select",
       "id": "q_intro",
       "text": "Do you reside in the United States and are at least 18 years old?",
-      "details": "Access to CovApp is restricted to US citizen of full age."
+      "details": "Access to CovApp is restricted to US citizens of full age."
     },
     {
       "type": "multiselect",
