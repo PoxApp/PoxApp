@@ -4,6 +4,7 @@ import { ROUTES } from '../../../global/constants';
 import settings from '../../../global/utils/settings';
 
 @Component({
+  styleUrl: 'disclaimer.css',
   tag: 'ia-disclaimer',
 })
 export class Disclaimer {

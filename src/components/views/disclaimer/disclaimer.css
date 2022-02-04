@@ -1,0 +1,6 @@
+.disclaimer__content {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 60vh;
+  margin-bottom: 10px;
+}
