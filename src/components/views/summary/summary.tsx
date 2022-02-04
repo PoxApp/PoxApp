@@ -134,7 +134,7 @@ export class Summary {
                   <div innerHTML={i18next.t('summary_feedback_content')} />
                 </div>
               </ia-accordion>
-              {!IS_COLLABORATION && <ia-app-recommendations />}
+              {/* {!IS_COLLABORATION && <ia-app-recommendations />} */}
             </div>
           </div>
         </d4l-card>
