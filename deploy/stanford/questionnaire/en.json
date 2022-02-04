@@ -2230,15 +2230,15 @@
       "id": "v_cdc_has_high_risk"
     },
     {
-      "expression": "<img src=\"https://covappstanford.z13.web.core.windows.net/assets/images/recommendation-green.svg\" alt=\"green\" width=\"20\" height=\"20\"><br>",
+      "expression": "<img src=\"https://covapp.stanford.edu/assets/images/recommendation-green.svg\" alt=\"green\" width=\"20\" height=\"20\"><br>",
       "id": "v_green"
     },
     {
-      "expression": "<img src=\"https://covappstanford.z13.web.core.windows.net/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"><br>",
+      "expression": "<img src=\"https://covapp.stanford.edu/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"><br>",
       "id": "v_orange"
     },
     {
-      "expression": "<img src=\"https://covappstanford.z13.web.core.windows.net/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"><br>",
+      "expression": "<img src=\"https://covapp.stanford.edu/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"><br>",
       "id": "v_red"
     }
   ],
@@ -2667,7 +2667,7 @@
           "id": "no_severity"
         }
       ],
-      "description": "Recommendations for Severe COVID-19",
+      "description": "Recommendations for Severe COVID-19 and Vaccination",
       "id": "rc_severity"
     },
     {
