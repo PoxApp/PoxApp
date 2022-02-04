@@ -46,7 +46,7 @@ export class Disclaimer {
               <d4l-button
                 classes="button--block"
                 data-test="continueButton"
-                text={i18next.t('button_continue')}
+                text={i18next.t('button_disclaimer_continue') ?? i18next.t('button_continue')}
                 is-route-link
               />
             </stencil-route-link>
