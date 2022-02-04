@@ -13,7 +13,6 @@ import i18next from '../../../global/utils/i18n';
 import version from '../../../global/utils/version';
 import { Answers } from '../questionnaire/questionnaire';
 import settings from '../../../global/utils/settings';
-import { IS_COLLABORATION } from '../../../global/layouts';
 import { QuestionnaireEngine, Result } from '@covopen/covquestions-js';
 import { getQuestionnaire } from '../../../global/questions';
 import DOMPurify from 'dompurify';
