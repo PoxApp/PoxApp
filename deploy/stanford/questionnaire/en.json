@@ -16,13 +16,100 @@
     {
       "options": [
         {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_intro",
+      "text": "Access to CovApp is restricted.",
+      "details": "Please confirm that you are residing in the United States and are at least 18 years old."
+    },
+    {
+      "type": "multiselect",
+      "id": "new_question_id",
+      "text": "We are sorry, but CovApp may only be used if you reside in the US and are at least 18 years old.",
+      "enableWhenExpression": {
+        "var": "q_intro.option.no"
+      },
+      "details": "Click <a href=\"https://covapp.stanford.edu\">here</a> to return to the CovApp mainpage."
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "American Indian or Alaska Native",
+          "value": "indian"
+        },
+        {
+          "scores": {},
+          "text": "Asian",
+          "value": "asian"
+        },
+        {
+          "scores": {},
+          "text": "Black or African America",
+          "value": "black"
+        },
+        {
+          "scores": {},
+          "text": "Native Hawaiian or Other Pacific Islander",
+          "value": "hawaiian"
+        },
+        {
+          "scores": {},
+          "text": "White",
+          "value": "white"
+        },
+        {
+          "scores": {},
+          "text": "I prefer not to say",
+          "value": "no"
+        }
+      ],
+      "type": "multiselect",
+      "id": "q_race",
+      "text": "What is your race?",
+      "details": "One or more categories may be selected."
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Hispanic or Latino",
+          "value": "hispanic"
+        },
+        {
+          "scores": {},
+          "text": "Not Hispanic or Latino",
+          "value": "non-hispanic"
+        },
+        {
+          "scores": {},
+          "text": "I prefer not to say",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_ethnicity",
+      "text": "What is your ethnicity?"
+    },
+    {
+      "options": [
+        {
           "scores": {
             "Exposition": 0,
             "Symptoms": 0,
             "Dissemination": 0,
             "Severity": 0
           },
-          "text": "Under 30 years",
+          "text": "Under 30 years old",
           "value": "under30"
         },
         {
@@ -32,7 +119,7 @@
             "Dissemination": 0,
             "Exposition": 0
           },
-          "text": "30 till 49 years",
+          "text": "30-49 years old",
           "value": "30till49"
         },
         {
@@ -42,7 +129,7 @@
             "Symptoms": 0,
             "Dissemination": 0
           },
-          "text": "50 till 59 years",
+          "text": "50-59 years old",
           "value": "50till59"
         },
         {
@@ -52,7 +139,7 @@
             "Symptoms": 0,
             "Dissemination": 0
           },
-          "text": "60 till 69 years",
+          "text": "60-69 years old",
           "value": "60till69"
         },
         {
@@ -62,7 +149,7 @@
             "Symptoms": 0,
             "Dissemination": 0
           },
-          "text": "70 till 79 years",
+          "text": "70-79 years old",
           "value": "70till79"
         },
         {
@@ -77,7 +164,7 @@
         }
       ],
       "id": "q_age",
-      "text": "How old are you?",
+      "text": "What is your age?",
       "type": "select"
     },
     {
@@ -259,7 +346,7 @@
       ],
       "id": "q_contact",
       "text": "Have you had close contact with a confirmed case?",
-      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 15 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 1.5 meters of the person for more than 15 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask) on contact.",
+      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 15 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 6 feet of the person for more than 15 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask) on contact.",
       "type": "select"
     },
     {
@@ -276,15 +363,8 @@
           "scores": {
             "Exposition": 7
           },
-          "text": "Yes, with high risk",
+          "text": "Yes",
           "value": "yes_high_risk"
-        },
-        {
-          "scores": {
-            "Exposition": 1
-          },
-          "text": "Yes, with low risk",
-          "value": "yes_low_risk"
         },
         {
           "scores": {},
@@ -293,13 +373,14 @@
         },
         {
           "scores": {},
-          "text": "I don't use the Corona Warn App",
+          "text": "I don't use a contact tracing app",
           "value": "no_usage"
         }
       ],
       "id": "q_contact_tracing_risk_contacts",
-      "text": "Has there been a risk encounter detected by the Corona Warn App in the last 14 days?",
-      "type": "select"
+      "text": "Did you have an exposure notification of a digital contact tracing app in the last 14 days?",
+      "type": "select",
+      "details": "Digital contact tracing apps track when people are in close contact and a recent contact tests positive."
     },
     {
       "options": [
@@ -307,7 +388,7 @@
           "scores": {
             "Symptoms": 1
           },
-          "text": "Fever above 38°C",
+          "text": "Fever above 100.4 °F",
           "value": "fever"
         },
         {
@@ -429,7 +510,7 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Chronic lung disease",
+          "text": "Chronic lung disease (e.g. chronic obstructive pulmonary disease, asthma, interstitial lung disease, cystic fibrosis)",
           "value": "lung"
         },
         {
@@ -443,7 +524,7 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Heart disease",
+          "text": "Heart disease (e.g. cardiovascular disease, congenital heart disease)",
           "value": "heart"
         },
         {
@@ -473,33 +554,62 @@
           },
           "text": "Cancer",
           "value": "cancer"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Sickle cell disease",
+          "value": "sickcell"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Neurodevelopmental disorders (e.g. cerebral palsy)",
+          "value": "neuro"
+        },
+        {
+          "scores": {},
+          "text": "Having a medical-related technological dependence (e.g. tracheostomy, gastrostomy)",
+          "value": "technological"
         }
       ],
       "id": "q_chronic_illnesses",
-      "text": "Has a doctor diagnosed with any of the following illnesses?",
+      "text": "Have you been diagnosed with any of the following diseases?",
       "type": "multiselect",
-      "details": "If you don't have any of the illnesses, choose the “Next” button without selecting a symptom.",
+      "details": "If you don't have any of the following diseases, choose the “Next” button without selecting an option.",
       "optional": true
     },
     {
       "numericOptions": {
-        "max": 220,
-        "min": 100,
+        "max": 7,
+        "min": 4,
         "step": 1
       },
       "id": "q_height",
-      "text": "What is your height? (in cm)",
+      "text": "What is your height? (feet)",
       "type": "number",
-      "details": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19."
+      "details": "Please enter your height in feet. Click on Next to enter inches."
     },
     {
       "numericOptions": {
-        "max": 300,
-        "min": 20,
+        "max": 12,
+        "min": 0,
+        "step": 1
+      },
+      "type": "number",
+      "id": "q_height2",
+      "text": "What is your height? (inches)"
+    },
+    {
+      "numericOptions": {
+        "max": 1000,
+        "min": 40,
         "step": 1
       },
       "id": "q_weight",
-      "text": "What is your weight? (in kg)",
+      "text": "What is your weight? (lbs)",
       "type": "number",
       "details": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19"
     },
@@ -573,7 +683,7 @@
         }
       ],
       "id": "q_flu",
-      "text": "Have you been vaccinated against flu between August 2020 and today?",
+      "text": "Have you been vaccinated against flu between August 2021 and today?",
       "type": "select"
     },
     {
@@ -611,7 +721,8 @@
       "type": "select",
       "enableWhenExpression": {
         "var": "q_vaccine.option.yes"
-      }
+      },
+      "details": "Select yes, if you have received a single-dose vaccine, such as the Johnson & Johnson’s Janssen vaccine, or all doses of 2-doses vaccines, such as Pfizer or Moderna vaccines. Booster shots don't need to be considered."
     },
     {
       "id": "q_vaccine_date",
@@ -765,7 +876,7 @@
           {
             "*": [
               {
-                "var": "q_weight"
+                "var": "v_weight"
               },
               10000
             ]
@@ -773,10 +884,10 @@
           {
             "*": [
               {
-                "var": "q_height"
+                "var": "v_height"
               },
               {
-                "var": "q_height"
+                "var": "v_height"
               }
             ]
           }
@@ -1077,11 +1188,18 @@
     {
       "id": "has_high_severity",
       "expression": {
-        ">=": [
+        "or": [
           {
-            "var": "v_severity"
+            ">=": [
+              {
+                "var": "v_severity"
+              },
+              2
+            ]
           },
-          2
+          {
+            "var": "v_cdc_has_high_risk"
+          }
         ]
       }
     },
@@ -1841,28 +1959,60 @@
           },
           0,
           {
-            "*": [
+            "if": [
               {
-                "+": [
+                "var": "is_fully_vaccinated"
+              },
+              {
+                "*": [
                   {
-                    "*": [
+                    "+": [
                       {
-                        "log10": {
-                          "+": [
-                            {
-                              "var": "v_severity"
-                            },
-                            1
-                          ]
-                        }
+                        "*": [
+                          {
+                            "log10": {
+                              "+": [
+                                {
+                                  "var": "v_severity"
+                                },
+                                1
+                              ]
+                            }
+                          },
+                          0.463314
+                        ]
                       },
-                      0.463314
+                      0.360529
                     ]
                   },
-                  0.360529
+                  50
                 ]
               },
-              100
+              {
+                "*": [
+                  {
+                    "+": [
+                      {
+                        "*": [
+                          {
+                            "log10": {
+                              "+": [
+                                {
+                                  "var": "v_severity"
+                                },
+                                1
+                              ]
+                            }
+                          },
+                          0.463314
+                        ]
+                      },
+                      0.360529
+                    ]
+                  },
+                  100
+                ]
+              }
             ]
           }
         ]
@@ -1980,6 +2130,104 @@
         ]
       },
       "id": "v_older_than_60"
+    },
+    {
+      "expression": {
+        "*": [
+          {
+            "var": "q_weight"
+          },
+          0.453592
+        ]
+      },
+      "id": "v_weight"
+    },
+    {
+      "expression": {
+        "+": [
+          {
+            "*": [
+              {
+                "var": "q_height"
+              },
+              30.48
+            ]
+          },
+          {
+            "*": [
+              {
+                "var": "q_height2"
+              },
+              2.54
+            ]
+          }
+        ]
+      },
+      "id": "v_height"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "has_positive_antigen"
+          },
+          {
+            "var": "has_positive_pcr"
+          }
+        ]
+      },
+      "id": "has_positive_test"
+    },
+    {
+      "expression": {
+        "or": [
+          {
+            "var": "v_older_than_60"
+          },
+          {
+            ">": [
+              {
+                "var": "v_bmi"
+              },
+              25
+            ]
+          },
+          {
+            "var": "q_pregnant.option.yes"
+          },
+          {
+            "var": "q_chronic_illnesses.option.kidney"
+          },
+          {
+            "var": "q_chronic_illnesses.option.diabetes"
+          },
+          {
+            "var": "q_steroids.option.yes"
+          },
+          {
+            "var": "q_immunosuppressants.option.chemo"
+          },
+          {
+            "var": "q_immunosuppressants.option.immunosuppressiva"
+          },
+          {
+            "var": "q_chronic_illnesses.option.lung"
+          },
+          {
+            "var": "q_chronic_illnesses.option.heart"
+          },
+          {
+            "var": "q_chronic_illnesses.option.pressure"
+          },
+          {
+            "var": "q_chronic_illnesses.option.neuro"
+          },
+          {
+            "var": "q_chronic_illnesses.option.technological"
+          }
+        ]
+      },
+      "id": "v_cdc_has_high_risk"
     }
   ],
   "resultCategories": [
@@ -1988,11 +2236,11 @@
         {
           "expression": true,
           "id": "print_risk_profile",
-          "text": "Based on your responses CovApp has created a personal risk profil which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower scores implies a lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to Covid-19.<br> <br> 2. Exposition: This score increases, if you have visits, encounters or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases, if your responses indicate any circumstances (e.g. chronic diseases, medications or similiar) that increase your chance of a severe course, if you are infected by the novel coronavirus.<br> <br> 4. Dissemination potential: This score increases, if you have private or work related environment that favours the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe Course of Covid-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> Your personal risk profile:<br> <br> Symptoms: %(v_symptoms_user_score)d of 100 Points<br> Exposition: %(v_exposition_user_score)d of 100 Points<br> Severe Course: %(v_severity_user_score)d of 100 Points<br> Dissemination potential: %(v_dissemination_user_score)d of 100 Points<br>"
+          "text": "Based on your responses CovApp has created a personal risk profile which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower score implies lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to COVID-19.<br> <br> 2. Exposition: This score increases if you have visits, encounters, or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases if your responses indicate any circumstances (e.g. chronic diseases, medications, or similar) that increase your chance of a severe course if you are infected by the novel coronavirus.<br> <br> 4. Dissemination potential: This score increases, if you have a private or work-related environment that favors the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe COVID-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> Your personal risk profile:<br> <br> Symptoms: %(v_symptoms_user_score)d of 100 Points<br> Exposition: %(v_exposition_user_score)d of 100 Points<br> Severe Course: %(v_severity_user_score)d of 100 Points<br> Dissemination potential: %(v_dissemination_user_score)d of 100 Points<br>"
         }
       ],
       "id": "rc_profil",
-      "description": "Your personal risk profile:"
+      "description": "Your personal risk profile"
     },
     {
       "results": [
@@ -2015,14 +2263,14 @@
             ]
           },
           "id": "positive_pcr_vaccinated",
-          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. You are fully vaccinated, however vaccine breakthrough infection can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "Most users with a positive PCR-test are infected with the novel coronavirus. You are fully vaccinated, however breakthrough infections can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
             "var": "has_positive_pcr"
           },
           "id": "has_positive_pcr_not_vaccinated",
-          "text": "Most users with a positive PCR-test are infection with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "Most users with a positive PCR-test are infected with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
         },
         {
           "expression": {
@@ -2036,14 +2284,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "Some users with your constellation of answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Some users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.  "
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "Most users with your answers are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however vaccine breakthrough infection can occur.  "
+          "text": "Many users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. "
         },
         {
           "expression": {
@@ -2149,7 +2397,7 @@
               }
             ]
           },
-          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however vaccine breakthrough infection can occur.  ",
+          "text": "Some users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however breakthrough infection can occur.  ",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -2257,19 +2505,30 @@
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
-          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service (116117). If your shortness of breath becomes severe, please seek medical help."
+          "text": "You reported shortness of breath. Please call your general practitioner or the medical on-call service. If your shortness of breath becomes severe, please seek medical help immediately or call <a href=\"tel:911\">911</a>."
         },
         {
           "expression": {
             "and": [
               {
-                "var": "has_high_severity"
+                "or": [
+                  {
+                    "var": "has_low_severity"
+                  },
+                  {
+                    "var": "has_high_severity"
+                  }
+                ]
               },
               {
-                "var": "has_infection"
-              },
-              {
-                "var": "has_symptoms"
+                "or": [
+                  {
+                    "var": "has_infection"
+                  },
+                  {
+                    "var": "has_probable_infection"
+                  }
+                ]
               },
               {
                 "!": {
@@ -2278,17 +2537,31 @@
               }
             ]
           },
-          "id": "has_high_severity_and_infection",
-          "text": "You have risk factors for severe covid-19. Your responses already indicate symptoms of the infection. Your condition required immediate medical attention."
+          "id": "has_high_severity_and_infection_and_symptoms_no_vaccination",
+          "text": "Many users with your responses have a high risk to develop severe COVID-19. <br><br>Please seek for medical care immediately, if you have or develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>.<br><br>"
         },
         {
           "expression": {
             "and": [
               {
-                "var": "has_high_severity"
+                "or": [
+                  {
+                    "var": "has_low_severity"
+                  },
+                  {
+                    "var": "has_high_severity"
+                  }
+                ]
               },
               {
-                "var": "has_infection"
+                "or": [
+                  {
+                    "var": "has_infection"
+                  },
+                  {
+                    "var": "has_probable_infection"
+                  }
+                ]
               },
               {
                 "var": "is_fully_vaccinated"
@@ -2299,16 +2572,30 @@
             ]
           },
           "id": "has_high_severity_and_has_infection_and_is_fully_vaccinated_but_is_immunocompromised",
-          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If you have symptoms or your condition deteriorates, please immediately seek for medical advice."
+          "text": "Most of the time, vaccination can prevent a severe course of COVID-19. Some users with your responses have an immune system with reduced activity and the inability to create sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. <br><br>Please seek medical care immediately, if your condition deteriorates or you develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>."
         },
         {
           "expression": {
             "and": [
               {
-                "var": "has_high_severity"
+                "or": [
+                  {
+                    "var": "has_low_severity"
+                  },
+                  {
+                    "var": "has_high_severity"
+                  }
+                ]
               },
               {
-                "var": "has_infection"
+                "or": [
+                  {
+                    "var": "has_infection"
+                  },
+                  {
+                    "var": "has_probable_infection"
+                  }
+                ]
               },
               {
                 "var": "is_fully_vaccinated"
@@ -2316,190 +2603,69 @@
             ]
           },
           "id": "has_severity_and_has_infection_and_is_fully_vaccinated",
-          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
+          "text": "For most users with your responses vaccination should prevent developing severe COVID-19 despite having risk factors. <br><br>Please seek for medical care immediately, if your condition deteriorates or you develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\">CDC guidelines</a>."
         },
         {
           "expression": {
             "and": [
               {
-                "var": "has_high_severity"
-              },
-              {
-                "var": "has_probable_infection"
-              },
-              {
-                "var": "has_symptoms"
-              },
-              {
-                "!": {
-                  "var": "is_fully_vaccinated"
-                }
-              }
-            ]
-          },
-          "id": "has_high_severity_and_probable_infection_and_is_not_fully_vaccinated",
-          "text": "You have risk factors for severe covid-19. Your responses already indicate symptoms of the infection. If your infection is confirmed, please immediately seek for medical advice."
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "has_high_severity"
-              },
-              {
-                "var": "has_probable_infection"
-              },
-              {
-                "var": "is_fully_vaccinated"
-              },
-              {
-                "var": "is_immunocompromised"
-              }
-            ]
-          },
-          "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated_and_is_immunocompromised",
-          "text": "You are fully vaccinated. In most cases, vaccination can prevent a severe course of covid-19. However, your responses indicate that your immune system might have a reduced activity, which could have prevented creation of sufficient amounts of antibodies following vaccination. There is no clear evidence for your situation. If an infection with the novel coronavirus is verified and you have symptoms or your condition deteriorates, please immediately seek for medical advice."
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "has_high_severity"
-              },
-              {
-                "var": "has_probable_infection"
+                "or": [
+                  {
+                    "var": "has_low_severity"
+                  },
+                  {
+                    "var": "has_high_severity"
+                  }
+                ]
               },
               {
                 "var": "is_fully_vaccinated"
               }
             ]
           },
-          "id": "has_high_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your infection is confirmed and your condition deteriorates, please immediately seek for medical advice."
+          "id": "has_severity_and_is_fully_vaccinated",
+          "text": "Most users with your responses have a low risk to develop severe COVID-19. A modest percentage of people who are fully vaccinated can still get Covid-19 if they are exposed to the novel coronavirus but will most likely develop only mild symptoms."
         },
         {
           "expression": {
-            "and": [
+            "or": [
               {
                 "var": "has_low_severity"
               },
-              {
-                "var": "has_probable_infection"
-              },
-              {
-                "var": "has_symptoms"
-              },
-              {
-                "!": {
-                  "var": "is_fully_vaccinated"
-                }
-              }
-            ]
-          },
-          "id": "has_medium_severity_and_probable_infection",
-          "text": "Your responses indicate a moderate risk to develop severe covid-19. You already report symptoms which might be related to the infection. Please seek for medical advice."
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "has_low_severity"
-              },
-              {
-                "var": "has_infection"
-              },
-              {
-                "var": "has_symptoms"
-              },
-              {
-                "!": {
-                  "var": "is_fully_vaccinated"
-                }
-              }
-            ]
-          },
-          "id": "has_medium_severity_and_infection",
-          "text": "Your responses indicate a moderate risk to develop severe covid-19. You already report symptoms which might be related to the infection. If your infection is confirmed, please seek for medical advice."
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "has_low_severity"
-              },
-              {
-                "var": "has_infection"
-              },
-              {
-                "var": "is_fully_vaccinated"
-              }
-            ]
-          },
-          "id": "has_low_severity_and_has_infection_and_is_vaccinated",
-          "text": "You are infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "has_low_severity"
-              },
-              {
-                "var": "has_probable_infection"
-              },
-              {
-                "var": "is_fully_vaccinated"
-              }
-            ]
-          },
-          "id": "has_low_severity_and_has_probable_infection_and_is_fully_vaccinated",
-          "text": "You are potentially infected with the novel coronavirus despite being vaccinated . In most cases vaccination should protect you from developing severe covid-19 despite having risk factors. If your condition deteriorates, please immediately seek for medical advice."
-        },
-        {
-          "expression": {
-            "and": [
               {
                 "var": "has_high_severity"
-              },
-              {
-                "var": "q_vaccine.option.no"
               }
             ]
           },
-          "id": "has_high_severity_and_no_vaccination",
-          "text": "Your responses indicate a high risk to develop severe covid-19. We strongly recommend vaccination in your situation, which can prevent development of severe covid-19 in most cases."
+          "id": "has_severity",
+          "text": "Many users with your responses have a high risk for severe COVID-19.<br><br>High-risk patients benefit particularly from vaccination:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         },
         {
           "expression": {
-            "and": [
-              {
-                "var": "has_high_severity"
-              },
-              {
-                "var": "q_vaccine.option.no"
-              }
-            ]
+            "!": {
+              "var": "is_fully_vaccinated"
+            }
           },
-          "id": "has_medium_severity_and_no_vaccination",
-          "text": "Your responses indicate a moderate risk to develop severe covid-19. We strongly recommend vaccination in your situation, which can prevent development of severe covid-19 in most cases."
+          "id": "no_severity_and_not_vaccinated",
+          "text": "Most users with your responses have a low risk to develop severe COVID-19. You may still benefit from getting vaccinated:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you, particulary people with an increased risk of severe illness.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         },
         {
           "expression": true,
-          "id": "no_severity",
-          "text": "Most users with your responses don't have an increased risk to develope a severe course of covid-19."
+          "text": "Most users with your responses have a low risk to develop severe COVID-19.",
+          "id": "no_severity"
         }
       ],
-      "description": "Recommendations for Severe Course of Covid-19",
+      "description": "Recommendations for Severe COVID-19",
       "id": "rc_severity"
     },
     {
       "results": [
         {
           "expression": {
-            "var": "has_infection"
+            "var": "has_positive_test"
           },
           "id": "rc_infected",
-          "text": "Please self-isolate form other persons to prevent transmission of the virus."
+          "text": "Please self-isolate from other persons to prevent transmission of the virus and follow these rules:<br><br>\n1.) Please stay home except to get medical care. If you need to leave your home, avoid public transportation and wear a mask.<br>\n2.) Stay in a separate room and away from other people in your home.<br>\n3.) Notify close contacts that they may have been exposed to COVID-19. The novel coronavirus can spread 48 hours before you have developed symptoms or tested positive. By letting your friends and colleagues know, you can prevent further infections and help to protect everyone.<br>\n4.) Follow instructions from your healthcare provider and local health department.<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -2515,7 +2681,7 @@
               }
             ]
           },
-          "text": "Your responses indicate many social interactions due to work or privately. You are vaccinated, however a vaccine breakthrough infection might be possible in your case. Please reduce your social interactions as much as possible, until an infection has been excluded.",
+          "text": "Your responses indicate many work-related or private social contacts. Some users with your responses have a breakthrough infection. Please reduce your social interactions as much as possible, until an infection has been ruled out.\n<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>.",
           "id": "probable_infection_and_vaccination"
         },
         {
@@ -2535,7 +2701,7 @@
             ]
           },
           "id": "probable_infection_and_no_vaccination",
-          "text": "Your responses indicate many social interactions due to work or privately. Please self-isolate until an infection has been excluded."
+          "text": "Your responses indicate many work-related or private social contacts. Please reduce your social interactions as much as possible, until an infection has been ruled out.\n<br>\n<br>\nFor more information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html\">CDC guidelines</a>."
         }
       ],
       "description": "Recommendations to prevent spread of virus",
@@ -2547,66 +2713,30 @@
           "expression": {
             "and": [
               {
-                "var": "v_symptoms_max_3d"
-              },
-              {
-                "var": "q_vaccine.option.yes"
+                "var": "v_cdc_has_high_risk"
               },
               {
                 "or": [
                   {
-                    "var": "has_positive_pcr"
+                    "var": "has_positive_test"
                   },
                   {
-                    "var": "has_positive_antigen"
-                  }
-                ]
-              }
-            ]
-          },
-          "id": "study_1",
-          "text": "Suggestion for Vaccination Study<br>\nSince you state that you were vaccinated (fully or partially) before the currently possible SARS-CoV-2, it makes sense from a scientific point of view to investigate this more closely. Researchers at the Charité are currently conducting such studies.<br>\nIf you decide to participate in such study (and live in the greater Berlin area), further tests, including antibody tests to clarify the vaccine effect, would be necessary, which are usually carried out in a special outpatient department of the Charité.<br>\nIf necessary, please contact <a href=\"mailto:covac-studie@charite.de\">covac-studie@charite.de</a> immediately. Send a short email such as: \"I have a positive coronavirus test today despite the vaccination and symptoms have been typical of covid-19 for a maximum of 3 days. Please contact me by \"your email and telephone number\"."
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "has_positive_antigen"
-              },
-              {
-                "!": {
-                  "var": "q_pregnant.option.yes"
-                }
-              },
-              {
-                "var": "q_vaccine.option.no"
-              },
-              {
-                "or": [
-                  {
-                    "var": "q_immunosuppressants.option.chemo"
-                  },
-                  {
-                    "var": "q_immunosuppressants.option.immunosuppressiva"
-                  },
-                  {
-                    "var": "v_older_than_50"
-                  },
-                  {
-                    "var": "q_chronic_illnesses.option.lung"
-                  },
-                  {
-                    "var": "q_chronic_illnesses.option.kidney"
-                  },
-                  {
-                    "var": "q_chronic_illnesses.option.downsyndrome"
-                  },
-                  {
-                    ">": [
+                    "and": [
                       {
-                        "var": "v_bmi"
+                        "var": "has_high_exposition"
                       },
-                      35
+                      {
+                        "or": [
+                          {
+                            "!": {
+                              "var": "is_fully_vaccinated"
+                            }
+                          },
+                          {
+                            "var": "is_immunocompromised"
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -2614,11 +2744,11 @@
             ]
           },
           "id": "study_2",
-          "text": "Suggestion for Antibody Study<br>\nUsers with your answer constellation can possibly benefit from an approved, special treatment for SARS-CoV-2 infection, since their risk of becoming seriously ill is comparatively high. Such treatments (antibody therapy) are currently only available at a few specialized clinics - including the Charité. If you live in the greater Berlin area, please contact the Charité immediately by yourself or through your family doctor:<br>\n- By telephone hotline: <a href=\"tel:+4930450576888\">030 450 576 888</a> (available on weekdays from 8 a.m. to 4 p.m.).<br>\n- By email: <a href=\"mailto:corona-ak-ambulanz@charite.de\">corona-ak-ambulanz@charite.de</a>. A short text is enough, e.g.: The Charité-CovApp recommends that I visit the antibody therapy outpatient clinic because of my immunosuppression. Please contact me: \"Your email address and telephone number\"'.<br><br>\nYou can find more information here:<br>\n<a href=\"https://www.charite.de/klinikum/themen_klinikum/themenschwerpunkt_coronavirus/corona_ticker/\">Charité Corona Ticker</a>"
+          "text": "Suggestion for Monoclonal Antibody Therapy<br><br>\nUsers with your responses may benefit from an approved, special treatment with monoclonal antibodies for the novel coronavirus due to a high risk of developing severe COVID-19. Such treatment is currently only available at <a href=\\\"https://protect-public.hhs.gov/pages/therapeutics-distribution\\\">specialized clinics</a>.<br><br>Please coordinate with your respective physician or care provider before contacting a location to receive treatment. A call center is available to answer questions and provide information related to monoclonal antibody therapeutic treatments at the following phone numbers: <a href=\\\"tel:+18773326585\\\">1-877-332-6585</a> (English Language); <a href=\\\"tel:+18773660310\\\">1-877-366-0310</a> (Spanish Language).\n\n"
         }
       ],
-      "description": "Suggestion for study",
-      "id": "rc_study"
+      "description": "Suggestion for Special Treatments",
+      "id": "rc_treatment"
     }
   ],
   "testCases": [
