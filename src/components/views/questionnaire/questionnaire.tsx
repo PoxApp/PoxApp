@@ -169,6 +169,9 @@ export class Questionnaire {
   };
 
   get currentAnswerValue(): RawAnswer {
+    if(this.currentQuestion == undefined){
+      return undefined
+    }
     return this.answerData[this.currentQuestion.id];
   }
 
@@ -212,8 +215,7 @@ export class Questionnaire {
           timeOfExecution: 23,
         });
         // debugger;
-        const previousQuestionId =
-          this.currentQuestion == undefined ? undefined : this.currentQuestion.id;
+        const previousQuestionId = this.currentQuestion == undefined ? undefined : this.currentQuestion.id;
         this.currentQuestion = this.questionnaireEngine.nextQuestion();
         // Go back to previous Question if language is changed
         // TODO: https://github.com/CovOpen/CovQuestions/issues/190
@@ -343,7 +345,7 @@ export class Questionnaire {
               <d4l-button
                 classes="button--block"
                 data-test="continueButton"
-                disabled={!currentQuestion.optional && this.currentAnswerValue === undefined}
+                disabled={!currentQuestion?.optional && this.currentAnswerValue === undefined}
                 text={i18next.t('questionnaire_button_next')}
               />
             </div>
