@@ -35,6 +35,7 @@
       "type": "multiselect",
       "id": "new_question_id",
       "text": "We are sorry, but CovApp may only be used if you reside in the US and are at least 18 years old.",
+      "options": [],
       "enableWhenExpression": {
         "var": "q_intro.option.no"
       },

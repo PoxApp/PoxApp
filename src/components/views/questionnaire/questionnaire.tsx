@@ -343,6 +343,7 @@ export class Questionnaire {
               <d4l-button
                 classes="button--block"
                 data-test="continueButton"
+                disabled={!currentQuestion.optional && this.currentAnswerValue === undefined}
                 text={i18next.t('questionnaire_button_next')}
               />
             </div>
