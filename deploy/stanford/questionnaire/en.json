@@ -1019,7 +1019,7 @@
       "enableWhenExpression": {
         "var": "q_vaccine.option.yes"
       },
-      "details": "Select yes, if you have received a single-dose vaccine, such as the Johnson & Johnson’s Janssen vaccine, or all doses of 2-doses vaccines, such as Pfizer or Moderna vaccines. Booster shots don't need to be considered."
+      "details": "Select yes, if you have received a single-dose vaccine, such as the Johnson & Johnson’s Janssen vaccine, or all doses of 2-doses vaccines, such as Pfizer or Moderna vaccines. If you are immunocompromised, you may need an additional dose as part of your primary vaccine series. Booster shots don't need to be considered."
     },
     {
       "options": [
@@ -10573,10 +10573,6 @@
         ]
       },
       "id": "v_local_risk_icon"
-    },
-    {
-      "expression": "<br>Vaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>.",
-      "id": "v_vaccine"
     }
   ],
   "resultCategories": [
@@ -10596,7 +10592,7 @@
         {
           "expression": true,
           "id": "print_risk_profile",
-          "text": "Based on your responses CovApp has created a personal risk profile which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower score implies lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to COVID-19.<br> <br> 2. Exposition: This score increases if you have visits, encounters, or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases if your responses indicate any circumstances (e.g. chronic diseases, medications, or similar) that increase your chance of a severe course if you are infected by the novel coronavirus.<br> <br> 4. Dissemination potential: This score increases, if you have a private or work-related environment that favors the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe COVID-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> "
+          "text": "Based on your responses CovApp has created a personal risk profile which is also used for your recommendations.<br> <br> The profile has four risk dimensions with a value between 0 and 100 points. While a lower score implies lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br> These are the four risk dimensions:<br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to COVID-19.<br> <br> 2. Exposition: This score increases if you have visits, encounters, or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases if your responses indicate any circumstances (e.g. chronic diseases, medications, or similar) that increase your chance of a severe course if you are infected by the novel coronavirus.<br> <br> 4. Dissemination Potential: This score increases, if you have a private or work-related environment that favors the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe COVID-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> "
         }
       ],
       "id": "rc_profil",
@@ -10644,14 +10640,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "%(v_orange)sSome users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.  "
+          "text": "%(v_orange)sSome users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.  <br><br>\nCOVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\">here</a>. \n"
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "%(v_red)sMany users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. "
+          "text": "%(v_red)sMany users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. <br><br>\nCOVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\">here</a>. \n"
         },
         {
           "expression": {
@@ -10852,7 +10848,7 @@
         {
           "expression": true,
           "id": "no_test",
-          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. Currently, there is no necessity to conduct a test.  If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus and do not need testing. If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
         }
       ],
       "description": "Test Recommendation",
@@ -11127,7 +11123,7 @@
             ]
           },
           "id": "booster",
-          "text": "%(v_red)sMost users with your responses should get a booster shot. <br><br>\n\n<ul>\n<li>Although vaccination prevents severe disease, the effectiveness at preventing infection or severe illness wanes over time. </li>\n<li>A booster shot will give you additional protection against the highly transmissible omicron variant which currently the cause for most infections in the US.</li>\n<li>A booster shot increases the immune response against the novel coronavirus. With an increased immune response, individuals have improved protection against getting infected with the novel coronavirus and are less likely to develop severe disease.</li>\n<li>A booster is recommended for individuals who were vaccinated with Pfizer-BioNTech or Moderna 6 months earlier or with the J&J/Janssen single-dose vaccine 2 months earlier.</li>\n</ul>\n\n<br>Booster shots are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
+          "text": "%(v_red)sMost users with your responses should get a booster shot. <br><br>\n\n<ul>\n<li>Although vaccination prevents severe disease, the effectiveness at preventing infection or severe illness wanes over time. </li>\n<li>A booster shot will give you additional protection against the highly transmissible omicron variant which is currently the cause for most infections in the US.</li>\n<li>A booster shot increases the immune response against the novel coronavirus. With an increased immune response, individuals have improved protection against getting infected with the novel coronavirus and are less likely to develop severe disease.</li>\n<li>A booster is recommended for individuals who were vaccinated with Pfizer-BioNTech or Moderna 6 months earlier or with the J&J/Janssen single-dose vaccine 2 months earlier.</li>\n</ul>\n\n<br>Booster shots are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         }
       ],
       "description": "Recommendation for Booster Shot",
@@ -11145,7 +11141,7 @@
             ]
           },
           "id": "localrisk",
-          "text": "%(v_local_risk_icon)sStatistics for %(v_state)s.<br>\n<br>\nTransmission level in your state is: %(v_transmission_level)s.<br>\n<br>\n1 in every %(v_one_infection)d people in your state is currently infected with COVID-19.<br>\nIn a group of 10 people, there is a %(v_10_person_infected)d Percent chance that at least one person has COVID-19.<br>\nIn a group of 50 people, there is a %(v_50_person_infected)d Percent chance that at least one person has COVID-19.<br>\n"
+          "text": "%(v_local_risk_icon)sStatistics for %(v_state)s.<br>\n<br>\nTransmission level in your state is: %(v_transmission_level)s.<br>\n7 day case rate per 100,000: %(v_state_incidence)d.<br>\n<br>\nThis means:<br>\n1 in every %(v_one_infection)d people in your state is currently infected with COVID-19.<br><br>\nIn a group of 10 people, there is a %(v_10_person_infected)d Percent chance that at least one person is infected.<br><br>\nIn a group of 50 people, there is a %(v_50_person_infected)d Percent chance that at least one person is infected.<br><br>\nFor public indoor seetings, everyone should wear a mask.<br>\nFor outdoor seetings, you may choose to wear a mask when in sustained closed contact with other people.<br>\n<br>\nMake sure you follow local laws and policies regarding mask requirements, which can vary from place to place.<br>\n<br>For more information regarding benefits of masks, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html\">CDC</a>.\n\n"
         }
       ],
       "description": "Your State Statistics",
