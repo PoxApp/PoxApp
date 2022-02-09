@@ -593,25 +593,311 @@
       "optional": true
     },
     {
-      "numericOptions": {
-        "max": 7,
-        "min": 4,
-        "step": 1
-      },
-      "id": "q_height",
-      "text": "What is your height? (feet)",
-      "type": "number",
-      "details": "Please enter your height in feet. Click on Next to enter inches."
+      "options": [
+        {
+          "scores": {},
+          "text": "4'",
+          "value": "4"
+        },
+        {
+          "scores": {},
+          "text": "5'",
+          "value": "5"
+        },
+        {
+          "scores": {},
+          "text": "6'",
+          "value": "6"
+        },
+        {
+          "scores": {},
+          "text": "7'",
+          "value": "7"
+        }
+      ],
+      "type": "select",
+      "id": "q_height_feet",
+      "text": "What is your height? (feet)"
     },
     {
-      "numericOptions": {
-        "max": 12,
-        "min": 0,
-        "step": 1
-      },
-      "type": "number",
-      "id": "q_height2",
-      "text": "What is your height? (inches)"
+      "options": [
+        {
+          "scores": {},
+          "text": "4'0''",
+          "value": "40"
+        },
+        {
+          "scores": {},
+          "text": "4'1''",
+          "value": "41"
+        },
+        {
+          "scores": {},
+          "text": "4'2''",
+          "value": "42"
+        },
+        {
+          "scores": {},
+          "text": "4'3''",
+          "value": "43"
+        },
+        {
+          "scores": {},
+          "text": "4'4''",
+          "value": "44"
+        },
+        {
+          "scores": {},
+          "text": "4'5''",
+          "value": "45"
+        },
+        {
+          "scores": {},
+          "text": "4'6''",
+          "value": "46"
+        },
+        {
+          "scores": {},
+          "text": "4'7''",
+          "value": "47"
+        },
+        {
+          "scores": {},
+          "text": "4'8''",
+          "value": "48"
+        },
+        {
+          "scores": {},
+          "text": "4'9''",
+          "value": "49"
+        },
+        {
+          "scores": {},
+          "text": "4'10''",
+          "value": "410"
+        },
+        {
+          "scores": {},
+          "text": "4'11''",
+          "value": "411"
+        }
+      ],
+      "type": "select",
+      "id": "q_height_inches4",
+      "text": "What is your height?",
+      "enableWhenExpression": {
+        "var": "q_height_feet.option.4"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "5'0''",
+          "value": "50"
+        },
+        {
+          "scores": {},
+          "text": "5'1''",
+          "value": "51"
+        },
+        {
+          "scores": {},
+          "text": "5'2''",
+          "value": "52"
+        },
+        {
+          "scores": {},
+          "text": "5'3''",
+          "value": "53"
+        },
+        {
+          "scores": {},
+          "text": "5'4''",
+          "value": "54"
+        },
+        {
+          "scores": {},
+          "text": "5'5''",
+          "value": "55"
+        },
+        {
+          "scores": {},
+          "text": "5'6''",
+          "value": "56"
+        },
+        {
+          "scores": {},
+          "text": "5'7''",
+          "value": "57"
+        },
+        {
+          "scores": {},
+          "text": "5'8''",
+          "value": "58"
+        },
+        {
+          "scores": {},
+          "text": "5'9''",
+          "value": "59"
+        },
+        {
+          "scores": {},
+          "text": "5'10''",
+          "value": "510"
+        },
+        {
+          "scores": {},
+          "text": "5'11''",
+          "value": "511"
+        }
+      ],
+      "type": "select",
+      "id": "q_height_inches5",
+      "text": "What is your height?",
+      "enableWhenExpression": {
+        "var": "q_height_feet.option.5"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "6'0''",
+          "value": "60"
+        },
+        {
+          "scores": {},
+          "text": "6'1''",
+          "value": "61"
+        },
+        {
+          "scores": {},
+          "text": "6'2''",
+          "value": "62"
+        },
+        {
+          "scores": {},
+          "text": "6'3''",
+          "value": "63"
+        },
+        {
+          "scores": {},
+          "text": "6'4''",
+          "value": "64"
+        },
+        {
+          "scores": {},
+          "text": "6'5''",
+          "value": "65"
+        },
+        {
+          "scores": {},
+          "text": "6'6''",
+          "value": "66"
+        },
+        {
+          "scores": {},
+          "text": "6'7''",
+          "value": "67"
+        },
+        {
+          "scores": {},
+          "text": "6'8''",
+          "value": "68"
+        },
+        {
+          "scores": {},
+          "text": "6'9''",
+          "value": "69"
+        },
+        {
+          "scores": {},
+          "text": "6'10''",
+          "value": "610"
+        },
+        {
+          "scores": {},
+          "text": "6'11''",
+          "value": "611"
+        }
+      ],
+      "type": "select",
+      "id": "q_height_inches6",
+      "text": "What is your height?",
+      "enableWhenExpression": {
+        "var": "q_height_feet.option.6"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "7'0''",
+          "value": "70"
+        },
+        {
+          "scores": {},
+          "text": "7'1''",
+          "value": "71"
+        },
+        {
+          "scores": {},
+          "text": "7'2''",
+          "value": "72"
+        },
+        {
+          "scores": {},
+          "text": "7'3''",
+          "value": "73"
+        },
+        {
+          "scores": {},
+          "text": "7'4''",
+          "value": "74"
+        },
+        {
+          "scores": {},
+          "text": "7'5''",
+          "value": "75"
+        },
+        {
+          "scores": {},
+          "text": "7'6''",
+          "value": "76"
+        },
+        {
+          "scores": {},
+          "text": "7'7''",
+          "value": "77"
+        },
+        {
+          "scores": {},
+          "text": "7'8''",
+          "value": "78"
+        },
+        {
+          "scores": {},
+          "text": "7'9''",
+          "value": "79"
+        },
+        {
+          "scores": {},
+          "text": "7'10''",
+          "value": "710"
+        },
+        {
+          "scores": {},
+          "text": "7'11''",
+          "value": "711"
+        }
+      ],
+      "type": "select",
+      "id": "q_height_inches7",
+      "text": "What is your height?",
+      "enableWhenExpression": {
+        "var": "q_height_feet.option.7"
+      }
     },
     {
       "numericOptions": {
@@ -2190,21 +2476,386 @@
     },
     {
       "expression": {
-        "+": [
+        "if": [
           {
-            "*": [
-              {
-                "var": "q_height"
-              },
-              30.48
-            ]
+            "var": "q_height_inches4.option.40"
           },
+          121.92,
           {
-            "*": [
+            "if": [
               {
-                "var": "q_height2"
+                "var": "q_height_inches4.option.41"
               },
-              2.54
+              124.46,
+              {
+                "if": [
+                  {
+                    "var": "q_height_inches4.option.42"
+                  },
+                  127,
+                  {
+                    "if": [
+                      {
+                        "var": "q_height_inches4.option.43"
+                      },
+                      129.54,
+                      {
+                        "if": [
+                          {
+                            "var": "q_height_inches4.option.44"
+                          },
+                          132.08,
+                          {
+                            "if": [
+                              {
+                                "var": "q_height_inches4.option.45"
+                              },
+                              134.62,
+                              {
+                                "if": [
+                                  {
+                                    "var": "q_height_inches4.option.46"
+                                  },
+                                  137.16,
+                                  {
+                                    "if": [
+                                      {
+                                        "var": "q_height_inches4.option.47"
+                                      },
+                                      139.7,
+                                      {
+                                        "if": [
+                                          {
+                                            "var": "q_height_inches4.option.48"
+                                          },
+                                          142.24,
+                                          {
+                                            "if": [
+                                              {
+                                                "var": "q_height_inches4.option.49"
+                                              },
+                                              144.78,
+                                              {
+                                                "if": [
+                                                  {
+                                                    "var": "q_height_inches4.option.410"
+                                                  },
+                                                  147.32,
+                                                  {
+                                                    "if": [
+                                                      {
+                                                        "var": "q_height_inches4.option.411"
+                                                      },
+                                                      149.86,
+                                                      {
+                                                        "if": [
+                                                          {
+                                                            "var": "q_height_inches5.option.50"
+                                                          },
+                                                          152.4,
+                                                          {
+                                                            "if": [
+                                                              {
+                                                                "var": "q_height_inches5.option.51"
+                                                              },
+                                                              154.94,
+                                                              {
+                                                                "if": [
+                                                                  {
+                                                                    "var": "q_height_inches5.option.52"
+                                                                  },
+                                                                  157.48,
+                                                                  {
+                                                                    "if": [
+                                                                      {
+                                                                        "var": "q_height_inches5.option.53"
+                                                                      },
+                                                                      160.02,
+                                                                      {
+                                                                        "if": [
+                                                                          {
+                                                                            "var": "q_height_inches5.option.54"
+                                                                          },
+                                                                          162.56,
+                                                                          {
+                                                                            "if": [
+                                                                              {
+                                                                                "var": "q_height_inches5.option.55"
+                                                                              },
+                                                                              165.1,
+                                                                              {
+                                                                                "if": [
+                                                                                  {
+                                                                                    "var": "q_height_inches5.option.56"
+                                                                                  },
+                                                                                  167.64,
+                                                                                  {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        "var": "q_height_inches5.option.57"
+                                                                                      },
+                                                                                      170.18,
+                                                                                      {
+                                                                                        "if": [
+                                                                                          {
+                                                                                            "var": "q_height_inches5.option.58"
+                                                                                          },
+                                                                                          172.72,
+                                                                                          {
+                                                                                            "if": [
+                                                                                              {
+                                                                                                "var": "q_height_inches5.option.59"
+                                                                                              },
+                                                                                              175.26,
+                                                                                              {
+                                                                                                "if": [
+                                                                                                  {
+                                                                                                    "var": "q_height_inches5.option.510"
+                                                                                                  },
+                                                                                                  177.8,
+                                                                                                  {
+                                                                                                    "if": [
+                                                                                                      {
+                                                                                                        "var": "q_height_inches5.option.511"
+                                                                                                      },
+                                                                                                      180.34,
+                                                                                                      {
+                                                                                                        "if": [
+                                                                                                          {
+                                                                                                            "var": "q_height_inches6.option.60"
+                                                                                                          },
+                                                                                                          182.88,
+                                                                                                          {
+                                                                                                            "if": [
+                                                                                                              {
+                                                                                                                "var": "q_height_inches6.option.61"
+                                                                                                              },
+                                                                                                              185.42,
+                                                                                                              {
+                                                                                                                "if": [
+                                                                                                                  {
+                                                                                                                    "var": "q_height_inches6.option.62"
+                                                                                                                  },
+                                                                                                                  187.96,
+                                                                                                                  {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "var": "q_height_inches6.option.63"
+                                                                                                                      },
+                                                                                                                      190.5,
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "var": "q_height_inches6.option.64"
+                                                                                                                          },
+                                                                                                                          193.04,
+                                                                                                                          {
+                                                                                                                            "if": [
+                                                                                                                              {
+                                                                                                                                "var": "q_height_inches6.option.65"
+                                                                                                                              },
+                                                                                                                              195.58,
+                                                                                                                              {
+                                                                                                                                "if": [
+                                                                                                                                  {
+                                                                                                                                    "var": "q_height_inches6.option.66"
+                                                                                                                                  },
+                                                                                                                                  198.12,
+                                                                                                                                  {
+                                                                                                                                    "if": [
+                                                                                                                                      {
+                                                                                                                                        "var": "q_height_inches6.option.67"
+                                                                                                                                      },
+                                                                                                                                      200.66,
+                                                                                                                                      {
+                                                                                                                                        "if": [
+                                                                                                                                          {
+                                                                                                                                            "var": "q_height_inches6.option.68"
+                                                                                                                                          },
+                                                                                                                                          203.2,
+                                                                                                                                          {
+                                                                                                                                            "if": [
+                                                                                                                                              {
+                                                                                                                                                "var": "q_height_inches6.option.69"
+                                                                                                                                              },
+                                                                                                                                              205.74,
+                                                                                                                                              {
+                                                                                                                                                "if": [
+                                                                                                                                                  {
+                                                                                                                                                    "var": "q_height_inches6.option.610"
+                                                                                                                                                  },
+                                                                                                                                                  208.28,
+                                                                                                                                                  {
+                                                                                                                                                    "if": [
+                                                                                                                                                      {
+                                                                                                                                                        "var": "q_height_inches6.option.611"
+                                                                                                                                                      },
+                                                                                                                                                      210.82,
+                                                                                                                                                      {
+                                                                                                                                                        "if": [
+                                                                                                                                                          {
+                                                                                                                                                            "var": "q_height_inches7.option.70"
+                                                                                                                                                          },
+                                                                                                                                                          213.36,
+                                                                                                                                                          {
+                                                                                                                                                            "if": [
+                                                                                                                                                              {
+                                                                                                                                                                "var": "q_height_inches7.option.71"
+                                                                                                                                                              },
+                                                                                                                                                              215.9,
+                                                                                                                                                              {
+                                                                                                                                                                "if": [
+                                                                                                                                                                  {
+                                                                                                                                                                    "var": "q_height_inches7.option.72"
+                                                                                                                                                                  },
+                                                                                                                                                                  218.44,
+                                                                                                                                                                  {
+                                                                                                                                                                    "if": [
+                                                                                                                                                                      {
+                                                                                                                                                                        "var": "q_height_inches7.option.73"
+                                                                                                                                                                      },
+                                                                                                                                                                      220.98,
+                                                                                                                                                                      {
+                                                                                                                                                                        "if": [
+                                                                                                                                                                          {
+                                                                                                                                                                            "var": "q_height_inches7.option.74"
+                                                                                                                                                                          },
+                                                                                                                                                                          223.52,
+                                                                                                                                                                          {
+                                                                                                                                                                            "if": [
+                                                                                                                                                                              {
+                                                                                                                                                                                "var": "q_height_inches7.option.75"
+                                                                                                                                                                              },
+                                                                                                                                                                              226.06,
+                                                                                                                                                                              {
+                                                                                                                                                                                "if": [
+                                                                                                                                                                                  {
+                                                                                                                                                                                    "var": "q_height_inches7.option.76"
+                                                                                                                                                                                  },
+                                                                                                                                                                                  228.6,
+                                                                                                                                                                                  {
+                                                                                                                                                                                    "if": [
+                                                                                                                                                                                      {
+                                                                                                                                                                                        "var": "q_height_inches7.option.77"
+                                                                                                                                                                                      },
+                                                                                                                                                                                      231.14,
+                                                                                                                                                                                      {
+                                                                                                                                                                                        "if": [
+                                                                                                                                                                                          {
+                                                                                                                                                                                            "var": "q_height_inches7.option.78"
+                                                                                                                                                                                          },
+                                                                                                                                                                                          233.68,
+                                                                                                                                                                                          {
+                                                                                                                                                                                            "if": [
+                                                                                                                                                                                              {
+                                                                                                                                                                                                "var": "q_height_inches7.option.79"
+                                                                                                                                                                                              },
+                                                                                                                                                                                              236.22,
+                                                                                                                                                                                              {
+                                                                                                                                                                                                "if": [
+                                                                                                                                                                                                  {
+                                                                                                                                                                                                    "var": "q_height_inches7.option.710"
+                                                                                                                                                                                                  },
+                                                                                                                                                                                                  238.76,
+                                                                                                                                                                                                  {
+                                                                                                                                                                                                    "if": [
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        "var": "q_height_inches7.option.711"
+                                                                                                                                                                                                      },
+                                                                                                                                                                                                      241.3,
+                                                                                                                                                                                                      -1
+                                                                                                                                                                                                    ]
+                                                                                                                                                                                                  }
+                                                                                                                                                                                                ]
+                                                                                                                                                                                              }
+                                                                                                                                                                                            ]
+                                                                                                                                                                                          }
+                                                                                                                                                                                        ]
+                                                                                                                                                                                      }
+                                                                                                                                                                                    ]
+                                                                                                                                                                                  }
+                                                                                                                                                                                ]
+                                                                                                                                                                              }
+                                                                                                                                                                            ]
+                                                                                                                                                                          }
+                                                                                                                                                                        ]
+                                                                                                                                                                      }
+                                                                                                                                                                    ]
+                                                                                                                                                                  }
+                                                                                                                                                                ]
+                                                                                                                                                              }
+                                                                                                                                                            ]
+                                                                                                                                                          }
+                                                                                                                                                        ]
+                                                                                                                                                      }
+                                                                                                                                                    ]
+                                                                                                                                                  }
+                                                                                                                                                ]
+                                                                                                                                              }
+                                                                                                                                            ]
+                                                                                                                                          }
+                                                                                                                                        ]
+                                                                                                                                      }
+                                                                                                                                    ]
+                                                                                                                                  }
+                                                                                                                                ]
+                                                                                                                              }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        ]
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            ]
+                                                                                                          }
+                                                                                                        ]
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                ]
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
           }
         ]
