@@ -30,7 +30,7 @@
     "app_recommendation_headline": "Continue tracking your symptoms and help fight COVID-19 with one of the following apps",
     "summary_show_doctor_headline": "Show your answers to a doctor if needed",
     "summary_reset_paragraph": "You can't change your answers, but you can fill out the questionnaire again.",
-    "summary_contact_health_content": "<p>For local health authorities, visit the <a class=\"o-link o-link--underline o-link--gray o-link--bold\" href=\"https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html\"  target=\"_blank\" rel=\"noreferrer noopener\">Robert Koch Institute website</a>.</p><p>For local coronavirus hotlines and video consultation services, visit <a <a class=\"o-link o-link--underline o-link--gray o-link--bold\" href=\"/recommendations\" target=\"_blank\" rel=\"noreferrer noopener\">this page</a>.</p>",
+    "summary_contact_health_content": "<p>For local health authorities, visit the <a class=\"o-link o-link--underline o-link--gray o-link--bold\" href=\"https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html\"  target=\"_blank\" rel=\"noreferrer noopener\">Robert Koch Institute website</a>.</p><p>For local coronavirus hotlines and video consultation services, visit <a <a class=\"o-link o-link--underline o-link--gray o-link--bold\" href=\"/recommendations\" target=\"_blank\" rel=\"noreferrer noopener\">this page</a>.</p> ",
     "summary_contact_health_headline": "Contact your local health authority or call a local coronavirus hotline",
     "button_delete_qr_code": "Answer questions again",
     "button_show_code": "Show previous summary",
