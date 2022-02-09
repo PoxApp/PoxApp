@@ -11132,7 +11132,14 @@
     {
       "results": [
         {
-          "expression": true,
+          "expression": {
+            ">": [
+              {
+                "var": "q_zip"
+              },
+              0
+            ]
+          },
           "id": "localrisk",
           "text": "%(v_local_risk_icon)sStatistics for %(v_state)s.<br>\n<br>\nTransmission level in your state is: %(v_transmission_level)s.<br>\n<br>\n1 in every %(v_state_incidence)d people in your state is currently infected with COVID-19.<br>\nIn a group of 10 people, there is a %(v_10_person_infected)d Percent chance that at least one person has COVID-19.<br>\nIn a group of 50 people, there is a %(v_50_person_infected)d Percent chance that at least one person has COVID-19.<br>\n"
         }
