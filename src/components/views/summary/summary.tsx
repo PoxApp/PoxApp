@@ -96,7 +96,7 @@ export class Summary {
                 result.length > 0 ? 
                 <ia-accordion
                 headline={result[0].resultCategory.description}
-                open={false}
+                open={true}
                 >
                 <div slot="accordion-children">
                   <div innerHTML={DOMPurify.sanitize(result[0].result.text)} />
