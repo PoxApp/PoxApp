@@ -10580,7 +10580,7 @@
       "results": [
         {
           "expression": true,
-          "text": "<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color)s stroke-width=\"12\" stroke-dasharray=\"%(v_highest_score)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\">%(v_highest_score)d/100</text></svg>\n<br>\nYour Highest Risk Score: %(v_highest_score)d<br>\nInterpretation: %(v_score_interpretation)s<br><br>\n\nYour personal risk profile:<br> <br> Symptoms Score: %(v_symptoms_user_score)d of 100 Points<br> Exposition Score: %(v_exposition_user_score)d of 100 Points<br> Severe Course Score: %(v_severity_user_score)d of 100 Points<br> Dissemination Potential Score: %(v_dissemination_user_score)d of 100 Points<br>",
+          "text": "<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color)s stroke-width=\"12\" stroke-dasharray=\"%(v_highest_score)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d/100</text></svg>\n<br>\nYour Highest Risk Score: %(v_highest_score)d of 100 Points<br>\nInterpretation: %(v_score_interpretation)s<br><br>\n\nYour personal risk profile:<br> <br> Symptoms Score: %(v_symptoms_user_score)d of 100 Points<br> Exposition Score: %(v_exposition_user_score)d of 100 Points<br> Severe Course Score: %(v_severity_user_score)d of 100 Points<br> Dissemination Potential Score: %(v_dissemination_user_score)d of 100 Points<br>",
           "id": "risk_scores"
         }
       ],
