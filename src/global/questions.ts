@@ -1,7 +1,6 @@
 import { Questionnaire } from '@covopen/covquestions-js';
 import {
   QUESTION_SHARE_DATA,
-  QUESTION_SHARE_DATA_PLZ,
 } from '../components/views/questionnaire/utils';
 import { LOCAL_STORAGE_KEYS } from './constants';
 
