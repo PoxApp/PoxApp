@@ -46,7 +46,6 @@ function addAdditionalQuestions(
     questions: [
       ...functionQuestionnaire.questions,
       QUESTION_SHARE_DATA(),
-      QUESTION_SHARE_DATA_PLZ(),
     ],
   };
 }
