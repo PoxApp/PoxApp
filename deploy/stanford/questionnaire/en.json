@@ -10573,6 +10573,10 @@
         ]
       },
       "id": "v_local_risk_icon"
+    },
+    {
+      "expression": "<br>Vaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>.",
+      "id": "v_vaccine"
     }
   ],
   "resultCategories": [
@@ -10994,7 +10998,7 @@
             ]
           },
           "id": "has_severity",
-          "text": "%(v_red)sMany users with your responses have a high risk for severe COVID-19.<br><br>High-risk patients benefit particularly from vaccination:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
+          "text": "%(v_red)sMany users with your responses have a high risk for severe COVID-19.<br><br>High-risk patients benefit particularly from vaccination:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you.</li>\n</ul>\n<br>Vaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         },
         {
           "expression": {
@@ -11003,7 +11007,7 @@
             }
           },
           "id": "no_severity_and_not_vaccinated",
-          "text": "%(v_red)sMost users with your responses have a low risk to develop severe COVID-19. You may still benefit from getting vaccinated:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you, particulary people with an increased risk of severe illness.</li>\n</ul>\n<br>\nVaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
+          "text": "%(v_red)sMost users with your responses have a low risk to develop severe COVID-19. You may still benefit from getting vaccinated:<br>\n<ul>\n  <li>Vaccines can keep you from getting and spreading the novel coronavirus.</li>\n  <li>Vaccines help keep you from getting seriously ill.</li>\n  <li>Vaccines can protect people around you, particulary people with an increased risk of severe illness.</li>\n</ul>\n<br>Vaccines are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         },
         {
           "expression": true,
@@ -11123,7 +11127,7 @@
             ]
           },
           "id": "booster",
-          "text": "%(v_red)sMost users with your responses should get a booster shot. <br><br>\n\n<ul>\n<li>Although vaccination prevents severe disease, the effectiveness at preventing infection or severe illness wanes over time. </li>\n<li>A booster shot will give you additional protection against the highly transmissible omicron variant which currently the cause for most infections in the US.</li>\n<li>A booster shot increases the immune response against the novel coronavirus. With an increased immune response, individuals have improved protection against getting infected with the novel coronavirus and are less likely to develop severe disease.</li>\n<li>A booster is recommended for individuals who were vaccinated with Pfizer-BioNTech or Moderna 6 months earlier or with the J&J/Janssen single-dose vaccine 2 months earlier.</li>\n</ul>\n\n<br>\nBooster shots are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>\n\nFor more information regarding benefits of booster shots, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html\">CDC</a>."
+          "text": "%(v_red)sMost users with your responses should get a booster shot. <br><br>\n\n<ul>\n<li>Although vaccination prevents severe disease, the effectiveness at preventing infection or severe illness wanes over time. </li>\n<li>A booster shot will give you additional protection against the highly transmissible omicron variant which currently the cause for most infections in the US.</li>\n<li>A booster shot increases the immune response against the novel coronavirus. With an increased immune response, individuals have improved protection against getting infected with the novel coronavirus and are less likely to develop severe disease.</li>\n<li>A booster is recommended for individuals who were vaccinated with Pfizer-BioNTech or Moderna 6 months earlier or with the J&J/Janssen single-dose vaccine 2 months earlier.</li>\n</ul>\n\n<br>Booster shots are free and available throughout the US. Please visit <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\">Vaccines.gov</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> to find a vaccination site near you.<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\">CDC</a>."
         }
       ],
       "description": "Recommendation for Booster Shot",
