@@ -41,6 +41,15 @@
       "details": "We are sorry, but CovApp Stanford can currently only be offered to individuals who reside in the US and are at least 18 years old.<br><br>Click <a href=\"https://covapp.stanford.edu\">here</a> to return to the CovApp mainpage."
     },
     {
+      "type": "multiselect",
+      "id": "q_restriction2",
+      "text": "Access to CovApp is restricted.",
+      "enableWhenExpression": {
+        "var": "q_intro.option.no"
+      },
+      "details": "We are sorry, but CovApp Stanford can currently only be offered to individuals who reside in the US and are at least 18 years old.<br><br>Click <a href=\"https://covapp.stanford.edu\">here</a> to return to the CovApp mainpage."
+    },
+    {
       "options": [
         {
           "scores": {},
@@ -11141,7 +11150,7 @@
             ]
           },
           "id": "localrisk",
-          "text": "%(v_local_risk_icon)sStatistics for %(v_state)s.<br>\n<br>\nTransmission level in your state is: %(v_transmission_level)s.<br>\n7 day case rate per 100,000: %(v_state_incidence)d.<br>\n<br>\nThis means:<br>\n1 in every %(v_one_infection)d people in your state is currently infected with COVID-19.<br><br>\nIn a group of 10 people, there is a %(v_10_person_infected)d Percent chance that at least one person is infected.<br><br>\nIn a group of 50 people, there is a %(v_50_person_infected)d Percent chance that at least one person is infected.<br><br>\nFor public indoor seetings, everyone should wear a mask.<br>\nFor outdoor seetings, you may choose to wear a mask when in sustained closed contact with other people.<br>\n<br>\nMake sure you follow local laws and policies regarding mask requirements, which can vary from place to place.<br>\n<br>For more information regarding benefits of masks, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html\">CDC</a>.\n\n"
+          "text": "%(v_local_risk_icon)sStatistics for %(v_state)s.<br>\n<br>\nTransmission level in your state is: %(v_transmission_level)s.<br>\n7 day case rate per 100,000: %(v_state_incidence)d.<br>\n<br>\nThis means:<br>\n1 in every %(v_one_infection)d people in your state is currently infected with COVID-19.<br><br>\nIn a group of 10 people, there is a %(v_10_person_infected)d Percent chance that at least one person is infected.<br><br>\nIn a group of 50 people, there is a %(v_50_person_infected)d Percent chance that at least one person is infected.<br><br>\nFor public indoor settings, everyone should wear a mask.<br>\nFor outdoor settings, you may choose to wear a mask when in sustained closed contact with other people.<br>\n<br>\nMake sure you follow local laws and policies regarding mask requirements, which can vary from place to place.<br>\n<br>For more information regarding benefits of masks, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html\">CDC</a>.\n\n"
         }
       ],
       "description": "Your State Statistics",
