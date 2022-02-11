@@ -103,7 +103,18 @@ export class Summary {
                 </div>
               </ia-accordion> : undefined
               }
-              {result.slice(1).map(r => (
+              {
+                result.length > 1 ? 
+                <ia-accordion
+                headline={result[1].resultCategory.description}
+                open={false}
+                >
+                <div slot="accordion-children">
+                  <div innerHTML={DOMPurify.sanitize(result[1].result.text)} />
+                </div>
+              </ia-accordion> : undefined
+              }
+              {result.slice(2).map(r => (
                 <ia-accordion headline={r.resultCategory.description} open={true}>
                   <div slot="accordion-children">
                     <div innerHTML={DOMPurify.sanitize(r.result.text)} />
