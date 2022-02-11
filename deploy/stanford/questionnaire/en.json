@@ -1077,8 +1077,9 @@
         }
       ],
       "id": "q_antigentest",
-      "text": "Did you perform an antigen test in the last 7 days?",
-      "type": "select"
+      "text": "Did you perform a rapid COVID-19 test in the last 7 days?",
+      "type": "select",
+      "details": "A rapid COVID-19 test detects the presence of antigen and usually only takes 5-30 minutes."
     },
     {
       "options": [
@@ -1096,7 +1097,7 @@
         }
       ],
       "id": "q_antigentestresult",
-      "text": "Has the result of this antigen test been positive?",
+      "text": "Has the result of this rapid COVID-19 test been positive?",
       "type": "select",
       "enableWhenExpression": {
         "var": "q_antigentest.option.yes"
@@ -1116,8 +1117,9 @@
         }
       ],
       "id": "q_pcrtest",
-      "text": "Was a PCR test performed in the last 7 days?",
-      "type": "select"
+      "text": "Was a laboratory COVID-19 test performed in the last 7 days?",
+      "type": "select",
+      "details": "A laboratory COVID-19 test is sent to a laboratory and usually takes 1-3 days for completion. PCR, RT-PCR or NAAT are example for laboratory tests."
     },
     {
       "options": [
@@ -1134,7 +1136,7 @@
       ],
       "type": "select",
       "id": "q_pcrtestresult",
-      "text": "Was this PCR test positive?",
+      "text": "Was this laboratory test positive?",
       "enableWhenExpression": {
         "var": "q_pcrtest.option.yes"
       }
@@ -10623,7 +10625,7 @@
             "var": "has_negative_pcr"
           },
           "id": "negative_pcr",
-          "text": "%(v_green)sMost users with a negative PCR-test are not infected with the novel coronavirus. PCR-tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your PCR-test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "%(v_green)sMost users with a negative laboratory test are not infected with the novel coronavirus. Laboratory tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your laboratory test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the laboratory test."
         },
         {
           "expression": {
@@ -10637,14 +10639,14 @@
             ]
           },
           "id": "positive_pcr_vaccinated",
-          "text": "%(v_red)sMost users with a positive PCR-test are infected with the novel coronavirus. You are fully vaccinated, however breakthrough infections can occur.  If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "%(v_red)sMost users with a positive laboratory test are infected with the novel coronavirus. You are fully vaccinated, however breakthrough infections can occur.  If you have further questions, please contact the facility which conducted the laboratory test."
         },
         {
           "expression": {
             "var": "has_positive_pcr"
           },
           "id": "has_positive_pcr_not_vaccinated",
-          "text": "%(v_red)sMost users with a positive PCR-test are infected with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive PCR-tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the PCR-test."
+          "text": "%(v_red)sMost users with a positive laboratory test are infected with the novel coronavirus. Especially, at the beginning or the end of the infection there might be positive laboratory tests with a viral load below 1.000.000 copies/ml. In such a case, a comprehensive medical consultation is necessary. If you have further questions, please contact the facility which conducted the laboratory test."
         },
         {
           "expression": {
@@ -10658,14 +10660,14 @@
             ]
           },
           "id": "positive_antigen_vaccinated",
-          "text": "%(v_orange)sSome users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.\n"
+          "text": "%(v_orange)sSome users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a laboratory test which is more reliable than an antigen test. You are fully vaccinated, however breakthrough infections can occur.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.\n"
         },
         {
           "expression": {
             "var": "has_positive_antigen"
           },
           "id": "positive_antigen_not_vaccinated",
-          "text": "%(v_red)sMany users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a PCR-test which is more reliable than an antigen test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_red)sMany users with your responses are infected with the novel coronavirus. For verficiation purposes we recommend a laboratory test which is more reliable than an antigen test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -10719,7 +10721,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_immunocompromised_vaccinated",
-          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a PCR-test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. You are fully vaccinated and had a risk contact. However, your responses indicate that the production of antibodies might have been impaired. Therefore, we recommend completion of a laboratory test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -10736,7 +10738,7 @@
             ]
           },
           "id": "high_exposition_no_symptoms_is_fully_vaccinated",
-          "text": "%(v_orange)sMost users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a PCR-test can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_orange)sMost users with your answers are not infected with the novel coronavirus. You have encountered a risk contact while being fully vaccinated. In most cases you should be protected (exception: your risk contact is infected with a mutant of the coronavirus; in such a case, a comprehensive medicical consultation is necessary). If you develop symptoms, a laboratory test can be conducted. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -10755,7 +10757,7 @@
             ]
           },
           "id": "negative_antigen_high_exposition_not_vaccinated",
-          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a laboratory test for verfication purposes which has a higher sensitivity and specifity than an antigen test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -10771,7 +10773,7 @@
               }
             ]
           },
-          "text": "%(v_red)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however breakthrough infection can occur. \n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.",
+          "text": "%(v_red)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a laboratory test for verfication purposes which has a higher sensitivity and specifity. You are fully vaccinated, however breakthrough infection can occur. \n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.",
           "id": "negative_antigen_symptoms_vaccinated"
         },
         {
@@ -10790,7 +10792,7 @@
               }
             ]
           },
-          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a PCR-test for verfication purposes which has a higher sensitivity and specifity than an antigen test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.",
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Even though you have a negative antigen test, an infection might be possible. We recommend completion of a laboratory test for verfication purposes which has a higher sensitivity and specifity than an antigen test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.",
           "id": "negative_antigen_symptoms_not_vaccinated"
         },
         {
@@ -10805,14 +10807,14 @@
             ]
           },
           "id": "symptoms_vaccinated",
-          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test. You are fully vaccinated, however breakthrough infections can occur.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_orange)sSome users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a laboratory test. You are fully vaccinated, however breakthrough infections can occur.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
             "var": "has_symptoms"
           },
           "id": "symptoms_not_vaccinated",
-          "text": "%(v_red)sMany users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a PCR-test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_red)sMany users with your answers are infected with the novel coronavirus. Your responses indicate typical symptoms of a novel coronavirus infection. We recommend completion of a laboratory test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -10861,7 +10863,7 @@
             ]
           },
           "id": "high_exposition_not_vaccinated",
-          "text": "%(v_red)sMany users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a PCR-test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "%(v_red)sMany users with your answers are infected with the novel coronavirus. Your responses indicate a risk contact who might have infected you. We recommend completion of a laboratory test.\n<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. For a map of COVID-19 testing sites near you <a href=\"https://www.google.com/maps/search/covid-19+testing+near+%(q_zip)s\" target=\"_blank\">click here</a>.\n<br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": true,
