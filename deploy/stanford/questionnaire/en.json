@@ -177,436 +177,6 @@
       "type": "select"
     },
     {
-      "numericOptions": {
-        "max": 99999,
-        "min": 0,
-        "step": 1
-      },
-      "type": "number",
-      "id": "q_zip",
-      "text": "What is your zip code?",
-      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Living alone",
-          "value": "alone"
-        },
-        {
-          "scores": {
-            "Exposition": 1,
-            "Dissemination": 1
-          },
-          "text": "Living together with family, in a shared apartment, or in a supervised community facility",
-          "value": "together"
-        }
-      ],
-      "id": "q_living",
-      "text": "What is your current living situation?",
-      "type": "select"
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Dissemination": 1
-          },
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "id": "q_caring",
-      "text": "At least once a week, do you privately care for people with age-related conditions, chronic illnesses, or frailty?",
-      "type": "select",
-      "details": "This doesn't include care services or support that you provide professionally."
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Exposition": 1,
-            "Dissemination": 1
-          },
-          "text": "Working in the medical field (care, doctor's office, hospital, or similiar)",
-          "value": "medical"
-        },
-        {
-          "scores": {
-            "Exposition": 1,
-            "Dissemination": 1
-          },
-          "text": "Cared for or accomodated in the medical sector (care or hospital)",
-          "value": "medical2"
-        },
-        {
-          "scores": {
-            "Exposition": 1,
-            "Dissemination": 1
-          },
-          "text": "Working in a community facility (school, day care center, university, home etc.)",
-          "value": "community"
-        },
-        {
-          "scores": {
-            "Exposition": 1,
-            "Dissemination": 1
-          },
-          "text": "Cared for or accomodated in a community facility (school, day care center, university, home etc.)",
-          "value": "community2"
-        },
-        {
-          "scores": {},
-          "text": "No, in none of the above",
-          "value": "none"
-        }
-      ],
-      "id": "q_work",
-      "text": "Do you work or are you cared for/accommodated in one of the following areas?",
-      "type": "select"
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Exposition": 7
-          },
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        },
-        {
-          "scores": {},
-          "text": "I don't know",
-          "value": "idontknow"
-        }
-      ],
-      "id": "q_outbreak",
-      "text": "Have two or more persons been tested positively for the novel coronavirus in the facility you live in or work for in the last 14 days?",
-      "type": "select",
-      "enableWhenExpression": {
-        "or": [
-          {
-            "var": "q_work.option.medical"
-          },
-          {
-            "var": "q_work.option.medical2"
-          },
-          {
-            "var": "q_work.option.community"
-          },
-          {
-            "var": "q_work.option.community2"
-          }
-        ]
-      }
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "id": "q_smoke",
-      "text": "Do you smoke?",
-      "type": "select"
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        },
-        {
-          "scores": {},
-          "text": "I don't know",
-          "value": "dont_know"
-        }
-      ],
-      "id": "q_pregnant",
-      "text": "Are you pregnant?",
-      "type": "select"
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Exposition": 7
-          },
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "id": "q_contact",
-      "text": "Have you had close contact with a confirmed case?",
-      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 10 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 6 feet of the person for more than 10 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask) on contact.",
-      "type": "select"
-    },
-    {
-      "id": "q_contact_date",
-      "text": "What day was the last contact?",
-      "type": "date",
-      "enableWhenExpression": {
-        "var": "q_contact.option.yes"
-      }
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Exposition": 7
-          },
-          "text": "Yes",
-          "value": "yes_high_risk"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        },
-        {
-          "scores": {},
-          "text": "I don't use a contact tracing app",
-          "value": "no_usage"
-        }
-      ],
-      "id": "q_contact_tracing_risk_contacts",
-      "text": "Did you have an exposure notification of a digital contact tracing app in the last 14 days?",
-      "type": "select",
-      "details": "Digital contact tracing apps track when people are in close contact and a recent contact tests positive."
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Fever above 100.4 °F",
-          "value": "fever"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Chills",
-          "value": "chills"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Body aches",
-          "value": "aches"
-        },
-        {
-          "scores": {
-            "Symptoms": 3
-          },
-          "text": "Loss of taste or smell",
-          "value": "tastesmell"
-        }
-      ],
-      "id": "q_symptoms",
-      "text": "In the last days, which of the following symptoms have you had? (multiple selection possible)",
-      "type": "multiselect",
-      "details": "The question relates to acute or exacerbated symptoms and excludes chronic complaints or seasonal or allergic complaints. If you have a chronic illness, compare your current symptoms with your previous problems to answer the question.  If you haven't had any of the symptoms, choose the “Next” button without selecting a symptom.",
-      "optional": true
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Feeling tired or weak",
-          "value": "tired"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Persistent cough",
-          "value": "cough"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Runny nose",
-          "value": "nose"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Diarrhea",
-          "value": "diarrhea"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Sore throat",
-          "value": "sorethroat"
-        },
-        {
-          "scores": {
-            "Symptoms": 1
-          },
-          "text": "Headache",
-          "value": "headache"
-        }
-      ],
-      "id": "q_symptoms2",
-      "text": "In the last days, which of the following symptoms have you had? (multiple selection possible)",
-      "type": "multiselect",
-      "details": "If you haven't had any of the symptoms, choose the “Next” button without selecting a symptom.",
-      "optional": true
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Symptoms": 1,
-            "Severity": 3
-          },
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "id": "q_breath",
-      "text": "In the past 24 hours, did you feel that you were more quickly out of breath than usual?",
-      "type": "select",
-      "details": "Choose “Yes“ if you have difficulty breathing or shortness of breath: <ul><li>While sitting or lying down</li><li>When getting up from a bed or a chair</li><li>After light activity, such as going for a walk or climbing some stairs.</li></ul>If you have chronic lung disease, compare your current breathing problems with your previous breathing problems."
-    },
-    {
-      "id": "q_symptoms_date",
-      "text": "With regard to all questions about symptoms: since when have you had the symptoms you specified?",
-      "type": "date",
-      "enableWhenExpression": {
-        ">": [
-          {
-            "var": "score.Symptoms"
-          },
-          0
-        ]
-      }
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Chronic lung disease (e.g. chronic obstructive pulmonary disease, asthma, interstitial lung disease, cystic fibrosis)",
-          "value": "lung"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Diabetes",
-          "value": "diabetes"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Heart disease (e.g. cardiovascular disease, congenital heart disease)",
-          "value": "heart"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "High blood pressure",
-          "value": "pressure"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Kidney disease",
-          "value": "kidney"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Down-Syndrom",
-          "value": "downsyndrome"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Cancer",
-          "value": "cancer"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Sickle cell disease",
-          "value": "sickcell"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Neurodevelopmental disorders (e.g. cerebral palsy)",
-          "value": "neuro"
-        },
-        {
-          "scores": {},
-          "text": "Having a medical-related technological dependence (e.g. tracheostomy, gastrostomy)",
-          "value": "technological"
-        }
-      ],
-      "id": "q_chronic_illnesses",
-      "text": "Have you been diagnosed with any of the following diseases?",
-      "type": "multiselect",
-      "details": "If you don't have any of the following diseases, choose the “Next” button without selecting an option.",
-      "optional": true
-    },
-    {
       "options": [
         {
           "scores": {},
@@ -925,10 +495,105 @@
       "details": "We use your height and weight to calculate your body mass index (BMI). The BMI can be a risk factor in the context of COVID-19"
     },
     {
+      "numericOptions": {
+        "max": 99999,
+        "min": 0,
+        "step": 1
+      },
+      "type": "number",
+      "id": "q_zip",
+      "text": "What is your zip code?",
+      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Living alone",
+          "value": "alone"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Living together with family, in a shared apartment, or in a supervised community facility",
+          "value": "together"
+        }
+      ],
+      "id": "q_living",
+      "text": "What is your current living situation?",
+      "type": "select"
+    },
+    {
       "options": [
         {
           "scores": {
-            "Severity": 2
+            "Dissemination": 1
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_caring",
+      "text": "At least once a week, do you privately care for people with age-related conditions, chronic illnesses, or frailty?",
+      "type": "select",
+      "details": "This doesn't include care services or support that you provide professionally."
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Working in the medical field (care, doctor's office, hospital, or similiar)",
+          "value": "medical"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Cared for or accomodated in the medical sector (care or hospital)",
+          "value": "medical2"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Working in a community facility (school, day care center, university, home etc.)",
+          "value": "community"
+        },
+        {
+          "scores": {
+            "Exposition": 1,
+            "Dissemination": 1
+          },
+          "text": "Cared for or accomodated in a community facility (school, day care center, university, home etc.)",
+          "value": "community2"
+        },
+        {
+          "scores": {},
+          "text": "No, in none of the above",
+          "value": "none"
+        }
+      ],
+      "id": "q_work",
+      "text": "Do you work or are you cared for/accommodated in one of the following areas?",
+      "type": "select"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 7
           },
           "text": "Yes",
           "value": "yes"
@@ -941,15 +606,295 @@
         {
           "scores": {},
           "text": "I don't know",
-          "value": "dont_know"
+          "value": "idontknow"
         }
       ],
-      "id": "q_steroids",
-      "text": "Have you taken steroid tablets for more than 2 weeks?",
-      "type": "select"
+      "id": "q_outbreak",
+      "text": "Have two or more persons been tested positively for the novel coronavirus in the facility you live in or work for in the last 14 days?",
+      "type": "select",
+      "enableWhenExpression": {
+        "or": [
+          {
+            "var": "q_work.option.medical"
+          },
+          {
+            "var": "q_work.option.medical2"
+          },
+          {
+            "var": "q_work.option.community"
+          },
+          {
+            "var": "q_work.option.community2"
+          }
+        ]
+      }
     },
     {
       "options": [
+        {
+          "scores": {
+            "Exposition": 7
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_contact",
+      "text": "Have you had close contact with a confirmed case?",
+      "details": "Close contact with a confirmed case means:  <ul><li>Face-to-face contact for longer than 10 minutes </li><li>Direct, physical contact (touching, shaking hands, kissing)</li><li>Being within 6 feet of the person for more than 10 minutes</li><li>Contact with or exchange of body fluids</li><li>Living in the same apartment.</li></ul>Choose \"No\" if you have worn adequate protective measures (mask) on contact.",
+      "type": "select"
+    },
+    {
+      "id": "q_contact_date",
+      "text": "What day was the last contact?",
+      "type": "date",
+      "enableWhenExpression": {
+        "var": "q_contact.option.yes"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 7
+          },
+          "text": "Yes",
+          "value": "yes_high_risk"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        },
+        {
+          "scores": {},
+          "text": "I don't use a contact tracing app",
+          "value": "no_usage"
+        }
+      ],
+      "id": "q_contact_tracing_risk_contacts",
+      "text": "Did you have an exposure notification of a digital contact tracing app in the last 14 days?",
+      "type": "select",
+      "details": "Digital contact tracing apps track when people are in close contact and a recent contact tests positive."
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Fever above 100.4 °F",
+          "value": "fever"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Chills",
+          "value": "chills"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Body aches",
+          "value": "aches"
+        },
+        {
+          "scores": {
+            "Symptoms": 3
+          },
+          "text": "Loss of taste or smell",
+          "value": "tastesmell"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Feeling tired or weak",
+          "value": "tired"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Persistent cough",
+          "value": "cough"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Runny nose",
+          "value": "nose"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Diarrhea",
+          "value": "diarrhea"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Sore throat",
+          "value": "sorethroat"
+        },
+        {
+          "scores": {
+            "Symptoms": 1
+          },
+          "text": "Headache",
+          "value": "headache"
+        }
+      ],
+      "id": "q_symptoms",
+      "text": "In the last days, which of the following symptoms have you had? (multiple selection possible)",
+      "type": "multiselect",
+      "details": "The question relates to acute or exacerbated symptoms and excludes chronic complaints or seasonal or allergic complaints. If you have a chronic illness, compare your current symptoms with your previous problems to answer the question.  If you haven't had any of the symptoms, choose the “Next” button without selecting a symptom.",
+      "optional": true
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Severity": 3
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_breath",
+      "text": "In the past 24 hours, did you feel that you were more quickly out of breath than usual?",
+      "type": "select",
+      "details": "Choose “Yes“ if you have difficulty breathing or shortness of breath: <ul><li>While sitting or lying down</li><li>When getting up from a bed or a chair</li><li>After light activity, such as going for a walk or climbing some stairs.</li></ul>If you have chronic lung disease, compare your current breathing problems with your previous breathing problems."
+    },
+    {
+      "id": "q_symptoms_date",
+      "text": "With regard to all questions about symptoms: since when have you had the symptoms you specified?",
+      "type": "date",
+      "enableWhenExpression": {
+        ">": [
+          {
+            "var": "score.Symptoms"
+          },
+          0
+        ]
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Smoking",
+          "value": "smoking"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Pregnancy",
+          "value": "pregnancy"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Diabetes",
+          "value": "diabetes"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Chronic lung disease (e.g. chronic obstructive pulmonary disease, asthma, interstitial lung disease, cystic fibrosis)",
+          "value": "lung"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Heart disease (e.g. cardiovascular disease, congenital heart disease)",
+          "value": "heart"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "High blood pressure",
+          "value": "pressure"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Kidney disease",
+          "value": "kidney"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Down-Syndrom",
+          "value": "downsyndrome"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Cancer",
+          "value": "cancer"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Sickle cell disease",
+          "value": "sickcell"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Neurodevelopmental disorders (e.g. cerebral palsy)",
+          "value": "neuro"
+        },
+        {
+          "scores": {},
+          "text": "Having a medical-related technological dependence (e.g. tracheostomy, gastrostomy)",
+          "value": "technological"
+        }
+      ],
+      "id": "q_chronic_illnesses",
+      "text": "Do you have any of the following risk factors?",
+      "type": "multiselect",
+      "details": "If you don't have any of these risk factors, choose the “Next” button without selecting an option.",
+      "optional": true
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Severity": 2
+          },
+          "text": "Steroids (longer than 2 weeks)",
+          "value": "steroids"
+        },
         {
           "scores": {
             "Severity": 2
@@ -1011,7 +956,7 @@
         }
       ],
       "id": "q_vaccine",
-      "text": "Have you been vaccinated for the novel coronavirus?",
+      "text": "Have you been vaccinated against COVID-19?",
       "type": "select"
     },
     {
@@ -1076,10 +1021,30 @@
           "value": "no"
         }
       ],
-      "id": "q_antigentest",
-      "text": "Did you perform a rapid COVID-19 test in the last 7 days?",
       "type": "select",
-      "details": "A rapid COVID-19 test detects the presence of antigen and usually only takes 5-30 minutes."
+      "id": "q_covid_test",
+      "text": "Have you been tested for COVID-19 in the last 7 days?"
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "id": "q_antigentest",
+      "text": "Did you take a rapid COVID-19 test in the last 7 days?",
+      "type": "select",
+      "details": "A rapid COVID-19 test detects the presence of antigen and usually only takes 5-30 minutes.",
+      "enableWhenExpression": {
+        "var": "q_covid_test.options.yes"
+      }
     },
     {
       "options": [
@@ -1117,9 +1082,12 @@
         }
       ],
       "id": "q_pcrtest",
-      "text": "Was a laboratory COVID-19 test performed in the last 7 days?",
+      "text": "Did you take a laboratory COVID-19 test in the last 7 days?",
       "type": "select",
-      "details": "A laboratory COVID-19 test is sent to a laboratory and usually takes 1-3 days for completion. PCR, RT-PCR or NAAT are example for laboratory tests."
+      "details": "A laboratory COVID-19 test is sent to a laboratory and usually takes 1-3 days for completion. PCR, RT-PCR or NAAT are example for laboratory tests.",
+      "enableWhenExpression": {
+        "var": "q_covid_test.options.yes"
+      }
     },
     {
       "options": [
@@ -1232,13 +1200,13 @@
       "expression": {
         "or": [
           {
-            "var": "q_symptoms2.option.nose"
+            "var": "q_symptoms.option.nose"
           },
           {
-            "var": "q_symptoms2.option.sorethroat"
+            "var": "q_symptoms.option.sorethroat"
           },
           {
-            "var": "q_symptoms2.option.cough"
+            "var": "q_symptoms.option.cough"
           },
           {
             "var": "q_breath.option.yes"
@@ -1687,7 +1655,7 @@
             "var": "q_immunosuppressants.option.radiotherapy"
           },
           {
-            "var": "q_steroids.option.yes"
+            "var": "q_immunosuppressants.option.steroids"
           },
           {
             "var": "v_older_than_60"
@@ -2906,7 +2874,7 @@
             ]
           },
           {
-            "var": "q_pregnant.option.yes"
+            "var": "q_chronic_illnesses.option.pregnancy"
           },
           {
             "var": "q_chronic_illnesses.option.kidney"
@@ -2915,7 +2883,7 @@
             "var": "q_chronic_illnesses.option.diabetes"
           },
           {
-            "var": "q_steroids.option.yes"
+            "var": "q_immunosuppressants.option.steroids"
           },
           {
             "var": "q_immunosuppressants.option.chemo"
@@ -10593,6 +10561,221 @@
     {
       "expression": "<br><br>Please note: A COVID-19 test and type of test is a medical decision and may depend on the capacities of your testing site.<br><br>COVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. <br><br>For additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html\" target=\"_blank\">CDC guidelines</a>.",
       "id": "v_text_test"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            ">": [
+              {
+                "var": "v_symptoms_user_score"
+              },
+              50
+            ]
+          },
+          "red",
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "v_symptoms_user_score"
+                  },
+                  0
+                ]
+              },
+              "#FDE47F",
+              "green"
+            ]
+          }
+        ]
+      },
+      "id": "v_gauge_color_symptoms"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            ">": [
+              {
+                "var": "v_exposition_user_score"
+              },
+              50
+            ]
+          },
+          "red",
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "v_exposition_user_score"
+                  },
+                  0
+                ]
+              },
+              "#FDE47F",
+              "green"
+            ]
+          }
+        ]
+      },
+      "id": "v_gauge_color_exposition"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            ">": [
+              {
+                "var": "v_severity_user_score"
+              },
+              50
+            ]
+          },
+          "red",
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "v_severity_user_score"
+                  },
+                  0
+                ]
+              },
+              "#FDE47F",
+              "green"
+            ]
+          }
+        ]
+      },
+      "id": "v_gauge_color_severity"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            ">": [
+              {
+                "var": "v_dissemination_user_score"
+              },
+              50
+            ]
+          },
+          "red",
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "v_dissemination_user_score"
+                  },
+                  0
+                ]
+              },
+              "#FDE47F",
+              "green"
+            ]
+          }
+        ]
+      },
+      "id": "v_gauge_color_dissemination"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_highest_score"
+              },
+              0
+            ]
+          },
+          1,
+          {
+            "var": "v_highest_score"
+          }
+        ]
+      },
+      "id": "v_gauge_highest_score"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_symptoms_user_score"
+              },
+              0
+            ]
+          },
+          1,
+          {
+            "var": "v_symptoms_user_score"
+          }
+        ]
+      },
+      "id": "v_gauge_symptoms"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_exposition_user_score"
+              },
+              0
+            ]
+          },
+          1,
+          {
+            "var": "v_exposition_user_score"
+          }
+        ]
+      },
+      "id": "v_gauge_exposition"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_severity_user_score"
+              },
+              0
+            ]
+          },
+          1,
+          {
+            "var": "v_severity_user_score"
+          }
+        ]
+      },
+      "id": "v_gauge_severity"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "v_dissemination_user_score"
+              },
+              0
+            ]
+          },
+          1,
+          {
+            "var": "v_dissemination_user_score"
+          }
+        ]
+      },
+      "id": "v_gauge_dissemination"
     }
   ],
   "resultCategories": [
@@ -10600,7 +10783,7 @@
       "results": [
         {
           "expression": true,
-          "text": "<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color)s stroke-width=\"12\" stroke-dasharray=\"%(v_highest_score)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d/100</text></svg>\n<br>\nRisk Score: %(v_highest_score)d of 100 Points<br>\nInterpretation: %(v_score_interpretation)s<br><br>\n\nYour Risk Score is equal to the highest score in your Risk Profile.",
+          "text": "<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color)s stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text></svg>\n<br>\n<center>Your Risk Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nYour Risk Score is equal to the highest score in your Risk Profile. For your Risk Profile please see below.",
           "id": "risk_scores"
         }
       ],
@@ -10612,7 +10795,7 @@
         {
           "expression": true,
           "id": "print_risk_profile",
-          "text": "Symptoms Score: %(v_symptoms_user_score)d of 100 Points<br> Exposition Score: %(v_exposition_user_score)d of 100 Points<br> Severe Course Score: %(v_severity_user_score)d of 100 Points<br> Dissemination Potential Score: %(v_dissemination_user_score)d of 100 Points<br><br><strong>How is the risk profile generated?</strong><br><br>\nBased on your responses CovApp has created a personal risk profile which is also used for your recommendations.<br> <br> Your risk profile has four risk dimensions with a value between 0 and 100 points. While a lower score implies lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br><strong> These are the four risk dimensions:</strong><br> <br> 1. Symptoms: This score increases if your responses indicate symptoms that can be related to COVID-19.<br> <br> 2. Exposition: This score increases if you have visits, encounters, or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe Course: This score increases if your responses indicate any circumstances (e.g. chronic diseases, medications, or similar) that increase your chance of a severe course if you are infected by the novel coronavirus.<br> <br> 4. Dissemination Potential: This score increases, if you have a private or work-related environment that favors the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition scores are used together with your vaccination status to compile the \"Test Recommendation\". The score severe course is combined with your vaccination status for the \"Recommendations for Severe COVID-19\". The score dissemination potential is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".<br> <br> \n"
+          "text": "<table width=\"100%\">\n<tr>\n<td width=\"50%\">\n<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color_symptoms)s stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_symptoms)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_symptoms_user_score)d</text></svg>\n<br>\n<center>Symptom Score</center>\n</td>\n\n<td width=\"50%\">\n<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color_exposition)s stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_exposition)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_exposition_user_score)d</text></svg>\n<br>\n<center>Exposition Score</center>\n</td>\n</tr>\n\n<tr>\n<td width=\"50%\">\n<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color_severity)s stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_severity)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_severity_user_score)d</text></svg>\n<br>\n<center>Severe COVID-19 Score</center>\n</td>\n\n<td width=\"50%\">\n<svg viewBox=\"0 0 100 50\"><circle id=\"low\" r=\"26\" cx=\"45\" cy=\"65\" stroke=%(v_gauge_color_dissemination)s stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_dissemination)d, 500\" fill=\"none\" transform=\"rotate(160 50 50)\"></circle><text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_dissemination_user_score)d</text></svg>\n<br>\n<center>Dissemination Score</center>\n</td>\n</tr>\n\n</table>\n\n\n<br><br><strong>How is the risk profile generated?</strong><br><br>\nBased on your responses CovApp has created a personal risk profile which is also used for your recommendations.<br> <br> Your risk profile has four risk dimensions with a value between 0 and 100 points. While a lower score implies lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br><strong> These are the four risk dimensions:</strong><br> <br> 1. Symptom Score: This score increases if your responses indicate symptoms that can be related to COVID-19.<br> <br> 2. Exposition Score: This score increases if you have visits, encounters, or circumstances, which imply that you could have been in contact with the novel coronavirus.<br> <br> 3. Severe COVID-19 Score: This score increases if your responses indicate any circumstances (e.g. chronic diseases, medications, or similar) that increase your chance of a severe course if you are infected by the novel coronavirus.<br> <br> 4. Dissemination Score: This score increases, if you have a private or work-related environment that favors the spread of the virus if you are infected and infectious.<br> <br> Symptom and Exposition Scores are used together with your vaccination status to compile the \"Test Recommendation\". The Severe COVID-19 Score is combined with your vaccination status for the \"Recommendations for Severe COVID-19\". The Dissemination Score is interpreted in combination with the probability of infection to create the \"Recommendations to prevent spread of virus\".\n"
         }
       ],
       "id": "rc_profil",
