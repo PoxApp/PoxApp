@@ -1043,7 +1043,7 @@
       "type": "select",
       "details": "A rapid COVID-19 test detects the presence of antigen and usually only takes 5-30 minutes.",
       "enableWhenExpression": {
-        "var": "q_covid_test.options.yes"
+        "var": "q_covid_test.option.yes"
       }
     },
     {
@@ -1086,7 +1086,7 @@
       "type": "select",
       "details": "A laboratory COVID-19 test is sent to a laboratory and usually takes 1-3 days for completion. PCR, RT-PCR or NAAT are example for laboratory tests.",
       "enableWhenExpression": {
-        "var": "q_covid_test.options.yes"
+        "var": "q_covid_test.option.yes"
       }
     },
     {
