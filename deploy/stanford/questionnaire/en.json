@@ -11303,7 +11303,7 @@
             ]
           },
           "id": "study_2",
-          "text": "<center><h3>%(v_red)s Monoclonal Antibody Therapy<br></h3></center>\nSome users with your responses may benefit from an approved, special treatment with monoclonal antibodies for the novel coronavirus due to a high risk of developing severe COVID-19. Such treatment is currently only available at <a href=\"https://protect-public.hhs.gov/pages/therapeutics-distribution\" target=\"_blank\">specialized clinics</a>.<br><br>Please coordinate with your respective physician or care provider before contacting a location to receive treatment. A call center is available to answer questions and provide information related to monoclonal antibody therapeutic treatments at the following phone numbers: <a href=\\\"tel:+18773326585\\\">1-877-332-6585</a> (English Language); <a href=\\\"tel:+18773660310\\\">1-877-366-0310</a> (Spanish Language).\n\n"
+          "text": "<center><h3>%(v_red)s Monoclonal Antibody Therapy<br></h3></center>\nSome users with your responses may benefit from an approved, special treatment with monoclonal antibodies for the novel coronavirus due to a high risk of developing severe COVID-19. Such treatment is currently only available at specialized clinics.<br><br>Please coordinate with your respective physician or care provider before contacting a location to receive treatment. A call center is available to answer questions and provide information related to monoclonal antibody therapeutic treatments at the following phone numbers: <a href=\\\"tel:+18773326585\\\">1-877-332-6585</a> (English Language); <a href=\\\"tel:+18773660310\\\">1-877-366-0310</a> (Spanish Language).\n\n"
         }
       ],
       "description": "Suggestion for Special Treatments",
