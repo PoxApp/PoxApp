@@ -2,15 +2,17 @@
   "id": "covapp_original",
   "schemaVersion": "1",
   "version": 1,
-  "language": "de",
-  "title": "CovApp",
+  "language": "en",
+  "title": "CovApp Stanford",
   "meta": {
+    "regions": [
+      "US"
+    ],
     "availableLanguages": [
-      "en",
-      "de"
+      "en"
     ],
     "author": "Alexander Thieme",
-    "creationDate": "2022-02-04"
+    "creationDate": "2022-02-15"
   },
   "questions": [
     {
@@ -1339,11 +1341,11 @@
           {
             "if": [
               {
-                ">=": [
+                ">": [
                   {
                     "var": "v_bmi"
                   },
-                  30
+                  25
                 ]
               },
               {
@@ -1351,7 +1353,7 @@
                   {
                     "var": "score.Severity"
                   },
-                  1
+                  2
                 ]
               },
               {
@@ -8514,11 +8516,11 @@
       "expression": {
         "if": [
           {
-            ">": [
+            ">=": [
               {
                 "var": "v_highest_score"
               },
-              50
+              51
             ]
           },
           "red",
@@ -10568,11 +10570,11 @@
       "expression": {
         "if": [
           {
-            ">": [
+            ">=": [
               {
                 "var": "v_symptoms_user_score"
               },
-              50
+              51
             ]
           },
           "red",
@@ -10598,11 +10600,11 @@
       "expression": {
         "if": [
           {
-            ">": [
+            ">=": [
               {
                 "var": "v_exposition_user_score"
               },
-              50
+              51
             ]
           },
           "red",
@@ -10628,11 +10630,11 @@
       "expression": {
         "if": [
           {
-            ">": [
+            ">=": [
               {
                 "var": "v_severity_user_score"
               },
-              50
+              51
             ]
           },
           "red",
@@ -10658,11 +10660,11 @@
       "expression": {
         "if": [
           {
-            ">": [
+            ">=": [
               {
                 "var": "v_dissemination_user_score"
               },
-              50
+              51
             ]
           },
           "red",
