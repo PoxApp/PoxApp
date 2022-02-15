@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "Assessing the risk of contagious viral infections (COVID-19)",
-  "repository": "https://github.com/CovOpen/CovApp",
+  "repository": "https://github.com/CovOpen/Covapp-2.0",
   "scripts": {
     "analyze": "stencil build",
     "generate": "stencil generate",

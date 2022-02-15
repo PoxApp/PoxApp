@@ -209,7 +209,7 @@ export class AppRoot {
           </stencil-router>
         </main>
         <div class="c-footer version">
-            Version &#8287;<a href={"https://github.com/CovOpen/CovApp/commit/" + HASH_LONG}
+            Version &#8287;<a href={"https://github.com/CovOpen/Covapp-2.0/commit/" + HASH_LONG}
                      target="_blank"
                      rel="noopener"
                      aria-label="Link to the Version on Github"

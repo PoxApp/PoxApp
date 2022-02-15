@@ -22,7 +22,7 @@
     "button_delete_qr_code": "Answer questions again",
     "button_show_code": "Show previous summary",
     "button_start_now": "Start questionnaire",
-    "call_to_action_open_source": "<strong>CovApp open source</strong>\nCovApp is open source under MIT license. Find the <a href=\"https://github.com/CovOpen/CovApp\">code here</a> and the <a href=\"https://www.d4l.io/blog/covapp-faq/\">FAQ here</a>. Create your own version and help fight COVID-19.",
+    "call_to_action_open_source": "<strong>CovApp open source</strong>\nCovApp is open source under MIT license. Find the <a href=\"https://github.com/CovOpen/Covapp-2.0\">code here</a> and the <a href=\"https://www.d4l.io/blog/covapp-faq/\">FAQ here</a>. Create your own version and help fight COVID-19.",
     "call_to_action_widget": "<strong>For doctors: use CovApp in your practice</strong>\nIf you prefer a simple implementation, use our CovApp widget to integrate the app and help as many patients as possible. Find information about <a href=\"https://www.data4life.care/de/corona/#coronavirus-test\">implementation here</a>.",
     "cookie_bar_accept": "Accept",
     "cookie_bar_data_privacy": "privacy policy",
