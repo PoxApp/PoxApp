@@ -133,6 +133,11 @@ export class Questionnaire {
         this.currentAnswerValue === 'yes' ? '1' : '0',
       ]);
     }
+    try {
+      window.scrollTo(0, 0);
+    } catch(error) {
+      console.log(error);
+    }
   };
 
   moveToPreviousStep = () => {
