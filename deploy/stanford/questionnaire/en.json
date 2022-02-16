@@ -803,62 +803,6 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Smoking",
-          "value": "smoking"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Pregnancy",
-          "value": "pregnancy"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Diabetes",
-          "value": "diabetes"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Chronic lung disease (e.g. chronic obstructive pulmonary disease, asthma, interstitial lung disease, cystic fibrosis)",
-          "value": "lung"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Heart disease (e.g. cardiovascular disease, congenital heart disease)",
-          "value": "heart"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "High blood pressure",
-          "value": "pressure"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Kidney disease",
-          "value": "kidney"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Down syndrome",
-          "value": "downsyndrome"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
           "text": "Cancer",
           "value": "cancer"
         },
@@ -866,8 +810,64 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Sickle cell disease",
-          "value": "sickcell"
+          "text": "Cerebrovascular disease (e.g., stroke, TIA, carotid stenosis, aneurysms) ",
+          "value": "cerebrovascular"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Chronic kidney disease",
+          "value": "kidney"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Chronic lung disease (e.g., bronchiectasis, COPD, interstitial lung disease, cystic fibrosis, NOT asthma)",
+          "value": "lung"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Chronic liver disease (cirrhosis, non-alcoholic fatty liver disease, alcoholic liver disease, autoimmune hepatitis)",
+          "value": "liver"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Diabetes mellitus (type 1 and 2)",
+          "value": "diabetes"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Down Syndrome",
+          "value": "downsyndrome"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "HIV",
+          "value": "hiv"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Heart conditions (e.g., heart failure, coronary artery disease, or cardiomyopathies, NOT high blood pressure)",
+          "value": "heart"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Mental health conditions (such as mood disorders, including depression, and schizophrenia spectrum disorders)",
+          "value": "mental"
         },
         {
           "scores": {
@@ -880,8 +880,36 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Substance use disorders",
-          "value": "substance"
+          "text": "Physical Inactivity (less than 150 mins physical activity per week)",
+          "value": "physical"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Pregnancy and Recent Pregnancy (6 weeks after birth)",
+          "value": "pregnancy"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Primary Immunodeficiencies",
+          "value": "primaryimmunodeficiencies"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Smoking, current and former",
+          "value": "smoker"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Tuberculosis",
+          "value": "tuberculosis"
         }
       ],
       "id": "q_chronic_illnesses",
@@ -1330,17 +1358,17 @@
               {
                 "var": "score.Severity"
               },
-              2
+              4
             ]
           },
           {
             "if": [
               {
-                ">": [
+                ">=": [
                   {
                     "var": "v_bmi"
                   },
-                  25
+                  30
                 ]
               },
               {
@@ -1348,11 +1376,31 @@
                   {
                     "var": "score.Severity"
                   },
-                  2
+                  3
                 ]
               },
               {
-                "var": "score.Severity"
+                "if": [
+                  {
+                    ">": [
+                      {
+                        "var": "v_bmi"
+                      },
+                      25
+                    ]
+                  },
+                  {
+                    "+": [
+                      {
+                        "var": "score.Severity"
+                      },
+                      2
+                    ]
+                  },
+                  {
+                    "var": "score.Severity"
+                  }
+                ]
               }
             ]
           }
@@ -1672,6 +1720,12 @@
           },
           {
             "var": "v_older_than_60"
+          },
+          {
+            "var": "q_chronic_illnesses.option.hiv"
+          },
+          {
+            "var": "q_chronic_illnesses.option.primaryimmunodeficiencies"
           }
         ]
       },
@@ -2300,10 +2354,10 @@
                               ]
                             }
                           },
-                          0.505135
+                          0.48312
                         ]
                       },
-                      0.26899
+                      0.279494
                     ]
                   },
                   50
@@ -2325,10 +2379,10 @@
                               ]
                             }
                           },
-                          0.505135
+                          0.48312
                         ]
                       },
-                      0.26899
+                      0.279494
                     ]
                   },
                   100
@@ -2911,13 +2965,7 @@
             "var": "q_chronic_illnesses.option.heart"
           },
           {
-            "var": "q_chronic_illnesses.option.pressure"
-          },
-          {
             "var": "q_chronic_illnesses.option.neuro"
-          },
-          {
-            "var": "q_chronic_illnesses.option.technological"
           }
         ]
       },
