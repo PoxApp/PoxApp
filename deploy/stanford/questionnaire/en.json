@@ -852,7 +852,7 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Down-Syndrom",
+          "text": "Down syndrome",
           "value": "downsyndrome"
         },
         {
@@ -873,15 +873,15 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Neurodevelopmental disorders (e.g. cerebral palsy)",
+          "text": "Dementia or other neurological conditions",
           "value": "neuro"
         },
         {
           "scores": {
             "Severity": 1
           },
-          "text": "Having a medical-related technological dependence (e.g. tracheostomy, gastrostomy)",
-          "value": "technological"
+          "text": "Substance use disorders",
+          "value": "substance"
         }
       ],
       "id": "q_chronic_illnesses",
