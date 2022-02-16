@@ -803,6 +803,27 @@
           "scores": {
             "Severity": 1
           },
+          "text": "Physical inactivity (< 150 mins activity per week)",
+          "value": "physical"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Pregnancy, current and recent (birth < 6 weeks)",
+          "value": "pregnancy"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Smoking, current and former",
+          "value": "smoker"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
           "text": "Cancer",
           "value": "cancer"
         },
@@ -810,7 +831,7 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Cerebrovascular disease (e.g., stroke, TIA, carotid stenosis, aneurysms) ",
+          "text": "Cerebrovascular disease (e.g., stroke, carotid stenosis, aneurysms) ",
           "value": "cerebrovascular"
         },
         {
@@ -852,7 +873,7 @@
           "scores": {
             "Severity": 1
           },
-          "text": "HIV",
+          "text": "HIV (human immunodeficiency virus)",
           "value": "hiv"
         },
         {
@@ -866,7 +887,7 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Mental health conditions (such as mood disorders, including depression, and schizophrenia spectrum disorders)",
+          "text": "Mental health conditions (e.g., mood disorders, including depression, and schizophrenia spectrum disorders)",
           "value": "mental"
         },
         {
@@ -880,29 +901,8 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Physical Inactivity (less than 150 mins physical activity per week)",
-          "value": "physical"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Pregnancy and Recent Pregnancy (6 weeks after birth)",
-          "value": "pregnancy"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Primary Immunodeficiencies",
+          "text": "Primary immunodeficiencies",
           "value": "primaryimmunodeficiencies"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Smoking, current and former",
-          "value": "smoker"
         },
         {
           "scores": {
