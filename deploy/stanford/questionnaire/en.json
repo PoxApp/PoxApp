@@ -921,19 +921,12 @@
           },
           "text": "Radiotherapy",
           "value": "radiotherapy"
-        },
-        {
-          "scores": {
-            "Severity": 2
-          },
-          "text": "Bone marrow transplant",
-          "value": "bonemarrow"
         }
       ],
       "id": "q_immunosuppressants",
       "text": "Do you currently receive one or more of the following treatments? (multiple selection possible)",
       "type": "multiselect",
-      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease. Chemo and/or radiotherapy is used as treatment for cancer. If you didn't receive any of these treatments, choose the “Next” button without selecting a treatment.",
+      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease. Chemo and/or radiotherapy is used as treatment for cancer. If you currently don't receive any of these treatments, choose the “Next” button without selecting a treatment.",
       "optional": true
     },
     {
