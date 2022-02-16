@@ -885,9 +885,9 @@
         }
       ],
       "id": "q_chronic_illnesses",
-      "text": "Do you have any of the following risk factors?",
+      "text": "Do you have any of the following risk factors? (multiple selection possible)",
       "type": "multiselect",
-      "details": "If you don't have any of these risk factors, choose the “Next” button without selecting an option.",
+      "details": "Please select all applicable risks factors for severe COVID-19 from the list below.<br><br>If you don't have any of these risk factors, choose the “Next” button without selecting an option.",
       "optional": true
     },
     {
@@ -924,44 +924,29 @@
         }
       ],
       "id": "q_immunosuppressants",
-      "text": "Do you currently receive one or more of the following treatments?",
+      "text": "Do you currently receive one or more of the following treatments? (multiple selection possible)",
       "type": "multiselect",
-      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease. Chemo and/or radiotherapy is used as treatment for cancer. If you don't receive any of these treatments, choose the “Next” button without selecting a treatment.",
+      "details": "You take or get immunosuppresives after an organ transplant, in the therapy of an autoimmune disease. Chemo and/or radiotherapy is used as treatment for cancer. If you didn't receive any of these treatments, choose the “Next” button without selecting a treatment.",
       "optional": true
     },
     {
       "options": [
         {
           "scores": {},
-          "text": "Yes",
-          "value": "yes"
+          "text": "Flu (after August 2021)",
+          "value": "flu"
         },
         {
           "scores": {},
-          "text": "No",
-          "value": "no"
+          "text": "COVID-19",
+          "value": "covid"
         }
       ],
-      "id": "q_flu",
-      "text": "Have you been vaccinated against flu between August 2021 and today?",
-      "type": "select"
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "id": "q_vaccine",
-      "text": "Have you been vaccinated against COVID-19?",
-      "type": "select"
+      "type": "multiselect",
+      "id": "q_vaccines",
+      "text": "What diseases have you been vaccinated against? (multiple selection possible)",
+      "optional": true,
+      "details": "If you didn't receive any of these vaccines, choose the “Next” button without selecting an option."
     },
     {
       "options": [
@@ -977,10 +962,10 @@
         }
       ],
       "id": "q_vaccine_completed",
-      "text": "Did you receive all intended doses of your vaccine?",
+      "text": "Did you receive all intended doses of your COVID-19 vaccine?",
       "type": "select",
       "enableWhenExpression": {
-        "var": "q_vaccine.option.yes"
+        "var": "q_vaccines.option.covid"
       },
       "details": "Select yes, if you have received a single-dose vaccine, such as the Johnson & Johnson’s Janssen vaccine, or all doses of 2-doses vaccines, such as Pfizer or Moderna vaccines. If you are immunocompromised, you may need an additional dose as part of your primary vaccine series. Booster shots don't need to be considered."
     },
@@ -1001,7 +986,7 @@
       "id": "q_booster",
       "text": "Did you receive a COVID-19 booster shot?",
       "enableWhenExpression": {
-        "var": "q_vaccine.option.yes"
+        "var": "q_vaccine_completed.option.yes"
       }
     },
     {
@@ -1063,6 +1048,11 @@
           "scores": {},
           "text": "No",
           "value": "negative"
+        },
+        {
+          "scores": {},
+          "text": "I don't know",
+          "value": "idontknow"
         }
       ],
       "id": "q_antigentestresult",
@@ -1104,6 +1094,11 @@
           "scores": {},
           "text": "No",
           "value": "negative"
+        },
+        {
+          "scores": {},
+          "text": "I don't know",
+          "value": "idontknow"
         }
       ],
       "type": "select",
@@ -1230,7 +1225,7 @@
               {
                 "and": [
                   {
-                    "var": "q_flu.option.yes"
+                    "var": "q_vaccines.option.flu"
                   },
                   {
                     ">": [
@@ -1567,7 +1562,14 @@
       "expression": {
         "if": [
           {
-            "var": "q_pcrtest.option.no"
+            "or": [
+              {
+                "var": "q_pcrtest.option.no"
+              },
+              {
+                "var": "q_pcrtestresult.option.idontknow"
+              }
+            ]
           },
           true,
           false
@@ -1603,7 +1605,14 @@
       "expression": {
         "if": [
           {
-            "var": "q_antigentest.option.no"
+            "or": [
+              {
+                "var": "q_antigentest.option.no"
+              },
+              {
+                "var": "q_antigentestresult.option.idontknow"
+              }
+            ]
           },
           true,
           false
@@ -8486,11 +8495,11 @@
       "expression": {
         "if": [
           {
-            ">": [
+            ">=": [
               {
                 "var": "v_highest_score"
               },
-              50
+              51
             ]
           },
           "High Risk",
@@ -10812,7 +10821,7 @@
             "var": "has_negative_pcr"
           },
           "id": "negative_pcr",
-          "text": "%(v_green)sMost users with a negative laboratory test are not infected with the novel coronavirus. Laboratory tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your laboratory test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the laboratory test."
+          "text": "%(v_green)s Most users with a negative laboratory test are not infected with the novel coronavirus. Laboratory tests are a very reliable method to assess the infection status of a person with a high validity. If you encounter a risk contact or new symptoms after completion of your laboratory test, it might be senseful to repeat it. If you have further questions, please contact the facility which conducted the laboratory test."
         },
         {
           "expression": {
@@ -10871,7 +10880,7 @@
             ]
           },
           "id": "negative_antigen_no_exposition_no_symptoms",
-          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)s Most users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -10888,7 +10897,7 @@
             ]
           },
           "id": "negative_antigen_low_exposition_no_symptoms",
-          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)s Most users with your answers are not infected with the novel coronavirus. If you encounter a new risk contact or new symptoms, it might be senseful to repeat a test. In such a case, please complete the questionnaire of CovApp again to get an individualized recommendation."
         },
         {
           "expression": {
@@ -11033,7 +11042,7 @@
               }
             ]
           },
-          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus. You might have a higher than average exposition, but you are fully vaccinated and should be protected in most situation. If you develop new symptoms, please complete the questionnaire of CovApp again to get an individualized recommendation.",
+          "text": "%(v_green)s Most users with your answers are not infected with the novel coronavirus. You might have a higher than average exposition, but you are fully vaccinated and should be protected in most situation. If you develop new symptoms, please complete the questionnaire of CovApp again to get an individualized recommendation.",
           "id": "low_exposition_vaccinated"
         },
         {
@@ -11055,7 +11064,7 @@
         {
           "expression": true,
           "id": "no_test",
-          "text": "%(v_green)sMost users with your answers are not infected with the novel coronavirus and do not need testing. If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
+          "text": "%(v_green)s Most users with your answers are not infected with the novel coronavirus and do not need testing. If you develop new symptoms or encounter a new risk contact, please complete the questionnaire of CovApp again to get an individualized recommendation."
         }
       ],
       "description": "Test Recommendation",
@@ -11330,7 +11339,7 @@
             ]
           },
           "id": "booster",
-          "text": "<center><h3>%(v_red)s Get boosted.</h3></center><br>\n\n\nMost users with your responses should get a booster shot. <br><br>\n\n<ul>\n<li>Although vaccination prevents severe disease, the effectiveness at preventing infection or severe illness wanes over time. </li>\n<li>A booster shot will give you additional protection against the highly transmissible omicron variant which is currently the cause for most infections in the US.</li>\n<li>A booster shot increases the immune response against the novel coronavirus. With an increased immune response, individuals have improved protection against getting infected with the novel coronavirus and are less likely to develop severe disease.</li>\n<li>A booster is recommended for individuals who were vaccinated with Pfizer-BioNTech or Moderna 6 months earlier or with the J&J/Janssen single-dose vaccine 2 months earlier.</li>\n</ul>\n\n<br>Booster shots are free and available throughout the US.<br><br>For vaccination sites near you and to schedule an appointment <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\" target=\"_blank\">click here</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> .<br><br>For more information regarding benefits of vaccination, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html\" target=\"_blank\">CDC</a>."
+          "text": "<center><h3>%(v_red)s Get boosted.</h3></center><br>\n\n\nMost users with your responses should get a booster shot. <br><br>\n\n<ul>\n<li>Although vaccination prevents severe disease, the effectiveness at preventing infection or severe illness wanes over time. </li>\n<li>A booster shot will give you additional protection against the highly transmissible omicron variant which is currently the cause for most infections in the US.</li>\n<li>A booster shot increases the immune response against the novel coronavirus. With an increased immune response, individuals have improved protection against getting infected with the novel coronavirus and are less likely to develop severe disease.</li>\n<li>A booster is recommended for individuals who were vaccinated with Pfizer-BioNTech or Moderna 6 months earlier or with the J&J/Janssen single-dose vaccine 2 months earlier.</li>\n</ul>\n\n<br>Booster shots are free and available throughout the US.<br><br>For vaccination sites near you and to schedule an appointment <a href=\"https://www.vaccines.gov/results/?zipcode=%(q_zip)s&medications=a84fb9ed-deb4-461c-b785-e17c782ef88b,779bfe52-0dd8-4023-a183-457eb100fccc,784db609-dc1f-45a5-bad6-8db02e79d44f&appointments=true\" target=\"_blank\">click here</a> or call <a href=\"tel:+18002320233\">1-800-232-0233</a> .<br><br>For more information regarding boosters, please also visit <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/vaccines/stay-up-to-date.html\" target=\"_blank\">CDC</a>."
         }
       ],
       "description": "Recommendation for Booster Shot",
