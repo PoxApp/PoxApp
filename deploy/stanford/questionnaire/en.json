@@ -824,36 +824,22 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Cancer",
-          "value": "cancer"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Cerebrovascular disease (e.g., stroke, carotid stenosis, aneurysms) ",
-          "value": "cerebrovascular"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Chronic kidney disease",
-          "value": "kidney"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Chronic lung disease (e.g., bronchiectasis, COPD, interstitial lung disease, cystic fibrosis)",
+          "text": "Chronic lung disease (COPD, cystic fibrosis, pulmonary fibrosis, pulmonary hypertension or embolism)",
           "value": "lung"
         },
         {
           "scores": {
             "Severity": 1
           },
-          "text": "Chronic liver disease (cirrhosis, non-alcoholic fatty liver disease, alcoholic liver disease, autoimmune hepatitis)",
-          "value": "liver"
+          "text": "Heart conditions (cardiomyopathy, congenital heart disease, heart failure, coronary artery disease)",
+          "value": "heart"
+        },
+        {
+          "scores": {
+            "Severity": 1
+          },
+          "text": "Brain and nervous system conditions (dementia, stroke)",
+          "value": "neuro"
         },
         {
           "scores": {
@@ -866,8 +852,8 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Down Syndrome",
-          "value": "downsyndrome"
+          "text": "Cancer",
+          "value": "cancer"
         },
         {
           "scores": {
@@ -880,36 +866,22 @@
           "scores": {
             "Severity": 1
           },
-          "text": "Heart conditions (e.g., heart failure, coronary artery disease, or cardiomyopathies)",
-          "value": "heart"
+          "text": "Chronic kidney or liver disease",
+          "value": "kidney"
         },
         {
           "scores": {
             "Severity": 1
           },
-          "text": "Mental health conditions (e.g., mood disorders, including depression, and schizophrenia spectrum disorders)",
+          "text": "Mental health conditions (depression, schizophrenia)",
           "value": "mental"
         },
         {
           "scores": {
             "Severity": 1
           },
-          "text": "Dementia or other neurological conditions",
-          "value": "neuro"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Primary immunodeficiencies",
-          "value": "primaryimmunodeficiencies"
-        },
-        {
-          "scores": {
-            "Severity": 1
-          },
-          "text": "Tuberculosis",
-          "value": "tuberculosis"
+          "text": "Down Syndrome",
+          "value": "downsyndrome"
         }
       ],
       "id": "q_chronic_illnesses",
@@ -949,6 +921,13 @@
           },
           "text": "Radiotherapy",
           "value": "radiotherapy"
+        },
+        {
+          "scores": {
+            "Severity": 2
+          },
+          "text": "Bone marrow transplant",
+          "value": "bonemarrow"
         }
       ],
       "id": "q_immunosuppressants",
@@ -1725,7 +1704,7 @@
             "var": "q_chronic_illnesses.option.hiv"
           },
           {
-            "var": "q_chronic_illnesses.option.primaryimmunodeficiencies"
+            "var": "q_immunosuppressants.option.bonemarrow"
           }
         ]
       },
