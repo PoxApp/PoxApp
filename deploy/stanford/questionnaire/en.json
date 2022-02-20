@@ -35,6 +35,7 @@
     },
     {
       "type": "multiselect",
+      "options": [],
       "id": "q_restriction",
       "text": "Access to CovApp is restricted.",
       "enableWhenExpression": {
@@ -45,6 +46,7 @@
     {
       "type": "multiselect",
       "id": "q_restriction2",
+      "options": [],
       "text": "Access to CovApp is restricted.",
       "enableWhenExpression": {
         "var": "q_intro.option.no"
