@@ -35,7 +35,6 @@
     },
     {
       "type": "multiselect",
-      "options": [],
       "id": "q_restriction",
       "text": "Access to CovApp is restricted.",
       "enableWhenExpression": {
@@ -46,7 +45,6 @@
     {
       "type": "multiselect",
       "id": "q_restriction2",
-      "options": [],
       "text": "Access to CovApp is restricted.",
       "enableWhenExpression": {
         "var": "q_intro.option.no"
@@ -2313,28 +2311,26 @@
                 "var": "is_fully_vaccinated"
               },
               {
-                "*": [
+                "if": [
                   {
-                    "+": [
+                    "and": [
                       {
-                        "*": [
-                          {
-                            "log10": {
-                              "+": [
-                                {
-                                  "var": "v_severity"
-                                },
-                                1
-                              ]
-                            }
-                          },
-                          0.48312
-                        ]
+                        "var": "is_immunocompromised"
                       },
-                      0.279494
+                      {
+                        "or": [
+                          {
+                            "var": "has_infection"
+                          },
+                          {
+                            "var": "has_probable_infection"
+                          }
+                        ]
+                      }
                     ]
                   },
-                  50
+                  20,
+                  10
                 ]
               },
               {
@@ -8528,48 +8524,11 @@
           {
             "if": [
               {
-                "or": [
+                ">": [
                   {
-                    ">": [
-                      {
-                        "var": "v_symptoms_user_score"
-                      },
-                      0
-                    ]
+                    "var": "v_highest_score"
                   },
-                  {
-                    ">": [
-                      {
-                        "var": "v_exposition_user_score"
-                      },
-                      0
-                    ]
-                  },
-                  {
-                    ">": [
-                      {
-                        "var": "v_dissemination_user_score"
-                      },
-                      0
-                    ]
-                  },
-                  {
-                    "and": [
-                      {
-                        ">": [
-                          {
-                            "var": "v_severity_user_score"
-                          },
-                          0
-                        ]
-                      },
-                      {
-                        "!": {
-                          "var": "is_fully_vaccinated"
-                        }
-                      }
-                    ]
-                  }
+                  10
                 ]
               },
               "Medium Risk",
@@ -8595,48 +8554,11 @@
           {
             "if": [
               {
-                "or": [
+                ">": [
                   {
-                    ">": [
-                      {
-                        "var": "v_symptoms_user_score"
-                      },
-                      0
-                    ]
+                    "var": "v_highest_score"
                   },
-                  {
-                    ">": [
-                      {
-                        "var": "v_exposition_user_score"
-                      },
-                      0
-                    ]
-                  },
-                  {
-                    ">": [
-                      {
-                        "var": "v_dissemination_user_score"
-                      },
-                      0
-                    ]
-                  },
-                  {
-                    "and": [
-                      {
-                        ">": [
-                          {
-                            "var": "v_severity_user_score"
-                          },
-                          0
-                        ]
-                      },
-                      {
-                        "!": {
-                          "var": "is_fully_vaccinated"
-                        }
-                      }
-                    ]
-                  }
+                  10
                 ]
               },
               "#FDE47F",
@@ -10690,7 +10612,7 @@
                   {
                     "var": "v_symptoms_user_score"
                   },
-                  0
+                  10
                 ]
               },
               "#FDE47F",
@@ -10720,7 +10642,7 @@
                   {
                     "var": "v_exposition_user_score"
                   },
-                  0
+                  10
                 ]
               },
               "#FDE47F",
@@ -10746,20 +10668,11 @@
           {
             "if": [
               {
-                "and": [
+                ">": [
                   {
-                    ">": [
-                      {
-                        "var": "v_severity_user_score"
-                      },
-                      0
-                    ]
+                    "var": "v_severity_user_score"
                   },
-                  {
-                    "!": {
-                      "var": "is_fully_vaccinated"
-                    }
-                  }
+                  10
                 ]
               },
               "#FDE47F",
@@ -10789,7 +10702,7 @@
                   {
                     "var": "v_dissemination_user_score"
                   },
-                  0
+                  10
                 ]
               },
               "#FDE47F",
@@ -10811,7 +10724,7 @@
               0
             ]
           },
-          1,
+          2,
           {
             "var": "v_highest_score"
           }
