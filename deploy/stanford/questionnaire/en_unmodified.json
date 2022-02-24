@@ -8592,9 +8592,7 @@
               }
             ]
           },
-          {
-            "var": "SEVENDAYINCIDENCEAK"
-          },
+          "SEVENDAYINCIDENCEAK",
           {
             "if": [
               {
@@ -8617,9 +8615,7 @@
                   }
                 ]
               },
-              {
-                "var": "SEVENDAYINCIDENCEAL"
-              },
+              "SEVENDAYINCIDENCEAL",
               {
                 "if": [
                   {
@@ -8642,9 +8638,7 @@
                       }
                     ]
                   },
-                  {
-                    "var": "SEVENDAYINCIDENCEAR"
-                  },
+                  "SEVENDAYINCIDENCEAR",
                   {
                     "if": [
                       {
@@ -8667,9 +8661,7 @@
                           }
                         ]
                       },
-                      {
-                        "var": "SEVENDAYINCIDENCEAR"
-                      },
+                      "SEVENDAYINCIDENCEAR",
                       {
                         "if": [
                           {
@@ -8692,9 +8684,7 @@
                               }
                             ]
                           },
-                          {
-                            "var": "SEVENDAYINCIDENCEAZ"
-                          },
+                          "SEVENDAYINCIDENCEAZ",
                           {
                             "if": [
                               {
@@ -8717,9 +8707,7 @@
                                   }
                                 ]
                               },
-                              {
-                                "var": "SEVENDAYINCIDENCECA"
-                              },
+                              "SEVENDAYINCIDENCECA",
                               {
                                 "if": [
                                   {
@@ -8742,9 +8730,7 @@
                                       }
                                     ]
                                   },
-                                  {
-                                    "var": "SEVENDAYINCIDENCECO"
-                                  },
+                                  "SEVENDAYINCIDENCECO",
                                   {
                                     "if": [
                                       {
@@ -8767,9 +8753,7 @@
                                           }
                                         ]
                                       },
-                                      {
-                                        "var": "SEVENDAYINCIDENCECT"
-                                      },
+                                      "SEVENDAYINCIDENCECT",
                                       {
                                         "if": [
                                           {
@@ -8792,9 +8776,7 @@
                                               }
                                             ]
                                           },
-                                          {
-                                            "var": "SEVENDAYINCIDENCECT"
-                                          },
+                                          "SEVENDAYINCIDENCECT",
                                           {
                                             "if": [
                                               {
@@ -8817,9 +8799,7 @@
                                                   }
                                                 ]
                                               },
-                                              {
-                                                "var": "SEVENDAYINCIDENCEDC"
-                                              },
+                                              "SEVENDAYINCIDENCEDC",
                                               {
                                                 "if": [
                                                   {
@@ -8842,9 +8822,7 @@
                                                       }
                                                     ]
                                                   },
-                                                  {
-                                                    "var": "SEVENDAYINCIDENCEDC"
-                                                  },
+                                                  "SEVENDAYINCIDENCEDC",
                                                   {
                                                     "if": [
                                                       {
@@ -8867,9 +8845,7 @@
                                                           }
                                                         ]
                                                       },
-                                                      {
-                                                        "var": "SEVENDAYINCIDENCEDC"
-                                                      },
+                                                      "SEVENDAYINCIDENCEDC",
                                                       {
                                                         "if": [
                                                           {
@@ -8892,9 +8868,7 @@
                                                               }
                                                             ]
                                                           },
-                                                          {
-                                                            "var": "SEVENDAYINCIDENCEDE"
-                                                          },
+                                                          "SEVENDAYINCIDENCEDE",
                                                           {
                                                             "if": [
                                                               {
@@ -8917,9 +8891,7 @@
                                                                   }
                                                                 ]
                                                               },
-                                                              {
-                                                                "var": "SEVENDAYINCIDENCEFL"
-                                                              },
+                                                              "SEVENDAYINCIDENCEFL",
                                                               {
                                                                 "if": [
                                                                   {
@@ -8942,9 +8914,7 @@
                                                                       }
                                                                     ]
                                                                   },
-                                                                  {
-                                                                    "var": "SEVENDAYINCIDENCEGA"
-                                                                  },
+                                                                  "SEVENDAYINCIDENCEGA",
                                                                   {
                                                                     "if": [
                                                                       {
@@ -8967,9 +8937,7 @@
                                                                           }
                                                                         ]
                                                                       },
-                                                                      {
-                                                                        "var": "SEVENDAYINCIDENCEGA"
-                                                                      },
+                                                                      "SEVENDAYINCIDENCEGA",
                                                                       {
                                                                         "if": [
                                                                           {
@@ -8992,9 +8960,7 @@
                                                                               }
                                                                             ]
                                                                           },
-                                                                          {
-                                                                            "var": "SEVENDAYINCIDENCEHI"
-                                                                          },
+                                                                          "SEVENDAYINCIDENCEHI",
                                                                           {
                                                                             "if": [
                                                                               {
@@ -9017,9 +8983,7 @@
                                                                                   }
                                                                                 ]
                                                                               },
-                                                                              {
-                                                                                "var": "SEVENDAYINCIDENCEIA"
-                                                                              },
+                                                                              "SEVENDAYINCIDENCEIA",
                                                                               {
                                                                                 "if": [
                                                                                   {
@@ -9042,9 +9006,7 @@
                                                                                       }
                                                                                     ]
                                                                                   },
-                                                                                  {
-                                                                                    "var": "SEVENDAYINCIDENCEIA"
-                                                                                  },
+                                                                                  "SEVENDAYINCIDENCEIA",
                                                                                   {
                                                                                     "if": [
                                                                                       {
@@ -9067,9 +9029,7 @@
                                                                                           }
                                                                                         ]
                                                                                       },
-                                                                                      {
-                                                                                        "var": "SEVENDAYINCIDENCEID"
-                                                                                      },
+                                                                                      "SEVENDAYINCIDENCEID",
                                                                                       {
                                                                                         "if": [
                                                                                           {
@@ -9092,9 +9052,7 @@
                                                                                               }
                                                                                             ]
                                                                                           },
-                                                                                          {
-                                                                                            "var": "SEVENDAYINCIDENCEIL"
-                                                                                          },
+                                                                                          "SEVENDAYINCIDENCEIL",
                                                                                           {
                                                                                             "if": [
                                                                                               {
@@ -9117,9 +9075,7 @@
                                                                                                   }
                                                                                                 ]
                                                                                               },
-                                                                                              {
-                                                                                                "var": "SEVENDAYINCIDENCEIN"
-                                                                                              },
+                                                                                              "SEVENDAYINCIDENCEIN",
                                                                                               {
                                                                                                 "if": [
                                                                                                   {
@@ -9142,9 +9098,7 @@
                                                                                                       }
                                                                                                     ]
                                                                                                   },
-                                                                                                  {
-                                                                                                    "var": "SEVENDAYINCIDENCEKS"
-                                                                                                  },
+                                                                                                  "SEVENDAYINCIDENCEKS",
                                                                                                   {
                                                                                                     "if": [
                                                                                                       {
@@ -9167,9 +9121,7 @@
                                                                                                           }
                                                                                                         ]
                                                                                                       },
-                                                                                                      {
-                                                                                                        "var": "SEVENDAYINCIDENCEKY"
-                                                                                                      },
+                                                                                                      "SEVENDAYINCIDENCEKY",
                                                                                                       {
                                                                                                         "if": [
                                                                                                           {
@@ -9192,9 +9144,7 @@
                                                                                                               }
                                                                                                             ]
                                                                                                           },
-                                                                                                          {
-                                                                                                            "var": "SEVENDAYINCIDENCELA"
-                                                                                                          },
+                                                                                                          "SEVENDAYINCIDENCELA",
                                                                                                           {
                                                                                                             "if": [
                                                                                                               {
@@ -9217,9 +9167,7 @@
                                                                                                                   }
                                                                                                                 ]
                                                                                                               },
-                                                                                                              {
-                                                                                                                "var": "SEVENDAYINCIDENCELA"
-                                                                                                              },
+                                                                                                              "SEVENDAYINCIDENCELA",
                                                                                                               {
                                                                                                                 "if": [
                                                                                                                   {
@@ -9242,9 +9190,7 @@
                                                                                                                       }
                                                                                                                     ]
                                                                                                                   },
-                                                                                                                  {
-                                                                                                                    "var": "SEVENDAYINCIDENCEMA"
-                                                                                                                  },
+                                                                                                                  "SEVENDAYINCIDENCEMA",
                                                                                                                   {
                                                                                                                     "if": [
                                                                                                                       {
@@ -9267,9 +9213,7 @@
                                                                                                                           }
                                                                                                                         ]
                                                                                                                       },
-                                                                                                                      {
-                                                                                                                        "var": "SEVENDAYINCIDENCEMA"
-                                                                                                                      },
+                                                                                                                      "SEVENDAYINCIDENCEMA",
                                                                                                                       {
                                                                                                                         "if": [
                                                                                                                           {
@@ -9292,9 +9236,7 @@
                                                                                                                               }
                                                                                                                             ]
                                                                                                                           },
-                                                                                                                          {
-                                                                                                                            "var": "SEVENDAYINCIDENCEMD"
-                                                                                                                          },
+                                                                                                                          "SEVENDAYINCIDENCEMD",
                                                                                                                           {
                                                                                                                             "if": [
                                                                                                                               {
@@ -9317,9 +9259,7 @@
                                                                                                                                   }
                                                                                                                                 ]
                                                                                                                               },
-                                                                                                                              {
-                                                                                                                                "var": "SEVENDAYINCIDENCEMD"
-                                                                                                                              },
+                                                                                                                              "SEVENDAYINCIDENCEMD",
                                                                                                                               {
                                                                                                                                 "if": [
                                                                                                                                   {
@@ -9342,9 +9282,7 @@
                                                                                                                                       }
                                                                                                                                     ]
                                                                                                                                   },
-                                                                                                                                  {
-                                                                                                                                    "var": "SEVENDAYINCIDENCEMD"
-                                                                                                                                  },
+                                                                                                                                  "SEVENDAYINCIDENCEMD",
                                                                                                                                   {
                                                                                                                                     "if": [
                                                                                                                                       {
@@ -9367,9 +9305,7 @@
                                                                                                                                           }
                                                                                                                                         ]
                                                                                                                                       },
-                                                                                                                                      {
-                                                                                                                                        "var": "SEVENDAYINCIDENCEME"
-                                                                                                                                      },
+                                                                                                                                      "SEVENDAYINCIDENCEME",
                                                                                                                                       {
                                                                                                                                         "if": [
                                                                                                                                           {
@@ -9392,9 +9328,7 @@
                                                                                                                                               }
                                                                                                                                             ]
                                                                                                                                           },
-                                                                                                                                          {
-                                                                                                                                            "var": "SEVENDAYINCIDENCEMI"
-                                                                                                                                          },
+                                                                                                                                          "SEVENDAYINCIDENCEMI",
                                                                                                                                           {
                                                                                                                                             "if": [
                                                                                                                                               {
@@ -9417,9 +9351,7 @@
                                                                                                                                                   }
                                                                                                                                                 ]
                                                                                                                                               },
-                                                                                                                                              {
-                                                                                                                                                "var": "SEVENDAYINCIDENCEMN"
-                                                                                                                                              },
+                                                                                                                                              "SEVENDAYINCIDENCEMN",
                                                                                                                                               {
                                                                                                                                                 "if": [
                                                                                                                                                   {
@@ -9442,9 +9374,7 @@
                                                                                                                                                       }
                                                                                                                                                     ]
                                                                                                                                                   },
-                                                                                                                                                  {
-                                                                                                                                                    "var": "SEVENDAYINCIDENCEMO"
-                                                                                                                                                  },
+                                                                                                                                                  "SEVENDAYINCIDENCEMO",
                                                                                                                                                   {
                                                                                                                                                     "if": [
                                                                                                                                                       {
@@ -9467,9 +9397,7 @@
                                                                                                                                                           }
                                                                                                                                                         ]
                                                                                                                                                       },
-                                                                                                                                                      {
-                                                                                                                                                        "var": "SEVENDAYINCIDENCEMS"
-                                                                                                                                                      },
+                                                                                                                                                      "SEVENDAYINCIDENCEMS",
                                                                                                                                                       {
                                                                                                                                                         "if": [
                                                                                                                                                           {
@@ -9492,9 +9420,7 @@
                                                                                                                                                               }
                                                                                                                                                             ]
                                                                                                                                                           },
-                                                                                                                                                          {
-                                                                                                                                                            "var": "SEVENDAYINCIDENCEMS"
-                                                                                                                                                          },
+                                                                                                                                                          "SEVENDAYINCIDENCEMS",
                                                                                                                                                           {
                                                                                                                                                             "if": [
                                                                                                                                                               {
@@ -9517,9 +9443,7 @@
                                                                                                                                                                   }
                                                                                                                                                                 ]
                                                                                                                                                               },
-                                                                                                                                                              {
-                                                                                                                                                                "var": "SEVENDAYINCIDENCEMT"
-                                                                                                                                                              },
+                                                                                                                                                              "SEVENDAYINCIDENCEMT",
                                                                                                                                                               {
                                                                                                                                                                 "if": [
                                                                                                                                                                   {
@@ -9542,9 +9466,7 @@
                                                                                                                                                                       }
                                                                                                                                                                     ]
                                                                                                                                                                   },
-                                                                                                                                                                  {
-                                                                                                                                                                    "var": "SEVENDAYINCIDENCENC"
-                                                                                                                                                                  },
+                                                                                                                                                                  "SEVENDAYINCIDENCENC",
                                                                                                                                                                   {
                                                                                                                                                                     "if": [
                                                                                                                                                                       {
@@ -9567,9 +9489,7 @@
                                                                                                                                                                           }
                                                                                                                                                                         ]
                                                                                                                                                                       },
-                                                                                                                                                                      {
-                                                                                                                                                                        "var": "SEVENDAYINCIDENCEND"
-                                                                                                                                                                      },
+                                                                                                                                                                      "SEVENDAYINCIDENCEND",
                                                                                                                                                                       {
                                                                                                                                                                         "if": [
                                                                                                                                                                           {
@@ -9592,9 +9512,7 @@
                                                                                                                                                                               }
                                                                                                                                                                             ]
                                                                                                                                                                           },
-                                                                                                                                                                          {
-                                                                                                                                                                            "var": "SEVENDAYINCIDENCENE"
-                                                                                                                                                                          },
+                                                                                                                                                                          "SEVENDAYINCIDENCENE",
                                                                                                                                                                           {
                                                                                                                                                                             "if": [
                                                                                                                                                                               {
@@ -9617,9 +9535,7 @@
                                                                                                                                                                                   }
                                                                                                                                                                                 ]
                                                                                                                                                                               },
-                                                                                                                                                                              {
-                                                                                                                                                                                "var": "SEVENDAYINCIDENCENE"
-                                                                                                                                                                              },
+                                                                                                                                                                              "SEVENDAYINCIDENCENE",
                                                                                                                                                                               {
                                                                                                                                                                                 "if": [
                                                                                                                                                                                   {
@@ -9642,9 +9558,7 @@
                                                                                                                                                                                       }
                                                                                                                                                                                     ]
                                                                                                                                                                                   },
-                                                                                                                                                                                  {
-                                                                                                                                                                                    "var": "SEVENDAYINCIDENCENH"
-                                                                                                                                                                                  },
+                                                                                                                                                                                  "SEVENDAYINCIDENCENH",
                                                                                                                                                                                   {
                                                                                                                                                                                     "if": [
                                                                                                                                                                                       {
@@ -9667,9 +9581,7 @@
                                                                                                                                                                                           }
                                                                                                                                                                                         ]
                                                                                                                                                                                       },
-                                                                                                                                                                                      {
-                                                                                                                                                                                        "var": "SEVENDAYINCIDENCENJ"
-                                                                                                                                                                                      },
+                                                                                                                                                                                      "SEVENDAYINCIDENCENJ",
                                                                                                                                                                                       {
                                                                                                                                                                                         "if": [
                                                                                                                                                                                           {
@@ -9692,9 +9604,7 @@
                                                                                                                                                                                               }
                                                                                                                                                                                             ]
                                                                                                                                                                                           },
-                                                                                                                                                                                          {
-                                                                                                                                                                                            "var": "SEVENDAYINCIDENCENM"
-                                                                                                                                                                                          },
+                                                                                                                                                                                          "SEVENDAYINCIDENCENM",
                                                                                                                                                                                           {
                                                                                                                                                                                             "if": [
                                                                                                                                                                                               {
@@ -9717,9 +9627,7 @@
                                                                                                                                                                                                   }
                                                                                                                                                                                                 ]
                                                                                                                                                                                               },
-                                                                                                                                                                                              {
-                                                                                                                                                                                                "var": "SEVENDAYINCIDENCENV"
-                                                                                                                                                                                              },
+                                                                                                                                                                                              "SEVENDAYINCIDENCENV",
                                                                                                                                                                                               {
                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                   {
@@ -9742,9 +9650,7 @@
                                                                                                                                                                                                       }
                                                                                                                                                                                                     ]
                                                                                                                                                                                                   },
-                                                                                                                                                                                                  {
-                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCENY"
-                                                                                                                                                                                                  },
+                                                                                                                                                                                                  "SEVENDAYINCIDENCENY",
                                                                                                                                                                                                   {
                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                       {
@@ -9767,9 +9673,7 @@
                                                                                                                                                                                                           }
                                                                                                                                                                                                         ]
                                                                                                                                                                                                       },
-                                                                                                                                                                                                      {
-                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCENY"
-                                                                                                                                                                                                      },
+                                                                                                                                                                                                      "SEVENDAYINCIDENCENY",
                                                                                                                                                                                                       {
                                                                                                                                                                                                         "if": [
                                                                                                                                                                                                           {
@@ -9792,9 +9696,7 @@
                                                                                                                                                                                                               }
                                                                                                                                                                                                             ]
                                                                                                                                                                                                           },
-                                                                                                                                                                                                          {
-                                                                                                                                                                                                            "var": "SEVENDAYINCIDENCEOH"
-                                                                                                                                                                                                          },
+                                                                                                                                                                                                          "SEVENDAYINCIDENCEOH",
                                                                                                                                                                                                           {
                                                                                                                                                                                                             "if": [
                                                                                                                                                                                                               {
@@ -9817,9 +9719,7 @@
                                                                                                                                                                                                                   }
                                                                                                                                                                                                                 ]
                                                                                                                                                                                                               },
-                                                                                                                                                                                                              {
-                                                                                                                                                                                                                "var": "SEVENDAYINCIDENCEOK"
-                                                                                                                                                                                                              },
+                                                                                                                                                                                                              "SEVENDAYINCIDENCEOK",
                                                                                                                                                                                                               {
                                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                                   {
@@ -9842,9 +9742,7 @@
                                                                                                                                                                                                                       }
                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCEOK"
-                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                  "SEVENDAYINCIDENCEOK",
                                                                                                                                                                                                                   {
                                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                                       {
@@ -9867,9 +9765,7 @@
                                                                                                                                                                                                                           }
                                                                                                                                                                                                                         ]
                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCEOR"
-                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                      "SEVENDAYINCIDENCEOR",
                                                                                                                                                                                                                       {
                                                                                                                                                                                                                         "if": [
                                                                                                                                                                                                                           {
@@ -9892,9 +9788,7 @@
                                                                                                                                                                                                                               }
                                                                                                                                                                                                                             ]
                                                                                                                                                                                                                           },
-                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                            "var": "SEVENDAYINCIDENCEPA"
-                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                          "SEVENDAYINCIDENCEPA",
                                                                                                                                                                                                                           {
                                                                                                                                                                                                                             "if": [
                                                                                                                                                                                                                               {
@@ -9917,9 +9811,7 @@
                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                 ]
                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                "var": "SEVENDAYINCIDENCERI"
-                                                                                                                                                                                                                              },
+                                                                                                                                                                                                                              "SEVENDAYINCIDENCERI",
                                                                                                                                                                                                                               {
                                                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                                                   {
@@ -9942,9 +9834,7 @@
                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCESC"
-                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                  "SEVENDAYINCIDENCESC",
                                                                                                                                                                                                                                   {
                                                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                                                       {
@@ -9967,9 +9857,7 @@
                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                         ]
                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCESD"
-                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                      "SEVENDAYINCIDENCESD",
                                                                                                                                                                                                                                       {
                                                                                                                                                                                                                                         "if": [
                                                                                                                                                                                                                                           {
@@ -9992,9 +9880,7 @@
                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                             ]
                                                                                                                                                                                                                                           },
-                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                            "var": "SEVENDAYINCIDENCETN"
-                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                          "SEVENDAYINCIDENCETN",
                                                                                                                                                                                                                                           {
                                                                                                                                                                                                                                             "if": [
                                                                                                                                                                                                                                               {
@@ -10017,9 +9903,7 @@
                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                 ]
                                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                "var": "SEVENDAYINCIDENCETX"
-                                                                                                                                                                                                                                              },
+                                                                                                                                                                                                                                              "SEVENDAYINCIDENCETX",
                                                                                                                                                                                                                                               {
                                                                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                                                                   {
@@ -10042,9 +9926,7 @@
                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCETX"
-                                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                                  "SEVENDAYINCIDENCETX",
                                                                                                                                                                                                                                                   {
                                                                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                                                                       {
@@ -10067,9 +9949,7 @@
                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                         ]
                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCETX"
-                                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                                      "SEVENDAYINCIDENCETX",
                                                                                                                                                                                                                                                       {
                                                                                                                                                                                                                                                         "if": [
                                                                                                                                                                                                                                                           {
@@ -10092,9 +9972,7 @@
                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                             ]
                                                                                                                                                                                                                                                           },
-                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                            "var": "SEVENDAYINCIDENCETX"
-                                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                                          "SEVENDAYINCIDENCETX",
                                                                                                                                                                                                                                                           {
                                                                                                                                                                                                                                                             "if": [
                                                                                                                                                                                                                                                               {
@@ -10117,9 +9995,7 @@
                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                 ]
                                                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                "var": "SEVENDAYINCIDENCEUT"
-                                                                                                                                                                                                                                                              },
+                                                                                                                                                                                                                                                              "SEVENDAYINCIDENCEUT",
                                                                                                                                                                                                                                                               {
                                                                                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                                                                                   {
@@ -10142,9 +10018,7 @@
                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCEVA"
-                                                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                                                  "SEVENDAYINCIDENCEVA",
                                                                                                                                                                                                                                                                   {
                                                                                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                                                                                       {
@@ -10167,9 +10041,7 @@
                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                         ]
                                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCEVA"
-                                                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                                                      "SEVENDAYINCIDENCEVA",
                                                                                                                                                                                                                                                                       {
                                                                                                                                                                                                                                                                         "if": [
                                                                                                                                                                                                                                                                           {
@@ -10192,9 +10064,7 @@
                                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                                             ]
                                                                                                                                                                                                                                                                           },
-                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                            "var": "SEVENDAYINCIDENCEVA"
-                                                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                                                          "SEVENDAYINCIDENCEVA",
                                                                                                                                                                                                                                                                           {
                                                                                                                                                                                                                                                                             "if": [
                                                                                                                                                                                                                                                                               {
@@ -10217,9 +10087,7 @@
                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                 ]
                                                                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                "var": "SEVENDAYINCIDENCEVA"
-                                                                                                                                                                                                                                                                              },
+                                                                                                                                                                                                                                                                              "SEVENDAYINCIDENCEVA",
                                                                                                                                                                                                                                                                               {
                                                                                                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                                                                                                   {
@@ -10242,9 +10110,7 @@
                                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCEVT"
-                                                                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                                                                  "SEVENDAYINCIDENCEVT",
                                                                                                                                                                                                                                                                                   {
                                                                                                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                                                                                                       {
@@ -10267,9 +10133,7 @@
                                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                                         ]
                                                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCEVT"
-                                                                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                                                                      "SEVENDAYINCIDENCEVT",
                                                                                                                                                                                                                                                                                       {
                                                                                                                                                                                                                                                                                         "if": [
                                                                                                                                                                                                                                                                                           {
@@ -10292,9 +10156,7 @@
                                                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                                                             ]
                                                                                                                                                                                                                                                                                           },
-                                                                                                                                                                                                                                                                                          {
-                                                                                                                                                                                                                                                                                            "var": "SEVENDAYINCIDENCEWA"
-                                                                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                                                                          "SEVENDAYINCIDENCEWA",
                                                                                                                                                                                                                                                                                           {
                                                                                                                                                                                                                                                                                             "if": [
                                                                                                                                                                                                                                                                                               {
@@ -10317,9 +10179,7 @@
                                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                                 ]
                                                                                                                                                                                                                                                                                               },
-                                                                                                                                                                                                                                                                                              {
-                                                                                                                                                                                                                                                                                                "var": "SEVENDAYINCIDENCEWI"
-                                                                                                                                                                                                                                                                                              },
+                                                                                                                                                                                                                                                                                              "SEVENDAYINCIDENCEWI",
                                                                                                                                                                                                                                                                                               {
                                                                                                                                                                                                                                                                                                 "if": [
                                                                                                                                                                                                                                                                                                   {
@@ -10342,9 +10202,7 @@
                                                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                                                                                                   },
-                                                                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                                                                    "var": "SEVENDAYINCIDENCEWV"
-                                                                                                                                                                                                                                                                                                  },
+                                                                                                                                                                                                                                                                                                  "SEVENDAYINCIDENCEWV",
                                                                                                                                                                                                                                                                                                   {
                                                                                                                                                                                                                                                                                                     "if": [
                                                                                                                                                                                                                                                                                                       {
@@ -10367,9 +10225,7 @@
                                                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                                                         ]
                                                                                                                                                                                                                                                                                                       },
-                                                                                                                                                                                                                                                                                                      {
-                                                                                                                                                                                                                                                                                                        "var": "SEVENDAYINCIDENCEWY"
-                                                                                                                                                                                                                                                                                                      },
+                                                                                                                                                                                                                                                                                                      "SEVENDAYINCIDENCEWY",
                                                                                                                                                                                                                                                                                                       -1
                                                                                                                                                                                                                                                                                                     ]
                                                                                                                                                                                                                                                                                                   }
