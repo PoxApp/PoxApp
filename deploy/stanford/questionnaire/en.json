@@ -767,8 +767,8 @@
       "options": [
         {
           "scores": {
-            "Symptoms": 1,
-            "Severity": 3
+            "Symptoms": 100,
+            "Severity": 100
           },
           "text": "Yes",
           "value": "yes"
@@ -808,7 +808,7 @@
         },
         {
           "scores": {
-            "Severity": 1
+            "Severity": 2
           },
           "text": "Pregnancy, current and recent (birth < 6 weeks)",
           "value": "pregnancy"
@@ -822,28 +822,28 @@
         },
         {
           "scores": {
-            "Severity": 1
+            "Severity": 2
           },
           "text": "Chronic lung disease (COPD, cystic fibrosis, pulmonary fibrosis, pulmonary hypertension or embolism)",
           "value": "lung"
         },
         {
           "scores": {
-            "Severity": 1
+            "Severity": 2
           },
           "text": "Heart conditions (cardiomyopathy, congenital heart disease, heart failure, coronary artery disease)",
           "value": "heart"
         },
         {
           "scores": {
-            "Severity": 1
+            "Severity": 2
           },
           "text": "Brain and nervous system conditions (dementia, stroke)",
           "value": "neuro"
         },
         {
           "scores": {
-            "Severity": 1
+            "Severity": 2
           },
           "text": "Diabetes mellitus (type 1 and 2)",
           "value": "diabetes"
@@ -864,7 +864,7 @@
         },
         {
           "scores": {
-            "Severity": 1
+            "Severity": 2
           },
           "text": "Chronic kidney or liver disease",
           "value": "kidney"
@@ -1748,7 +1748,7 @@
               {
                 "var": "v_severity"
               },
-              27
+              33
             ]
           },
           100
@@ -2228,28 +2228,41 @@
           },
           0,
           {
-            "*": [
+            "if": [
               {
-                "+": [
+                ">=": [
                   {
-                    "*": [
-                      {
-                        "log10": {
-                          "+": [
-                            {
-                              "var": "v_symptoms"
-                            },
-                            1
-                          ]
-                        }
-                      },
-                      0.687759
-                    ]
+                    "var": "v_symptoms"
                   },
-                  0.171856
+                  100
                 ]
               },
-              100
+              100,
+              {
+                "*": [
+                  {
+                    "+": [
+                      {
+                        "*": [
+                          {
+                            "log10": {
+                              "+": [
+                                {
+                                  "var": "v_symptoms"
+                                },
+                                1
+                              ]
+                            }
+                          },
+                          0.687759
+                        ]
+                      },
+                      0.2
+                    ]
+                  },
+                  100
+                ]
+              }
             ]
           }
         ]
@@ -2312,54 +2325,67 @@
           {
             "if": [
               {
-                "var": "is_fully_vaccinated"
+                ">=": [
+                  {
+                    "var": "v_severity"
+                  },
+                  100
+                ]
               },
+              100,
               {
                 "if": [
                   {
-                    "and": [
+                    "var": "is_fully_vaccinated"
+                  },
+                  {
+                    "if": [
                       {
-                        "var": "is_immunocompromised"
-                      },
-                      {
-                        "or": [
+                        "and": [
                           {
-                            "var": "has_infection"
+                            "var": "is_immunocompromised"
                           },
                           {
-                            "var": "has_probable_infection"
+                            "or": [
+                              {
+                                "var": "has_infection"
+                              },
+                              {
+                                "var": "has_probable_infection"
+                              }
+                            ]
                           }
                         ]
-                      }
+                      },
+                      20,
+                      10
                     ]
                   },
-                  20,
-                  10
-                ]
-              },
-              {
-                "*": [
                   {
-                    "+": [
+                    "*": [
                       {
-                        "*": [
+                        "+": [
                           {
-                            "log10": {
-                              "+": [
-                                {
-                                  "var": "v_severity"
-                                },
-                                1
-                              ]
-                            }
+                            "*": [
+                              {
+                                "log10": {
+                                  "+": [
+                                    {
+                                      "var": "v_severity"
+                                    },
+                                    1
+                                  ]
+                                }
+                              },
+                              0.48312
+                            ]
                           },
-                          0.48312
+                          0.27
                         ]
                       },
-                      0.279494
+                      100
                     ]
-                  },
-                  100
+                  }
                 ]
               }
             ]
@@ -11392,7 +11418,7 @@
           "text": "We have found the following resources for zip code '%(q_zip)s':<br><br>\n\nDepartment of Health %(v_state)s<br>\nWebsite: <a href=%(v_state_url)s target=\"_blank\">%(v_state_url)s</a><br>\nCOVID-19 Hotline: <a href=\"tel:%(v_state_hotline)s\">%(v_state_hotline)s</a><br>\nCOVID-19 Test: You can find low or no-cost COVID-19 testing sites in your area <a href=\"https://www.hhs.gov/coronavirus/community-based-testing-sites/index.html\" target=\"_blank\">here</a>. \n"
         }
       ],
-      "description": "COVID19 Resources for your Area",
+      "description": "COVID-19 Resources for Your Area",
       "id": "rc_local_resource"
     }
   ],
