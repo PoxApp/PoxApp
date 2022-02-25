@@ -11228,14 +11228,7 @@
           "expression": {
             "and": [
               {
-                "or": [
-                  {
-                    "var": "has_low_severity"
-                  },
-                  {
-                    "var": "has_high_severity"
-                  }
-                ]
+                "var": "has_high_severity"
               },
               {
                 "or": [
@@ -11256,6 +11249,32 @@
           },
           "id": "has_high_severity_and_infection_and_symptoms_no_vaccination",
           "text": "<center><h3>%(v_red)s High Risk for Severe Illness.<br></h3></center>Many users with your responses have a high risk to develop severe illness. <br><br>Please seek for medical care immediately, if you have or develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\"  target=\"_blank\">CDC guidelines</a>.<br><br>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "has_low_severity"
+              },
+              {
+                "or": [
+                  {
+                    "var": "has_infection"
+                  },
+                  {
+                    "var": "has_probable_infection"
+                  }
+                ]
+              },
+              {
+                "!": {
+                  "var": "is_fully_vaccinated"
+                }
+              }
+            ]
+          },
+          "text": "<center><h3>%(v_orange)s Medium Risk for Severe Illness.<br></h3></center>Some users with your responses can develop severe illness. <br><br>Please seek for medical care immediately, if you have or develop any of the following emergency warning signs:\n<ul>\n  <li>Trouble breathing</li>\n  <li>Pain or pressure in the chest</li>\n  <li>Confusion</li>\n  <li>Inability to wake or stay awake</li>\n  <li>Pale, gray, or blue-colored skin or lips</li>\n</ul>\nThis list of symptoms and conditions is not complete. Please contact your respective physician or medical provider for any other symptoms.<br><br>\nFor additional information, take a look at the <a href=\"https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html\"  target=\"_blank\">CDC guidelines</a>.<br><br>",
+          "id": "has_low_severity_and_has_infection_and_is_fully_vaccinated"
         },
         {
           "expression": {
