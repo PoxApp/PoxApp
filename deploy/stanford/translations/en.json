@@ -20,7 +20,7 @@
     "call_to_action_open_source": "<strong>CovApp open source</strong>\nCovApp is a software invented by Dr. Alexander Thieme and is open source. Find the source code <a href=\"https://github.com/CovOpen/Covapp-2.0\">here</a>. You can create your own version of CovApp and help fight COVID-19.",
     "start_block_3_headline": "What data is sent over the internet?",
     "summary_show_doctor_content_2": "<p>Or import your answers into a Data4Life account.</p><p>Data4Life is a nonprofit organization dedicated to developing secure digital health solutions.</p>",
-    "summary_show_doctor_content": "<p>You can print your answers and present the QR code at supporting hospitals.</p>",
+    "summary_show_doctor_content": "<p>You can print your answers and present the QR code at supporting hospitals.</p> ",
     "summary_show_doctor_button": "View answers and QR code",
     "start_block_1_headline": "How does CovApp work?",
     "start_block_5_headline": "Use the open-source version of CovApp to help fight COVID-19",
