@@ -12,7 +12,7 @@
       "en"
     ],
     "author": "Alexander Thieme",
-    "creationDate": "2022-03-12"
+    "creationDate": "2022-05-18"
   },
   "questions": [
     {
@@ -2156,7 +2156,14 @@
     },
     {
       "expression": {
-        "var": "has_positive_pcr"
+        "or": [
+          {
+            "var": "has_positive_pcr"
+          },
+          {
+            "var": "has_positive_antigen"
+          }
+        ]
       },
       "id": "has_infection"
     },
@@ -2207,9 +2214,6 @@
                 "var": "is_immunocompromised"
               }
             ]
-          },
-          {
-            "var": "has_positive_antigen"
           }
         ]
       },
@@ -21973,24 +21977,35 @@
                 "var": "v_cdc_has_high_risk"
               },
               {
+                "var": "has_infection"
+              },
+              {
                 "or": [
                   {
-                    "var": "has_positive_test"
+                    "var": "has_no_symptoms"
                   },
                   {
                     "and": [
                       {
-                        "var": "has_high_exposition"
+                        "var": "has_symptoms"
                       },
                       {
-                        "or": [
+                        "<=": [
                           {
-                            "!": {
-                              "var": "is_fully_vaccinated"
-                            }
+                            "-": [
+                              {
+                                "var": "now"
+                              },
+                              {
+                                "var": "q_symptoms_date"
+                              }
+                            ]
                           },
                           {
-                            "var": "is_immunocompromised"
+                            "*": [
+                              86400,
+                              7
+                            ]
                           }
                         ]
                       }
@@ -22000,12 +22015,12 @@
               }
             ]
           },
-          "id": "study_2",
-          "text": "<center><h3>%(v_red)s Monoclonal Antibody Therapy<br></h3></center>\nSome users with your responses may benefit from an approved, special treatment with monoclonal antibodies for the novel coronavirus due to a high risk of developing severe COVID-19. Such treatment is currently only available at specialized clinics.<br><br>Please coordinate with your respective physician or care provider before contacting a location to receive treatment. A call center is available to answer questions and provide information related to monoclonal antibody therapeutic treatments at the following phone numbers: <a href=\\\"tel:+18773326585\\\">1-877-332-6585</a> (English Language); <a href=\\\"tel:+18773660310\\\">1-877-366-0310</a> (Spanish Language).\n\n"
+          "id": "antiviral",
+          "text": "<center><h3>%(v_red)s Antiviral Therapy<br></h3></center>\nSome users with your responses may benefit from an approved antiviral treatment for COVID-19 due to a higher risk of developing severe illness.\n<br><br>A call center is available at: <a href=\\\"+18002320233\\\">1-800-232-0233</a> to get help (in English and more than 150 languages) from 8:00 am to midnight ET, 7 days a week.<br>\nThe Disability Information and Access Line (DIAL) is also available to specifically help people with disabilities access services. To get help, call <a href=\\\"+18886771199\\\">1-888-677-1199</a>, Monday-Friday from 9:00 am to 8:00 pm ET or email <a href=\"mailto:DIAL@usaginganddisability.org\">DIAL@usaginganddisability.org</a>.<br><br>\n\nTo help find participating treatment sites closest to you, please <a href=\"\\https://covid-19-test-to-treat-locator-dhhs.hub.arcgis.com/\\\">click here</a>."
         }
       ],
-      "description": "Suggestion for Special Treatments",
-      "id": "rc_treatment"
+      "description": "Suggestion for Antiviral Therapy",
+      "id": "rc_antiviral"
     },
     {
       "results": [
