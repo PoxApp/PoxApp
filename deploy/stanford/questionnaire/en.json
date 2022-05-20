@@ -12,7 +12,7 @@
       "en"
     ],
     "author": "Alexander Thieme",
-    "creationDate": "2022-05-18"
+    "creationDate": "2022-05-19"
   },
   "questions": [
     {
@@ -2961,6 +2961,9 @@
           },
           {
             "var": "q_immunosuppressants.option.immunosuppressiva"
+          },
+          {
+            "var": "q_risk_factors.option.hiv"
           },
           {
             "var": "q_risk_factors.option.lung"
@@ -21744,6 +21747,60 @@
       "results": [
         {
           "expression": {
+            "and": [
+              {
+                "var": "v_cdc_has_high_risk"
+              },
+              {
+                "var": "has_infection"
+              },
+              {
+                "or": [
+                  {
+                    "var": "has_no_symptoms"
+                  },
+                  {
+                    "and": [
+                      {
+                        "var": "has_symptoms"
+                      },
+                      {
+                        "<=": [
+                          {
+                            "-": [
+                              {
+                                "var": "now"
+                              },
+                              {
+                                "var": "q_symptoms_date"
+                              }
+                            ]
+                          },
+                          {
+                            "*": [
+                              86400,
+                              7
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "antiviral",
+          "text": "<center><h3>%(v_red)s Antiviral Therapy<br></h3></center>\nSome users with your responses may benefit from an approved antiviral treatment for COVID-19 due to a higher risk of developing severe illness.\n<br><br>A call center is available at: <a href=\\\"+18002320233\\\">1-800-232-0233</a> to get help (in English and more than 150 languages) from 8:00 am to midnight ET, 7 days a week.<br>\nThe Disability Information and Access Line (DIAL) is also available to specifically help people with disabilities access services. To get help, call <a href=\\\"+18886771199\\\">1-888-677-1199</a>, Monday-Friday from 9:00 am to 8:00 pm ET or email <a href=\"mailto:DIAL@usaginganddisability.org\">DIAL@usaginganddisability.org</a>.<br><br>\n\nTo help find participating treatment sites closest to you, please <a href=\"\\https://covid-19-test-to-treat-locator-dhhs.hub.arcgis.com/\\\">click here</a>."
+        }
+      ],
+      "description": "Suggestion for Antiviral Therapy",
+      "id": "rc_antiviral"
+    },
+    {
+      "results": [
+        {
+          "expression": {
             "var": "has_problems_breathing_symptom"
           },
           "id": "problems_breathing",
@@ -21967,60 +22024,6 @@
       ],
       "description": "Recommendations to prevent spread of virus",
       "id": "rc_dissemination"
-    },
-    {
-      "results": [
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "v_cdc_has_high_risk"
-              },
-              {
-                "var": "has_infection"
-              },
-              {
-                "or": [
-                  {
-                    "var": "has_no_symptoms"
-                  },
-                  {
-                    "and": [
-                      {
-                        "var": "has_symptoms"
-                      },
-                      {
-                        "<=": [
-                          {
-                            "-": [
-                              {
-                                "var": "now"
-                              },
-                              {
-                                "var": "q_symptoms_date"
-                              }
-                            ]
-                          },
-                          {
-                            "*": [
-                              86400,
-                              7
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          "id": "antiviral",
-          "text": "<center><h3>%(v_red)s Antiviral Therapy<br></h3></center>\nSome users with your responses may benefit from an approved antiviral treatment for COVID-19 due to a higher risk of developing severe illness.\n<br><br>A call center is available at: <a href=\\\"+18002320233\\\">1-800-232-0233</a> to get help (in English and more than 150 languages) from 8:00 am to midnight ET, 7 days a week.<br>\nThe Disability Information and Access Line (DIAL) is also available to specifically help people with disabilities access services. To get help, call <a href=\\\"+18886771199\\\">1-888-677-1199</a>, Monday-Friday from 9:00 am to 8:00 pm ET or email <a href=\"mailto:DIAL@usaginganddisability.org\">DIAL@usaginganddisability.org</a>.<br><br>\n\nTo help find participating treatment sites closest to you, please <a href=\"\\https://covid-19-test-to-treat-locator-dhhs.hub.arcgis.com/\\\">click here</a>."
-        }
-      ],
-      "description": "Suggestion for Antiviral Therapy",
-      "id": "rc_antiviral"
     },
     {
       "results": [
