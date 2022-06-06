@@ -113,10 +113,8 @@ export class Questionnaire {
     this.progress = this.questionnaireEngine.getProgress();
     if (nextQuestion === undefined) {
       let answers = this.questionnaireEngine.getAnswersPersistence();
-      if (
-        answers.answers.find((q) => q.questionId === QUESTION_SHARE_DATA().id)
-          .rawAnswer === 'yes'
-      ) {
+      const donationAnswer = answers.answers.find((q) => q.questionId === QUESTION_SHARE_DATA().id)
+      if (donationAnswer?.rawAnswer === 'yes') {
         // User is sharing data
         donateAnswers(answers);
       }

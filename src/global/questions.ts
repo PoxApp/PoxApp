@@ -1,8 +1,8 @@
 import { Questionnaire } from '@covopen/covquestions-js';
-import {
-  QUESTION_SHARE_DATA,
-} from '../components/views/questionnaire/utils';
+import { QUESTION_SHARE_DATA } from '../components/views/questionnaire/utils';
 import { LOCAL_STORAGE_KEYS } from './constants';
+import { ASK_FOR_DATADONATION } from './custom';
+
 
 export let questionnaire: Questionnaire = undefined;
 export let cacheKey: string = '';
@@ -16,13 +16,13 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   //     return new Promise(() => cachedQuestionnaire);
   //   }
   if (questionnaire != undefined && cacheKey === language) {
-    return new Promise(resolve => resolve(addAdditionalQuestions(questionnaire)));
+    return new Promise((resolve) => resolve(addAdditionalQuestions(questionnaire)));
   }
   // Make sure it is ending with a slash
   if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';
   return fetch(`${baseUrl}${language}.json`)
     .then((response: Response) => response.json())
-    .then(response => {
+    .then((response) => {
       localStorage.setItem(
         LOCAL_STORAGE_KEYS.QUESTIONNAIRE,
         JSON.stringify(response)
@@ -40,13 +40,13 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
 function addAdditionalQuestions(
   functionQuestionnaire: Questionnaire
 ): Questionnaire {
-  return {
-    ...functionQuestionnaire,
-    questions: [
-      ...functionQuestionnaire.questions,
-      QUESTION_SHARE_DATA(),
-    ],
-  };
+  if(ASK_FOR_DATADONATION){
+    return {
+      ...functionQuestionnaire,
+      questions: [...functionQuestionnaire.questions, QUESTION_SHARE_DATA()],
+    };
+  }
+  return functionQuestionnaire;
 }
 
 export const QUESTION = {
