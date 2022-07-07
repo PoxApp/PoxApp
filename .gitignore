@@ -1,0 +1,36 @@
+dist/
+!www/favicon.ico
+www/
+
+*~
+*.sw[mnpcod]
+*.log
+*.lock
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+
+.stencil/
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+node_modules/
+$RECYCLE.BIN/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+.env
+stats.html
+
+# Auto generated 
+src/assets/changelog.md
+
+# Customization
+src/global/custom.ts
+src/global/styles/overwrite.css
+custom/**/*
+!custom/.gitkeep

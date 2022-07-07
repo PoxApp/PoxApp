@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.logo-bzga {
+  height: 33px;
+}
+
+.logo-bzga--big {
+  height: 39px;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-bzga {
+    height: 39px;
+  }
+  .logo-bzga--big {
+    height: 52px;
+  }
+}

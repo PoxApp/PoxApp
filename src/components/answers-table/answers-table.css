@@ -1,0 +1,21 @@
+.answers-table {
+  margin-top: 1rem;
+}
+
+.answers-table table {
+  margin: 1rem 0;
+  text-align: left;
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.answers-table td {
+  padding: 0.25rem;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+.answers-table tr:nth-child(even) {
+  background-color: var(--color-neutral-lighter);
+}

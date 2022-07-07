@@ -1,0 +1,49 @@
+.start__headline-1 {
+  font-size: 1.5rem;
+  margin: 1rem 0 1.5rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.start__headline-2 {
+  margin-bottom: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.start__section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.start__section-illustration {
+  display: block;
+  margin: 0 auto;
+  width: 56px;
+  height: 56px;
+}
+
+.start__section-headline {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
+}
+
+.start__section-infotext {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.start__legal-note {
+  font-size: 0.9rem;
+}
+
+.start__legal-note > strong {
+  font-weight: 400;
+}
+
+.start__next-link {
+  padding-bottom: 1em;
+  display: block;
+}

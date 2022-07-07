@@ -1,0 +1,83 @@
+.language-switch {
+  text-transform: uppercase;
+}
+
+main {
+  padding: 0 var(--padding-main);
+}
+
+main.layout--embedded {
+  padding: var(--padding-main);
+  min-height: 100%;
+  justify-content: center;
+}
+
+.app__logo-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.app__logo-container ia-logo-charite {
+  margin-right: 1.56rem;
+}
+
+.app__cookie-bar {
+  position: relative;
+  box-shadow: var(--shadow-soft);
+}
+
+.banner--error {
+  background-color: var(--color-error) !important;
+  color: var(--color-tertiary) !important;
+}
+
+.banner--error .banner__close .sc-d4l-banner .icon {
+  color: var(--color-tertiary);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    min-height: calc(
+      100vh - var(--header-height-desktop) - var(--footer-height-desktop)
+    );
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .app__logo-container ia-logo-charite {
+    margin-right: 3.125rem;
+  }
+}
+
+.cookie-bar.snack-bar {
+  background-color: #fff;
+}
+
+.cookie-bar__content {
+  font-size: 14px;
+  color: var(--color-neutral);
+}
+
+.d4l-banner__content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.d4l-banner__content > * {
+  flex: 0 1 auto;
+}
+
+.d4l-banner__content > * + * {
+  margin-left: 1rem;
+}
+
+.version {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

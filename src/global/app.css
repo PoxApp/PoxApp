@@ -1,0 +1,127 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  Any global CSS variables should also be applied here.
+*/
+@import '../../node_modules/@d4l/web-components-library/dist/d4l-ui/d4l-ui.css';
+@import './styles/typography.css';
+@import './styles/variables.css';
+@import './styles/components.css';
+@import './styles/objects.css';
+@import './styles/utils.css';
+
+/*
+// TODO: https://github.com/gesundheitscloud/infection-risk-assessment/pull/76
+// This is only a temporary fix. This should be moved/handled differently
+*/
+@import '../components/input-date/input-date.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 1.5;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: var(--color-neutral);
+  background-color: var(--color-tertiary);
+}
+
+.radio strong {
+  font-weight: 400;
+}
+
+@media print {
+  /* Hide basically everything */
+  .c-header,
+  .c-footer,
+  .summary > * {
+    display: none;
+  }
+  .summary d4l-card > * {
+    display: none;
+  }
+  .summary d4l-card .summary__content > * {
+    display: none;
+  }
+  d4l-button {
+    display: none;
+  }
+  d4l-banner {
+    display: none;
+  }
+  d4l-snack-bar {
+    display: none;
+  }
+  /* Override hiding for the path we want to see */
+  .summary d4l-card {
+    display: block;
+  }
+  .summary d4l-card .summary__content {
+    display: block;
+  }
+  .summary d4l-card .summary__content .card__content {
+    display: block;
+  }
+
+  /* Slight display adjustments for paper view */
+  .summary h3 {
+    margin-top: 0;
+  }
+  .card {
+    box-shadow: none !important;
+  }
+  body {
+    background-color: #fff;
+  }
+}
+
+.disclaimer,
+.data_privacy,
+.faq,
+.recommendation,
+.imprint,
+.legal,
+.questionnaire__comment,
+.accordion__content,
+.call-to-action__container {
+  white-space: pre-wrap;
+}
+
+.ie {
+  display: none;
+  margin: 20px auto;
+  padding: 20px;
+  height: auto;
+  width: 50%;
+  background: white;
+  border-radius: 8px;
+  border-collapse: separate;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.15);
+}
+
+.is-ie {
+  display: block;
+}
+
+.is-ie + app-root {
+  display: none;
+}
+
+/**
+ * Add CSS from customization
+**/
+@import './styles/overwrite.css';
