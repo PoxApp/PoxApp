@@ -1,0 +1,48 @@
+{
+  "id": "test",
+  "schemaVersion": "",
+  "version": 1,
+  "language": "none",
+  "title": "test",
+  "meta": {
+    "availableLanguages": [],
+    "author": "",
+    "creationDate": ""
+  },
+  "questions": [
+    {
+      "numericOptions": {
+        "max": 1,
+        "min": 0
+      },
+      "options": [
+        {
+          "scores": {
+            "newKey": 2,
+            "newKey-1": 4
+          },
+          "text": "test",
+          "value": "0.2"
+        }
+      ],
+      "type": "number",
+      "id": "ai_image_recognition",
+      "text": "Photograph your Skin",
+      "details": "The data will be processed locally, try to center the rash in the frame."
+    }
+  ],
+  "resultCategories": [
+    {
+      "results": [
+        {
+          "expression": true,
+          "id": "test",
+          "text": "%(ai_image_recognition).2f"
+        }
+      ],
+      "description": "",
+      "id": "new_result_category_id"
+    }
+  ],
+  "variables": []
+}

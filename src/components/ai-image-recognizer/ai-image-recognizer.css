@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+video, canvas {
+  margin-bottom: 10px;
+}

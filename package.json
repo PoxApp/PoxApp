@@ -31,14 +31,13 @@
     "api-proxy": "node ./scripts/devProxy.js"
   },
   "devDependencies": {
-    "@stencil/core": "^2.6.0",
+    "@lokalise/node-api": "^6.0.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/github": "^7.1.1",
     "@semantic-release/release-notes-generator": "^9.0.1",
-    "semantic-release": "^17.2.1",
-    "@lokalise/node-api": "^6.0.0",
+    "@stencil/core": "^2.6.0",
     "@stencil/router": "^1.0.1",
     "@types/jest": "26.0.23",
     "@types/puppeteer": "5.4.3",
@@ -52,6 +51,7 @@
     "prettier": "^2.3.1",
     "puppeteer": "10.0.0",
     "rollup-plugin-visualizer": "^4.2.2",
+    "semantic-release": "^17.2.1",
     "workbox-build": "6.1.5"
   },
   "license": "MIT",
@@ -59,6 +59,7 @@
     "@covopen/covquestions-js": "1.5.0",
     "@d4l/web-components-library": "^2.22.4",
     "@sentry/browser": "6.7.1",
+    "@tensorflow/tfjs": "^3.19.0",
     "cross-env": "^7.0.3",
     "dompurify": "^2.2.9",
     "http-proxy": "^1.18.1",

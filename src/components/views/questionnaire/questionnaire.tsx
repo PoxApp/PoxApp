@@ -330,7 +330,12 @@ export class Questionnaire {
                         onUpdateFormData={updateFormData}
                       />
                     )}
-                    {currentQuestion.type === 'number' && (
+                    {currentQuestion.type === 'number' ?
+                      (currentQuestion.id.startsWith("ai_") ?
+                      <ai-image-recognizer
+                        onUpdateFormData={updateFormData}
+                        inputId={currentQuestion.id}
+                        /> :
                       <ia-input-number
                         inputId={currentQuestion.id}
                         inputLabel={currentQuestion.text}
@@ -341,7 +346,8 @@ export class Questionnaire {
                         value={this.currentAnswerValue as number}
                         onUpdateFormData={updateFormData}
                       />
-                    )}
+                      )
+                    : null}
                   </div>
                 ) : undefined}
               </fieldset>
