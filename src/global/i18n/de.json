@@ -1,6 +1,9 @@
 {
   "label": "Deutsch",
   "keys": {
+    "ai_remove_picture": "Neues Bild aufnehmen",
+    "ai_take_picture": "Bild aufnehmen",
+    "no_camera_support": "Dein Gerät untertützt keine Bildaufnahmen",
     "answers_table_headline": "Ihre Antworten",
     "answers_table_hide_answers": "Antworten ausblenden",
     "answers_table_print": "Drucken",

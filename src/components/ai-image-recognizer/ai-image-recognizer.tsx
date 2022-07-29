@@ -83,6 +83,7 @@ export class AiImageRecognizer {
 
   render() {
     return [
+        (!SUPPORTS_MEDIA_DEVICES && i18next.t('no_camera_support')),
         <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,
         <video ref={el => (this._player = el)} width="640" height="640" autoplay playsinline muted style={{display: this.tookPicture ? "none" : "block"}}></video>,
         (this.tookPicture ?
