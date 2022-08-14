@@ -62,7 +62,7 @@
       "enableWhenExpression": {
         "var": "q_rash.option.yes"
       },
-      "details": "PoxApp kann das Foto analysieren und bedingt in die Auswirkung einfließen lassen."
+      "details": "PoxApp kann das Foto analysieren und bedingt in die Auswertung einfließen lassen."
     },
     {
       "numericOptions": {},
