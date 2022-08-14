@@ -37,7 +37,7 @@
         {
           "expression": true,
           "id": "test",
-          "text": "%(ai_image_recognition).2f"
+          "text": "%(ai_image_recognition.confidence).2f %(ai_image_recognition.img)s"
         }
       ],
       "description": "",

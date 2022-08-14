@@ -19,7 +19,7 @@ const SUPPORTS_MEDIA_DEVICES = 'mediaDevices' in navigator;
 export class AiImageRecognizer {
   @Prop() inputId: string;
   @Event() updateFormData: EventEmitter;
-  updateFormDataHandler(key: string, value: number) {
+  updateFormDataHandler(key: string, value: object) {
     this.updateFormData.emit({ key, value });
   }
 
@@ -74,7 +74,7 @@ export class AiImageRecognizer {
     console.log(labels[tf.argMax(score).dataSync()[0]] + ' with ' + confidence)
 
     img.dispose();
-    this.updateFormDataHandler(this.inputId, confidence)
+    //this.updateFormDataHandler(this.inputId, confidence)
   }
 
   predict = async(imgElement) =>  {
@@ -87,7 +87,7 @@ export class AiImageRecognizer {
       const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);
       var confidence = this._model.predict(batched);
       debugger
-      this.updateFormDataHandler(this.inputId, confidence)
+      this.updateFormDataHandler(this.inputId, {confidence: confidence, img: "img" })
     });
 
   }
