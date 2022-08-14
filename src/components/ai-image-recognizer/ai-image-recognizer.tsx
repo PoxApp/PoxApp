@@ -100,8 +100,8 @@ export class AiImageRecognizer {
       reader.onload = e => {
         // Fill the image & call predict.
         this._img_preview.src = e.target.result;
-        this._img_preview.width = 224;
-        this._img_preview.height = 244;
+        //this._img_preview.width = 224;
+        //this._img_preview.height = 244;
         this._img_preview.onload = () => this.predict(this._img_preview);
       };
 
@@ -119,7 +119,7 @@ export class AiImageRecognizer {
   render() {
     return [
         (!SUPPORTS_MEDIA_DEVICES && i18next.t('no_camera_support')),
-        <img ref={el => (this._img_preview = el)} width="640" height="640" />,
+        <img ref={el => (this._img_preview = el)} style={{"width" : "100%"}} />,
         <input type="file" accept="image/*" onChange={this.uploadPicture}/>,
         // <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,
         // <video ref={el => (this._player = el)} width="640" height="640" autoplay playsinline muted style={{display: this.tookPicture ? "none" : "block"}}></video>,
