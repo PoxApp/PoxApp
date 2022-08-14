@@ -40,19 +40,19 @@ export class AiImageRecognizer {
   }
 
   async componentDidLoad() {
-    this._videoStream = await tf.data.webcam(this._player, {
-      resizeWidth: 180,
-      resizeHeight: 180,
-      facingMode: 'environment',
-    });
+    //this._videoStream = await tf.data.webcam(this._player, {
+    //  resizeWidth: 180,
+    //  resizeHeight: 180,
+    //  facingMode: 'environment',
+    //});
     // const track = this._videoStream.webcamVideoElement.srcObject.getVideoTracks()[0]
     // console.log(track.getCapabilities().torch)
     // track.applyConstraints({advanced: [{torch:true}]})
   }
 
   disconnectedCallback(){
-    this._videoStream.stop();
-    this._model.dispose();
+    //this._videoStream.stop();
+    //this._model.dispose();
   }
 
   takePicture = async () => {
@@ -77,6 +77,21 @@ export class AiImageRecognizer {
     this.updateFormDataHandler(this.inputId, confidence)
   }
 
+  predict = async(imgElement) =>  {
+   
+    const logits = tf.tidy(() => {
+      const IMAGE_SIZE = 224;
+      const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
+      const offset = tf.scalar(127.5);
+      const normalized = img.sub(offset).div(offset);
+      const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);
+      var confidence = this._model.predict(batched);
+      debugger
+      this.updateFormDataHandler(this.inputId, confidence)
+    });
+
+  }
+
   uploadPicture = async (event: any) => {
     if(event.target.files.length >= 1){
       let file = event.target.files[0];
@@ -86,7 +101,7 @@ export class AiImageRecognizer {
         this._img_preview.src = e.target.result;
         this._img_preview.width = 224;
         this._img_preview.height = 244;
-        // img.onload = () => predict(img);
+        this._img_preview.onload = () => this.predict(this._img_preview);
       };
 
       // Read in the image file as a data URL.
@@ -103,25 +118,25 @@ export class AiImageRecognizer {
   render() {
     return [
         (!SUPPORTS_MEDIA_DEVICES && i18next.t('no_camera_support')),
+        <img ref={el => (this._img_preview = el)} width="640" height="640" />,
         <input type="file" accept="image/*" onChange={this.uploadPicture}/>,
-        <img ref={el => (this._img_preview = el)} />,
         // <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,
         // <video ref={el => (this._player = el)} width="640" height="640" autoplay playsinline muted style={{display: this.tookPicture ? "none" : "block"}}></video>,
-        (this.tookPicture ?
-          <d4l-button
-          type="button"
-          classes="button--block answers-table__button"
-          data-test="removePictureButton"
-          text={i18next.t('ai_remove_picture')}
-          handleClick={this.removePicture}
-          /> : 
-          <d4l-button
-            type="button"
-            classes="button--block answers-table__button"
-            data-test="takePictureButton"
-            text={i18next.t('ai_take_picture')}
-            handleClick={this.takePicture}
-          />)
+        //(this.tookPicture ?
+        //  <d4l-button
+        //  type="button"
+        //  classes="button--block answers-table__button"
+        //  data-test="removePictureButton"
+        //  text={i18next.t('ai_remove_picture')}
+        //  handleClick={this.removePicture}
+        //  /> : 
+        //  <d4l-button
+        //    type="button"
+        //    classes="button--block answers-table__button"
+        //    data-test="takePictureButton"
+        //    text={i18next.t('ai_take_picture')}
+        //    handleClick={this.takePicture}
+        //  />)
         ];
   }
 
