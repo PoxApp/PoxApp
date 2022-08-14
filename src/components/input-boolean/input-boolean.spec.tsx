@@ -9,9 +9,7 @@ describe('input-boolean', () => {
     });
     expect(page.root).toEqualHtml(`
       <input-boolean>
-        <mock:shadow-root>
           <ia-input-radio value=""></ia-input-radio>
-        </mock:shadow-root>
       </input-boolean>
     `);
   });

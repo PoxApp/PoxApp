@@ -76,7 +76,3 @@ As long as your are staying withing the guards set by the [customization documen
 [Contributor Code of Conduct](./CODE-OF-CONDUCT.md). By participating in this project, you agree to abide by its terms.
 
 We are currently using https://storybook.d4l.io/?path=/story/screens-welcome--welcome
-
-## Remarks
-
-The first version was developed by the [data4life team](https://github.com/d4l-data4life/covapp). 
