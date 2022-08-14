@@ -72,5 +72,8 @@
     "i18next-browser-languagedetector": "6.1.2",
     "pure-svg-code": "^1.0.6",
     "rollup-plugin-node-polyfills": "^0.2.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }
