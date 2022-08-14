@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('ai-image-recognizer', () => {
+xdescribe('ai-image-recognizer', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<ai-image-recognizer></ai-image-recognizer>');
