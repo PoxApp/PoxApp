@@ -80,14 +80,15 @@ export class AiImageRecognizer {
   predict = async(imgElement) =>  {
    
     const logits = tf.tidy(() => {
-      const IMAGE_SIZE = 224;
-      const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
-      const offset = tf.scalar(127.5);
-      const normalized = img.sub(offset).div(offset);
-      const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);
-      var confidence = this._model.predict(batched);
+      //const IMAGE_SIZE = 224;
+      //const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
+      //const offset = tf.scalar(127.5);
+      //const normalized = img.sub(offset).div(offset);
+      //const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);
+      //var confidence = this._model.predict(batched);
+      var confidence = 1;
       debugger
-      this.updateFormDataHandler(this.inputId, {confidence: confidence, img: "img" })
+      this.updateFormDataHandler(this.inputId, {confidence: confidence, img: btoa(imgElement.src) })
     });
 
   }
