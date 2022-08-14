@@ -10,9 +10,11 @@ tasks:
       export PATH="$PATH:$HOME/.dotnet/tools/"
 #      cp example.env .env
     command: |
+      mkdir /workspace/datadonation
       cd /workspace/datadonation
       git clone https://github.com/CovOpen/DataDonation.git . 
       dotnet restore
+      docker-compose up -d
       dotnet run
     openMode: split-right
   

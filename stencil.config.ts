@@ -23,6 +23,7 @@ export const config: Config = {
   ],
   testing: {
     setupFiles: ['jest-localstorage-mock'],
+    testPathIgnorePatterns: ['cypress'],
   },
   plugins: [
     nodePolyfills(),

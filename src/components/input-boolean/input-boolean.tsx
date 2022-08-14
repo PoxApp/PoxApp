@@ -11,7 +11,6 @@ import {
 @Component({
   tag: 'input-boolean',
   styleUrl: 'input-boolean.css',
-  shadow: true,
 })
 export class InputBoolean implements ComponentInterface {
   @Prop() inputId: string;
