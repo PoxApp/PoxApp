@@ -29,6 +29,7 @@ export class AiImageRecognizer {
   _canvas;
   _model;
   _videoStream;
+  _img_preview;
 
 
   componentWillLoad() {
@@ -75,6 +76,24 @@ export class AiImageRecognizer {
     img.dispose();
     this.updateFormDataHandler(this.inputId, confidence)
   }
+
+  uploadPicture = async (event: any) => {
+    if(event.target.files.length >= 1){
+      let file = event.target.files[0];
+      let reader = new FileReader();
+      reader.onload = e => {
+        // Fill the image & call predict.
+        this._img_preview.src = e.target.result;
+        this._img_preview.width = 224;
+        this._img_preview.height = 244;
+        // img.onload = () => predict(img);
+      };
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(file);
+    }
+  }
+
   removePicture = async () => {
     this.tookPicture = false;
     this.updateFormDataHandler(this.inputId, undefined)
@@ -84,8 +103,10 @@ export class AiImageRecognizer {
   render() {
     return [
         (!SUPPORTS_MEDIA_DEVICES && i18next.t('no_camera_support')),
-        <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,
-        <video ref={el => (this._player = el)} width="640" height="640" autoplay playsinline muted style={{display: this.tookPicture ? "none" : "block"}}></video>,
+        <input type="file" accept="image/*" onChange={this.uploadPicture}/>,
+        <img ref={el => (this._img_preview = el)} />,
+        // <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,
+        // <video ref={el => (this._player = el)} width="640" height="640" autoplay playsinline muted style={{display: this.tookPicture ? "none" : "block"}}></video>,
         (this.tookPicture ?
           <d4l-button
           type="button"
