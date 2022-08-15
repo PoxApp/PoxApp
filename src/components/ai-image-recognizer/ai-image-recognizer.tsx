@@ -98,14 +98,22 @@ export class AiImageRecognizer {
       return mobilenet.predict(batched);
     });
 
+    console.log(logits)
 
     const classes = await this.getTopKClasses(logits, TOPK_PREDICTIONS);
     var classname = classes[0].className;
     var confidence = classes[0].probability.toFixed(3);
 
-    console.log(classname + " " + confidence)
+    this.showResults(classes)
     this.updateFormDataHandler(this.inputId, {confidence: confidence, img: classname });
   }
+
+  showResults = async(classes) => {
+    for (let i = 0; i < classes.length; i++) {
+      console.log("class: " + classes[i].className + " probability: " + classes[i].probability.toFixed(3));
+    }
+  }
+
 
   getTopKClasses = async(logits, topK) => {
     const IMAGENET_CLASSES = {
@@ -1135,6 +1143,7 @@ export class AiImageRecognizer {
   
     const valuesAndIndices = [];
     for (let i = 0; i < values.length; i++) {
+      console.log(values[i])
       valuesAndIndices.push({value: values[i], index: i});
     }
     valuesAndIndices.sort((a, b) => {
