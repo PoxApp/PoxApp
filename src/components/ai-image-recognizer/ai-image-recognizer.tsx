@@ -31,10 +31,10 @@ export class AiImageRecognizer {
   _img_preview;
   _input;
 
-  IMAGE_SIZE = 180;
+  IMAGE_SIZE = 160;
 
   componentWillLoad() {
-    tf.loadLayersModel('assets/ai/model.json').then(model => {
+    tf.loadGraphModel('assets/ai/model.json').then(model => {
       this._model = model;
       console.log('model loaded');
     });
