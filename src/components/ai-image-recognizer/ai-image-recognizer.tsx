@@ -7,13 +7,12 @@ import {
   State,
 } from '@stencil/core';
 import * as tf from '@tensorflow/tfjs';
-import i18next from '../../global/utils/i18n';
+import i18next from 'i18next';
 
 
 @Component({
   tag: 'ai-image-recognizer',
   styleUrl: 'ai-image-recognizer.css',
-  shadow: true,
 })
 export class AiImageRecognizer {
   @Prop() inputId: string;
@@ -94,8 +93,9 @@ export class AiImageRecognizer {
 
   render() {
     return [
-        <img ref={el => (this._img_preview = el)} style={{"width" : "100%"}}  />,
-        <input ref={el => (this._input = el)} type="file" style={{"visibility": "visible" }} accept="image/*" onChange={this.uploadPicture}/>,
+      <label htmlFor="file-upload" class="file-upload">{i18next.t('upload_picture')}</label>,
+      <input ref={el => (this._input = el)} type="file" id="file-upload" accept="image/*" onChange={this.uploadPicture}/>,
+      <img ref={el => (this._img_preview = el)} style={{"width" : "100%"}}  />,
         // <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,
         // <video ref={el => (this._player = el)} width="640" height="640" autoplay playsinline muted style={{display: this.tookPicture ? "none" : "block"}}></video>,
         //(this.tookPicture ?
