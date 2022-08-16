@@ -7,10 +7,139 @@
   "meta": {
     "availableLanguages": [],
     "author": "Alexander Thieme",
-    "creationDate": "2022-06-03",
+    "creationDate": "2022-08-16",
     "description": "Provide recommendations for monkeypox infections"
   },
   "questions": [
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_intro",
+      "text": "Do you reside in the United States and are at least 18 years old?",
+      "details": "CovApp may only be used by persons who reside in the United States and are at least 18 years old."
+    },
+    {
+      "type": "multiselect",
+      "id": "q_restriction",
+      "text": "Access to PoxApp is restricted.",
+      "enableWhenExpression": {
+        "var": "q_intro.option.no"
+      },
+      "details": "We are sorry, but PoxApp Stanford can currently only be offered to individuals who reside in the US and are at least 18 years old.<br><br>Click <a href=\"https://poxapp.stanford.edu\">here</a> to return to the PoxApp mainpage."
+    },
+    {
+      "type": "multiselect",
+      "id": "q_restriction2",
+      "text": "Access to PoxApp is restricted.",
+      "enableWhenExpression": {
+        "var": "q_intro.option.no"
+      },
+      "details": "We are sorry, but PoxApp Stanford can currently only be offered to individuals who reside in the US and are at least 18 years old.<br><br>Click <a href=\"https://poxapp.stanford.edu\">here</a> to return to the PoxApp mainpage."
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "American Indian or Alaska Native",
+          "value": "indian"
+        },
+        {
+          "scores": {},
+          "text": "Asian",
+          "value": "asian"
+        },
+        {
+          "scores": {},
+          "text": "Black or African America",
+          "value": "black"
+        },
+        {
+          "scores": {},
+          "text": "Native Hawaiian or Other Pacific Islander",
+          "value": "hawaiian"
+        },
+        {
+          "scores": {},
+          "text": "White",
+          "value": "white"
+        },
+        {
+          "scores": {},
+          "text": "I prefer not to say",
+          "value": "no"
+        }
+      ],
+      "type": "multiselect",
+      "id": "q_race",
+      "text": "What is your race?",
+      "details": "One or more categories may be selected."
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Hispanic or Latino",
+          "value": "hispanic"
+        },
+        {
+          "scores": {},
+          "text": "Not Hispanic or Latino",
+          "value": "non-hispanic"
+        },
+        {
+          "scores": {},
+          "text": "I prefer not to say",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_ethnicity",
+      "text": "What is your ethnicity?"
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "male",
+          "value": "male"
+        },
+        {
+          "scores": {},
+          "text": "female",
+          "value": "female"
+        },
+        {
+          "scores": {},
+          "text": "I prefer not to say",
+          "value": "iprefernottosay"
+        }
+      ],
+      "type": "select",
+      "id": "q_sexbirth",
+      "text": "Sex assigned at birth:"
+    },
+    {
+      "numericOptions": {
+        "max": 120,
+        "min": 18,
+        "step": 1
+      },
+      "options": [],
+      "id": "q_age",
+      "text": "What is your age?",
+      "type": "number"
+    },
     {
       "numericOptions": {
         "max": 99999,
@@ -41,6 +170,14 @@
       "id": "q_rash",
       "text": "Do you have a skin or mucosal rash/lesion?",
       "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, genital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
+    },
+    {
+      "type": "date",
+      "id": "q_rash_date",
+      "text": "On which date did the rash/skin lesion first appear?",
+      "enableWhenExpression": {
+        "var": "q_rash.option.yes"
+      }
     },
     {
       "options": [
@@ -232,6 +369,54 @@
       "id": "q_travel",
       "text": "Have you been in any of the following locations in the past 21 days?",
       "details": "Please select one of the mentioned locations."
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Monkeypox",
+          "value": "monkeypox"
+        },
+        {
+          "scores": {},
+          "text": "Measels",
+          "value": "measels"
+        },
+        {
+          "scores": {},
+          "text": "Chickenpox (or varicelle zoster or VZV)",
+          "value": "chickenpox"
+        }
+      ],
+      "type": "multiselect",
+      "id": "q_vaccine",
+      "text": "For which diseases have you been vaccinated?",
+      "optional": true
+    },
+    {
+      "options": [
+        {
+          "scores": {},
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_new_medication",
+      "text": "Did you take any new medication in the last 14 days?"
+    },
+    {
+      "type": "date",
+      "id": "q_new_med_date",
+      "text": "On which date did you take the new medication for the first time?",
+      "enableWhenExpression": {
+        "var": "q_new_medication.option.yes"
+      }
     }
   ],
   "resultCategories": [
