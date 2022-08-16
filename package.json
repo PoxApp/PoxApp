@@ -29,7 +29,7 @@
     "prepare-stanford": "rimraf custom && mkdir custom && copyfiles ./deploy/stanford/**/* custom -u 2 -V && copyfiles ./deploy/stanford/* custom -u 2 -V",
     "prepare-poxapp": "rimraf custom && mkdir custom && copyfiles ./deploy/poxapp/**/* custom -u 2 -V && copyfiles ./deploy/poxapp/* custom -u 2 -V",
     "start-charite": "npm run prepare-charite && cross-env LAYOUT=CHARITE npm run start",
-    "start-poxapp": "npm run prepare-poxapp && cross-env LAYOUT=CHARITE npm run start",
+    "start-poxapp": "npm run prepare-poxapp && cross-env SUPPORTED_LANGUAGES=en LAYOUT=CHARITE npm run start",
     "start-stanford": "npm run prepare-stanford && cross-env SUPPORTED_LANGUAGES=en npm run start",
     "release": "semantic-release",
     "api-proxy": "node ./scripts/devProxy.js"
