@@ -3,7 +3,7 @@
   "schemaVersion": "",
   "version": 1,
   "language": "en",
-  "title": "PoxApp",
+  "title": "PoxApp Stanford",
   "meta": {
     "availableLanguages": [],
     "author": "Alexander Thieme",
@@ -108,6 +108,17 @@
       "text": "What is your ethnicity?"
     },
     {
+      "numericOptions": {
+        "max": 99999,
+        "min": 0,
+        "step": 1
+      },
+      "type": "number",
+      "id": "q_zip",
+      "text": "What is your zip code?",
+      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
+    },
+    {
       "options": [
         {
           "scores": {},
@@ -139,17 +150,6 @@
       "id": "q_age",
       "text": "What is your age?",
       "type": "number"
-    },
-    {
-      "numericOptions": {
-        "max": 99999,
-        "min": 0,
-        "step": 1
-      },
-      "type": "number",
-      "id": "q_zip",
-      "text": "What is your zip code?",
-      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
     },
     {
       "options": [
@@ -530,7 +530,7 @@
     {
       "results": [
         {
-          "expression": true,
+          "expression": "",
           "id": "rc_tulip2",
           "text": "Probability that this is a tulip: %(ai_image_recognition.confidence).2f"
         }
@@ -541,14 +541,7 @@
     {
       "results": [
         {
-          "expression": {
-            ">": [
-              {
-                "var": "ai_image_recognition.confidence"
-              },
-              0.5
-            ]
-          },
+          "expression": "",
           "id": "rc_tulip",
           "text": "This looks like a tulip!<p>\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Keukenhof_Holanda_003.JPG/1024px-Keukenhof_Holanda_003.JPG\" style=\"max-width: 100%\">"
         }
