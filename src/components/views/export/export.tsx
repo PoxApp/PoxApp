@@ -161,14 +161,14 @@ export class Export {
       return;
     }
 
-    const answers = JSON.parse(localStorage.getItem('answers'));
+    const answers = JSON.parse(sessionStorage.getItem('answers'));
     const questionnaire = ((this.currentLanguage === 'de'
       ? COVAPP_QUESTIONNAIRE_DE
       : COVAPP_QUESTIONNAIRE_EN) as unknown) as FHIRQuestionnaire;
     const fhir = buildQuestionnaireResponse(answers, questionnaire);
 
     this.submitted = true;
-    localStorage.setItem(LOCAL_STORAGE_KEYS.EXPORTED, 'true');
+    sessionStorage.setItem(LOCAL_STORAGE_KEYS.EXPORTED, 'true');
 
     if (this.mode === EXPORT_MODE.IFRAME) {
       this.postMessage('export', { fhir });

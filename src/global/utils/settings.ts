@@ -73,7 +73,7 @@ class Settings {
       return null;
     }
 
-    const value = localStorage.getItem(key);
+    const value = sessionStorage.getItem(key);
     if (value !== null) {
       this[`_${key}`] = value;
     }
@@ -89,7 +89,7 @@ class Settings {
 
     this[`_${key}`] = value;
     if ('localStorage' in window) {
-      localStorage.setItem(key, value);
+      sessionStorage.setItem(key, value);
     }
 
     this._changeHandlers.forEach(handler => handler(key, value));

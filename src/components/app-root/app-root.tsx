@@ -114,7 +114,7 @@ export class AppRoot {
     const testDateElement = document.createElement('input');
     testDateElement.setAttribute('type', 'date');
     testDateElement.value = 'text'; // should be sanitized away
-    localStorage.setItem(
+    sessionStorage.setItem(
       'supportsDateElement',
       String(
         testDateElement.getAttribute('type') !== 'text' &&

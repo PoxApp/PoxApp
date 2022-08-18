@@ -3,12 +3,12 @@ import settings, { COMPLETED } from './settings';
 
 //TODO: Use JSON Questionnaire Version
 const match = (): boolean => {
-  const setVersion = localStorage.getItem(LOCAL_STORAGE_KEYS.VERSION);
+  const setVersion = sessionStorage.getItem(LOCAL_STORAGE_KEYS.VERSION);
   return setVersion === QUESTIONNAIRE_VERSION;
 };
 
 const set = () => {
-  localStorage.setItem(LOCAL_STORAGE_KEYS.VERSION, QUESTIONNAIRE_VERSION);
+  sessionStorage.setItem(LOCAL_STORAGE_KEYS.VERSION, QUESTIONNAIRE_VERSION);
 };
 
 const reset = () => {

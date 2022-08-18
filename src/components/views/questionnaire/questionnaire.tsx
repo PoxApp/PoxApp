@@ -80,7 +80,7 @@ export class Questionnaire {
   }
 
   persistStateToLocalStorage = () => {
-    localStorage.setItem(
+    sessionStorage.setItem(
       LOCAL_STORAGE_KEYS.ANSWERS,
       JSON.stringify(this.answerData)
     );
@@ -150,7 +150,7 @@ export class Questionnaire {
         this.currentQuestion.id
       );
       this.currentQuestion = question;
-      const answers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS));
+      const answers = JSON.parse(sessionStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS));
       if (this.answerData && answers) {
         this.answerData = answers;
         this.persistStateToLocalStorage();
@@ -186,7 +186,7 @@ export class Questionnaire {
       version.reset();
     }
     const availableAnswers = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
+      sessionStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
     );
     this.answerData = availableAnswers ?? {};
 

@@ -10,7 +10,7 @@ export let baseUrl = '/assets/questionnaire/';
 export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   // TODO implement Update Mechanism
   //   let cachedQuestionnaire = JSON.parse(
-  //     localStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
+  //     sessionStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
   //   );
   //   if (cachedQuestionnaire) {
   //     return new Promise(() => cachedQuestionnaire);
@@ -23,7 +23,7 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   return fetch(`${baseUrl}${language}.json`)
     .then((response: Response) => response.json())
     .then(response => {
-      localStorage.setItem(
+      sessionStorage.setItem(
         LOCAL_STORAGE_KEYS.QUESTIONNAIRE,
         JSON.stringify(response)
       );

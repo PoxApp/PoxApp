@@ -209,7 +209,8 @@
       "text": "Which body locations are affected by the rash/skin lesions?",
       "enableWhenExpression": {
         "var": "q_rash.option.yes"
-      }
+      },
+      "optional": false
     },
     {
       "type": "date",
@@ -449,7 +450,10 @@
       ],
       "type": "select",
       "id": "q_new_medication",
-      "text": "Did you take any new medication in the last 14 days?"
+      "text": "Did you take any new medication in the last 14 days?",
+      "enableWhenExpression": {
+        "var": "q_rash.option.yes"
+      }
     },
     {
       "type": "date",
