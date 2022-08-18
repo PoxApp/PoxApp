@@ -15,7 +15,7 @@ const reset = () => {
   settings.remove(COMPLETED);
 
   for (const key in LOCAL_STORAGE_KEYS) {
-    localStorage.removeItem(LOCAL_STORAGE_KEYS[key]);
+    sessionStorage.removeItem(LOCAL_STORAGE_KEYS[key]);
   }
 };
 
