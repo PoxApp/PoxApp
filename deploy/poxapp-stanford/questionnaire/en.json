@@ -169,7 +169,7 @@
       "type": "select",
       "id": "q_rash",
       "text": "Do you have a skin or mucosal rash/lesion?",
-      "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, genital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
+      "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, anogenital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
     },
     {
       "options": [
@@ -240,7 +240,7 @@
       "enableWhenExpression": {
         "var": "q_rash.option.yes"
       },
-      "details": "PoxApp can analyse your picture and within limits take into consideration for the personalized recommendations. "
+      "details": "PoxApp can analyze a picture of your skin lesion with methods of artificial intelligence and take into consideration for the personalized recommendations."
     },
     {
       "numericOptions": {},
@@ -339,7 +339,7 @@
       "enableWhenExpression": {
         ">": [
           {
-            "var": "score.Symptoms"
+            "var": "q_symptoms.selected_count"
           },
           0
         ]
