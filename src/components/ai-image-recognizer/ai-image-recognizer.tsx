@@ -20,7 +20,7 @@ export class AiImageRecognizer {
   updateFormDataHandler(key: string, value: object) {
     this.updateFormData.emit({ key, value });
   }
-
+1111
   @State() tookPicture = false;
 
   _player;
@@ -52,18 +52,14 @@ export class AiImageRecognizer {
       const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
       const offset = tf.scalar(255.0);
       const normalized = img.div(offset);
-      const batch = tf.expandDims(normalized, 0)
+      const batch = tf.expandDims(img, 0)
     var score = tf.softmax(tf.tensor(this._model.predict(batch).arraySync()[0]));
     var confidence = tf.max(score).dataSync()[0];
-    var labels = ['daisy', 'dandelion', 'roses', 'sunflowers', 'tulips'];
-    var label = labels[tf.argMax(score).dataSync()[0]]
-    var confidence_tulips = confidence;
-    if(label != 'tulips') {
-      confidence_tulips = 1 - confidence;
-    }
-    console.log(labels[tf.argMax(score).dataSync()[0]] + ' with ' + confidence)
-    console.log('confidence_tulips: ' + confidence_tulips)
-    this.updateFormDataHandler(this.inputId, { confidence: confidence_tulips, img: btoa(imgElement.src) })
+    var score2 = this._model.predict(batch)
+    var score3 = tf.sigmoid(score2)
+    console.log("score3: " + score3)
+    console.log("img: " + img.shape)
+    this.updateFormDataHandler(this.inputId, { confidence: confidence, img: btoa(imgElement.src) })
     img.dispose();
   }
 
