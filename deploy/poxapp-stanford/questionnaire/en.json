@@ -575,23 +575,45 @@
     {
       "results": [
         {
-          "expression": "",
-          "id": "rc_tulip2",
-          "text": "Probability that this is a tulip: %(ai_image_recognition.confidence).2f"
+          "expression": {
+            "and": [
+              {
+                "var": "q_photo.option.yes"
+              },
+              {
+                ">=": [
+                  {
+                    "var": "ai_image_recognition.confidence"
+                  },
+                  0.5
+                ]
+              }
+            ]
+          },
+          "id": "rc_ai_monkeypox",
+          "text": "This is monkeypox.\n\nProbablity that skin lesion was caused by monkeypox: %(ai_image_recognition.confidence).2f"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "q_photo.option.yes"
+              },
+              {
+                "<": [
+                  {
+                    "var": "ai_image_recognition.confidence"
+                  },
+                  0.5
+                ]
+              }
+            ]
+          },
+          "id": "rc_ai_nonmonkeypox",
+          "text": "This is not monkeypox.\n\nProbablity that skin lesion was caused by monkeypox: %(ai_image_recognition.confidence).2f"
         }
       ],
       "description": "Monkeypox Skin Lesion Classifier Details",
-      "id": "rc_ai2"
-    },
-    {
-      "results": [
-        {
-          "expression": "",
-          "id": "rc_tulip",
-          "text": "This looks like a tulip!<p>\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Keukenhof_Holanda_003.JPG/1024px-Keukenhof_Holanda_003.JPG\" style=\"max-width: 100%\">"
-        }
-      ],
-      "description": "Monkeypox Skin Lesion Classifier",
       "id": "rc_ai"
     }
   ],
