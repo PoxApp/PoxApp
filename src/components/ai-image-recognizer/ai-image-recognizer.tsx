@@ -30,7 +30,7 @@ export class AiImageRecognizer {
   _img_preview;
   _input;
 
-  IMAGE_SIZE = 160;
+  IMAGE_SIZE = 224;
 
   componentWillLoad() {
     tf.loadGraphModel('assets/ai/model.json').then(model => {
