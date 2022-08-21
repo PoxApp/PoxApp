@@ -41,7 +41,7 @@
     "summary_next": "What's next?",
     "export_go-start_button": "Continue",
     "button_disclaimer_continue": "I accept",
-    "start_block_4_infotext": "<p>PoxApp is not a medical device. It offers neither diagnostic services nor monitoring or treatment of diseases. This app does not replace medical advice or treatment. Please see our <a href=\"https://poxapp.stanford.edu/data-privacy\">Privacy Notice</a> to understand how the information you provide will be used.</p>",
+    "start_block_4_infotext": "<p>PoxApp is not a medical device. It offers neither diagnostic services nor monitoring or treatment of diseases. This WebApp does not replace medical advice or treatment. Please see our <a href=\"https://poxapp.stanford.edu/data-privacy\">Privacy Notice</a> to understand how the information you provide will be used.</p>",
     "recommendation_headline": "",
     "start_section_3_headline": "3) Share information",
     "start_section_2_infotext": "PoxApp evalutes your responses and picture and gives you recommendations.",
