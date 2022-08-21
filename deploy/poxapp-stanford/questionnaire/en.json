@@ -168,7 +168,7 @@
       ],
       "type": "select",
       "id": "q_rash",
-      "text": "Do you have a skin or mucosal rash/lesion?",
+      "text": "Do you have a new skin or mucosal rash/lesion?",
       "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, anogenital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
     },
     {
@@ -221,34 +221,12 @@
       }
     },
     {
-      "options": [
-        {
-          "scores": {},
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "numericOptions": {},
-      "type": "select",
-      "id": "q_photo",
-      "text": "Would you like to take or select a picture of your rash/skin lesion?",
-      "enableWhenExpression": {
-        "var": "q_rash.option.yes"
-      },
-      "details": "PoxApp can analyze a picture of your skin lesion with methods of artificial intelligence and take into consideration for the personalized recommendations."
-    },
-    {
       "numericOptions": {},
       "type": "number",
       "id": "ai_image_recognition",
       "text": "Please now take or select a picture of your rash/skin lesion.",
       "enableWhenExpression": {
-        "var": "q_photo.option.yes"
+        "var": "q_rash.option.yes"
       },
       "details": "<b><p style=\"color:red\">Please do not take or select a picture of your head or body parts with a tattoo or birth mark.</p></b>"
     },
@@ -578,7 +556,7 @@
           "expression": {
             "and": [
               {
-                "var": "q_photo.option.yes"
+                "var": "q_rash.option.yes"
               },
               {
                 ">=": [
