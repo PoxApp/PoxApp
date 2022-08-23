@@ -51,9 +51,10 @@ export class AiImageRecognizer {
 
       const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
       const batch = tf.expandDims(img, 0)
-    var score = this._model.predict(batch)
+    var score = this._model.predict(batch).dataSync()
     var confidence = parseFloat(tf.sigmoid(score).dataSync())
     console.log("confidence: " + confidence)
+    console.log("score: " + score)
     this.updateFormDataHandler(this.inputId,{ confidence: confidence, img: btoa(imgElement.src) })
     img.dispose();
   }
