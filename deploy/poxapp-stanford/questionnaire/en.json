@@ -122,12 +122,12 @@
       "options": [
         {
           "scores": {},
-          "text": "male",
+          "text": "Male",
           "value": "male"
         },
         {
           "scores": {},
-          "text": "female",
+          "text": "Female",
           "value": "female"
         },
         {
@@ -169,7 +169,7 @@
       "type": "select",
       "id": "q_rash",
       "text": "Do you have a new skin or mucosal rash/lesion?",
-      "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, anogenital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
+      "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, anogenital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.stanford.edu/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
     },
     {
       "options": [
@@ -224,11 +224,11 @@
       "numericOptions": {},
       "type": "number",
       "id": "ai_image_recognition",
-      "text": "Please now take or select a picture of your rash/skin lesion.",
+      "text": "Picture of your rash/skin lesion.",
       "enableWhenExpression": {
         "var": "q_rash.option.yes"
       },
-      "details": "<b><p style=\"color:red\">Please do not take or select a picture of your head or body parts with a tattoo or birth mark.</p></b>"
+      "details": "<b>Please take or select a close-up and well-lit picture of your skin lesion.<p style=\"color:red\">Do not photograph your head or body parts with a tattoo or birth mark.</p></b><p><img src=\"https://poxapp.stanford.edu/assets/images/cnndirections.png\" style=\"max-width: 100%\"><p>"
     },
     {
       "options": [
