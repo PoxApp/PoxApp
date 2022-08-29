@@ -51,112 +51,6 @@
       "options": [
         {
           "scores": {},
-          "text": "American Indian or Alaska Native",
-          "value": "indian"
-        },
-        {
-          "scores": {},
-          "text": "Asian",
-          "value": "asian"
-        },
-        {
-          "scores": {},
-          "text": "Black or African America",
-          "value": "black"
-        },
-        {
-          "scores": {},
-          "text": "Native Hawaiian or Other Pacific Islander",
-          "value": "hawaiian"
-        },
-        {
-          "scores": {},
-          "text": "White",
-          "value": "white"
-        },
-        {
-          "scores": {},
-          "text": "I prefer not to say",
-          "value": "no"
-        }
-      ],
-      "type": "multiselect",
-      "id": "q_race",
-      "text": "What is your race?",
-      "details": "One or more categories may be selected."
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Hispanic or Latino",
-          "value": "hispanic"
-        },
-        {
-          "scores": {},
-          "text": "Not Hispanic or Latino",
-          "value": "non-hispanic"
-        },
-        {
-          "scores": {},
-          "text": "I prefer not to say",
-          "value": "no"
-        }
-      ],
-      "type": "select",
-      "id": "q_ethnicity",
-      "text": "What is your ethnicity?"
-    },
-    {
-      "numericOptions": {
-        "max": 99999,
-        "min": 0,
-        "step": 1
-      },
-      "type": "number",
-      "id": "q_zip",
-      "text": "What is your zip code?",
-      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Male",
-          "value": "male"
-        },
-        {
-          "scores": {},
-          "text": "Female",
-          "value": "female"
-        },
-        {
-          "scores": {},
-          "text": "I prefer not to say",
-          "value": "iprefernottosay"
-        }
-      ],
-      "type": "select",
-      "id": "q_sexbirth",
-      "text": "Sex assigned at birth:"
-    },
-    {
-      "numericOptions": {
-        "max": 120,
-        "min": 18,
-        "step": 1
-      },
-      "options": [],
-      "id": "q_age",
-      "text": "What is your age?",
-      "type": "number"
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Symptoms": 8
-          },
           "text": "Yes",
           "value": "yes"
         },
@@ -170,55 +64,6 @@
       "id": "q_rash",
       "text": "Do you have a new skin or mucosal rash/lesion?",
       "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, anogenital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.stanford.edu/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Head",
-          "value": "head"
-        },
-        {
-          "scores": {},
-          "text": "Neck",
-          "value": "neck"
-        },
-        {
-          "scores": {},
-          "text": "Torso (without anogenital region)",
-          "value": "torso"
-        },
-        {
-          "scores": {},
-          "text": "Anogenital",
-          "value": "anogential"
-        },
-        {
-          "scores": {},
-          "text": "Upper Extremities",
-          "value": "upperextremities"
-        },
-        {
-          "scores": {},
-          "text": "Lower Extremities",
-          "value": "lowerextremities"
-        }
-      ],
-      "type": "multiselect",
-      "id": "q_rash_location",
-      "text": "Which body locations are affected by the rash/skin lesions?",
-      "enableWhenExpression": {
-        "var": "q_rash.option.yes"
-      },
-      "optional": false
-    },
-    {
-      "type": "date",
-      "id": "q_rash_date",
-      "text": "On which date did the rash/skin lesion first appear?",
-      "enableWhenExpression": {
-        "var": "q_rash.option.yes"
-      }
     },
     {
       "numericOptions": {},
@@ -369,77 +214,6 @@
       "type": "select",
       "id": "q_sex",
       "text": "Have you had intimate contact with people outside of a relationship in the past 21 days?"
-    },
-    {
-      "options": [
-        {
-          "scores": {
-            "Exposition": 1
-          },
-          "text": "West or Central Africa",
-          "value": "africa"
-        },
-        {
-          "scores": {},
-          "text": "None of the above locations",
-          "value": "none"
-        }
-      ],
-      "type": "select",
-      "id": "q_travel",
-      "text": "Have you been in any of the following locations in the past 21 days?",
-      "details": "Please select one of the mentioned locations."
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Monkeypox",
-          "value": "monkeypox"
-        },
-        {
-          "scores": {},
-          "text": "Measels",
-          "value": "measels"
-        },
-        {
-          "scores": {},
-          "text": "Chickenpox (or varicelle zoster or VZV)",
-          "value": "chickenpox"
-        }
-      ],
-      "type": "multiselect",
-      "id": "q_vaccine",
-      "text": "For which diseases have you been vaccinated?",
-      "optional": true
-    },
-    {
-      "options": [
-        {
-          "scores": {},
-          "text": "Yes",
-          "value": "yes"
-        },
-        {
-          "scores": {},
-          "text": "No",
-          "value": "no"
-        }
-      ],
-      "type": "select",
-      "id": "q_new_medication",
-      "text": "Did you take any new medication in the last 14 days?",
-      "enableWhenExpression": {
-        "var": "q_rash.option.yes"
-      }
-    },
-    {
-      "type": "date",
-      "id": "q_new_med_date",
-      "text": "On which date did you take the new medication for the first time?",
-      "enableWhenExpression": {
-        "var": "q_new_medication.option.yes"
-      }
     }
   ],
   "resultCategories": [
@@ -449,97 +223,163 @@
           "expression": {
             "and": [
               {
-                ">": [
-                  {
-                    "var": "v_symptoms"
-                  },
-                  8
-                ]
+                "var": "symptoms"
               },
               {
-                ">": [
-                  {
-                    "var": "v_exposition"
-                  },
-                  0
-                ]
+                "var": "exposition"
+              },
+              {
+                "var": "monkeypox_detected"
               }
             ]
           },
           "id": "rc_test",
-          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. You report typical symptoms associated with a skin rash and you may have come into contact with the virus. We recommend getting tested for monkeypox. For further clarification, we recommend contacting your primary care physician or an infectious disease or tropical medicine facility by telephone.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with the monkeypox virus. You also report typical symptoms and you may have come into contact with the virus. PoxApp has detected characteristics in your skin lesion photo that are indicative of monkeypox. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+        },
+        {
+          "expression": "",
+          "id": "rc_test2",
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with the monkeypox virus. PoxApp has not detected typical characteristics of monkeypox in your skin lesion photo. However, you report typical symptoms and you may have come into contact with the virus. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
         },
         {
           "expression": {
-            ">=": [
+            "and": [
               {
-                "var": "v_exposition"
+                "var": "symptoms"
               },
-              3
+              {
+                "var": "monkeypox_detected"
+              }
+            ]
+          },
+          "id": "rc_test3",
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with the monkeypox virus. PoxApp has detected typical characteristics of monkeypox in your skin lesion photo and you also report typical symptoms. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "symptoms"
+              },
+              {
+                "var": "monkeypox_detected"
+              }
+            ]
+          },
+          "id": "rc_test4",
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Few users with your responses are infected with the monkeypox virus. PoxApp has not detected typical characteristics of monkeypox in your skin lesion photo. However, you report typical symptoms and you have a skin lesion. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "risk_contact"
+              },
+              {
+                "var": "monkeypox_detected"
+              }
+            ]
+          },
+          "id": "rc_test5",
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with monkeypox. PoxApp has detected typical characteristics of monkeypox in your skin lesion photo. You have had a risk contact with an infected person.  For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "risk_contact"
+              },
+              {
+                "var": "skin_lesion"
+              }
             ]
           },
           "id": "rc_contact",
-          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. You have had a risk contact with an infected person. For further clarification, please contact your local health department.\n</p>\n\n<p style=\"text-align:justify\">Please click <a href=\"https://tools.rki.de/PLZTool/\">here</a>, to get contact information regarding your local health department.</p>"
+          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. PoxApp has not detected typical characteristics of monkeypox in your skin lesion photo. However, you have had a risk contact with an infected person.  Please contact your local health department for further clarification.\n</p>\n"
         },
         {
           "expression": {
             "and": [
               {
-                ">": [
-                  {
-                    "var": "v_symptoms"
-                  },
-                  8
-                ]
+                "var": "risk_contact"
               },
               {
-                "==": [
-                  {
-                    "var": "v_exposition"
-                  },
-                  0
-                ]
+                "!": {
+                  "var": "skin_lesion"
+                }
+              },
+              {
+                "!": {
+                  "var": "symptoms"
+                }
               }
             ]
           },
-          "id": "rc_high_symptoms",
-          "text": "<center><h3>%(v_orange)s Contact a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Few users with your responses are infected with monkeypox. You report typical symptoms including a rash, but there is no evidence that you may have been exposed to the monkeypox virus. For further clarification, we recommend contacting your general practitioner by telephone.</p>"
-        },
-        {
-          "expression": {
-            ">": [
-              {
-                "var": "v_symptoms"
-              },
-              0
-            ]
-          },
-          "id": "rc_low_symptoms",
-          "text": "<center><h3>%(v_orange)s If you feel ill, contact a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your respones are not infected with monkeypox. You have reported symptoms without a rash or a rash without further symptoms. If you develop further symptoms, complete the survey of PoxApp again. If you currently feel ill, we recommend that you contact your primary care physician by phone.</p>"
+          "id": "rc_contact2",
+          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. You don't have a skin lesion or typical symptoms. However, you have had a risk contact with an infected person. Please contact your local health department for further clarification.\n</p>\n"
         },
         {
           "expression": {
             "and": [
               {
-                "==": [
-                  {
-                    "var": "v_symptoms"
-                  },
-                  0
-                ]
+                "var": "monkeypox_detected"
               },
               {
-                ">": [
-                  {
-                    "var": "v_exposition"
-                  },
-                  0
-                ]
+                "!": {
+                  "var": "risk_contact"
+                }
+              },
+              {
+                "!": {
+                  "var": "symptoms"
+                }
               }
             ]
           },
-          "id": "rc_low_exposition_and_no_symptoms",
-          "text": "<center><h3>%(v_green)s Complete PoxApp's survey again if you develop symptoms.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with responses are not infected with monkeypox. If you develop symptoms, complete the survey of PoxApp again.</p>"
+          "id": "rc_test6",
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with monkeypox. You responses indicate that you do not have typical symptoms and there has been no risk kontakt.  However, PoxApp has detected typical characteristics of monkeypox in your skin lesion photo. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "skin_lesion"
+              },
+              {
+                "!": {
+                  "var": "risk_contact"
+                }
+              },
+              {
+                "!": {
+                  "var": "symptoms"
+                }
+              }
+            ]
+          },
+          "id": "rc_skin_lesion",
+          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses and similar skin lesion photos are not infected with monkeypox. You responses indicate that you do not have typical symptoms and there has been no risk kontakt.  PoxApp has not detected typical characteristics of monkeypox in your skin lesion photo. However, there might be other skin conditions that might need medical treatment. For further clarification, please get in touch with a dermatologist.\n</p>\n"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "symptoms"
+              },
+              {
+                "!": {
+                  "var": "skin_lesion"
+                }
+              },
+              {
+                "!": {
+                  "var": "exposition"
+                }
+              }
+            ]
+          },
+          "id": "rc_symptoms",
+          "text": "<center><h3>%(v_orange)s Contact a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your responses are not infected with monkeypox. Your responses indicate symptoms without a skin lesion and there is no evidence that you may have been exposed to the monkeypox virus.  If you develop further symptoms or a skin lesion, complete the survey of PoxApp again. If you currently feel ill, we recommend that you contact your primary care physician by phone.</p>"
         },
         {
           "expression": true,
@@ -554,44 +394,29 @@
       "results": [
         {
           "expression": {
-            "and": [
-              {
-                "var": "q_rash.option.yes"
-              },
-              {
-                ">=": [
-                  {
-                    "var": "ai_image_recognition.confidence"
-                  },
-                  0.5
-                ]
-              }
-            ]
+            "var": "monkeypox_detected"
           },
           "id": "rc_ai_monkeypox",
-          "text": "This is monkeypox.\n\nProbablity that skin lesion was caused by monkeypox: %(ai_image_recognition.confidence).2f"
+          "text": "There is a higher probability that your skin lesion was caused by the monkeypox virus.<p>\n\nProbablity: %(ai_image_recognition.confidence).2f"
         },
         {
           "expression": {
             "and": [
               {
-                "var": "q_photo.option.yes"
+                "var": "skin_lesion"
               },
               {
-                "<": [
-                  {
-                    "var": "ai_image_recognition.confidence"
-                  },
-                  0.5
-                ]
+                "!": {
+                  "var": "monkeypox_detected"
+                }
               }
             ]
           },
           "id": "rc_ai_nonmonkeypox",
-          "text": "This is not monkeypox.\n\nProbablity that skin lesion was caused by monkeypox: %(ai_image_recognition.confidence).2f"
+          "text": "There is a lower probability that your skin lesion was caused by the monkeypox virus.<p>\n\nProbablity: %(ai_image_recognition.confidence).2f"
         }
       ],
-      "description": "Monkeypox Skin Lesion Classifier Details",
+      "description": "DEBUG: Monkeypox Skin Lesion",
       "id": "rc_ai"
     }
   ],
@@ -617,7 +442,41 @@
           }
         ]
       },
-      "id": "v_contact_relevant"
+      "id": "contact_relevant"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            ">=": [
+              {
+                "var": "exposition_score"
+              },
+              3
+            ]
+          },
+          true,
+          false
+        ]
+      },
+      "id": "risk_contact"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            ">": [
+              {
+                "var": "exposition_score"
+              },
+              0
+            ]
+          },
+          true,
+          false
+        ]
+      },
+      "id": "exposition"
     },
     {
       "expression": {
@@ -629,7 +488,7 @@
               },
               {
                 "!": {
-                  "var": "v_contact_relevant"
+                  "var": "contact_relevant"
                 }
               }
             ]
@@ -647,13 +506,13 @@
           }
         ]
       },
-      "id": "v_exposition"
+      "id": "exposition_score"
     },
     {
       "expression": {
         "if": [
           {
-            "var": "v_contact_relevant"
+            "var": "contact_relevant"
           },
           {
             ">": [
@@ -668,7 +527,7 @@
           false
         ]
       },
-      "id": "v_symptoms_after_contact"
+      "id": "symptoms_after_contact"
     },
     {
       "expression": {
@@ -701,50 +560,42 @@
           }
         ]
       },
-      "id": "v_symptoms2"
+      "id": "symptoms_score"
+    },
+    {
+      "expression": {
+        "and": [
+          {
+            "var": "q_rash.option.yes"
+          },
+          {
+            ">=": [
+              {
+                "var": "ai_image_recognition.confidence"
+              },
+              0.5
+            ]
+          }
+        ]
+      },
+      "id": "monkeypox_detected"
     },
     {
       "expression": {
         "if": [
           {
-            "and": [
+            ">": [
               {
-                ">=": [
-                  {
-                    "var": "v_symptoms2"
-                  },
-                  8
-                ]
+                "var": "symptoms_score"
               },
-              {
-                "==": [
-                  {
-                    "var": "v_exposition"
-                  },
-                  3
-                ]
-              },
-              {
-                "!": {
-                  "var": "v_symptoms_after_contact"
-                }
-              }
+              0
             ]
           },
-          {
-            "-": [
-              {
-                "var": "v_symptoms2"
-              },
-              8
-            ]
-          },
-          {
-            "var": "v_symptoms2"
-          }
+          true,
+          false
         ]
       },
-      "id": "v_symptoms"
+      "id": "symptoms"
     },
     {
       "expression": "<img src=\"https://poxapp.charite.de/assets/images/recommendation-green.svg\" alt=\"green\" width=\"20\" height=\"20\">",
@@ -843,6 +694,12 @@
         }
       },
       "id": "qr_travel"
+    },
+    {
+      "expression": {
+        "var": "q_rash.option.yes"
+      },
+      "id": "skin_lesion"
     }
   ]
 }
