@@ -172,7 +172,7 @@ export class AppRoot {
                 anchorTitle="Home link"
                 anchorClass="u-display-block c-logo"
               >
-                <h1>{i18next.t('app_name')}</h1>
+                <h1>{i18next.t('app_name')}</h1> 
               </stencil-route-link>
             )}
             {LANGUAGES.length > 1 && (
