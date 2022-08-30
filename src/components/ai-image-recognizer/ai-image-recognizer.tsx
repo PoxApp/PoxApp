@@ -55,7 +55,7 @@ export class AiImageRecognizer {
     var confidence = 1 - parseFloat(tf.sigmoid(score).dataSync())
     console.log("confidence: " + confidence)
     console.log("score: " + score)
-    this.updateFormDataHandler(this.inputId,{ confidence: confidence, img: btoa(imgElement.src) })
+    this.updateFormDataHandler(this.inputId,{ confidence: confidence })
     img.dispose();
   }
 
