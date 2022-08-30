@@ -243,7 +243,19 @@
           "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with the monkeypox virus. You also report typical symptoms and you may have come into contact with the virus. PoxApp has detected characteristics in your skin lesion photo that are indicative of monkeypox. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
         },
         {
-          "expression": "",
+          "expression": {
+            "and": [
+              {
+                "var": "symptoms"
+              },
+              {
+                "var": "exposition"
+              },
+              {
+                "var": "skin_lesion"
+              }
+            ]
+          },
           "id": "rc_test2",
           "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with the monkeypox virus. PoxApp has not detected typical characteristics of monkeypox in your skin lesion photo. However, you report typical symptoms and you may have come into contact with the virus. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
         },
@@ -268,7 +280,7 @@
                 "var": "symptoms"
               },
               {
-                "var": "monkeypox_detected"
+                "var": "skin_lesion"
               }
             ]
           },
@@ -305,21 +317,7 @@
         },
         {
           "expression": {
-            "and": [
-              {
-                "var": "risk_contact"
-              },
-              {
-                "!": {
-                  "var": "skin_lesion"
-                }
-              },
-              {
-                "!": {
-                  "var": "symptoms"
-                }
-              }
-            ]
+            "var": "risk_contact"
           },
           "id": "rc_contact2",
           "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. You don't have a skin lesion or typical symptoms. However, you have had a risk contact with an infected person. Please contact your local health department for further clarification.\n</p>\n"
@@ -343,7 +341,7 @@
             ]
           },
           "id": "rc_test6",
-          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with monkeypox. You responses indicate that you do not have typical symptoms and there has been no risk kontakt.  However, PoxApp has detected typical characteristics of monkeypox in your skin lesion photo. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with similar skin lesion photos are infected with monkeypox. You responses indicate that you do not have typical symptoms and there has been no risk kontakt.  However, PoxApp has detected typical characteristics of monkeypox in your skin lesion photo. For further clarification, we recommend contacting your primary care physician, an infectious disease or tropical medicine facility by telephone and getting tested for monkeypox.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
         },
         {
           "expression": {
