@@ -14,12 +14,18 @@
     {
       "options": [
         {
-          "scores": {},
+          "scores": {
+            "Exposition": 0,
+            "Symptoms": 0
+          },
           "text": "Yes",
           "value": "yes"
         },
         {
-          "scores": {},
+          "scores": {
+            "Exposition": 0,
+            "Symptoms": 0
+          },
           "text": "No",
           "value": "no"
         }
@@ -389,35 +395,6 @@
       ],
       "description": "Recommendations",
       "id": "rc_recommendation"
-    },
-    {
-      "results": [
-        {
-          "expression": {
-            "var": "monkeypox_detected"
-          },
-          "id": "rc_ai_monkeypox",
-          "text": "There is a higher probability that your skin lesion was caused by the monkeypox virus.<p>\n\nProbablity: %(ai_image_recognition.confidence).2f"
-        },
-        {
-          "expression": {
-            "and": [
-              {
-                "var": "skin_lesion"
-              },
-              {
-                "!": {
-                  "var": "monkeypox_detected"
-                }
-              }
-            ]
-          },
-          "id": "rc_ai_nonmonkeypox",
-          "text": "There is a lower probability that your skin lesion was caused by the monkeypox virus.<p>\n\nProbablity: %(ai_image_recognition.confidence).2f"
-        }
-      ],
-      "description": "DEBUG: Monkeypox Skin Lesion",
-      "id": "rc_ai"
     }
   ],
   "variables": [
@@ -598,6 +575,12 @@
       "id": "symptoms"
     },
     {
+      "expression": {
+        "var": "q_rash.option.yes"
+      },
+      "id": "skin_lesion"
+    },
+    {
       "expression": "<img src=\"https://poxapp.charite.de/assets/images/recommendation-green.svg\" alt=\"green\" width=\"20\" height=\"20\">",
       "id": "v_green"
     },
@@ -694,12 +677,6 @@
         }
       },
       "id": "qr_travel"
-    },
-    {
-      "expression": {
-        "var": "q_rash.option.yes"
-      },
-      "id": "skin_lesion"
     }
   ]
 }
