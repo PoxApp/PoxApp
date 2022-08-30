@@ -6609,52 +6609,6 @@
           }
         ]
       },
-      "id": "v_highest_score1"
-    },
-    {
-      "expression": {
-        "if": [
-          {
-            ">": [
-              {
-                "var": "v_severity_user_score"
-              },
-              {
-                "var": "v_highest_score1"
-              }
-            ]
-          },
-          {
-            "var": "v_severity_user_score"
-          },
-          {
-            "var": "v_highest_score1"
-          }
-        ]
-      },
-      "id": "v_highest_score2"
-    },
-    {
-      "expression": {
-        "if": [
-          {
-            ">": [
-              {
-                "var": "v_dissemination_user_score"
-              },
-              {
-                "var": "v_highest_score2"
-              }
-            ]
-          },
-          {
-            "var": "v_dissemination_user_score"
-          },
-          {
-            "var": "v_highest_score2"
-          }
-        ]
-      },
       "id": "v_highest_score"
     },
     {
