@@ -17,7 +17,10 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   //     return new Promise(() => cachedQuestionnaire);
   //   }
   if (questionnaire != undefined && cacheKey === language) {
+    if(DATA_DONATION) {
     return new Promise(resolve => resolve(addAdditionalQuestions(questionnaire)));
+    }
+    return new Promise(resolve => resolve(questionnaire));
   }
   // Make sure it is ending with a slash
   if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';

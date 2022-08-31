@@ -485,9 +485,7 @@
     {
       "results": [
         {
-          "expression": {
-            "var": "skin_lesion"
-          },
+          "expression": "",
           "id": "rc_probability",
           "text": "Probablity that skin lesion was caused by MPXV: %(ai_image_recognition.confidence).2f"
         }
