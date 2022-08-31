@@ -6,7 +6,7 @@ const { stringify } = require('javascript-stringify');
 const deepAssign = require('deep-assign');
 const prettier = require('prettier');
 const fs = require('fs-extra');
- 
+
 const prettierOptions = {
   ...JSON.parse(readFileSync(join(__dirname, '..', '.prettierrc'), 'utf8')),
   parser: 'typescript',
@@ -25,9 +25,7 @@ function tryToReadTranslationFile(filePath) {
       );
     }
     if (error.code === 'MODULE_NOT_FOUND') {
-      console.info(
-        `Info - The translation file '${filePath}' was not provided`
-      );
+      console.info(`Info - The translation file '${filePath}' was not provided`);
     }
     //console.warn(`Something went wrong while reading the Translation file (${error.code})`)
 
@@ -70,7 +68,7 @@ function getTranslationsForLanguageCode(code) {
 }
 
 function getTranslations(supportedLanguages) {
-  return supportedLanguages.map(code => ({
+  return supportedLanguages.map((code) => ({
     code,
     translations: getTranslationsForLanguageCode(code),
   }));
@@ -88,6 +86,7 @@ function writeCustomizationAppFile({
   data4lifeAndroidBaseUrl,
   data4lifeIosBaseUrl,
   whitelistedData4LifeOrigins,
+  dataDonationUrl,
 }) {
   const appFilePath = join(__dirname, '..', 'src', 'global', 'custom.ts');
 
@@ -113,6 +112,11 @@ function writeCustomizationAppFile({
 
   // layout flag to adjust the header layout for charite and official collaborations
   export const LAYOUT = '${layout}';
+
+  // If specified ask for DataDonation at the end
+  export const DATA_DONATION_URL = ${
+    dataDonationUrl ? "'" + dataDonationUrl + "'" : undefined
+  };
 
   // custom logo defined in /src/custom/logo.svg
   export const CUSTOM_LOGO = \`${logo}\`;
@@ -169,8 +173,7 @@ function writeStyleOverwrite() {
       ${readContent}
     
       `,
-    {...prettierOptions,
-    parser: "css"}
+    { ...prettierOptions, parser: 'css' }
   );
 
   writeFileSync(styleFilePath, fileContent);
@@ -187,10 +190,14 @@ const {
   DATA4LIFE_ANDROID_BASEURL,
   DATA4LIFE_IOS_BASEURL,
   WHITELISTED_DATA4LIFE_ORIGINS,
+  DATA_DONATION_URL,
 } = process.env;
 const supportedLanguages = SUPPORTED_LANGUAGES
   ? SUPPORTED_LANGUAGES.split(',')
   : ['de', 'en'];
+
+const dataDonationUrl =
+  DATA_DONATION_URL == 'false' ? undefined : DATA_DONATION_URL ?? '/api/donate';
 
 const translations = getTranslations(supportedLanguages);
 const logo = tryToReadLogo();
@@ -207,6 +214,7 @@ writeCustomizationAppFile({
   data4lifeAndroidBaseUrl: DATA4LIFE_ANDROID_BASEURL,
   data4lifeIosBaseUrl: DATA4LIFE_IOS_BASEURL,
   whitelistedData4LifeOrigins: WHITELISTED_DATA4LIFE_ORIGINS,
+  dataDonationUrl: dataDonationUrl,
 });
 
 writeStyleOverwrite();
@@ -215,7 +223,7 @@ writeStyleOverwrite();
 let sourceDir = './custom/questionnaire';
 let destDir = './src/assets/questionnaire';
 try {
-  fs.copySync(sourceDir, destDir, { recursive: true, overwrite: true })
+  fs.copySync(sourceDir, destDir, { recursive: true, overwrite: true });
 } catch (err) {
-  console.error(err)
+  console.error(err);
 }

@@ -23,6 +23,7 @@ import { trackEvent, TRACKING_EVENTS } from '../../../global/utils/track';
 import { getQuestionnaire } from '../../../global/questions';
 import DOMPurify from 'dompurify';
 import { donateAnswers } from '../../../global/utils/dataDonation';
+import { DATA_DONATION_URL } from '../../../global/custom';
 export type Scores = { [key: string]: number };
 export type Answers = { [key: string]: string | string[] };
 
@@ -31,9 +32,6 @@ export type Answers = { [key: string]: string | string[] };
   tag: 'ia-questionnaire',
 })
 export class Questionnaire {
-
- DATA_DONATION = false;
-
   @Prop() history: RouterHistory;
 
   @State() language: string = settings.languageCode;
@@ -116,32 +114,28 @@ export class Questionnaire {
     this.progress = this.questionnaireEngine.getProgress();
     if (nextQuestion === undefined) {
       let answers = this.questionnaireEngine.getAnswersPersistence();
-      if(this.DATA_DONATION) {
-      if (
-        answers.answers.find((q) => q.questionId === QUESTION_SHARE_DATA().id)
-          .rawAnswer === 'yes'
-      ) {
-        // User is sharing data
-        donateAnswers(answers);
+      if (DATA_DONATION_URL) {
+        if (
+          answers.answers.find((q) => q.questionId === QUESTION_SHARE_DATA().id)
+            .rawAnswer === 'yes'
+        ) {
+          // User is sharing data
+          donateAnswers(answers);
+          trackEvent([
+            ...TRACKING_EVENTS.DATA_DONATION_CONSENT,
+            this.currentAnswerValue === 'yes' ? '1' : '0',
+          ]);
+        }
       }
-    }
       this.history.push(ROUTES.SUMMARY, {});
       trackEvent(TRACKING_EVENTS.FINISH);
     } else {
       this.currentQuestion = nextQuestion;
     }
     this.persistStateToLocalStorage();
-    if(this.DATA_DONATION) {
-      if (this.currentQuestion.id === QUESTION_SHARE_DATA().id) {
-        trackEvent([
-          ...TRACKING_EVENTS.DATA_DONATION_CONSENT,
-          this.currentAnswerValue === 'yes' ? '1' : '0',
-        ]);
-      }
-    }
     try {
       window.scrollTo(0, 0);
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
   };
@@ -180,8 +174,8 @@ export class Questionnaire {
   };
 
   get currentAnswerValue(): RawAnswer {
-    if(this.currentQuestion == undefined){
-      return undefined
+    if (this.currentQuestion == undefined) {
+      return undefined;
     }
     return this.answerData[this.currentQuestion.id];
   }
@@ -226,7 +220,8 @@ export class Questionnaire {
           timeOfExecution: 23,
         });
         // debugger;
-        const previousQuestionId = this.currentQuestion == undefined ? undefined : this.currentQuestion.id;
+        const previousQuestionId =
+          this.currentQuestion == undefined ? undefined : this.currentQuestion.id;
         this.currentQuestion = this.questionnaireEngine.nextQuestion();
         // Go back to previous Question if language is changed
         // TODO: https://github.com/CovOpen/CovQuestions/issues/190
@@ -336,24 +331,25 @@ export class Questionnaire {
                         onUpdateFormData={updateFormData}
                       />
                     )}
-                    {currentQuestion.type === 'number' ?
-                      (currentQuestion.id.startsWith("ai_") ?
-                      <ai-image-recognizer
-                        onUpdateFormData={updateFormData}
-                        inputId={currentQuestion.id}
-                        /> :
-                      <ia-input-number
-                        inputId={currentQuestion.id}
-                        inputLabel={currentQuestion.text}
-                        required={!currentQuestion.optional}
-                        inputMax={currentQuestion.numericOptions.max}
-                        inputMin={currentQuestion.numericOptions.min}
-                        inputStep={currentQuestion.numericOptions.step}
-                        value={this.currentAnswerValue as number}
-                        onUpdateFormData={updateFormData}
-                      />
+                    {currentQuestion.type === 'number' ? (
+                      currentQuestion.id.startsWith('ai_') ? (
+                        <ai-image-recognizer
+                          onUpdateFormData={updateFormData}
+                          inputId={currentQuestion.id}
+                        />
+                      ) : (
+                        <ia-input-number
+                          inputId={currentQuestion.id}
+                          inputLabel={currentQuestion.text}
+                          required={!currentQuestion.optional}
+                          inputMax={currentQuestion.numericOptions.max}
+                          inputMin={currentQuestion.numericOptions.min}
+                          inputStep={currentQuestion.numericOptions.step}
+                          value={this.currentAnswerValue as number}
+                          onUpdateFormData={updateFormData}
+                        />
                       )
-                    : null}
+                    ) : null}
                   </div>
                 ) : undefined}
               </fieldset>
@@ -362,7 +358,9 @@ export class Questionnaire {
               <d4l-button
                 classes="button--block"
                 data-test="continueButton"
-                disabled={!currentQuestion?.optional && this.currentAnswerValue === undefined}
+                disabled={
+                  !currentQuestion?.optional && this.currentAnswerValue === undefined
+                }
                 text={i18next.t('questionnaire_button_next')}
               />
             </div>
