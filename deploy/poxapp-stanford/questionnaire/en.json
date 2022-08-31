@@ -6,7 +6,7 @@
   "title": "PoxApp Stanford",
   "meta": {
     "availableLanguages": [],
-    "author": "Alexander Thieme",
+    "author": "Dr. Alexander Thieme",
     "creationDate": "2022-08-29",
     "description": "Provide recommendations for monkeypox infections"
   },
@@ -6314,28 +6314,109 @@
               },
               100,
               {
-                "*": [
+                "if": [
                   {
-                    "+": [
+                    "var": "skin_lesion"
+                  },
+                  {
+                    "if": [
+                      {
+                        "<": [
+                          {
+                            "*": [
+                              {
+                                "+": [
+                                  {
+                                    "*": [
+                                      {
+                                        "log10": {
+                                          "+": [
+                                            {
+                                              "var": "symptoms_and_skin_lesion"
+                                            },
+                                            1
+                                          ]
+                                        }
+                                      },
+                                      0.765448
+                                    ]
+                                  },
+                                  0.269577
+                                ]
+                              },
+                              100
+                            ]
+                          },
+                          {
+                            "*": [
+                              {
+                                "var": "ai_image_recognition.confidence"
+                              },
+                              100
+                            ]
+                          }
+                        ]
+                      },
                       {
                         "*": [
                           {
-                            "log10": {
-                              "+": [
-                                {
-                                  "var": "symptoms_and_skin_lesion"
-                                },
-                                1
-                              ]
-                            }
+                            "var": "ai_image_recognition.confidence"
                           },
-                          0.765448
+                          100
                         ]
                       },
-                      0.269577
+                      {
+                        "*": [
+                          {
+                            "+": [
+                              {
+                                "*": [
+                                  {
+                                    "log10": {
+                                      "+": [
+                                        {
+                                          "var": "symptoms_and_skin_lesion"
+                                        },
+                                        1
+                                      ]
+                                    }
+                                  },
+                                  0.765448
+                                ]
+                              },
+                              0.269577
+                            ]
+                          },
+                          100
+                        ]
+                      }
                     ]
                   },
-                  100
+                  {
+                    "*": [
+                      {
+                        "+": [
+                          {
+                            "*": [
+                              {
+                                "log10": {
+                                  "+": [
+                                    {
+                                      "var": "symptoms_and_skin_lesion"
+                                    },
+                                    1
+                                  ]
+                                }
+                              },
+                              0.765448
+                            ]
+                          },
+                          0.269577
+                        ]
+                      },
+                      100
+                    ]
+                  }
                 ]
               }
             ]
