@@ -3,11 +3,12 @@ import {
   QUESTION_SHARE_DATA,
 } from '../components/views/questionnaire/utils';
 import { LOCAL_STORAGE_KEYS } from './constants';
-
+const DATA_DONATION = false;
 export let questionnaire: Questionnaire = undefined;
 export let cacheKey: string = '';
 export let baseUrl = '/assets/questionnaire/';
 export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
+  
   // TODO implement Update Mechanism
   //   let cachedQuestionnaire = JSON.parse(
   //     sessionStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
@@ -29,8 +30,10 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
       );
       questionnaire = { ...response };
       cacheKey = language;
-
+if(DATA_DONATION) {
       return addAdditionalQuestions(response);
+}
+return response;
     });
   // .catch(() => {
   //     // do nothing for now

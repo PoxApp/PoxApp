@@ -31,6 +31,9 @@ export type Answers = { [key: string]: string | string[] };
   tag: 'ia-questionnaire',
 })
 export class Questionnaire {
+
+ DATA_DONATION = false;
+
   @Prop() history: RouterHistory;
 
   @State() language: string = settings.languageCode;
@@ -113,6 +116,7 @@ export class Questionnaire {
     this.progress = this.questionnaireEngine.getProgress();
     if (nextQuestion === undefined) {
       let answers = this.questionnaireEngine.getAnswersPersistence();
+      if(this.DATA_DONATION) {
       if (
         answers.answers.find((q) => q.questionId === QUESTION_SHARE_DATA().id)
           .rawAnswer === 'yes'
@@ -120,18 +124,20 @@ export class Questionnaire {
         // User is sharing data
         donateAnswers(answers);
       }
+    }
       this.history.push(ROUTES.SUMMARY, {});
       trackEvent(TRACKING_EVENTS.FINISH);
     } else {
       this.currentQuestion = nextQuestion;
     }
     this.persistStateToLocalStorage();
-
-    if (this.currentQuestion.id === QUESTION_SHARE_DATA().id) {
-      trackEvent([
-        ...TRACKING_EVENTS.DATA_DONATION_CONSENT,
-        this.currentAnswerValue === 'yes' ? '1' : '0',
-      ]);
+    if(this.DATA_DONATION) {
+      if (this.currentQuestion.id === QUESTION_SHARE_DATA().id) {
+        trackEvent([
+          ...TRACKING_EVENTS.DATA_DONATION_CONSENT,
+          this.currentAnswerValue === 'yes' ? '1' : '0',
+        ]);
+      }
     }
     try {
       window.scrollTo(0, 0);
