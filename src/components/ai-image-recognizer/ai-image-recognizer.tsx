@@ -32,9 +32,18 @@ export class AiImageRecognizer {
 
   IMAGE_SIZE = 224;
 
+  async warmupModel() {
+
+    tf.tidy(function () {
+      var answer = this._model.predict(tf.zeros([1, this.IMAGE_SIZE, this.IMAGE_SIZE, 3]));
+    });
+  }
+
+
   componentWillLoad() {
     tf.loadGraphModel('assets/ai/model.json').then(model => {
       this._model = model;
+      this.warmupModel();
       console.log('model loaded');
     });
   }
