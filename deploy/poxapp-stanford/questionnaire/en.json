@@ -273,7 +273,7 @@
             ]
           },
           "id": "rc_test",
-          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Many users with your responses and similar skin lesion photos are infected with the monkeypox virus. Your responses indicate typical symptoms and that you may have come into contact with the virus. PoxApp has detected characteristics in your skin lesion photo that are indicative of monkeypox. For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone to get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Many users with your responses and similar skin lesions are infected with the monkeypox virus. Your responses indicate typical symptoms and you may have come into contact with the virus. PoxApp has detected characteristics in your skin lesion photo indicative of monkeypox. Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, infectious disease specialist, or tropical medicine facility by telephone and get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -290,7 +290,7 @@
             ]
           },
           "id": "rc_test2",
-          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with the monkeypox virus. PoxApp has not detected typical characteristics in your skin lesion photo indicative of monkeypox. However, your responses indicate typical symptoms and that you may have come into contact with the virus. For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone to get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with the monkeypox virus. PoxApp has not detected characteristics in your skin lesion photo indicative of monkeypox. However, you report typical symptoms and you may have come into contact with the virus. Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, infectious disease specialist, or tropical medicine facility by telephone and get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -304,7 +304,7 @@
             ]
           },
           "id": "rc_test3",
-          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with the monkeypox virus. PoxApp has detected typical characteristics of monkeypox in your skin lesion photo and you also report typical symptoms. For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone to get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesions are infected with the monkeypox virus. PoxApp has detected characteristics in your skin lesion photo indicative of monkeypox and you also report typical symptoms. Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, infectious disease specialist, or tropical medicine facility by telephone and get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -318,7 +318,7 @@
             ]
           },
           "id": "rc_test4",
-          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Few users with your responses are infected with the monkeypox virus. PoxApp has not detected typical characteristics of monkeypox in your skin lesion photo. However, you report typical symptoms and you have a skin lesion. For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone to get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Few users with your responses are infected with the monkeypox virus. PoxApp has not detected characteristics in your skin lesion photo indicative of monkeypox. However, you report typical symptoms and you have a skin lesion. Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, infectious disease specialist, or tropical medicine facility by telephone and get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -332,7 +332,7 @@
             ]
           },
           "id": "rc_test5",
-          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesion photos are infected with the monkeypox virus. PoxApp has detected typical characteristics of monkeypox in your skin lesion photo. You have had a risk contact with an infected person.  For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone to get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses and similar skin lesions are infected with the monkeypox virus. PoxApp has detected characteristics in your skin lesion photo indicative of monkeypox You have had a risk contact with an infected person.  Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, infectious disease specialist, or tropical medicine facility by telephone and get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -346,14 +346,14 @@
             ]
           },
           "id": "rc_contact",
-          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with the monkeypox virus. PoxApp has not detected typical characteristics in your skin lesion photo indicative of the monkeypox virus. However, you have had a risk contact with an infected person. Please contact your local health department for further clarification.\n</p>\n<br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Few users with your responses are infected with the monkeypox virus. PoxApp has not detected characteristics in your skin lesion photo indicative of monkeypox. However, you have had a risk contact with an infected person.  Please contact your local health department for further clarification.\n</p>\n<br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.\n"
         },
         {
           "expression": {
             "var": "risk_contact"
           },
           "id": "rc_contact2",
-          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with the monkeypox virus. Your responses indicate that you don't have a skin lesion or typical symptoms. However, you have had a risk contact with an infected person. Please contact your local health department for further clarification.\n</p>\n<br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Few users with your responses are infected with  the monkeypox virus. You don't have a skin lesion or typical symptoms. However, you have had a risk contact with an infected person. Please contact your local health department for further clarification.\n</p>\n<br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -374,7 +374,7 @@
             ]
           },
           "id": "rc_test6",
-          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with similar skin lesion photos are infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  However, PoxApp has detected typical characteristics in your skin lesion photo indicative of the monkeypox virus. For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone to get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
+          "text": "<center><h3>%(v_orange)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with similar skin lesions are infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  However, PoxApp has detected characteristics in your skin lesion photo indicative of monkeypox. For further clarification, we recommend contacting your primary care physician, infectious disease, or tropical medicine facility by telephone and get advice on monkeypox testing.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>\n<br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>."
         },
         {
           "expression": {
@@ -395,7 +395,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses and similar skin lesion photos are not infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  PoxApp has not detected typical characteristics in your skin lesion photo indicative of the monkeypox virus. However, there are other skin conditions that might need medical treatment. For further clarification, please get in touch with a dermatologist.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses and similar skin lesion photos are not infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  PoxApp has not detected characteristics in your skin lesion photo indicative of monkeypox. However, there are other skin conditions that might need medical treatment. For further clarification, please get in touch with a dermatologist.\n</p>\n"
         },
         {
           "expression": {
@@ -416,7 +416,7 @@
             ]
           },
           "id": "rc_symptoms",
-          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. Your responses indicate symptoms without a skin lesion and there is no evidence that you may have been exposed to the monkeypox virus.  If you develop further symptoms or a skin lesion, you can complete the survey of PoxApp again. If you currently feel ill, please contact your primary care physician by phone.</p>"
+          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. Your responses indicate symptoms without a skin lesion and there is no evidence that you may have been exposed to the monkeypox virus.  If you develop further symptoms or a skin lesion, complete the survey of PoxApp again. If you currently feel ill, we recommend that you contact your primary care physician by phone.\n</p>"
         },
         {
           "expression": true,
