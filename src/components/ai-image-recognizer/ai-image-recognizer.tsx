@@ -7,6 +7,8 @@ import {
   State,
 } from '@stencil/core';
 import * as tf from '@tensorflow/tfjs';
+//import * as tfnode from '@tensorflow/tfjs-node';
+
 import i18next from 'i18next';
 
 
@@ -32,19 +34,12 @@ export class AiImageRecognizer {
 
   IMAGE_SIZE = 224;
 
-  async warmupModel() {
-
-    tf.tidy(function () {
-      var answer = this._model.predict(tf.zeros([1, this.IMAGE_SIZE, this.IMAGE_SIZE, 3]));
-      console.log(answer);
-    });
-  }
-
-
-  componentWillLoad() {
+  async componentWillLoad() {
     tf.loadGraphModel('assets/ai/model.json').then(model => {
+      var answer = model.predict(tf.zeros([1, this.IMAGE_SIZE, this.IMAGE_SIZE, 3]));
+      console.log(answer)
       this._model = model;
-      this.warmupModel();
+      
       console.log('model loaded');
     });
   }
@@ -57,14 +52,18 @@ export class AiImageRecognizer {
   }
 
 
-  predict = async(imgElement) =>  {
-    const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
-    const batch = tf.expandDims(img, 0)
-    var score = this._model.predict(batch).dataSync()
-    var confidence = 1 - parseFloat(tf.sigmoid(score).dataSync())
-    console.log("confidence: " + confidence)
-    console.log("score: " + score)
-    this.updateFormDataHandler(this.inputId,{ confidence: confidence })
+  predict = async(img4) =>  {
+    
+    const img3 = tf.browser.fromPixels(img4);
+    const img2 = tf.image.resizeBilinear(img3, [this.IMAGE_SIZE, this.IMAGE_SIZE]);
+    const img = tf.cast(img2, 'float32');
+    
+    const batch = tf.expandDims(img, 0);
+    var score = this._model.predict(batch).dataSync();
+    var confidence = 1 - parseFloat(tf.sigmoid(score).dataSync());
+    console.log("confidence: " + confidence);
+    console.log("score: " + score);
+    this.updateFormDataHandler(this.inputId,{ confidence: confidence });
     img.dispose();
   }
 
@@ -78,11 +77,18 @@ export class AiImageRecognizer {
         let img = document.createElement('img');
         this._img_preview.src = e.target.result;
         img.src = e.target.result as string;
-        img.width = this.IMAGE_SIZE;
-        img.height = this.IMAGE_SIZE;
+        //img.width = this.IMAGE_SIZE;
+        //img.height = this.IMAGE_SIZE;
         img.onload = () => this.predict(img);
       };
       reader.readAsDataURL(file);
+      /*reader.onload = e => {
+        var arrayBuffer = new Uint8Array(e.target.result as ArrayBuffer);
+        var img = tfnode.node.decodeImage(arrayBuffer);
+        this.predict(img);
+      };
+
+      reader.readAsArrayBuffer(file);*/
     }
   }
 
