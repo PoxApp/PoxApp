@@ -7,7 +7,7 @@
   "meta": {
     "availableLanguages": [],
     "author": "Dr. Alexander Thieme",
-    "creationDate": "2022-08-29",
+    "creationDate": "2022-08-30",
     "description": "Provide recommendations for monkeypox infections"
   },
   "questions": [
@@ -6279,7 +6279,22 @@
               0
             ]
           },
-          0,
+          {
+            "if": [
+              {
+                "var": "skin_lesion"
+              },
+              {
+                "*": [
+                  {
+                    "var": "ai_image_recognition.confidence"
+                  },
+                  100
+                ]
+              },
+              0
+            ]
+          },
           {
             "if": [
               {
