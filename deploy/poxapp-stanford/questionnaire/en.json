@@ -431,6 +431,43 @@
       "results": [
         {
           "expression": {
+            "and": [
+              {
+                "var": "risk_contact"
+              },
+              {
+                ">": [
+                  {
+                    "var": "q_contact_date"
+                  },
+                  {
+                    "-": [
+                      {
+                        "var": "now"
+                      },
+                      {
+                        "*": [
+                          14,
+                          86400
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "rc_pep",
+          "text": "<p style=\"text-align:justify\">Your responses indicate that you had a risk contact and might be eligible for vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing the disease. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing.</p>\n\n<br>For additional information regarding post-exposure vaccination, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/health-departments/vaccine-considerations.html\" target=\"_blank\">CDC guidelines</a>."
+        }
+      ],
+      "description": "Post-Exposure Vaccination",
+      "id": "rc_vaccine"
+    },
+    {
+      "results": [
+        {
+          "expression": {
             ">": [
               {
                 "var": "q_zip"
