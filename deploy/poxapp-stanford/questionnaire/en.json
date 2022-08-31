@@ -395,7 +395,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses and similar skin lesion photos are not infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  PoxApp has not detected typical characteristics in your skin lesion photo indicative of the monkeypox virus. However, there might be other skin conditions that might need medical treatment. For further clarification, please get in touch with a dermatologist.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses and similar skin lesion photos are not infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  PoxApp has not detected typical characteristics in your skin lesion photo indicative of the monkeypox virus. However, there are other skin conditions that might need medical treatment. For further clarification, please get in touch with a dermatologist.\n</p>\n"
         },
         {
           "expression": {
