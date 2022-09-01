@@ -7,7 +7,7 @@
   "meta": {
     "availableLanguages": [],
     "author": "Dr. Alexander Thieme",
-    "creationDate": "2022-08-30",
+    "creationDate": "2022-09-01",
     "description": "Provide recommendations for monkeypox infections"
   },
   "questions": [
@@ -52,17 +52,6 @@
         "var": "q_intro.option.no"
       },
       "details": "We are sorry, but PoxApp Stanford can currently only be offered to individuals who reside in the US and are at least 18 years old.<br><br>Click <a href=\"https://poxapp.stanford.edu\">here</a> to return to the PoxApp mainpage."
-    },
-    {
-      "numericOptions": {
-        "max": 99999,
-        "min": 0,
-        "step": 1
-      },
-      "type": "number",
-      "id": "q_zip",
-      "text": "What is your zip code?",
-      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
     },
     {
       "options": [
@@ -231,6 +220,17 @@
       "type": "select",
       "id": "q_sex",
       "text": "Have you had intimate contact with people outside of a relationship in the past 21 days?"
+    },
+    {
+      "numericOptions": {
+        "max": 99999,
+        "min": 0,
+        "step": 1
+      },
+      "type": "number",
+      "id": "q_zip",
+      "text": "What is your zip code?",
+      "details": "We would like to know your zip code to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
     }
   ],
   "resultCategories": [
