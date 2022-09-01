@@ -22,7 +22,7 @@ export class AiImageRecognizer {
   updateFormDataHandler(key: string, value: object) {
     this.updateFormData.emit({ key, value });
   }
-1111
+
   @State() tookPicture = false;
 
   _player;
@@ -39,6 +39,8 @@ export class AiImageRecognizer {
       var answer = model.predict(tf.zeros([1, this.IMAGE_SIZE, this.IMAGE_SIZE, 3]));
       console.log(answer)
       this._model = model;
+      const status = document.getElementById('status');
+      status.textContent = '';
       
       console.log('model loaded');
     });
@@ -52,12 +54,8 @@ export class AiImageRecognizer {
   }
 
 
-  predict = async(img4) =>  {
-    
-    const img3 = tf.browser.fromPixels(img4);
-    const img2 = tf.image.resizeBilinear(img3, [this.IMAGE_SIZE, this.IMAGE_SIZE]);
-    const img = tf.cast(img2, 'float32');
-    
+  predict = async(img2) =>  {
+    const img = tf.cast(tf.image.resizeBilinear(tf.browser.fromPixels(img2), [this.IMAGE_SIZE, this.IMAGE_SIZE]), 'float32');
     const batch = tf.expandDims(img, 0);
     var score = this._model.predict(batch).dataSync();
     var confidence = 1 - parseFloat(tf.sigmoid(score).dataSync());
@@ -70,6 +68,7 @@ export class AiImageRecognizer {
 
 
   uploadPicture = async (event: any) => {
+    
     if(event.target.files.length >= 1){
       let file = event.target.files[0];
       let reader = new FileReader();
@@ -100,6 +99,8 @@ export class AiImageRecognizer {
 
   render() {
     return [
+
+      <label id="status">Loading AI model. Please wait...</label>,
       <label htmlFor="file-upload" class="file-upload">{i18next.t('upload_picture')}</label>,
       <input ref={el => (this._input = el)} type="file" id="file-upload" accept="image/*" onChange={this.uploadPicture}/>,
       <img ref={el => (this._img_preview = el)} style={{"width" : "100%"}}  />,
