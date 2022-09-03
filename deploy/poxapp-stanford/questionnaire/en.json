@@ -55,7 +55,7 @@
         {
           "scores": {
             "Exposition": 0,
-            "Symptoms": 1
+            "Symptoms": 0
           },
           "text": "Yes",
           "value": "yes"
@@ -248,7 +248,7 @@
         {
           "expression": true,
           "id": "risk_scores",
-          "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Your Risk Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nYour Risk Score is equal to the highest score in your Risk Profile. For your Risk Profile please see below."
+          "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Your Risk Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nYour Risk Score is equal to the highest score in your Risk Profile. "
         }
       ],
       "description": "Your Risk Score",
@@ -404,7 +404,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact. You report having a new rash or skin lesion. There are skin conditions that might need medical treatment, so you might consider getting in touch with a dermatologist.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. \n%(result_ai)s\nYour responses indicate that you do not have typical symptoms and there has been no risk contact. You report having a new rash or skin lesion. There are skin conditions that might need medical treatment, so you might consider getting in touch with a dermatologist.\n</p>\n"
         },
         {
           "expression": {
@@ -6358,11 +6358,19 @@
                 "var": "skin_lesion"
               },
               {
-                "*": [
+                "if": [
                   {
-                    "var": "ai_image_recognition.confidence"
+                    "var": "photo_taken"
                   },
-                  100
+                  {
+                    "*": [
+                      {
+                        "var": "ai_image_recognition.confidence"
+                      },
+                      100
+                    ]
+                  },
+                  25
                 ]
               },
               0
@@ -6935,6 +6943,12 @@
         ]
       },
       "id": "vaccine_footer"
+    },
+    {
+      "expression": {
+        "var": "q_photo.option.yes"
+      },
+      "id": "photo_taken"
     }
   ]
 }

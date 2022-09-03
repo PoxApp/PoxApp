@@ -103,7 +103,7 @@
       "enableWhenExpression": {
         "var": "q_photo.option.yes"
       },
-      "details": "<b>Please take or select a close-up and well-lit picture of your skin lesion. <p style=\"color:red\">Do not photograph your head or body parts with a tattoo or birth mark.</p></b><p><img src=\"https://poxapp.stanford.edu/assets/images/cnndirections3.png\" style=\"max-width: 100%\"><p>"
+      "details": "<b>Please take or select a close-up and well-lit picture of your skin lesion. <p style=\"color:red\">Do not photograph your head or body parts with a tattoo or birth mark.</p></b><p><img src=\"https://poxapp.stanford.edu/assets/images/cnndirections3.jpg\" style=\"max-width: 100%\"><p>"
     },
     {
       "options": [
@@ -248,7 +248,7 @@
         {
           "expression": true,
           "id": "risk_scores",
-          "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Your Risk Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nYour Risk Score is equal to the highest score in your Risk Profile. For your Risk Profile please see below."
+          "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Your Risk Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nYour Risk Score is equal to the highest score in your Risk Profile. "
         }
       ],
       "description": "Your Risk Score",
@@ -282,7 +282,7 @@
             ]
           },
           "id": "rc_test",
-          "text": "%(testing_header)s\n%(very_high_risk)s. \nYour responses indicate typical symptoms and you may have come into contact with the virus. \n%(result_ai)s.\n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(very_high_risk)s\nYou report having a rash or skin lesion, additional symptoms and you may have come into contact with the virus. \n%(result_ai)s\nFor individuals with a rash/skin lesion, additional symptoms and possible exposure to the virus,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -299,7 +299,7 @@
             ]
           },
           "id": "rc_test2",
-          "text": "%(testing_header)s\n%(high_risk)s.  \n%(result_ai)s. \nHowever, you report typical symptoms and you may have come into contact with the virus. \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYou report having a rash or skin lesion, additional symptoms and you may have come into contact with the virus.  \n%(result_ai)s\nFor individuals with a rash/skin lesion, additional symptoms and possible exposure to the virus,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -313,7 +313,7 @@
             ]
           },
           "id": "rc_test3",
-          "text": "%(testing_header)s\n%(high_risk)s.  \n%(result_ai)s. \nYou also report typical symptoms. \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYou report having a rash or skin lesion and additional symptoms.\n%(result_ai)s\nFor individuals with a rash/skin lesion and additional symptoms,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -327,7 +327,7 @@
             ]
           },
           "id": "rc_test4",
-          "text": "%(testing_header)s\n%(medium_risk)s.  \n%(result_ai)s. \nHowever, you report typical symptoms and you have a skin lesion. \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(medium_risk)s\nYou report having a rash or skin lesion and additional symptoms.  \n%(result_ai)s\nFor individuals with a rash/skin lesion and additional symptoms,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -341,7 +341,7 @@
             ]
           },
           "id": "rc_test5",
-          "text": "%(testing_header)s\n%(high_risk)s.  \n%(result_ai)s. \nYou have had a risk contact with an infected person.  \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYou report having a rash or skin lesion and you may have come into contact with the virus. \n%(result_ai)s\nFor individuals with a characteristic rash or characteristic skin lesion, \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -355,7 +355,7 @@
             ]
           },
           "id": "rc_contact",
-          "text": "%(contact_header)s\n%(medium_risk)s \n%(result_ai)s. However, you have had a risk contact with an infected person.  \n%(contact_footer)s"
+          "text": "%(contact_header)s\n%(medium_risk)s \nYou may have come into contact with the virus. \n%(contact_footer)s"
         },
         {
           "expression": {
@@ -383,7 +383,7 @@
             ]
           },
           "id": "rc_test6",
-          "text": "%(testing_header)s\n%(high_risk)s.  \nYour responses indicate that you do not have typical symptoms and there has been no risk contact.  \nHowever, %(result_ai)s. \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYour responses indicate that you do not have typical symptoms and there has been no risk contact.  \n%(result_ai)s\nFor individuals with a characteristic rash or skin lesion,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -404,7 +404,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses and similar skin lesion photos are not infected with the monkeypox virus. Your responses indicate that you do not have typical symptoms and there has been no risk contact.  %(result_ai)s. There are other skin conditions that might need medical treatment. If you need further clarification, please get in touch with a dermatologist.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. \n%(result_ai)s\nYour responses indicate that you do not have typical symptoms and there has been no risk contact. You report having a new rash or skin lesion. There are skin conditions that might need medical treatment, so you might consider getting in touch with a dermatologist.\n</p>\n"
         },
         {
           "expression": {
@@ -425,12 +425,12 @@
             ]
           },
           "id": "rc_symptoms",
-          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. Your responses indicate symptoms without a skin lesion and there is no evidence that you may have been exposed to the monkeypox virus.  If you develop further symptoms or a skin lesion, complete the survey of PoxApp again. If you currently feel ill, we recommend that you contact your primary care physician by phone.\n</p>"
+          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. Your responses indicate symptoms without a skin lesion and exposure to the monkeypox virus.  If you develop further symptoms or a skin lesion, complete the survey of PoxApp again. If you currently feel ill, you might consider getting in touch with a health care professional such as a primary care physician.\n</p>"
         },
         {
           "expression": true,
           "id": "rc_nothing",
-          "text": "<center><h3>%(v_green)s No further action required.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus and do not require further action.</p>\n"
+          "text": "<center><h3>%(v_green)s Most users with your responses are not infected with the monkeypox virus.<br></h3></center>\n"
         }
       ],
       "description": "Test Recommendation",
@@ -6358,11 +6358,19 @@
                 "var": "skin_lesion"
               },
               {
-                "*": [
+                "if": [
                   {
-                    "var": "ai_image_recognition.confidence"
+                    "var": "photo_taken"
                   },
-                  100
+                  {
+                    "*": [
+                      {
+                        "var": "ai_image_recognition.confidence"
+                      },
+                      100
+                    ]
+                  },
+                  25
                 ]
               },
               0
@@ -6822,14 +6830,14 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp has detected characteristics in your skin lesion photo indicative of monkeypox",
+          "PoxApp has detected characteristics in your skin lesion photo and, in our preliminary experiments, similar characteristics were associated with a monkeypox virus infection. ",
           {
             "if": [
               {
                 "var": "q_photo.option.yes"
               },
-              "PoxApp has not detected characteristics in your skin lesion photo indicative of monkeypox",
-              "You have not taken a picture of your skin lesion, so it could not be analyzed by PoxApp"
+              "",
+              "You have not taken a picture of your skin lesion, so it could not be analyzed by PoxApp. "
             ]
           }
         ]
@@ -6837,7 +6845,7 @@
       "id": "result_ai"
     },
     {
-      "expression": "Many users with your responses and similar skin lesions are infected with the monkeypox virus",
+      "expression": "Many users with your responses and similar skin lesions are infected with the monkeypox virus. ",
       "id": "very_high_risk"
     },
     {
@@ -6846,8 +6854,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Some users with your responses and similar skin lesions are infected with the monkeypox virus",
-          "Some users with your responses are infected with the monkeypox virus"
+          "Some users with your responses and similar skin lesions are infected with the monkeypox virus. ",
+          "Some users with your responses are infected with the monkeypox virus. "
         ]
       },
       "id": "high_risk"
@@ -6858,11 +6866,23 @@
           {
             "var": "monkeypox_detected"
           },
-          "Few users with your responses and similar skin lesions are infected with the monkeypox virus",
-          "Few users with your responses are infected with the monkeypox virus"
+          "Few users with your responses and similar skin lesions are infected with the monkeypox virus. ",
+          "Few users with your responses are infected with the monkeypox virus. "
         ]
       },
       "id": "medium_risk"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "skin_lesion"
+          },
+          "Most users with your responses and similar skin lesions are not infected with the monkeypox virus. ",
+          "Most users with your responses are not infected with the monkeypox virus. "
+        ]
+      },
+      "id": "low_risk"
     },
     {
       "expression": {
@@ -6882,8 +6902,8 @@
           {
             "var": "stanford"
           },
-          "Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
-          "Thus, for further clarification and in line with RKI we recommend contacting your primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information, take a look at the <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI guidelines</a>."
+          " CDC recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
+          " RKI recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information, take a look at the <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI guidelines</a>."
         ]
       },
       "id": "testing_footer"
@@ -6906,8 +6926,8 @@
           {
             "var": "stanford"
           },
-          "Please contact your local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.",
-          "Please contact your local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.rki.de/DE/Content/InfAZ/A/Affenpocken/Kontaktpersonen.html\" target=\"_blank\">RKI guidelines</a>."
+          "For individuals who had a risk contact, CDC recommends to get in touch with the local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.",
+          "For individuals who had a risk contact, RKI recommends to get in touch with the local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.rki.de/DE/Content/InfAZ/A/Affenpocken/Kontaktpersonen.html\" target=\"_blank\">RKI guidelines</a>."
         ]
       },
       "id": "contact_footer"
@@ -6923,6 +6943,12 @@
         ]
       },
       "id": "vaccine_footer"
+    },
+    {
+      "expression": {
+        "var": "q_photo.option.yes"
+      },
+      "id": "photo_taken"
     }
   ]
 }

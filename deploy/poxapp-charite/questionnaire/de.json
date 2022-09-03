@@ -103,7 +103,7 @@
       "enableWhenExpression": {
         "var": "q_photo.option.yes"
       },
-      "details": "<b>Bitte machen Sie nun ein gut beleuchtetes Foto des Hautausschlags aus der Nähe. <p style=\"color:red\">Bitte machen Sie kein Foto im Bereich des Kopfes, von Tattoos und Muttermalen</p></b><p><img src=\"https://poxapp.charite.de/assets/images/cnndirectionsgerman.png\" style=\"max-width: 100%\"><p>"
+      "details": "<b>Bitte machen Sie nun ein gut beleuchtetes Foto des Hautausschlags aus der Nähe. <p style=\"color:red\">Bitte machen Sie kein Foto im Bereich des Kopfes, von Tattoos und Muttermalen</p></b><p><img src=\"https://poxapp.charite.de/assets/images/cnndirectionsgerman.jpg\" style=\"max-width: 100%\"><p>"
     },
     {
       "options": [
@@ -282,7 +282,7 @@
             ]
           },
           "id": "rc_test",
-          "text": "%(testing_header)s\n%(very_high_risk)s. \nIhre Antworten deuten darauf hin, dass Sie typische Symptome haben, und Sie könnten mit dem Virus in Kontakt gekommen sein. \n%(result_ai)s.\n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(very_high_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben und mit dem Virus in Kontakt gekommen sein könnten. \n%(result_ai)s\nBei Personen mit einem neuen Hautauschlag, weiteren Symptomen und einer möglichen Exposition gegenüber dem Virus \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -299,7 +299,7 @@
             ]
           },
           "id": "rc_test2",
-          "text": "%(testing_header)s\n%(high_risk)s.  \n%(result_ai)s. \nIhre Antworten deuten allerdings darauf hin, dass Sie typische Symptome haben, und Sie könnten mit dem Virus in Kontakt gekommen sein.\n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben und mit dem Virus in Kontakt gekommen sein könnten. \n%(result_ai)s \nBei Personen mit einem neuen Hautauschlag, weiteren Symptomen und einer möglichen Exposition gegenüber dem Virus \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -313,7 +313,7 @@
             ]
           },
           "id": "rc_test3",
-          "text": "%(testing_header)s\n%(high_risk)s.  \n%(result_ai)s. \nSie geben auch typische Symptome an.\n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben könnten.\n%(result_ai)s \nBei Personen mit Hautausschlag und weiteren Symptomen \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -327,7 +327,7 @@
             ]
           },
           "id": "rc_test4",
-          "text": "%(testing_header)s\n%(medium_risk)s.  \n%(result_ai)s. \nNach Ihren Antworten haben Sie allerdings typische Symptome und Sie geben ebenfalls an, einen Hautausschlag zu haben.\n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(medium_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben könnten.\n%(result_ai)s\nBei Personen mit Hautausschlag und weiteren Symptomen \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -341,7 +341,7 @@
             ]
           },
           "id": "rc_test5",
-          "text": "%(testing_header)s\n%(high_risk)s.  \n%(result_ai)s. \nSie hatte einen Risikokontakt mit einer infizierten Person.\n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nSie hatte einen Risikokontakt mit einer infizierten Person und Sie geben einen Hautausschlag an.\n%(result_ai)s\nBei Personen mit einem charakteristischen Hautausschlag und einer möglichen Exposition gegenüber dem Virus \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -355,7 +355,7 @@
             ]
           },
           "id": "rc_contact",
-          "text": "%(contact_header)s\n%(medium_risk)s \n%(result_ai)s. \nSie hatten allerdings einen Risikokontakt mit einer infizierten Person.\n%(contact_footer)s"
+          "text": "%(contact_header)s\n%(medium_risk)s \nYou report having a rash or skin lesion and you may have come into contact with the virus. \n%(result_ai)s. \nBei Personen mit einem Risikokontakt empfiehlt das Robert Koch Institut (RKI) die Kontaktaufnahme mit dem lokalen Gesundheitsamt. Weitere Symptome wie der Hautausschlag können bei der Kontaktaufnahme angesprochen werden.\n%(contact_footer)s"
         },
         {
           "expression": {
@@ -383,7 +383,7 @@
             ]
           },
           "id": "rc_test6",
-          "text": "%(testing_header)s\n%(high_risk)s.  \nSie geben keine typischen Symptome an und Sie hatten auch keinen Risikokontakt. \n%(result_ai)s. \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag, aber keine weiteren Symptome an, und Sie hatten auch keinen Risikokontakt. \n%(result_ai)s\nBei charakteristischen Hautausschlängen und nach Ausschluss von anderen Diagnosen  \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -404,7 +404,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Holen Sie sich Rat bei einem Dermatologen.<br></h3></center>\n\n<p style=\"text-align:justify\">Die meisten Benutzer mit Ihren Antworten sind nicht mit dem Affenpockenvirus infiziert. Ihre Antworten weisen nicht auf typische Symptome hin und Sie geben auch keinen Risikokontakt an.  %(result_ai)s. Es gibt weitere Hauterkrankungen, die eine medizinische Behandlung bedürfen. Falls weiterer Klärungsbedarf besteht, dann empfehlen wir Ihnen, sich sich an einen Arzt zu wenden, z.B. an einen Dermatologen.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Holen Sie sich Rat bei einem Dermatologen.<br></h3></center>\n\n<p style=\"text-align:justify\">Die meisten Benutzer mit Ihren Antworten sind nicht mit dem Affenpockenvirus infiziert.\n%(result_ai)s\nIhre Antworten weisen auf keine weiteren Symptome hin und Sie geben auch keinen Risikokontakt an. Sie geben an, einen neuen Hautausschlag zu haben. Es gibt Hauterkrankungen, die eine medizinische Behandlung bedürfen. Dies kann von der PoxApp nicht beurteilt werden. Falls Ihrerseits weiterer Klärungsbedarf besteht, dann könnten Sie Rat bei einem Arzt einholen, z.B. bei einem Dermatologen.\n</p>\n"
         },
         {
           "expression": {
@@ -430,7 +430,7 @@
         {
           "expression": true,
           "id": "rc_nothing",
-          "text": "<center><h3>%(v_green)s Kein Hinweis auf eine Infektion mit dem Affenpockenvirus.<br></h3></center>\n\n<p style=\"text-align:justify\">Die meisten Benutzer mit Ihrer Antwortkonstellation benötigen keine weiteren Maßnahmen.</p>"
+          "text": "<center><h3>%(v_green)s Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Affenpockenvirus infiziert.<br></h3></center>"
         }
       ],
       "description": "Testempfehlung",
@@ -6797,7 +6797,7 @@
               51
             ]
           },
-          "High Risk",
+          "Hohes Risiko",
           {
             "if": [
               {
@@ -6808,8 +6808,8 @@
                   10
                 ]
               },
-              "Medium Risk",
-              "Low Risk"
+              "Mittleres Risiko",
+              "Niedriges Risiko"
             ]
           }
         ]
@@ -6822,14 +6822,14 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp hat einige typische Merkmale in dem Foto Ihres Hautausschlages identifiziert, die auf Affenpocken hinweisen könnten",
+          "PoxApp hat charakteristische Merkmale identifiziert und, in unseren vorläufigen Experimente, waren ähnliche Merkmale mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. ",
           {
             "if": [
               {
                 "var": "q_photo.option.yes"
               },
-              "PoxApp hat keine typische Merkmale in dem Foto Ihres Hautausschlages identifiziert, die auf Affenpocken hinweisen",
-              "Sie haben kein Foto aufgenommen, so dass PoxApp Ihren Hautausschlag nicht analysieren konnte"
+              "",
+              "Sie haben kein Foto aufgenommen, so dass PoxApp Ihren Hautausschlag nicht analysieren konnte. "
             ]
           }
         ]
@@ -6842,8 +6842,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Viele Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert",
-          "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert"
+          "Viele Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "very_high_risk"
@@ -6854,8 +6854,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert",
-          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert"
+          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "high_risk"
@@ -6866,8 +6866,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert",
-          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert"
+          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "medium_risk"
@@ -6891,7 +6891,7 @@
             "var": "stanford"
           },
           "Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
-          "Wir empfehlen die Durchführung eines Tests. Gegebenenfalls müssen zuvor Erkrankungen mit ähnlicher Symptomatik ausgeschlossen werden. Zur weiteren Abklärung empfehlen wir die telefonische Kontaktaufnahme mit Ihrem Hausarzt/Hausärztin oder mit einer infektiologischen oder tropenmedizinischen Einrichtung. Wir empfehlen, enge Kontakte mit anderen Personen zu vermeiden, bis eine Diagnose gestellt wurde.</p><p align=\"justify\">Bitte beachten Sie: Die Durchführung eines Tests ist eine medizinische Entscheidung des Arztes/der Ärztin.</p><br>Für weitere Informationen verweisen wir auf die Webseiten des <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">Robert Koch Instituts</a>."
+          " empfiehlt das Robert Koch Institut (RKI) zur weiteren Abklärung die telefonische Kontaktaufnahme mit Ihrem Hausarzt/Hausärztin oder mit einer infektiologischen oder tropenmedizinischen Einrichtung und die Vermeidung von engen Kontakte mit anderen Personen, bis eine Diagnose gestellt wurde. </p><p align=\"justify\">Bitte beachten Sie: Die Durchführung eines Tests ist eine medizinische Entscheidung des Arztes/der Ärztin.</p><br>Für weitere Informationen verweisen wir auf die Webseiten des <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI</a>."
         ]
       },
       "id": "testing_footer"
@@ -6915,7 +6915,7 @@
             "var": "stanford"
           },
           "Please contact your local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.",
-          "Bitte nehmen Sie für weitere Informationen Kontakt zu Ihrem lokalen Gesundheitsamt auf.</p><br>Weitere Informationen finden Sie auch auf den Webseiten des <a href=\"https://www.rki.de/DE/Content/InfAZ/A/Affenpocken/Kontaktpersonen.html\" target=\"_blank\">Robert Koch Instituts</a>."
+          "Bei Personen mit einem Risikokontakt empfiehlt das Robert Koch Institut die Kontaktaufnahme zum lokalen Gesundheitsamt.</p><br>Weitere Informationen finden Sie auch auf den Webseiten des <a href=\"https://www.rki.de/DE/Content/InfAZ/A/Affenpocken/Kontaktpersonen.html\" target=\"_blank\">RKIs</a>."
         ]
       },
       "id": "contact_footer"
@@ -6931,6 +6931,12 @@
         ]
       },
       "id": "vaccine_footer"
+    },
+    {
+      "expression": {
+        "var": "q_photo.option.yes"
+      },
+      "id": "photo_taken"
     }
   ]
 }
