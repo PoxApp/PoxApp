@@ -93,7 +93,7 @@
       "enableWhenExpression": {
         "var": "q_rash.option.yes"
       },
-      "details": "PoxApp kann das Foto von Ihrem Hautausschlag mit Künstlicher Intelligenz analysieren und in Ihre Handlungsempfehlung einfließen lassen. Ihr Foto wird anonym auf Ihrem Gerät analysiert und nicht auf einen externen Server hochgeladen."
+      "details": "PoxApp kann das Foto von Ihrem Hautausschlag mit Künstlicher Intelligenz analysieren. Ihr Foto wird anonym auf Ihrem Gerät analysiert und nicht auf einen externen Server hochgeladen."
     },
     {
       "numericOptions": {},
@@ -383,7 +383,7 @@
             ]
           },
           "id": "rc_test6",
-          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag, aber keine weiteren Symptome an, und Sie hatten auch keinen Risikokontakt. \n%(result_ai)s\nBei charakteristischen Hautausschlängen und nach Ausschluss von anderen Diagnosen  \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag, aber keine weiteren Symptome an, und Sie hatten auch keinen Risikokontakt. \n%(result_ai)s\nBei charakteristischen Hautausschlägen \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -6822,7 +6822,7 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp hat charakteristische Merkmale identifiziert und, in unseren vorläufigen Experimente, waren ähnliche Merkmale mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. ",
+          "PoxApp hat charakteristische Merkmale identifiziert. In unseren vorläufigen Experimenten waren ähnliche Merkmale häufig mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. ",
           {
             "if": [
               {
