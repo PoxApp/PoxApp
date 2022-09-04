@@ -8,7 +8,7 @@
     "availableLanguages": [],
     "author": "Dr. Alexander Thieme",
     "creationDate": "2022-09-01",
-    "description": "Provide recommendations for monkeypox infections"
+    "description": "Provide information on the monkeypox virus"
   },
   "questions": [
     {
@@ -469,8 +469,8 @@
               }
             ]
           },
-          "id": "rc_pep",
-          "text": "<center><h3>%(v_orange)s Get advice on vaccination.<br></h3></center>\n<p style=\"text-align:justify\">Your responses indicate that you had a risk contact and might be eligible for post-exposure vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing monkeypox. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing. For further clarification, please contact your local health department.</p>\n%(vaccine_footer)s\n<br><br>For monkeypox vaccination sites near you, please click <a href=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>."
+          "id": "rc_pep_us",
+          "text": "<center><h3>%(v_orange)s Get advice on vaccination.<br></h3></center>\n<p style=\"text-align:justify\">Your responses indicate that you had a risk contact and might be eligible for post-exposure vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing monkeypox. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing. For further clarification, please contact your local health department.</p>\n%(vaccine_footer)s\n<br><br>To get information on monkeypox vaccination site near you, please click <a ref=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>."
         },
         {
           "expression": {
@@ -500,7 +500,7 @@
               }
             ]
           },
-          "id": "rc_pep2",
+          "id": "rc_pep_germany",
           "text": "<center><h3>%(v_orange)s Get advice on vaccination.<br></h3></center>\n<p style=\"text-align:justify\">Your responses indicate that you had a risk contact and might be eligible for post-exposure vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing monkeypox. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing. For further clarification, please contact your local health department.</p>\n%(vaccine_footer)s"
         }
       ],
@@ -526,7 +526,7 @@
             ]
           },
           "id": "local_resources_us",
-          "text": "We have found the following resources for zip code '%(q_zip)s':<br><br>\n\nFor monkeypox vaccination sites near you, please click <a href=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>.<br><br>\n\nDepartment of Health %(v_state)s<br>\nWebsite: <a href=%(v_state_url)s target=\"_blank\">%(v_state_url)s</a><br>\nHotline: <a href=\"tel:%(v_state_hotline)s\">%(v_state_hotline)s</a><br>"
+          "text": "We have found the following resources for zip code '%(q_zip)s':<br><br>\n\nTo get information on monkeypox vaccination site near you, please click <a ref=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>.<br><br>\n\nDepartment of Health %(v_state)s<br>\nWebsite: <a href=%(v_state_url)s target=\"_blank\">%(v_state_url)s</a><br>\nHotline: <a href=\"tel:%(v_state_hotline)s\">%(v_state_hotline)s</a><br>"
         },
         {
           "expression": {
@@ -6864,7 +6864,7 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp has detected characteristics in your skin lesion photo and, in our preliminary experiments, similar characteristics were associated with a monkeypox virus infection. ",
+          "PoxApp has detected characteristics in your skin lesion photo. In our preliminary research, similar characteristics were associated in some cases with a monkeypox virus infection. Please note: PoxApp is unable to diagnose monkeypox; Monkeypox can only be diagnosed by a health care professional. ",
           {
             "if": [
               {

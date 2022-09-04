@@ -71,7 +71,7 @@
       ],
       "type": "select",
       "id": "q_rash",
-      "text": "Haben Sie einen neun Hautausschlag oder einen Ausschlag im Bereich der Schleimhäute?",
+      "text": "Haben Sie einen neuen Hautausschlag oder einen Ausschlag im Bereich der Schleimhäute?",
       "details": "Bitte schauen Sie insbesondere an folgenden Körperstellen nach: Gesicht, Handflächen, Fußsohlen, Genital- und Analbereich und Mundhöhle.<p>Hier finden Sie einige Beispiele:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Quelle Foto: UK Health Security Agency"
     },
     {
@@ -6822,7 +6822,7 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp hat charakteristische Merkmale identifiziert. In unseren vorläufigen Experimenten waren ähnliche Merkmale häufig mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. ",
+          "PoxApp hat charakteristische Merkmale identifiziert. In unseren vorläufigen Experimenten waren ähnliche Merkmale häufig mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. Bitte beachten Sie: Die PoxApp kann keine Diagnose für das Affenpockenvirus stellen, diese kann nur durch eine ärztliche Konsulation erfolgen. ",
           {
             "if": [
               {
