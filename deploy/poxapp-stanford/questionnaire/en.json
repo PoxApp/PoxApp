@@ -57,7 +57,7 @@
             "Exposition": 0,
             "Symptoms": 0
           },
-          "text": "Ja",
+          "text": "Yes",
           "value": "yes"
         },
         {
@@ -65,45 +65,45 @@
             "Exposition": 0,
             "Symptoms": 0
           },
-          "text": "Nein",
+          "text": "No",
           "value": "no"
         }
       ],
       "type": "select",
       "id": "q_rash",
-      "text": "Haben Sie einen neuen Hautausschlag oder einen Ausschlag im Bereich der Schleimhäute?",
-      "details": "Bitte schauen Sie insbesondere an folgenden Körperstellen nach: Gesicht, Handflächen, Fußsohlen, Genital- und Analbereich und Mundhöhle.<p>Hier finden Sie einige Beispiele:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Quelle Foto: UK Health Security Agency"
+      "text": "Do you have a new skin or mucosal rash/lesion?",
+      "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, anogenital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.stanford.edu/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
     },
     {
       "options": [
         {
           "scores": {},
-          "text": "Ja",
+          "text": "Yes",
           "value": "yes"
         },
         {
           "scores": {},
-          "text": "Nein",
+          "text": "No",
           "value": "no"
         }
       ],
       "type": "select",
       "id": "q_photo",
-      "text": "Möchten Sie, dass PoxApp ein Foto von Ihrem Hautausschlag analysiert?",
+      "text": "Do you want that PoxApp analyzes a photo of your skin lesion?",
       "enableWhenExpression": {
         "var": "q_rash.option.yes"
       },
-      "details": "PoxApp kann das Foto von Ihrem Hautausschlag mit Künstlicher Intelligenz analysieren. Ihr Foto wird anonym auf Ihrem Gerät analysiert und nicht auf einen externen Server hochgeladen."
+      "details": "PoxApp can analyze a photo of your skin lesion with methods of artificial intelligence. Your picture will be analyzed anonymously on your device and not sent to an external server."
     },
     {
       "numericOptions": {},
       "type": "number",
       "id": "ai_image_recognition",
-      "text": "Machen Sie nun ein Foto von Ihrem Hautausschlag.",
+      "text": "Picture of your rash/skin lesion.",
       "enableWhenExpression": {
         "var": "q_photo.option.yes"
       },
-      "details": "<b>Bitte machen Sie nun ein gut beleuchtetes Foto des Hautausschlags aus der Nähe. <p style=\"color:red\">Bitte machen Sie kein Foto im Bereich des Kopfes, von Tattoos und Muttermalen</p></b><p><img src=\"https://poxapp.charite.de/assets/images/cnndirectionsgerman.jpg\" style=\"max-width: 100%\"><p>"
+      "details": "<b>Please take or select a close-up and well-lit picture of your skin lesion. <p style=\"color:red\">Do not photograph your head or body parts with a tattoo or birth mark.</p></b><p><img src=\"https://poxapp.stanford.edu/assets/images/cnndirections3.jpg\" style=\"max-width: 100%\"><p>"
     },
     {
       "options": [
@@ -112,7 +112,7 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "Fieber",
+          "text": "Fever",
           "value": "fever"
         },
         {
@@ -120,7 +120,7 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "Schüttelfrost",
+          "text": "Chills",
           "value": "chills"
         },
         {
@@ -128,7 +128,7 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "Kopfschmerzen",
+          "text": "Headache",
           "value": "headache"
         },
         {
@@ -136,7 +136,7 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "Muskelschmerzen",
+          "text": "Muscle pain",
           "value": "muscle"
         },
         {
@@ -144,7 +144,7 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "Rückenschmerzen",
+          "text": "Backpain",
           "value": "backpain"
         },
         {
@@ -152,7 +152,7 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "Erschöpfung",
+          "text": "Exhaustion",
           "value": "fatigue"
         },
         {
@@ -160,20 +160,20 @@
             "Symptoms": 1,
             "Exposition": 0
           },
-          "text": "geschwollene Lymphknoten",
+          "text": "Swollen lymph nodes",
           "value": "lymphnode"
         }
       ],
       "type": "multiselect",
       "id": "q_symptoms",
-      "text": "Welche Symptome haben Sie aktuell?",
+      "text": "What are your current symptoms?",
       "optional": true,
-      "details": "Wählen Sie eine oder mehrere der unten genannten Symptome aus. Sollten Sie keine der Symptome haben, wählen Sie keinen Eintrag aus, und wählen Sie direkt „Weiter“."
+      "details": "Select one or more of the symptoms below. If you do not have any of the symptoms, click on \"Next\"."
     },
     {
       "type": "date",
       "id": "q_symptoms_date",
-      "text": "An welchem Tag traten die Symptome zum ersten Mal auf?",
+      "text": "On which date did the symptoms first appear?",
       "enableWhenExpression": {
         ">": [
           {
@@ -189,24 +189,24 @@
           "scores": {
             "Exposition": 3
           },
-          "text": "Ja",
+          "text": "Yes",
           "value": "yes"
         },
         {
           "scores": {},
-          "text": "Nein",
+          "text": "No",
           "value": "no"
         }
       ],
       "type": "select",
       "id": "q_contact",
-      "text": "Hatten Sie engen Kontakt zu einem nachweislich mit Affenpocken infizierten Menschen?",
-      "details": "Enger Kontakt mit einem bestätigten Fall bedeutet:<ul><li>Direkter, physischer Kontakt (Berührung, Händeschütteln, Küssen)</li><li>Kontakt mit oder ohne Austausch von Körperflüssigkeiten</li><li>Teilen einer Wohnung</li><li>Kontakt zu Bettwäsche (auch \"Bett machen\")</li></ul>"
+      "text": "Have you had close contact with a person confirmed to be infected with monkeypox?",
+      "details": "Close contact with a confirmed case means:<ul><li>Direct, physical contact (touching, shaking hands, kissing).</li><li>Contact with or exchange of body fluids.</li><li>Sharing an apartment.</li><li>Contact with bedding (including \"making the bed\").</li></ul>"
     },
     {
       "type": "date",
       "id": "q_contact_date",
-      "text": "An welchem Tag war der letzte Kontakt?",
+      "text": "What was the date of the last contact?",
       "enableWhenExpression": {
         "var": "q_contact.option.yes"
       }
@@ -217,18 +217,18 @@
           "scores": {
             "Exposition": 1
           },
-          "text": "Ja",
+          "text": "Yes",
           "value": "yes"
         },
         {
           "scores": {},
-          "text": "Nein",
+          "text": "No",
           "value": "no"
         }
       ],
       "type": "select",
       "id": "q_sex",
-      "text": "Hatten Sie in den vergangenen 21 Tagen intimen Kontakt mit nicht-festen Partnern? "
+      "text": "Have you had intimate contact with people outside of a relationship in the past 21 days?"
     },
     {
       "numericOptions": {
@@ -238,8 +238,8 @@
       },
       "type": "number",
       "id": "q_zip",
-      "text": "Was ist Ihre Postleitzahl?",
-      "details": "Wir verwenden Ihre Postleitzahl, um medizinische Angebote in Ihrer Region anzuzeigen. <br><br>Falls Sie Ihre Postleitzahl nicht angeben wollen, geben Sie bitte '0' ein."
+      "text": "What is your zip code?",
+      "details": "We would like to know your zip code to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
     }
   ],
   "resultCategories": [
@@ -248,10 +248,10 @@
         {
           "expression": "",
           "id": "risk_scores",
-          "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Ihr Risiko Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nIhr Risiko Score entspricht dem höchsten Score in Ihrem Risikoprofil."
+          "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Your Risk Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nYour Risk Score is equal to the highest score in your Risk Profile. "
         }
       ],
-      "description": "Ihr Risiko Score",
+      "description": "Your Risk Score",
       "id": "rc_risk_summary"
     },
     {
@@ -259,10 +259,10 @@
         {
           "expression": "",
           "id": "risk_profile",
-          "text": "<table width=\"100%\">\n<tr>\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_symptoms)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_symptoms)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_symptoms_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Symptome Score</center>\n</td>\n\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_exposition)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_exposition)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_exposition_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Expositions Score</center>\n</td>\n</tr>\n\n</table>\n\n\n<br><br><strong>Wie wird das persönliche Risikoprofil generiert?</strong><br><br>\n\nDie PoxApp hat ein persönliches Risikoprofil erstellt als Grundlage für die dargestellten Informationen.<br> <br> Dieses besteht aus zwei Risiko-Dimensionen, in denen Sie jeweils zwischen 0 und 100 Punkten erhalten haben. Eine niedrige Punktzahl bedeutet, dass ihr diesbezügliches Risiko als eher gering eingeschätzt wird, während eine hohe Punktzahl auf ein entsprechend größeres Risiko hinweist. Diese Angaben dienen nur der groben Orientierung und sind natürlich ohne Gewähr.<br> <br> <strong>Die zwei Risiko-Dimensionen sind:</strong><br> <br>  1. Symptome Score: Dieser Score erhöht sich, wenn Sie Symptome angegeben haben, die für eine Infektion mit dem Affenpockenvirus sprechen, oder wenn die PoxApp charakteristische Merkmale in Ihrem Hautausschlag erkannt hat, die für Affenpocken sprechen könnten. <br> <br> 2. Expositions Score: Dieser Score erhöht sich, wenn Sie Aufenthalte, Kontakte oder andere Umstände angegeben haben, die dafür sprechen, dass Sie mit dem Affenpockenvirus in Kontakt gekommen sein könnten.<br> <br> Die Scores dienen als Basis für die Handlungsempfehlungen. Für eine korrekte Interpretation sind neben der Höhe der Scores zusätzliche Faktoren heranzuziehen. Die Scores Symptome und Exposition werden für die \"Informationen über Testung\" und Score Exposition für \"Informationen über Post-Expositions-Impfung\" verwendet. "
+          "text": "<table width=\"100%\">\n<tr>\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_symptoms)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_symptoms)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_symptoms_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Symptom Score</center>\n</td>\n\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_exposition)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_exposition)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_exposition_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Exposition Score</center>\n</td>\n</tr>\n\n</table>\n\n\n<br><br><strong>How is the risk profile generated?</strong><br><br>\nBased on your responses PoxApp has created a personal risk profile which is also used for your displayed information.<br> <br> Your risk profile has two risk dimensions with a value between 0 and 100 points. While a lower score implies lower risk, higher scores indicate a higher risk. These scores are only intended to serve as a rough orientation without any guarantee. <br> <br><strong> These are the two risk dimensions:</strong><br> <br> 1. Symptom Score: This score increases if your responses indicate symptoms that can be related to monkeypox or if your skin lesion has characteristics that are indicative for monkeypox.<br> <br> 2. Exposition Score: This score increases if you have encounters or circumstances, which imply that you could have been in contact with the monkeypox virus.<br> <br> Symptom and Exposition Scores are used to compile the \"Information on Testing\", the Exposition Score for \"Information on Post-Exposure-Vaccination\"."
         }
       ],
-      "description": "Ihr Risiko Profil",
+      "description": "Your Risk Profile",
       "id": "rc_profile"
     },
     {
@@ -282,7 +282,7 @@
             ]
           },
           "id": "rc_test",
-          "text": "%(testing_header)s\n%(very_high_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben und mit dem Virus in Kontakt gekommen sein könnten. \n%(result_ai)s\nBei Personen mit einem neuen Hautauschlag, weiteren Symptomen und einer möglichen Exposition gegenüber dem Virus \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(very_high_risk)s\nYou report having a rash or skin lesion, additional symptoms and you may have come into contact with the virus. \n%(result_ai)s\nFor individuals with a rash/skin lesion, additional symptoms and possible exposure to the virus,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -299,7 +299,7 @@
             ]
           },
           "id": "rc_test2",
-          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben und mit dem Virus in Kontakt gekommen sein könnten. \n%(result_ai)s \nBei Personen mit einem neuen Hautauschlag, weiteren Symptomen und einer möglichen Exposition gegenüber dem Virus \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYou report having a rash or skin lesion, additional symptoms and you may have come into contact with the virus.  \n%(result_ai)s\nFor individuals with a rash/skin lesion, additional symptoms and possible exposure to the virus,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -313,7 +313,7 @@
             ]
           },
           "id": "rc_test3",
-          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben könnten.\n%(result_ai)s \nBei Personen mit Hautausschlag und weiteren Symptomen \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYou report having a rash or skin lesion and additional symptoms.\n%(result_ai)s\nFor individuals with a rash/skin lesion and additional symptoms,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -327,7 +327,7 @@
             ]
           },
           "id": "rc_test4",
-          "text": "%(testing_header)s\n%(medium_risk)s\nSie geben einen Hautausschlag an und Ihre Antworten deuten darauf hin, dass Sie typische Symptome haben könnten.\n%(result_ai)s\nBei Personen mit Hautausschlag und weiteren Symptomen \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(medium_risk)s\nYou report having a rash or skin lesion and additional symptoms.  \n%(result_ai)s\nFor individuals with a rash/skin lesion and additional symptoms,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -341,7 +341,7 @@
             ]
           },
           "id": "rc_test5",
-          "text": "%(testing_header)s\n%(high_risk)s\nSie hatte einen Risikokontakt mit einer infizierten Person und Sie geben einen Hautausschlag an.\n%(result_ai)s\nBei Personen mit einem charakteristischen Hautausschlag und einer möglichen Exposition gegenüber dem Virus \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYou report having a rash or skin lesion and you may have come into contact with the virus. \n%(result_ai)s\nFor individuals with a characteristic rash or characteristic skin lesion, \n%(testing_footer)s"
         },
         {
           "expression": {
@@ -355,14 +355,14 @@
             ]
           },
           "id": "rc_contact",
-          "text": "%(contact_header)s\n%(medium_risk)s \nYou report having a rash or skin lesion and you may have come into contact with the virus. \n%(result_ai)s. \nBei Personen mit einem Risikokontakt empfiehlt das Robert Koch Institut (RKI) die Kontaktaufnahme mit dem lokalen Gesundheitsamt. Weitere Symptome wie der Hautausschlag können bei der Kontaktaufnahme angesprochen werden.\n%(contact_footer)s"
+          "text": "%(contact_header)s\n%(medium_risk)s \nYou may have come into contact with the virus. \n%(contact_footer)s"
         },
         {
           "expression": {
             "var": "risk_contact"
           },
           "id": "rc_contact2",
-          "text": "%(contact_header)s \n%(medium_risk)s \nSie geben keine typischen Symptome oder einen Hautauschlag an. Sie hatten allerdings einen Risikokontakt mit einer infizierten Person.\n%(contact_footer)s"
+          "text": "%(contact_header)s \n%(medium_risk)s \nYou don't have a skin lesion or typical symptoms. However, you have had a risk contact with an infected person. \n%(contact_footer)s"
         },
         {
           "expression": {
@@ -383,7 +383,7 @@
             ]
           },
           "id": "rc_test6",
-          "text": "%(testing_header)s\n%(high_risk)s\nSie geben einen Hautausschlag, aber keine weiteren Symptome an, und Sie hatten auch keinen Risikokontakt. \n%(result_ai)s\nBei charakteristischen Hautausschlägen \n%(testing_footer)s"
+          "text": "%(testing_header)s\n%(high_risk)s\nYour responses indicate that you do not have typical symptoms and there has been no risk contact.  \n%(result_ai)s\nFor individuals with a characteristic rash or skin lesion,\n%(testing_footer)s"
         },
         {
           "expression": {
@@ -404,7 +404,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Holen Sie sich Rat bei einem Dermatologen.<br></h3></center>\n\n<p style=\"text-align:justify\">Die meisten Benutzer mit Ihren Antworten sind nicht mit dem Affenpockenvirus infiziert.\n%(result_ai)s\nIhre Antworten weisen auf keine weiteren Symptome hin und Sie geben auch keinen Risikokontakt an. Sie geben an, einen neuen Hautausschlag zu haben. Es gibt Hauterkrankungen, die eine medizinische Behandlung bedürfen. Dies kann von der PoxApp nicht beurteilt werden. Falls Ihrerseits weiterer Klärungsbedarf besteht, dann könnten Sie Rat bei einem Arzt einholen, z.B. bei einem Dermatologen.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a dermatologist.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. \n%(result_ai)s\nYour responses indicate that you do not have typical symptoms and there has been no risk contact. You report having a new rash or skin lesion. There are skin conditions that might need medical treatment, so you might consider getting in touch with a dermatologist.\n</p>\n"
         },
         {
           "expression": {
@@ -425,15 +425,15 @@
             ]
           },
           "id": "rc_symptoms",
-          "text": "<center><h3>%(v_orange)s Holen Sie sich Rat bei einem Arzt.<br></h3></center>\n<p style=\"text-align:justify\">Die meisten Benutzer mit Ihren Antworten sind nicht mit dem Affenpockenvirus infiziert. Ihre Antworten weisen auf einige Symptome hin, jedoch haben Sie keinen Hautausschlag und auch keinen Risikokontakt. Fall Sie weitere Symptome entwicklen, inbesondere einen Hautausschlage, dann führen Sie die PoxApp erneut aus. Wenn Sie sich krank fühlen, dann empfehlen wir Ihnen, sich bei einem Arzt Rat zu holen.\n</p>"
+          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your responses are not infected with the monkeypox virus. Your responses indicate symptoms without a skin lesion and exposure to the monkeypox virus.  If you develop further symptoms or a skin lesion, complete the survey of PoxApp again. If you currently feel ill, you might consider getting in touch with a health care professional such as a primary care physician.\n</p>"
         },
         {
           "expression": true,
           "id": "rc_nothing",
-          "text": "<center><h3>%(v_green)s Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Affenpockenvirus infiziert.<br></h3></center>"
+          "text": "<center><h3>%(v_green)s Most users with your responses are not infected with the monkeypox virus.<br></h3></center>\n"
         }
       ],
-      "description": "Informationen über Testung",
+      "description": "Information on Testing",
       "id": "rc_recommendation"
     },
     {
@@ -463,14 +463,48 @@
                     ]
                   }
                 ]
+              },
+              {
+                "var": "stanford"
               }
             ]
           },
-          "id": "rc_pep",
-          "text": "<center><h3>%(v_orange)s Lassen Sie sich bezüglich einer Impfung beraten<br></h3></center>\n<p style=\"text-align:justify\">Ihre Antworten weisen auf einen Risikokontakt hin. Das RKI empfiehlt für Personen mit einem Risikokontakt eine Post-Expositions-Impfung. Eine Post-Expositions-Impfung kann eine Erkrankung am Affenpockenvirus verhindern, wenn diese schnell genug durchgeführt wird. Die Impfung ist dann am wirkungsvollsten, wenn sie innerhalb von 4 Tagen gegegeben wird. Bei einer Impfung 4-14 Tage nach der Infektion können die Symptome reduziert, aber die Entwicklung der Erkrankung möglicherweise nicht verhindert werden. Für weitere Informationen empfehlen wir Ihnen, sich mit dem lokalen Gesundheitsamt in Verbindung zu setzen.\n%(vaccine_footer)s\n"
+          "id": "rc_pep_us",
+          "text": "<center><h3>%(v_orange)s Get advice on vaccination.<br></h3></center>\n<p style=\"text-align:justify\">Your responses indicate that you had a risk contact and might be eligible for post-exposure vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing monkeypox. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing. For further clarification, please contact your local health department.</p>\n%(vaccine_footer)s\n<br><br>For monkeypox vaccination site near you, please click <a href=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>."
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "risk_contact"
+              },
+              {
+                ">": [
+                  {
+                    "var": "q_contact_date"
+                  },
+                  {
+                    "-": [
+                      {
+                        "var": "now"
+                      },
+                      {
+                        "*": [
+                          14,
+                          86400
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "rc_pep_germany",
+          "text": "<center><h3>%(v_orange)s Get advice on vaccination.<br></h3></center>\n<p style=\"text-align:justify\">Your responses indicate that you had a risk contact and might be eligible for post-exposure vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing monkeypox. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing. For further clarification, please contact your local health department.</p>\n%(vaccine_footer)s"
         }
       ],
-      "description": "Informationen über Post-Expositions-Impfung",
+      "description": "Information on Post-Exposure Vaccination",
       "id": "rc_vaccine"
     },
     {
@@ -492,7 +526,7 @@
             ]
           },
           "id": "local_resources_us",
-          "text": "We have found the following resources for zip code '%(q_zip)s':<br><br>\n\nDepartment of Health %(v_state)s<br>\nWebsite: <a href=%(v_state_url)s target=\"_blank\">%(v_state_url)s</a><br>\nHotline: <a href=\"tel:%(v_state_hotline)s\">%(v_state_hotline)s</a><br>"
+          "text": "We have found the following resources for zip code '%(q_zip)s':<br><br>\n\nFor monkeypox vaccination site near you, please click <a href=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>.<br><br>\n\nDepartment of Health %(v_state)s<br>\nWebsite: <a href=%(v_state_url)s target=\"_blank\">%(v_state_url)s</a><br>\nHotline: <a href=\"tel:%(v_state_hotline)s\">%(v_state_hotline)s</a><br>"
         },
         {
           "expression": {
@@ -513,10 +547,10 @@
             ]
           },
           "id": "local_resources_germany",
-          "text": "<p style=\"text-align:justify\">Bitte klicken Sie <a href=\"https://tools.rki.de/PLZTool/?q=%(q_zip)s\">hier</a>, um Kontaktinformationen zu Ihrem lokalen Gesundheitsamt zu erhalten. </p>"
+          "text": "<p style=\"text-align:justify\">Please click <a href=\"https://tools.rki.de/PLZTool/?q=%(q_zip)s\">here</a>, to get contact details of your local department of health. </p>"
         }
       ],
-      "description": "Medizinische Angebote in Ihrer Nähe",
+      "description": "Resources for Your Area",
       "id": "rc_local_resource"
     },
     {
@@ -6358,11 +6392,19 @@
                 "var": "skin_lesion"
               },
               {
-                "*": [
+                "if": [
                   {
-                    "var": "ai_image_recognition.confidence"
+                    "var": "photo_taken"
                   },
-                  100
+                  {
+                    "*": [
+                      {
+                        "var": "ai_image_recognition.confidence"
+                      },
+                      100
+                    ]
+                  },
+                  25
                 ]
               },
               0
@@ -6797,7 +6839,7 @@
               51
             ]
           },
-          "Hohes Risiko",
+          "High Risk",
           {
             "if": [
               {
@@ -6808,8 +6850,8 @@
                   10
                 ]
               },
-              "Mittleres Risiko",
-              "Niedriges Risiko"
+              "Medium Risk",
+              "Low Risk"
             ]
           }
         ]
@@ -6822,14 +6864,14 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp hat charakteristische Merkmale identifiziert. In unseren vorläufigen Experimenten waren ähnliche Merkmale in einigen Fällen mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. Bitte beachten Sie: Die PoxApp kann keine Diagnose für das Affenpockenvirus stellen, diese kann nur durch eine ärztliche Konsulation erfolgen. ",
+          "PoxApp has detected characteristics in your skin lesion photo. In our preliminary research, similar characteristics were associated in some cases with a monkeypox virus infection. Please note: PoxApp is unable to diagnose monkeypox; Monkeypox can only be diagnosed by a health care professional. ",
           {
             "if": [
               {
                 "var": "q_photo.option.yes"
               },
               "",
-              "Sie haben kein Foto aufgenommen, so dass PoxApp Ihren Hautausschlag nicht analysieren konnte. "
+              "You have not taken a picture of your skin lesion, so it could not be analyzed by PoxApp. "
             ]
           }
         ]
@@ -6837,15 +6879,7 @@
       "id": "result_ai"
     },
     {
-      "expression": {
-        "if": [
-          {
-            "var": "monkeypox_detected"
-          },
-          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
-        ]
-      },
+      "expression": "Some users with your responses and similar skin lesions are infected with the monkeypox virus. ",
       "id": "very_high_risk"
     },
     {
@@ -6854,8 +6888,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
+          "Some users with your responses and similar skin lesions are infected with the monkeypox virus. ",
+          "Some users with your responses are infected with the monkeypox virus. "
         ]
       },
       "id": "high_risk"
@@ -6866,8 +6900,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
+          "Few users with your responses and similar skin lesions are infected with the monkeypox virus. ",
+          "Few users with your responses are infected with the monkeypox virus. "
         ]
       },
       "id": "medium_risk"
@@ -6876,10 +6910,22 @@
       "expression": {
         "if": [
           {
+            "var": "skin_lesion"
+          },
+          "Most users with your responses and similar skin lesions are not infected with the monkeypox virus. ",
+          "Most users with your responses are not infected with the monkeypox virus. "
+        ]
+      },
+      "id": "low_risk"
+    },
+    {
+      "expression": {
+        "if": [
+          {
             "var": "stanford"
           },
           "<center><h3><img src=\"https://poxapp.stanford.edu/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"> Get tested.<br></h3></center><p style=\"text-align:justify\">",
-          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"> Kontaktieren Sie einen Arzt/Ärztin zur Evaluation eines Tests.<br></h3></center><p style=\"text-align:justify\">"
+          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"> Get tested.<br></h3></center><p style=\"text-align:justify\">"
         ]
       },
       "id": "testing_header"
@@ -6890,8 +6936,8 @@
           {
             "var": "stanford"
           },
-          "Thus, for further clarification and in line with CDC we recommend contacting your primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
-          " empfiehlt das Robert Koch Institut (RKI) zur weiteren Abklärung die telefonische Kontaktaufnahme mit Ihrem Hausarzt/Hausärztin oder mit einer infektiologischen oder tropenmedizinischen Einrichtung und die Vermeidung von engen Kontakte mit anderen Personen, bis eine Diagnose gestellt wurde. </p><p align=\"justify\">Bitte beachten Sie: Die Durchführung eines Tests ist eine medizinische Entscheidung des Arztes/der Ärztin.</p><br>Für weitere Informationen verweisen wir auf die Webseiten des <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI</a>."
+          " CDC recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
+          " RKI recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information, take a look at the <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI guidelines</a>."
         ]
       },
       "id": "testing_footer"
@@ -6903,7 +6949,7 @@
             "var": "stanford"
           },
           "<center><h3><img src=\"https://poxapp.stanford.edu/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"> Get in touch with a local health department.<br></h3></center><p style=\"text-align:justify\">",
-          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"> Lassen Sich sich von Ihrem Gesundheitsamt beraten.<br></h3></center><p style=\"text-align:justify\">"
+          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"> Get in touch with a local health department.<br></h3></center><p style=\"text-align:justify\">"
         ]
       },
       "id": "contact_header"
@@ -6914,8 +6960,8 @@
           {
             "var": "stanford"
           },
-          "Please contact your local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.",
-          "Bei Personen mit einem Risikokontakt empfiehlt das Robert Koch Institut die Kontaktaufnahme zum lokalen Gesundheitsamt.</p><br>Weitere Informationen finden Sie auch auf den Webseiten des <a href=\"https://www.rki.de/DE/Content/InfAZ/A/Affenpocken/Kontaktpersonen.html\" target=\"_blank\">RKIs</a>."
+          "For individuals who had a risk contact, CDC recommends to get in touch with the local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/clinicians/monitoring.html\" target=\"_blank\">CDC guidelines</a>.",
+          "For individuals who had a risk contact, RKI recommends to get in touch with the local health department for further clarification.</p><br>For additional information what to do after exposure, take a look at the <a href=\"https://www.rki.de/DE/Content/InfAZ/A/Affenpocken/Kontaktpersonen.html\" target=\"_blank\">RKI guidelines</a>."
         ]
       },
       "id": "contact_footer"
@@ -6927,7 +6973,7 @@
             "var": "stanford"
           },
           "<br>For additional information regarding post-exposure vaccination, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/vaccines/vaccine-basics.html\" target=\"_blank\">CDC guidelines</a>.",
-          "<br><br>Für weitere Informationen über die Post-Expositions-Impfung, verweisen wir auf die Webseiten des <a href=\"https://www.rki.de/SharedDocs/FAQ/Impfen/Affenpocken/FAQ-Liste_Affenpocken_Impfung.html\" target=\"_blank\">Robert Koch Instituts</a>."
+          "<br>For additional information regarding post-exposure vaccination, take a look at the <a href=\"https://www.rki.de/SharedDocs/FAQ/Impfen/Affenpocken/FAQ-Liste_Affenpocken_Impfung.html\" target=\"_blank\">RKI guidelines</a>."
         ]
       },
       "id": "vaccine_footer"
