@@ -6822,7 +6822,7 @@
           {
             "var": "monkeypox_detected"
           },
-          "PoxApp hat charakteristische Merkmale identifiziert. In unseren vorläufigen Experimenten waren ähnliche Merkmale häufig mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. Bitte beachten Sie: Die PoxApp kann keine Diagnose für das Affenpockenvirus stellen, diese kann nur durch eine ärztliche Konsulation erfolgen. ",
+          "PoxApp hat charakteristische Merkmale identifiziert. In unseren vorläufigen Experimenten waren ähnliche Merkmale in einigen Fällen mit einer Infektion mit dem Affenpockenvirus vergesellschaftet. Bitte beachten Sie: Die PoxApp kann keine Diagnose für das Affenpockenvirus stellen, diese kann nur durch eine ärztliche Konsulation erfolgen. ",
           {
             "if": [
               {
@@ -6842,8 +6842,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Viele Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Viele Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
+          "Einige Benutzer mit Ihrer Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Einige Benutzer mit Ihrer Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "very_high_risk"
