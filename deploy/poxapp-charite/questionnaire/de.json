@@ -8,7 +8,7 @@
     "availableLanguages": [],
     "author": "Dr. Alexander Thieme",
     "creationDate": "2022-09-01",
-    "description": "Provide recommendations for monkeypox infections"
+    "description": "Provide information on the monkeypox virus"
   },
   "questions": [
     {
@@ -246,7 +246,7 @@
     {
       "results": [
         {
-          "expression": true,
+          "expression": "",
           "id": "risk_scores",
           "text": "<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Ihr Risiko Score<br>\nInterpretation: %(v_score_interpretation)s<br><br></center>\n\nIhr Risiko Score entspricht dem höchsten Score in Ihrem Risikoprofil."
         }
@@ -257,9 +257,9 @@
     {
       "results": [
         {
-          "expression": true,
+          "expression": "",
           "id": "risk_profile",
-          "text": "<table width=\"100%\">\n<tr>\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_symptoms)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_symptoms)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_symptoms_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Symptome Score</center>\n</td>\n\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_exposition)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_exposition)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_exposition_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Expositions Score</center>\n</td>\n</tr>\n\n</table>\n\n\n<br><br><strong>Wie wird das persönliche Risikoprofil generiert?</strong><br><br>\n\nDie PoxApp hat ein persönliches Risikoprofil erstellt als Grundlage für die weiteren Empfehlungen.<br> <br> Dieses besteht aus zwei Risiko-Dimensionen, in denen Sie jeweils zwischen 0 und 100 Punkten erhalten haben. Eine niedrige Punktzahl bedeutet, dass ihr diesbezügliches Risiko als eher gering eingeschätzt wird, während eine hohe Punktzahl auf ein entsprechend größeres Risiko hinweist. Diese Angaben dienen nur der groben Orientierung und sind natürlich ohne Gewähr.<br> <br> <strong>Die zwei Risiko-Dimensionen sind:</strong><br> <br>  1. Symptome Score: Dieser Score erhöht sich, wenn Sie Symptome angegeben haben, die für eine Infektion mit dem Affenpockenvirus sprechen, oder wenn die PoxApp charakteristische Merkmale in Ihrem Hautausschlag erkannt hat, die für Affenpocken sprechen könnten. <br> <br> 2. Expositions Score: Dieser Score erhöht sich, wenn Sie Aufenthalte, Kontakte oder andere Umstände angegeben haben, die dafür sprechen, dass Sie mit dem Affenpockenvirus in Kontakt gekommen sein könnten.<br> <br> Die Scores dienen als Basis für die Handlungsempfehlungen. Für eine korrekte Interpretation sind neben der Höhe der Scores zusätzliche Faktoren heranzuziehen. Die Scores Symptome und Exposition werden für die \"Testempfehlung\" verwendet. "
+          "text": "<table width=\"100%\">\n<tr>\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_symptoms)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_symptoms)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_symptoms_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Symptome Score</center>\n</td>\n\n<td width=\"50%\">\n\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color_exposition)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_exposition)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_exposition_user_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n\n<br>\n<center>Expositions Score</center>\n</td>\n</tr>\n\n</table>\n\n\n<br><br><strong>Wie wird das persönliche Risikoprofil generiert?</strong><br><br>\n\nDie PoxApp hat ein persönliches Risikoprofil erstellt als Grundlage für die dargestellten Informationen.<br> <br> Dieses besteht aus zwei Risiko-Dimensionen, in denen Sie jeweils zwischen 0 und 100 Punkten erhalten haben. Eine niedrige Punktzahl bedeutet, dass ihr diesbezügliches Risiko als eher gering eingeschätzt wird, während eine hohe Punktzahl auf ein entsprechend größeres Risiko hinweist. Diese Angaben dienen nur der groben Orientierung und sind natürlich ohne Gewähr.<br> <br> <strong>Die zwei Risiko-Dimensionen sind:</strong><br> <br>  1. Symptome Score: Dieser Score erhöht sich, wenn Sie Symptome angegeben haben, die für eine Infektion mit dem Affenpockenvirus sprechen, oder wenn die PoxApp charakteristische Merkmale in Ihrem Hautausschlag erkannt hat, die für Affenpocken sprechen könnten. <br> <br> 2. Expositions Score: Dieser Score erhöht sich, wenn Sie Aufenthalte, Kontakte oder andere Umstände angegeben haben, die dafür sprechen, dass Sie mit dem Affenpockenvirus in Kontakt gekommen sein könnten.<br> <br> Die Scores dienen als Basis für die Handlungsempfehlungen. Für eine korrekte Interpretation sind neben der Höhe der Scores zusätzliche Faktoren heranzuziehen. Die Scores Symptome und Exposition werden für die \"Informationen über Testung\" und Score Exposition für \"Informationen über Post-Expositions-Impfung\" verwendet. "
         }
       ],
       "description": "Ihr Risiko Profil",
@@ -433,7 +433,7 @@
           "text": "<center><h3>%(v_green)s Die meisten Benutzer mit Ihrer Antwortkonstellation sind nicht mit dem Affenpockenvirus infiziert.<br></h3></center>"
         }
       ],
-      "description": "Testempfehlung",
+      "description": "Informationen über Testung",
       "id": "rc_recommendation"
     },
     {
@@ -467,10 +467,10 @@
             ]
           },
           "id": "rc_pep",
-          "text": "<center><h3>%(v_orange)s Lassen Sie sich bezüglich einer Impfung beraten<br></h3></center>\n<p style=\"text-align:justify\">Ihre Antworten weisen auf einen Risikokontakt hin und Sie könnten möglicherweise von einer Post-Expositions-Impfung profitieren. Eine Post-Expositions-Impfung kann eine Erkrankung am Affenpockenvirus verhindern, wenn diese schnell genug durchgeführt wird. Die Impfung ist dann am wirkungsvollsten, wenn sie innerhalb von 4 Tagen gegegeben wird. Bei einer Impfung 4-14 Tage nach der Infektion können die Symptome reduziert, aber die Entwicklung der Erkrankung möglicherweise nicht verhindert werden. Für weitere Informationen empfehlen wir Ihnen, sich mit dem lokalen Gesundheitsamt in Verbindung zu setzen.\n%(vaccine_footer)s\n"
+          "text": "<center><h3>%(v_orange)s Lassen Sie sich bezüglich einer Impfung beraten<br></h3></center>\n<p style=\"text-align:justify\">Ihre Antworten weisen auf einen Risikokontakt hin. Das RKI empfiehlt für Personen mit einem Risikokontakt eine Post-Expositions-Impfung. Eine Post-Expositions-Impfung kann eine Erkrankung am Affenpockenvirus verhindern, wenn diese schnell genug durchgeführt wird. Die Impfung ist dann am wirkungsvollsten, wenn sie innerhalb von 4 Tagen gegegeben wird. Bei einer Impfung 4-14 Tage nach der Infektion können die Symptome reduziert, aber die Entwicklung der Erkrankung möglicherweise nicht verhindert werden. Für weitere Informationen empfehlen wir Ihnen, sich mit dem lokalen Gesundheitsamt in Verbindung zu setzen.\n%(vaccine_footer)s\n"
         }
       ],
-      "description": "Empfehlung für Post-Expositions-Impfung",
+      "description": "Informationen über Post-Expositions-Impfung",
       "id": "rc_vaccine"
     },
     {
