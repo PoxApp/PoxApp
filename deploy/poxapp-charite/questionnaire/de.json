@@ -6363,11 +6363,29 @@
                     "var": "photo_taken"
                   },
                   {
-                    "*": [
+                    "if": [
                       {
-                        "var": "ai_image_recognition.confidence"
+                        "<": [
+                          {
+                            "*": [
+                              {
+                                "var": "ai_image_recognition.confidence"
+                              },
+                              100
+                            ]
+                          },
+                          25
+                        ]
                       },
-                      100
+                      25,
+                      {
+                        "*": [
+                          {
+                            "var": "ai_image_recognition.confidence"
+                          },
+                          100
+                        ]
+                      }
                     ]
                   },
                   25
