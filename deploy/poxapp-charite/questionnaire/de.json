@@ -248,7 +248,7 @@
         {
           "expression": true,
           "id": "risk_scores",
-          "text": "<center>Risiko Score für Personen mit ähnlichen Merkmalen/Verhaltensweisen wie Sie:</center>\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Risiko Score</center>"
+          "text": "<center>Risiko Score für Personen mit ähnlichen Merkmalen/Verhaltensweisen:</center>\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Risiko Score</center>"
         }
       ],
       "description": "Risiko Score",
@@ -404,7 +404,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s  Kontaktieren Sie einen Arzt/Ärztin.<br></h3></center>\n\n<p style=\"text-align:justify\">Nur wenige Personen mit ähnlichen Antwortkonstellationen sind nicht mit dem Affenpockenvirus infiziert.\n%(result_ai)s\nBei Personen mit neu aufgetretenen Hautausschlägen wird zur weiteren Abklärung die telefonische Kontaktaufnahme mit Ihrem Hausarzt/Hausärztin oder einem Dermatologem empfohlen.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s  Arzt/Ärztin kontaktieren.<br></h3></center>\n\n<p style=\"text-align:justify\">Nur wenige Personen mit ähnlichen Antwortkonstellationen sind nicht mit dem Affenpockenvirus infiziert.\n%(result_ai)s\nBei Personen mit neu aufgetretenen Hautausschlägen wird zur weiteren Abklärung die telefonische Kontaktaufnahme mit Ihrem Hausarzt/Hausärztin oder einem Dermatologem empfohlen.\n</p>\n"
         },
         {
           "expression": {
@@ -425,7 +425,7 @@
             ]
           },
           "id": "rc_symptoms",
-          "text": "<center><h3>%(v_orange)s  Kontaktieren Sie einen Arzt/Ärztin.<br></h3></center>\n<p style=\"text-align:justify\">Die meisten Personen mit ähnlichen Antwortkonstellationen sind nicht mit dem Affenpockenvirus infiziert. Fall Sie weitere Symptome entwicklen, inbesondere einen Hautausschlage, können Sie die PoxApp erneut ausführen. Bei Personen mit starken Krankheitsgefühl oder Symptomen wird zur weiteren Abklärung die Kontaktaufnahme zu einem Arzt/Ärztin empfohlen. \n</p>"
+          "text": "<center><h3>%(v_orange)s  Arzt/Ärztin kontaktieren.<br></h3></center>\n<p style=\"text-align:justify\">Die meisten Personen mit ähnlichen Antwortkonstellationen sind nicht mit dem Affenpockenvirus infiziert. Fall Sie weitere Symptome entwicklen, inbesondere einen Hautausschlage, können Sie die PoxApp erneut ausführen. Bei Personen mit starken Krankheitsgefühl oder Symptomen wird zur weiteren Abklärung die Kontaktaufnahme zu einem Arzt/Ärztin empfohlen. \n</p>"
         },
         {
           "expression": true,
@@ -467,7 +467,7 @@
             ]
           },
           "id": "rc_pep",
-          "text": "<center><h3>%(v_orange)s Lassen Sie sich bezüglich einer Impfung beraten<br></h3></center>\n<p style=\"text-align:justify\">Ihre Antworten weisen auf einen Risikokontakt hin. Das RKI empfiehlt für Personen mit einem Risikokontakt eine Post-Expositions-Impfung. Eine Post-Expositions-Impfung kann eine Erkrankung am Affenpockenvirus verhindern, wenn diese schnell genug durchgeführt wird. Die Impfung ist dann am wirkungsvollsten, wenn sie innerhalb von 4 Tagen gegegeben wird. Bei einer Impfung 4-14 Tage nach der Infektion können die Symptome reduziert, aber die Entwicklung der Erkrankung möglicherweise nicht verhindert werden. Für weitere Informationen empfehlen wir Ihnen, sich mit dem lokalen Gesundheitsamt in Verbindung zu setzen.\n%(vaccine_footer)s\n"
+          "text": "<center><h3>%(v_orange)s Post-Expositions-Impfung<br></h3></center>\n<p style=\"text-align:justify\">Viele Personen mit ähnlichen Merkmalen und Verhaltensweisen profitieren von einer Impfung. Das Robert Koch Institut (RKI) empfiehlt für Personen mit einem Risikokontakt eine Post-Expositions-Impfung. Eine Post-Expositions-Impfung kann eine Erkrankung am Affenpockenvirus verhindern, wenn diese schnell genug durchgeführt wird. Die Impfung ist dann am wirkungsvollsten, wenn sie innerhalb von 4 Tagen gegegeben wird. Bei einer Impfung 4-14 Tage nach der Infektion können die Symptome reduziert, aber die Entwicklung der Erkrankung möglicherweise nicht verhindert werden. Für weitere Informationen empfehlen wir Ihnen, sich mit dem lokalen Gesundheitsamt in Verbindung zu setzen.\n%(vaccine_footer)s\n"
         }
       ],
       "description": "Informationen über Post-Expositions-Impfung",
@@ -6887,7 +6887,7 @@
             "var": "stanford"
           },
           "<center><h3><img src=\"https://poxapp.stanford.edu/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"> Get tested.<br></h3></center><p style=\"text-align:justify\">",
-          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"> Kontaktieren Sie einen Arzt/Ärztin.<br></h3></center><p style=\"text-align:justify\">"
+          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\"> Arzt/Ärztin kontaktieren.<br></h3></center><p style=\"text-align:justify\">"
         ]
       },
       "id": "testing_header"
@@ -6911,7 +6911,7 @@
             "var": "stanford"
           },
           "<center><h3><img src=\"https://poxapp.stanford.edu/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"> Get in touch with a local health department.<br></h3></center><p style=\"text-align:justify\">",
-          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"> Lassen Sich sich von Ihrem Gesundheitsamt beraten.<br></h3></center><p style=\"text-align:justify\">"
+          "<center><h3><img src=\"https://poxapp.charite.de/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\"> Beratung durch das Gesundheitsamt.<br></h3></center><p style=\"text-align:justify\">"
         ]
       },
       "id": "contact_header"
