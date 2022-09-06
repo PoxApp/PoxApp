@@ -404,7 +404,7 @@
             ]
           },
           "id": "rc_skin_lesion",
-          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n\n<p style=\"text-align:justify\">Most people with similar characteristics and behavior are not infected with the monkeypox virus. \nSome persons with new skin conditions need medical treatment and are adviced to get in touch with a primary care physician or dermatologist.\n</p>\n"
+          "text": "<center><h3>%(v_orange)s Get in touch with a doctor.<br></h3></center>\n\n<p style=\"text-align:justify\">Few people with similar characteristics and behavior are infected with the monkeypox virus.\n%(result_ai)s \nPersons with new skin conditions are adviced to get in touch with a primary care physician or dermatologist.\n</p>\n"
         },
         {
           "expression": {
