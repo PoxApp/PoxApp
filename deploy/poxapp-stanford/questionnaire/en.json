@@ -6940,7 +6940,7 @@
           {
             "var": "monkeypox_detected"
           },
-          "In our preliminary research, people with similar photos of skin lesions were in some cases infected with the monkeypox virus. Please note, that PoxApp does not make diagnoses. <p>",
+          "In our preliminary research, people with similar photos of skin lesions were in some cases infected with the monkeypox virus. <p>",
           {
             "if": [
               {

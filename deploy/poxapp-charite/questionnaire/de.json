@@ -6906,7 +6906,7 @@
           {
             "var": "monkeypox_detected"
           },
-          "In unserer vorläufigen Forschung lag bei Personen mit ähnlichen Fotos von Hautausschlägen in einigen Fällen eine Infektion mit dem Affenpockenvirus vor. Bitte beachten Sie, dass die PoxApp keine Diagnosen stellt.<p> ",
+          "In unserer vorläufigen Forschung lag bei Personen mit ähnlichen Fotos von Hautausschlägen in einigen Fällen eine Infektion mit dem Affenpockenvirus vor. <p> ",
           {
             "if": [
               {
@@ -6926,8 +6926,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Personen mit ähnlichen Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Einige Personen mit ähnlichen Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
+          "Einige Personen mit ähnlichen Antwortkonstellationen und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Einige Personen mit ähnlichen Antwortkonstellationen sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "very_high_risk"
@@ -6938,8 +6938,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Personen mit ähnlichen Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Einige Personen mit ähnlichen Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
+          "Einige Personen mit ähnlichen Antwortkonstellationen und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Einige Personen mit ähnlichen Antwortkonstellationen sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "high_risk"
@@ -6950,8 +6950,8 @@
           {
             "var": "monkeypox_detected"
           },
-          "Einige Benutzer mit ähnlichen Antwortkonstellation und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
-          "Einige Benutzer mit ähnlichen Antwortkonstellation sind mit dem Affenpockenvirus infiziert. "
+          "Einige Benutzer mit ähnlichen Antwortkonstellationen und ähnlich aussehenden Hautläsionen sind mit dem Affenpockenvirus infiziert. ",
+          "Einige Benutzer mit ähnlichen Antwortkonstellationen sind mit dem Affenpockenvirus infiziert. "
         ]
       },
       "id": "medium_risk"
