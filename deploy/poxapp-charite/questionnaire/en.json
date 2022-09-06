@@ -248,7 +248,7 @@
         {
           "expression": true,
           "id": "risk_scores",
-          "text": "<center>\nThe risk score for people with similar characteristics and behaviors is\n<br>\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n"
+          "text": "<center>\nThe risk score for people with similar characteristics and behaviors is\n<br>\n<svg width=\"100%\" viewBox=\"0 0 100 50\">\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"lightgrey\" stroke-width=\"12\" stroke-dasharray=\"100, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<circle id=\"low\" r=\"31.8\" cx=\"45\" cy=\"65\" stroke=\"%(v_gauge_color)s \" stroke-width=\"12\" stroke-dasharray=\"%(v_gauge_highest_score)d, 200\" fill=\"none\" transform=\"rotate(179.5 47.7 52)\"></circle>\n<text x=\"50%\" y=\"70%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.7em\">%(v_highest_score)d</text>\n<text x=\"18.8%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">0</text>\n<text x=\"82%\" y=\"89%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"0.3em\">100</text>\n</svg>\n<center>Risk Score</center>"
         }
       ],
       "description": "Risk Score",
@@ -497,6 +497,40 @@
                     ]
                   }
                 ]
+              },
+              {
+                "var": "is_berlin"
+              }
+            ]
+          },
+          "id": "rc_pep_berlin",
+          "text": "<center><h3>%(v_orange)s Post-exposure vaccination.<br></h3></center>\n<p style=\"text-align:justify\">Many people with similar characteristics are eligible for vaccination. The CDC advises that individuals who have been exposed to the monkeypox virus be given the vaccine to prevent them from developing monkeypox. This is called post-exposure vaccination which is effective at preventing monkeypox when given within 4 days of exposure. If given between 4–14 days after the date of exposure, symptoms may be reduced, but infection may not be prevented from developing. For further clarification, please contact your local health department.</p>\n%(vaccine_footer)s\n<br><br>\nFor a list of vaccination sites in Berlin, please click <a href=\"https://www.dagnae.de/2022/07/affenpocken-impfkampagne-in-berlin-impfstellen/\">here</a>.<br>\n"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "var": "risk_contact"
+              },
+              {
+                ">": [
+                  {
+                    "var": "q_contact_date"
+                  },
+                  {
+                    "-": [
+                      {
+                        "var": "now"
+                      },
+                      {
+                        "*": [
+                          14,
+                          86400
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -527,6 +561,30 @@
           },
           "id": "local_resources_us",
           "text": "We have found the following resources for zip code '%(q_zip)s':<br><br>\n\nFor monkeypox vaccination sites near you, please click <a href=\"https://mpoxvaxmap.org/view/%(q_zip)s/\">here</a>.<br><br>\n\nDepartment of Health %(v_state)s<br>\nWebsite: <a href=%(v_state_url)s target=\"_blank\">%(v_state_url)s</a><br>\nHotline: <a href=\"tel:%(v_state_hotline)s\">%(v_state_hotline)s</a><br>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                ">": [
+                  {
+                    "var": "q_zip"
+                  },
+                  0
+                ]
+              },
+              {
+                "!": {
+                  "var": "standford"
+                }
+              },
+              {
+                "var": "is_berlin"
+              }
+            ]
+          },
+          "id": "local_resources_berlin",
+          "text": "<p style=\"text-align:justify\">Please click <a href=\"https://tools.rki.de/PLZTool/?q=%(q_zip)s\">here</a>, to get contact details of your local department of health. </p>\n<br>\nFor a list of vaccination sites in Berlin, please click <a href=\"https://www.dagnae.de/2022/07/affenpocken-impfkampagne-in-berlin-impfstellen/\">here</a>.<br>\n"
         },
         {
           "expression": {
@@ -6954,8 +7012,8 @@
           {
             "var": "stanford"
           },
-          " CDC recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
-          " the Robert Koch Institute (RKI) recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information, take a look at the <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI guidelines</a>."
+          " CDC recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing. Close contact should be avoided until a diagnosis is made.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information regarding testing, take a look at the <a href=\"https://www.cdc.gov/poxvirus/monkeypox/testing/testing-basics.html\" target=\"_blank\">CDC guidelines</a>.",
+          " the Robert Koch Institute (RKI) recommends to contact a primary care physician, an infectious disease specialist, or a tropical medicine facility by telephone and to get advice on monkeypox testing. Close contact should be avoided until a diagnosis is made.</p><p style=\"text-align:justify\">Please note: Performing a test is a medical decision made by a physician.</p><br>For additional information, take a look at the <a href=\"https://www.rki.de/SharedDocs/FAQ/Affenpocken/affenpocken_gesamt.html\" target=\"_blank\">RKI guidelines</a>."
         ]
       },
       "id": "testing_footer"
@@ -7001,6 +7059,1547 @@
         "var": "q_photo.option.yes"
       },
       "id": "photo_taken"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "or": [
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10115
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10117
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10119
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10178
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10179
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10243
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10245
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10247
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10249
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10315
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10317
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10318
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10319
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10365
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10367
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10369
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10405
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10407
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10409
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10435
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10437
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10439
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10551
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10553
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10555
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10557
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10559
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10585
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10587
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10589
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10623
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10625
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10627
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10629
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10707
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10709
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10711
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10713
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10715
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10717
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10719
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10777
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10779
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10781
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10783
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10785
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10787
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10789
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10823
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10825
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10827
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10829
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10961
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10963
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10965
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10967
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10969
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10997
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  10999
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12043
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12045
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12047
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12049
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12051
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12053
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12055
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12057
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12059
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12099
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12101
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12103
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12105
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12107
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12109
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12157
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12159
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12161
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12163
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12165
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12167
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12169
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12203
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12205
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12207
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12209
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12247
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12249
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12277
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12279
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12305
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12307
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12309
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12347
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12349
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12351
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12353
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12355
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12357
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12359
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12435
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12437
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12439
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12459
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12487
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12489
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12524
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12526
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12527
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12529
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12555
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12557
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12559
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12587
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12589
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12619
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12621
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12623
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12627
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12629
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12679
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12681
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12683
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12685
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12687
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  12689
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13051
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13053
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13055
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13057
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13059
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13086
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13088
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13089
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13125
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13127
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13129
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13156
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13158
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13159
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13187
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13189
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13347
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13349
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13351
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13353
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13355
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13357
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13359
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13403
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13405
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13407
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13409
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13435
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13437
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13439
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13465
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13467
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13469
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13503
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13505
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13507
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13509
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13581
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13583
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13585
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13587
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13589
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13591
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13593
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13595
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13597
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13599
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13627
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  13629
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14050
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14052
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14053
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14055
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14057
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14059
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14089
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14109
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14129
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14163
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14165
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14167
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14169
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14193
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14195
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14197
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "q_zip"
+                  },
+                  14199
+                ]
+              }
+            ]
+          },
+          true,
+          false
+        ]
+      },
+      "id": "is_berlin"
     }
   ]
 }
