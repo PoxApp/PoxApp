@@ -355,7 +355,7 @@
             ]
           },
           "id": "rc_contact",
-          "text": "%(contact_header)s\n%(medium_risk)s \n%(result_ai)s. \nBei Personen mit einem Risikokontakt empfiehlt das Robert Koch Institut (RKI) die Kontaktaufnahme mit dem lokalen Gesundheitsamt. Weitere Symptome wie der neue Hautausschlag können bei der Kontaktaufnahme angesprochen werden.\n%(contact_footer)s\n<p style=\"text-align:justify\">Bitte klicken Sie <a href=\"https://tools.rki.de/PLZTool/?q=%(q_zip)s\">hier</a>, um Kontaktinformationen zu Ihrem lokalen Gesundheitsamt zu erhalten. </p>"
+          "text": "%(contact_header)s\n%(medium_risk)s \n%(result_ai)s\nBei Personen mit einem Risikokontakt empfiehlt das Robert Koch Institut (RKI) die Kontaktaufnahme mit dem lokalen Gesundheitsamt. Weitere Symptome wie der neue Hautausschlag können bei der Kontaktaufnahme angesprochen werden.\n%(contact_footer)s\n<br><p style=\"text-align:justify\">Bitte klicken Sie <a href=\"https://tools.rki.de/PLZTool/?q=%(q_zip)s\">hier</a>, um Kontaktinformationen zu Ihrem lokalen Gesundheitsamt zu erhalten. </p>"
         },
         {
           "expression": {
