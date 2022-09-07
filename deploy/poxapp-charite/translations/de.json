@@ -1,6 +1,7 @@
 {
     "label": "Deutsch",
     "keys": {
+      "load_ai": "Lade KI Modell. Bitte warten...",
       "app_name": "PoxApp",
       "upload_picture": "Foto des Hautausschlages anfertigen",
       "disclaimer_footer_text": "",

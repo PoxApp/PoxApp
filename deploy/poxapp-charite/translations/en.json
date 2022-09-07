@@ -1,6 +1,7 @@
 {
   "label": "English",
   "keys": {
+    "load_ai": "Loading AI model. Please wait...",
     "app_name": "PoxApp",
     "upload_picture": "Take picture of your skin lesion",
     "summary_feedback_content": "Usage of this app does not substitute medical treatment by a physician or clinical diagnostics.<br><br>We highly appreciate your feedback to PoxApp! If you encounter any issue with PoxApp or have ideas how to improve PoxApp, please send us an email: <a href=\"mailto:poxapp@charite.de\">poxapp@charite.de</a>",

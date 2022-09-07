@@ -35,19 +35,21 @@ export class AiImageRecognizer {
   IMAGE_SIZE = 224;
 
   async componentWillLoad() {
+    
+
+  }
+
+  async componentDidLoad() {
+    document.getElementById("upload_button").style.visibility = "hidden";
     tf.loadGraphModel('assets/ai/model.json').then(model => {
       var answer = model.predict(tf.zeros([1, this.IMAGE_SIZE, this.IMAGE_SIZE, 3]));
       console.log(answer)
       this._model = model;
       const status = document.getElementById('status');
       status.textContent = '';
-      
+      document.getElementById("upload_button").style.visibility = "visible";
       console.log('model loaded');
     });
-  }
-
-  async componentDidLoad() {
-
   }
 
   disconnectedCallback(){
@@ -100,8 +102,8 @@ export class AiImageRecognizer {
   render() {
     return [
 
-      <label id="status">Loading AI model. Please wait...</label>,
-      <label htmlFor="file-upload" class="file-upload">{i18next.t('upload_picture')}</label>,
+      <label id="status">{i18next.t("load_ai")}</label>,
+      <label id="upload_button" htmlFor="file-upload" class="file-upload">{i18next.t('upload_picture')}</label>,
       <input ref={el => (this._input = el)} type="file" id="file-upload" accept="image/*" onChange={this.uploadPicture}/>,
       <img ref={el => (this._img_preview = el)} style={{"width" : "100%"}}  />,
         // <canvas ref={el => (this._canvas = el)} width="640" height="640" style={{display: this.tookPicture ? "block" : "none"}}></canvas>,

@@ -1,6 +1,7 @@
 {
   "label": "English",
   "keys": {
+    "load_ai": "Loading AI model. Please wait...",
     "app_name": "PoxApp - the monkeypox app",
     "upload_picture": "Take picture of your skin lesion",
     "start_headline": "Do you have symptoms or a new skin lesion? PoxApp can suggest next steps.",
