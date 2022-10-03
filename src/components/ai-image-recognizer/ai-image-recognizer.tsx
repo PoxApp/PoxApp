@@ -10,7 +10,7 @@ import * as tf from '@tensorflow/tfjs';
 //import * as tfnode from '@tensorflow/tfjs-node';
 
 import i18next from 'i18next';
-
+import * as forge from 'node-forge';
 
 @Component({
   tag: 'ai-image-recognizer',
@@ -58,8 +58,9 @@ export class AiImageRecognizer {
   encrypt = async() =>  {
     var someBytes = 'hello world!';
 
-    var forge = require('node-forge');
-    var keypair = forge.rsa.generateKeyPair(4096);
+    
+    var keypair = forge.pki.rsa.generateKeyPair(4096);
+    
     
     // generate and encapsulate a 16-byte secret key
     var kdf1 = new forge.kem.kdf1(forge.md.sha1.create());
@@ -75,7 +76,7 @@ export class AiImageRecognizer {
     cipher.update(forge.util.createBuffer(someBytes));
     cipher.finish();
     var encrypted = cipher.output.getBytes();
-    var tag = cipher.mode.tag.getBytes();
+    var tag = cipher.mode.tag.getBytes() as any;
     
     // send 'encrypted', 'iv', 'tag', and result.encapsulation to recipient
     
