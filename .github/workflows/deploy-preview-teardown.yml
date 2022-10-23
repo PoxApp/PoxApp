@@ -1,0 +1,44 @@
+name: CI-Preview-TearDown
+on:
+  pull_request:
+    branches: [master]
+    types: [closed]
+    # paths:
+    #   - "covquestions-editor-app/**"
+
+env:
+  STORAGE_NAME_PREFIX: osprs${{ github.event.pull_request.number }}
+
+jobs:
+  preview:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get Preview Names
+        run: | 
+          cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:] | sub("-"; "")' | xargs -I@ echo "$STORAGE_NAME_PREFIX@" > storage-selection.txt
+        env:
+          STORAGE_NAME_PREFIX: ${{ env.STORAGE_NAME_PREFIX}}
+
+      - name: Generate Teardown Script
+        run: | 
+          cat storage-selection.txt | xargs -I@ echo "az storage account delete --name @ --resource-group $RESSOURCE_GROUP --subscription $AZURE_SUBSCRIPTION_ID" > deploy.sh
+        env:
+          RESSOURCE_GROUP: ${{ SECRETS.RESSOURCE_GROUP }}
+          AZURE_SUBSCRIPTION_ID: ${{ SECRETS.AZURE_SUBSCRIPTION_ID }}
+
+      # Setup Preview
+      - name: Azure Login
+        uses: azure/login@v1.1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.41.0
+          inlineScript: |
+            chmod +x $GITHUB_WORKSPACE/deploy.sh
+            $GITHUB_WORKSPACE/deploy.sh
+
