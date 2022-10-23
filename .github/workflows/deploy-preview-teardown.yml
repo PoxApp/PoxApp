@@ -23,7 +23,7 @@ jobs:
 
       - name: Generate Teardown Script
         run: | 
-          cat storage-selection.txt | xargs -I@ echo "az storage account delete --name @ --resource-group $RESSOURCE_GROUP --subscription $AZURE_SUBSCRIPTION_ID" > deploy.sh
+          cat storage-selection.txt | xargs -I@ echo "az storage account delete --name @ --resource-group $RESSOURCE_GROUP --subscription $AZURE_SUBSCRIPTION_ID" --yes > deploy.sh
         env:
           RESSOURCE_GROUP: ${{ SECRETS.RESSOURCE_GROUP }}
           AZURE_SUBSCRIPTION_ID: ${{ SECRETS.AZURE_SUBSCRIPTION_ID }}
