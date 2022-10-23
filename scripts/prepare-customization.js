@@ -197,7 +197,7 @@ const supportedLanguages = SUPPORTED_LANGUAGES
   : ['de', 'en'];
 
 const dataDonationUrl =
-  DATA_DONATION_URL == 'false' ? undefined : DATA_DONATION_URL ?? '/api/donate';
+  DATA_DONATION_URL == 'false' ? undefined : DATA_DONATION_URL || '/api/donate';
 
 const translations = getTranslations(supportedLanguages);
 const logo = tryToReadLogo();
