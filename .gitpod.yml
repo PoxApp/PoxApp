@@ -11,18 +11,23 @@ tasks:
       npm install
       npm run prepare-charite
     command: npm start
+
+  - name: Database
+    command: |
+      cd /workspace/datadonation
+      docker-compose up
+      gp sync-done database
+    openMode: tab-after
+
   - name: Backend
-    before: | 
+    init: | 
       dotnet tool install --global dotnet-ef
       export PATH="$PATH:$HOME/.dotnet/tools/"
       cd /workspace/datadonation
       dotnet restore
     command: |
-      cd /workspace/datadonation
-      dotnet restore
-      docker-compose up -d
-      sleep 10
-      cd api
+      gp sync-await database
+      cd /workspace/datadonation/api
       dotnet watch run
     openMode: split-right
   
@@ -43,7 +48,8 @@ vscode:
     - ms-azuretools.vscode-docker
     - esbenp.prettier-vscode
     - k--kato.docomment
-    - https://github.com/OmniSharp/omnisharp-vscode/releases/download/v1.23.12/csharp-1.23.12.vsix
+    - muhammad-sammy.csharp
+    - humao.rest-client
 
 github:
   prebuilds:
