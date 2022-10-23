@@ -33,7 +33,7 @@ jobs:
           cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:]' > build-selection.txt
           cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:] | sub("-"; "")' | xargs -I@ echo "$STORAGE_NAME_PREFIX@" > storage-selection.txt
           mkdir out
-          cat build-selection.txt | xargs -L1 -I@ sh -c 'npm run build-@; cp -r www out/$STORAGE_NAME_PREFIX$(echo @ | sed "s/-//g")'
+          cat build-selection.txt | xargs -L1 -I@ sh -c 'rm -r www; npm run build-@; cp -r www out/$STORAGE_NAME_PREFIX$(echo @ | sed "s/-//g")'
         env:
           STORAGE_NAME_PREFIX: ${{ env.STORAGE_NAME_PREFIX}}
           SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
