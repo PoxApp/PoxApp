@@ -15,12 +15,15 @@ tasks:
     before: | 
       dotnet tool install --global dotnet-ef
       export PATH="$PATH:$HOME/.dotnet/tools/"
+      cd /workspace/datadonation
+      dotnet restore
     command: |
       cd /workspace/datadonation
       dotnet restore
       docker-compose up -d
       sleep 10
-      dotnet run
+      cd api
+      dotnet watch run
     openMode: split-right
   
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
