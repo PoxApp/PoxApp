@@ -122,7 +122,6 @@ function writeCustomizationAppFile({
   export const CUSTOM_LOGO = \`${logo}\`;
 
   export const TRACKING_IS_ENABLED = ${!!(matomoUrl && matomoSiteId)};
-  export const ASK_FOR_DATADONATION = ${askForDataDonation === 'true'};
   export const MATOMO_URL = '${matomoUrl}';
   export const MATOMO_SITE_ID = '${matomoSiteId}';
   export const ERROR_TRACKING_ENABLED = ${!!sentryDSN};
