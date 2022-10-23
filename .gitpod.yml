@@ -1,3 +1,10 @@
+additionalRepositories:
+  - url: https://github.com/OSPRS/DataDonation.git
+    checkoutLocation: datadonation
+  - url: https://github.com/OSPRS/QuestionnaireEngine.git
+    checkoutLocation: QuestionnaireEngine
+
+workspaceLocation: QuestionnaireApp/OSPRS.code-workspace
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - init: |
@@ -8,11 +15,8 @@ tasks:
     before: | 
       dotnet tool install --global dotnet-ef
       export PATH="$PATH:$HOME/.dotnet/tools/"
-#      cp example.env .env
     command: |
-      mkdir /workspace/datadonation
       cd /workspace/datadonation
-      git clone https://github.com/CovOpen/DataDonation.git . 
       dotnet restore
       docker-compose up -d
       sleep 10
