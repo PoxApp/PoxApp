@@ -1,5 +1,4 @@
 import { DATA_DONATION_URL } from '../custom';
-import * as forge from 'node-forge';
 
 export let baseUrl = DATA_DONATION_URL;
 export function donateAnswers(answers: any): Promise<undefined> {
