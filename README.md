@@ -70,9 +70,3 @@ Before you open an issue, see the [customization documentation](./docs/CUSTOMIZA
 ## Application updates
 
 As long as your are staying withing the guards set by the [customization documentation](./docs/CUSTOMIZATION.md) you can easily pull updates from this repository. [GitHub provides documentation on how to sync forks](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
-
-## Code of conduct
-
-[Contributor Code of Conduct](./CODE-OF-CONDUCT.md). By participating in this project, you agree to abide by its terms.
-
-We are currently using https://storybook.d4l.io/?path=/story/screens-welcome--welcome

@@ -2,6 +2,7 @@ import { Questionnaire } from '@covopen/covquestions-js';
 import { QUESTION_SHARE_DATA } from '../components/views/questionnaire/utils';
 import { LOCAL_STORAGE_KEYS } from './constants';
 import { DATA_DONATION_URL } from './custom';
+
 export let questionnaire: Questionnaire = undefined;
 export let cacheKey: string = '';
 export let baseUrl = '/assets/questionnaire/';
@@ -26,7 +27,7 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   return fetch(`${baseUrl}${language}.json`)
     .then((response: Response) => response.json())
     .then((response) => {
-      sessionStorage.setItem(
+      localStorage.setItem(
         LOCAL_STORAGE_KEYS.QUESTIONNAIRE,
         JSON.stringify(response)
       );
