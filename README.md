@@ -1,28 +1,20 @@
-# Publications
-
-CovApp was featured on Nature Medicine.
-
-Check it out out here: https://www.nature.com/articles/s41591-022-01797-0
-
-A web-based app to provide personalized recommendations for COVID-19
-<img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41591-022-01797-0/MediaObjects/41591_2022_1797_Fig1_HTML.png?as=webp">
+[![Open Preview of PoxApp-Charite](https://badgen.net/badge/Preview/Poxapp-Charite/blue?icon=github)](https://osprspoxappcharite.z13.web.core.windows.net/)
+[![Open Preview of PoxApp-Stanford](https://badgen.net/badge/Preview/Poxapp-Stanford/blue?icon=github)](https://osprspoxappstanford.z13.web.core.windows.net/)
+[![Open Preview of CovApp-Charite](https://badgen.net/badge/Preview/CovApp/blue?icon=github)](https://osprscharite.z13.web.core.windows.net/)
+[![Open Preview of CovApp-Stanford](https://badgen.net/badge/Preview/CovApp-Stanford/blue?icon=github)](https://osprsstanford.z13.web.core.windows.net/)
 
 
+# OSPRS - QuestionnaireApp
 
-# Preview
-https://covappcharite.z13.web.core.windows.net/
+> 😷 Solution for assessing the risk of contagious viral infections (e.g. COVID-19, Monkeypox)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CovOpen/CovApp-2.0)
+> This is the preceding project of [CovApp](https://github.com/CovOpen/CovApp-2.0), which was featured on [Nature Medicine](https://www.nature.com/articles/s41591-022-01797-0)
 
-# CovApp
-
-> 😷 Solution for assessing the risk of contagious viral infections (COVID-19)
-
-CovApp can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. 
+OSPRS can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or coronavirus testing by answering a few questions. 
 
 Additionally, every filled out questionnaire summarizes relevant medical information for future doctor’s consultation in the form of a summary page, printout or a QR code. Institutions with the technical setup can scan the provided QR code and retrieve the patient information quickly and without any physical contact.
 
-By implementing the CovApp, any medical institution can reduce the number of new incoming patients, avoid physical contact and speed up the patient registration process.
+By implementing the OSPRS - QuestionnaireApp, any medical institution can reduce the number of new incoming patients, avoid physical contact and speed up the patient registration process.
 
 ---
 
@@ -30,12 +22,17 @@ This repository holds a white-labeled version of the original application, free 
 
 The application and underlying questionnaire logic [are versioned and future updates will be provided](#application-updates).
 
-⚠️ **Any institution/doctor’s office is free to implement CovApp on their domains – the medical responsibility and legal liability lie with the implementing institution.**
+⚠️ **Any institution/doctor’s office is free to implement on their domains – the medical responsibility and legal liability lie with the implementing institution.**
 
 ⚠️ **This application is only meant to be set up by software developers. Unfortunately, we can't provide a non-technical solution now.**
 
 ## Technical overview
 
+### Preview
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/OSPRS/QuestionnaireApp)
+
+### Main
 The application runs dynamically in the browser. **It can be built and deployed to any service that provides a static web server with custom routing**.
 
 It is based on a JavaScript software stack and uses the following technologies:
@@ -44,13 +41,13 @@ It is based on a JavaScript software stack and uses the following technologies:
 - [TypeScript](https://www.typescriptlang.org/)
 - [WebComponents](https://www.webcomponents.org/)
 
-## Installation and development
+### Installation and development
 
-To get further information on how to set up and deploy your custom CovApp application, see the [development documentation](./docs/DEVELOPMENT.md).
+To get further information on how to set up and deploy your own application, see the [development documentation](./docs/DEVELOPMENT.md).
 
-## Customization
+### Customization
 
-The CovApp provides the following customization options:
+The QuestionnaireApp provides the following customization options:
 
 - change words or add a new language
 
