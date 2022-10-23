@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 env:
   STORAGE_NAME_PREFIX: osprs${{ github.event.pull_request.number }}
@@ -30,7 +33,7 @@ jobs:
           cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:]' > build-selection.txt
           cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:] | sub("-"; "")' | xargs -I@ echo "$STORAGE_NAME_PREFIX@" > storage-selection.txt
           mkdir out
-          cat build-selection.txt | xargs -L1 -I@ echo 'npm run build-@; cp -r www out/$STORAGE_NAME_PREFIX$(echo @ | sed "s/-//g")'
+          cat build-selection.txt | xargs -L1 -I@ sh -c 'npm run build-@; cp -r www out/$STORAGE_NAME_PREFIX$(echo @ | sed "s/-//g")'
         env:
           STORAGE_NAME_PREFIX: ${{ env.STORAGE_NAME_PREFIX}}
           SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
@@ -60,23 +63,25 @@ jobs:
             chmod +x $GITHUB_WORKSPACE/deploy.sh
             $GITHUB_WORKSPACE/deploy.sh
 
-      # - name: Find Comment
-      #   uses: peter-evans/find-comment@v1
-      #   id: fc
-      #   with:
-      #     issue-number: ${{ github.event.pull_request.number }}
-      #     body-includes: This PR is available as a preview
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        if: github.event_name == 'pull_request'
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body-includes: This PR is available as a preview
 
-      # - id: get-comment-body
-      #   run: |
-      #     cat storage-selection.txt | xargs -L1 -I@ echo " - [@](https://@.z16.web.core.windows.net)" >> $GITHUB_OUTPUT
+      - id: get-comment-body
+        if: github.event_name == 'pull_request'
+        run: |
+          cat storage-selection.txt | xargs -L1 -I@ echo " - [@](https://@.z16.web.core.windows.net)" >> $GITHUB_OUTPUT
 
-      # - name: Create comment
-      #   if: ${{ steps.fc.outputs.comment-id == 0 }}
-      #   uses: peter-evans/create-or-update-comment@v1
-      #   with:
-      #     issue-number: ${{ github.event.pull_request.number }}
-      #     body: |
-      #       This PR is available as a preview: 
-      #       ${{ steps.get-comment-body.outputs.body }}
-      #     reaction-type: "rocket"
+      - name: Create comment
+        if: ${{ steps.fc.outputs.comment-id == 0  && github.event_name == 'pull_request'}}
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            This PR is available as a preview: 
+            ${{ steps.get-comment-body.outputs.body }}
+          reaction-type: "rocket"
