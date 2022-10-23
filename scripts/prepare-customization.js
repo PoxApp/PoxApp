@@ -6,7 +6,7 @@ const { stringify } = require('javascript-stringify');
 const deepAssign = require('deep-assign');
 const prettier = require('prettier');
 const fs = require('fs-extra');
- 
+
 const prettierOptions = {
   ...JSON.parse(readFileSync(join(__dirname, '..', '.prettierrc'), 'utf8')),
   parser: 'typescript',
@@ -25,9 +25,7 @@ function tryToReadTranslationFile(filePath) {
       );
     }
     if (error.code === 'MODULE_NOT_FOUND') {
-      console.info(
-        `Info - The translation file '${filePath}' was not provided`
-      );
+      console.info(`Info - The translation file '${filePath}' was not provided`);
     }
     //console.warn(`Something went wrong while reading the Translation file (${error.code})`)
 
@@ -70,7 +68,7 @@ function getTranslationsForLanguageCode(code) {
 }
 
 function getTranslations(supportedLanguages) {
-  return supportedLanguages.map(code => ({
+  return supportedLanguages.map((code) => ({
     code,
     translations: getTranslationsForLanguageCode(code),
   }));
@@ -88,6 +86,7 @@ function writeCustomizationAppFile({
   data4lifeAndroidBaseUrl,
   data4lifeIosBaseUrl,
   whitelistedData4LifeOrigins,
+  askForDataDonation,
 }) {
   const appFilePath = join(__dirname, '..', 'src', 'global', 'custom.ts');
 
@@ -118,6 +117,7 @@ function writeCustomizationAppFile({
   export const CUSTOM_LOGO = \`${logo}\`;
 
   export const TRACKING_IS_ENABLED = ${!!(matomoUrl && matomoSiteId)};
+  export const ASK_FOR_DATADONATION = ${askForDataDonation === 'true'};
   export const MATOMO_URL = '${matomoUrl}';
   export const MATOMO_SITE_ID = '${matomoSiteId}';
   export const ERROR_TRACKING_ENABLED = ${!!sentryDSN};
@@ -169,8 +169,7 @@ function writeStyleOverwrite() {
       ${readContent}
     
       `,
-    {...prettierOptions,
-    parser: "css"}
+    { ...prettierOptions, parser: 'css' }
   );
 
   writeFileSync(styleFilePath, fileContent);
@@ -187,6 +186,7 @@ const {
   DATA4LIFE_ANDROID_BASEURL,
   DATA4LIFE_IOS_BASEURL,
   WHITELISTED_DATA4LIFE_ORIGINS,
+  ASK_FOR_DATADONATION,
 } = process.env;
 const supportedLanguages = SUPPORTED_LANGUAGES
   ? SUPPORTED_LANGUAGES.split(',')
@@ -207,6 +207,8 @@ writeCustomizationAppFile({
   data4lifeAndroidBaseUrl: DATA4LIFE_ANDROID_BASEURL,
   data4lifeIosBaseUrl: DATA4LIFE_IOS_BASEURL,
   whitelistedData4LifeOrigins: WHITELISTED_DATA4LIFE_ORIGINS,
+  askForDataDonation:
+    ASK_FOR_DATADONATION == undefined ? 'true' : ASK_FOR_DATADONATION,
 });
 
 writeStyleOverwrite();
@@ -215,7 +217,7 @@ writeStyleOverwrite();
 let sourceDir = './custom/questionnaire';
 let destDir = './src/assets/questionnaire';
 try {
-  fs.copySync(sourceDir, destDir, { recursive: true, overwrite: true })
+  fs.copySync(sourceDir, destDir, { recursive: true, overwrite: true });
 } catch (err) {
-  console.error(err)
+  console.error(err);
 }
