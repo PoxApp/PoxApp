@@ -1,4 +1,5 @@
 dist/
+out/
 !www/favicon.ico
 www/
 
@@ -35,3 +36,8 @@ src/global/styles/overwrite.css
 src/assets/questionnaire/**
 custom/**/*
 !custom/.gitkeep
+
+# Common
+*.txt
+*.tar
+*.tar.gz
