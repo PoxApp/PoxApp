@@ -5,10 +5,17 @@ on:
     branches:
       - master
 
+env:
+  STORAGE_NAME_PREFIX: osprs${{ github.event.pull_request.number }}
+
 jobs:
   charite:
     runs-on: ubuntu-18.04
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.8.0
+        with:
+          access_token: ${{ github.token }}
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -18,46 +25,49 @@ jobs:
       - name: Install Packages
         run: npm install
 
-      - name: Build package
-        run: npm run build-charite
+      - name: Build packages
+        run: | 
+          cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:]' > build-selection.txt
+          cat package.json | jq '.scripts | keys[] | select( test("^build\\-")) | .[6:] | sub("-"; "")' | xargs -I@ echo "$STORAGE_NAME_PREFIX@" > storage-selection.txt
+          mkdir out
+          cat build-selection.txt | xargs -L1 -I@ echo 'npm run build-@; cp -r www out/$STORAGE_NAME_PREFIX$(echo @ | sed "s/-//g")'
         env:
+          STORAGE_NAME_PREFIX: ${{ env.STORAGE_NAME_PREFIX}}
           SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
 
-      # - name: Upload artifact
-      #   uses: actions/upload-artifact@v1.0.0
+      # Setup Preview
+      - name: Azure Login
+        uses: azure/login@v1.1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.41.0
+          inlineScript: |
+            cat storage-selection.txt | xargs -I@ sh -c "
+              az storage account create --kind StorageV2 --name @ --resource-group ${{ env.RESSOURCE_GROUP }} --subscription ${{ SECRETS.AZURE_SUBSCRIPTION_ID }}
+              az storage blob service-properties update --account-name @ --static-website --404-document 404.html --index-document index.html --subscription ${{ SECRETS.AZURE_SUBSCRIPTION_ID }}
+              az storage blob upload-batch -d '\$web' -s ./out/@ --account-name @ --account-key \"\$(az storage account keys list --account-name @ --resource-group  ${{ env.RESSOURCE_GROUP }} --subscription ${{ SECRETS.AZURE_SUBSCRIPTION_ID }} --query \"[0].value\")\" --overwrite --subscription ${{ SECRETS.AZURE_SUBSCRIPTION_ID }}"
+    
+      # - name: Find Comment
+      #   uses: peter-evans/find-comment@v1
+      #   id: fc
       #   with:
-      #     name: app
-      #     path: ./www
+      #     issue-number: ${{ github.event.pull_request.number }}
+      #     body-includes: This PR is available as a preview
 
-      - name: Publish to blob storage
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
-        with:
-          source_dir: ./www
-          container_name: $web
-          connection_string: ${{ secrets.AZURE_CONNECTION_STRING_CHARITE }}
-          extra_args: ""
+      # - id: get-comment-body
+      #   run: |
+      #     cat storage-selection.txt | xargs -L1 -I@ echo " - [@](https://@.z16.web.core.windows.net)" >> $GITHUB_OUTPUT
 
-  stanford:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-      - name: Install Packages
-        run: npm install
-
-      - name: Build package
-        run: npm run build-stanford
-        env:
-          SENTRY_DSN: https://a0d00f7ce1924a0a8521a8fe88af734c@o197997.ingest.sentry.io/5801653
-
-      - name: Publish to blob storage
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
-        with:
-          source_dir: ./www
-          container_name: $web
-          connection_string: ${{ secrets.AZURE_CONNECTION_STRING_STANFORD }}
-          extra_args: ""
+      # - name: Create comment
+      #   if: ${{ steps.fc.outputs.comment-id == 0 }}
+      #   uses: peter-evans/create-or-update-comment@v1
+      #   with:
+      #     issue-number: ${{ github.event.pull_request.number }}
+      #     body: |
+      #       This PR is available as a preview: 
+      #       ${{ steps.get-comment-body.outputs.body }}
+      #     reaction-type: "rocket"
