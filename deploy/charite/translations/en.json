@@ -1,6 +1,7 @@
 {
   "label": "English",
   "keys": {
+    "app_name": "CovApp",
     "start_headline": "Do you have symptoms? Did you encounter a risk contact? Did you perform a rapid test? CovApp shows you potential next steps.",
     "questionnaire_progress_bar_label": "Your progress with the questionnaire",
     "start_legal_paragraph": "<strong>CovApp is not a medical device. It offers neither diagnostic services nor monitoring or treatment of diseases. This app does not replace medical advice or treatment.</strong>",

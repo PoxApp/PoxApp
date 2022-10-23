@@ -1,6 +1,7 @@
 {
   "label": "Deutsch",
   "keys": {
+    "app_name": "CovApp",
     "start_headline": "Haben Sie Symptome? Fand ein Risiko-Kontakt statt? Liegt ein Schnelltest vor? CovApp zeigt Ihnen mögliche nächste Schritte.",
     "questionnaire_progress_bar_label": "Ihr Fortschritt mit dem Fragebogen",
     "start_legal_paragraph": "<strong>CovApp ist kein Medizinprodukt. Die App erbringt keine diagnostischen Leistungen und dient nicht der Überwachung oder Behandlung von Erkrankungen. Diese App ersetzt keine ärztliche Beratung oder Behandlung.</strong>",
