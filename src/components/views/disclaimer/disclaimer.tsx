@@ -9,6 +9,8 @@ import settings from '../../../global/utils/settings';
 })
 export class Disclaimer {
   @State() language: string = settings.languageCode;
+  @State() checkboxes = {};
+
   @Event() showLogoHeader: EventEmitter;
   @Listen('changedLanguage', {
     target: 'window',
@@ -19,10 +21,17 @@ export class Disclaimer {
 
   componentWillLoad() {
     this.showLogoHeader.emit({ show: false });
+    if (i18next.t('disclaimer_checkbox_1') != 'disclaimer_checkbox_1') {
+      this.checkboxes['checkbox-1'] = false;
+    }
   }
 
   get currentLanguage() {
     return this.language || 'en';
+  }
+
+  get checkboxesChecked() {
+    return Object.values(this.checkboxes).every((value) => value === true);
   }
 
   render() {
@@ -39,15 +48,34 @@ export class Disclaimer {
             <p innerHTML={i18next.t('disclaimer_paragraph_1')} />
           </div>
           <div class="disclaimer__footer" slot="card-footer">
+            <p innerHTML={i18next.t('disclaimer_footer_text')} />
+            {i18next.t('disclaimer_checkbox_1') != 'disclaimer_checkbox_1' ? (
+              <d4l-checkbox
+                key={'checkbox-1'}
+                
+                checkbox-id={`checkbox-1`}
+                name={'checkbox-1'}
+                label={i18next.t('disclaimer_checkbox_1')}
+                onChange={(event: any) =>
+                  (this.checkboxes = {
+                    ...this.checkboxes,
+                    'checkbox-1': event.target.checked,
+                  })
+                }
+              ></d4l-checkbox>
+            ) : null}
             <stencil-route-link
               anchor-id="d4l-button-register"
               url={ROUTES.QUESTIONNAIRE}
             >
               <d4l-button
+                disabled={!this.checkboxesChecked}
                 classes="button--block"
                 data-test="continueButton"
-                text={i18next.t('button_disclaimer_continue') ?? i18next.t('button_continue')}
-                is-route-link
+                text={
+                  i18next.t('button_disclaimer_continue') ??
+                  i18next.t('button_continue')
+                }
               />
             </stencil-route-link>
           </div>

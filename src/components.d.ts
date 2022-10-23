@@ -8,6 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { RouterHistory } from "@stencil/router";
 import { Language } from "@d4l/web-components-library/dist/types/components/LanguageSwitcher/language-switcher";
 export namespace Components {
+    interface AiImageRecognizer {
+        "inputId": string;
+    }
     interface AppRoot {
         "history": RouterHistory;
     }
@@ -146,6 +149,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAiImageRecognizerElement extends Components.AiImageRecognizer, HTMLStencilElement {
+    }
+    var HTMLAiImageRecognizerElement: {
+        prototype: HTMLAiImageRecognizerElement;
+        new (): HTMLAiImageRecognizerElement;
+    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
@@ -369,6 +378,7 @@ declare global {
         new (): HTMLInputBooleanElement;
     };
     interface HTMLElementTagNameMap {
+        "ai-image-recognizer": HTMLAiImageRecognizerElement;
         "app-root": HTMLAppRootElement;
         "connect-translations": HTMLConnectTranslationsElement;
         "ia-accordion": HTMLIaAccordionElement;
@@ -409,6 +419,10 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AiImageRecognizer {
+        "inputId"?: string;
+        "onUpdateFormData"?: (event: CustomEvent<any>) => void;
+    }
     interface AppRoot {
         "history"?: RouterHistory;
     }
@@ -562,6 +576,7 @@ declare namespace LocalJSX {
         "value"?: boolean;
     }
     interface IntrinsicElements {
+        "ai-image-recognizer": AiImageRecognizer;
         "app-root": AppRoot;
         "connect-translations": ConnectTranslations;
         "ia-accordion": IaAccordion;
@@ -605,6 +620,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ai-image-recognizer": LocalJSX.AiImageRecognizer & JSXBase.HTMLAttributes<HTMLAiImageRecognizerElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "connect-translations": LocalJSX.ConnectTranslations & JSXBase.HTMLAttributes<HTMLConnectTranslationsElement>;
             "ia-accordion": LocalJSX.IaAccordion & JSXBase.HTMLAttributes<HTMLIaAccordionElement>;

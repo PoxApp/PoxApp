@@ -82,6 +82,30 @@
     {
       "path": "@semantic-release/exec",
       "cmd": "cd www; zip -r ../release-stanford.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "rm www -r"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run build-poxapp-stanford"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "cd www; zip -r ../release-poxapp-stanford.zip *"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "rm www -r"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run build-poxapp-stanford"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "cd www; zip -r ../release-poxapp-stanford.zip *"
     }
   ],
   "publish": [

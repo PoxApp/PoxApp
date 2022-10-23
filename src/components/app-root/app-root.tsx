@@ -114,7 +114,7 @@ export class AppRoot {
     const testDateElement = document.createElement('input');
     testDateElement.setAttribute('type', 'date');
     testDateElement.value = 'text'; // should be sanitized away
-    localStorage.setItem(
+    sessionStorage.setItem(
       'supportsDateElement',
       String(
         testDateElement.getAttribute('type') !== 'text' &&
@@ -172,7 +172,7 @@ export class AppRoot {
                 anchorTitle="Home link"
                 anchorClass="u-display-block c-logo"
               >
-                <h1>CovApp</h1>
+                <h1>{i18next.t('app_name')}</h1> 
               </stencil-route-link>
             )}
             {LANGUAGES.length > 1 && (

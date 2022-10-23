@@ -1,8 +1,7 @@
 import { Questionnaire } from '@covopen/covquestions-js';
 import { QUESTION_SHARE_DATA } from '../components/views/questionnaire/utils';
 import { LOCAL_STORAGE_KEYS } from './constants';
-import { ASK_FOR_DATADONATION } from './custom';
-
+import { DATA_DONATION_URL } from './custom';
 
 export let questionnaire: Questionnaire = undefined;
 export let cacheKey: string = '';
@@ -10,13 +9,18 @@ export let baseUrl = '/assets/questionnaire/';
 export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   // TODO implement Update Mechanism
   //   let cachedQuestionnaire = JSON.parse(
-  //     localStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
+  //     sessionStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
   //   );
   //   if (cachedQuestionnaire) {
   //     return new Promise(() => cachedQuestionnaire);
   //   }
   if (questionnaire != undefined && cacheKey === language) {
-    return new Promise((resolve) => resolve(addAdditionalQuestions(questionnaire)));
+    if (DATA_DONATION_URL) {
+      return new Promise((resolve) =>
+        resolve(addAdditionalQuestions(questionnaire))
+      );
+    }
+    return new Promise((resolve) => resolve(questionnaire));
   }
   // Make sure it is ending with a slash
   if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';
@@ -29,8 +33,10 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
       );
       questionnaire = { ...response };
       cacheKey = language;
-
-      return addAdditionalQuestions(response);
+      if (DATA_DONATION_URL) {
+        return addAdditionalQuestions(response);
+      }
+      return response;
     });
   // .catch(() => {
   //     // do nothing for now
@@ -40,13 +46,10 @@ export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
 function addAdditionalQuestions(
   functionQuestionnaire: Questionnaire
 ): Questionnaire {
-  if(ASK_FOR_DATADONATION){
-    return {
-      ...functionQuestionnaire,
-      questions: [...functionQuestionnaire.questions, QUESTION_SHARE_DATA()],
-    };
-  }
-  return functionQuestionnaire;
+  return {
+    ...functionQuestionnaire,
+    questions: [...functionQuestionnaire.questions, QUESTION_SHARE_DATA()],
+  };
 }
 
 export const QUESTION = {

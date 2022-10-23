@@ -86,7 +86,7 @@ function writeCustomizationAppFile({
   data4lifeAndroidBaseUrl,
   data4lifeIosBaseUrl,
   whitelistedData4LifeOrigins,
-  askForDataDonation,
+  dataDonationUrl,
 }) {
   const appFilePath = join(__dirname, '..', 'src', 'global', 'custom.ts');
 
@@ -113,11 +113,15 @@ function writeCustomizationAppFile({
   // layout flag to adjust the header layout for charite and official collaborations
   export const LAYOUT = '${layout}';
 
+  // If specified ask for DataDonation at the end
+  export const DATA_DONATION_URL = ${
+    dataDonationUrl ? "'" + dataDonationUrl + "'" : undefined
+  };
+
   // custom logo defined in /src/custom/logo.svg
   export const CUSTOM_LOGO = \`${logo}\`;
 
   export const TRACKING_IS_ENABLED = ${!!(matomoUrl && matomoSiteId)};
-  export const ASK_FOR_DATADONATION = ${askForDataDonation === 'true'};
   export const MATOMO_URL = '${matomoUrl}';
   export const MATOMO_SITE_ID = '${matomoSiteId}';
   export const ERROR_TRACKING_ENABLED = ${!!sentryDSN};
@@ -186,11 +190,14 @@ const {
   DATA4LIFE_ANDROID_BASEURL,
   DATA4LIFE_IOS_BASEURL,
   WHITELISTED_DATA4LIFE_ORIGINS,
-  ASK_FOR_DATADONATION,
+  DATA_DONATION_URL,
 } = process.env;
 const supportedLanguages = SUPPORTED_LANGUAGES
   ? SUPPORTED_LANGUAGES.split(',')
   : ['de', 'en'];
+
+const dataDonationUrl =
+  DATA_DONATION_URL == 'false' ? undefined : DATA_DONATION_URL || '/api/donate';
 
 const translations = getTranslations(supportedLanguages);
 const logo = tryToReadLogo();
@@ -207,8 +214,7 @@ writeCustomizationAppFile({
   data4lifeAndroidBaseUrl: DATA4LIFE_ANDROID_BASEURL,
   data4lifeIosBaseUrl: DATA4LIFE_IOS_BASEURL,
   whitelistedData4LifeOrigins: WHITELISTED_DATA4LIFE_ORIGINS,
-  askForDataDonation:
-    ASK_FOR_DATADONATION == undefined ? 'true' : ASK_FOR_DATADONATION,
+  dataDonationUrl: dataDonationUrl,
 });
 
 writeStyleOverwrite();

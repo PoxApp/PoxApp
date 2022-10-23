@@ -99,7 +99,7 @@ export class Start {
       <div class="c-card-wrapper start">
         <d4l-card classes="card--desktop card--text-center">
           <div slot="card-header">
-            <h1 class="start__headline-1">CovApp</h1>
+            <h1 class="start__headline-1">{i18next.t('app_name')}</h1>
             <h2 class="start__headline-2">{i18next.t('start_headline')}</h2>
           </div>
           <div class="u-text-align--left" slot="card-content">

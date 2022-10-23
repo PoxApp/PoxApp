@@ -32,5 +32,6 @@ src/assets/changelog.md
 # Customization
 src/global/custom.ts
 src/global/styles/overwrite.css
+src/assets/questionnaire/**
 custom/**/*
 !custom/.gitkeep

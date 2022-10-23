@@ -4,3 +4,11 @@
   max-height: 60vh;
   margin-bottom: 10px;
 }
+
+d4l-checkbox {
+  margin: 2px 0;
+}
+
+d4l-checkbox label {
+  text-align: left;
+}
