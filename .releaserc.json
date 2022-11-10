@@ -89,6 +89,10 @@
     },
     {
       "path": "@semantic-release/exec",
+      "cmd": "npm run prepare-poxapp-stanford"
+    },
+    {
+      "path": "@semantic-release/exec",
       "cmd": "npm run build-poxapp-stanford"
     },
     {
@@ -98,6 +102,10 @@
     {
       "path": "@semantic-release/exec",
       "cmd": "rm www -r"
+    },
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm run prepare-poxapp-charite"
     },
     {
       "path": "@semantic-release/exec",
