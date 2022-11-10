@@ -87,6 +87,7 @@ function writeCustomizationAppFile({
   data4lifeIosBaseUrl,
   whitelistedData4LifeOrigins,
   dataDonationUrl,
+  dataDonationPublicKey,
 }) {
   const appFilePath = join(__dirname, '..', 'src', 'global', 'custom.ts');
 
@@ -116,6 +117,12 @@ function writeCustomizationAppFile({
   // If specified ask for DataDonation at the end
   export const DATA_DONATION_URL = ${
     dataDonationUrl ? "'" + dataDonationUrl + "'" : undefined
+  };
+
+  // If specified the donated data will be encrypted before
+  // Specify key as pemEncodedKey
+  export const DATA_DONATION_PUBLIC_KEY = ${
+    dataDonationPublicKey ? "'" + dataDonationPublicKey + "'" : undefined
   };
 
   // custom logo defined in /src/custom/logo.svg
@@ -191,6 +198,7 @@ const {
   DATA4LIFE_IOS_BASEURL,
   WHITELISTED_DATA4LIFE_ORIGINS,
   DATA_DONATION_URL,
+  DATA_DONATION_PUBLIC_KEY,
 } = process.env;
 const supportedLanguages = SUPPORTED_LANGUAGES
   ? SUPPORTED_LANGUAGES.split(',')
@@ -198,6 +206,10 @@ const supportedLanguages = SUPPORTED_LANGUAGES
 
 const dataDonationUrl =
   DATA_DONATION_URL == 'false' ? undefined : DATA_DONATION_URL || '/api/donate';
+const dataDonationPublicKey =
+  DATA_DONATION_PUBLIC_KEY == 'false'
+    ? undefined
+    : DATA_DONATION_PUBLIC_KEY || undefined;
 
 const translations = getTranslations(supportedLanguages);
 const logo = tryToReadLogo();
@@ -215,6 +227,7 @@ writeCustomizationAppFile({
   data4lifeIosBaseUrl: DATA4LIFE_IOS_BASEURL,
   whitelistedData4LifeOrigins: WHITELISTED_DATA4LIFE_ORIGINS,
   dataDonationUrl: dataDonationUrl,
+  dataDonationPublicKey: dataDonationPublicKey,
 });
 
 writeStyleOverwrite();
