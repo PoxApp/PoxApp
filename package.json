@@ -2,8 +2,8 @@
   "name": "infection-risk-assessment-app",
   "private": true,
   "version": "0.0.0",
-  "description": "Assessing the risk of contagious viral infections (COVID-19)",
-  "repository": "https://github.com/CovOpen/Covapp-2.0",
+  "description": "Assessing the risk of contagious viral infections (e.g. COVID-19)",
+  "repository": "https://github.com/OSPRS/QuestionnaireApp",
   "scripts": {
     "analyze": "stencil build",
     "generate": "stencil generate",
