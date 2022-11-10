@@ -9,6 +9,8 @@ www/
 *.lock
 *.tmp
 *.tmp.*
+*.tar
+*.tar.gz
 log.txt
 *.sublime-project
 *.sublime-workspace
