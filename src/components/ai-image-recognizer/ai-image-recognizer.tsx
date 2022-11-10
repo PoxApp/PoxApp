@@ -54,14 +54,14 @@ export class AiImageRecognizer {
   disconnectedCallback(){
   }
 
-  predict = async(img2) =>  {
-    const img = tf.cast(tf.image.resizeBilinear(tf.browser.fromPixels(img2), [this.IMAGE_SIZE, this.IMAGE_SIZE]), 'float32');
+  predict = async(imgElement) =>  {
+    const img = tf.cast(tf.image.resizeBilinear(tf.browser.fromPixels(imgElement), [this.IMAGE_SIZE, this.IMAGE_SIZE]), 'float32');
     const batch = tf.expandDims(img, 0);
     var score = this._model.predict(batch).dataSync();
     var confidence = 1 - parseFloat(tf.sigmoid(score).dataSync());
     console.log("confidence: " + confidence);
     console.log("score: " + score);
-    this.updateFormDataHandler(this.inputId,{ confidence: confidence });
+    this.updateFormDataHandler(this.inputId,{ confidence: confidence, img: btoa(imgElement.src)  });
     img.dispose();
   }
 
