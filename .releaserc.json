@@ -17,7 +17,7 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "npm run build-charite"
+      "cmd": "npm run build-covapp-charite"
     },
     {
       "path": "@semantic-release/exec",
@@ -25,15 +25,7 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "rm www -r"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-bmg"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run build"
+      "cmd": "npm run build-covapp-bmg"
     },
     {
       "path": "@semantic-release/exec",
@@ -41,15 +33,7 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "rm www -r"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-bzga"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run build"
+      "cmd": "npm run build-covapp-bzga"
     },
     {
       "path": "@semantic-release/exec",
@@ -57,15 +41,7 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "rm www -r"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-rki"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run build"
+      "cmd": "npm run build-covapp-rki"
     },
     {
       "path": "@semantic-release/exec",
@@ -73,23 +49,11 @@
     },
     {
       "path": "@semantic-release/exec",
-      "cmd": "rm www -r"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run build-stanford"
+      "cmd": "npm run build-covapp-stanford"
     },
     {
       "path": "@semantic-release/exec",
       "cmd": "cd www; zip -r ../release-covapp-stanford.zip *"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "rm www -r"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-poxapp-stanford"
     },
     {
       "path": "@semantic-release/exec",
@@ -98,14 +62,6 @@
     {
       "path": "@semantic-release/exec",
       "cmd": "cd www; zip -r ../release-poxapp-stanford.zip *"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "rm www -r"
-    },
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm run prepare-poxapp-charite"
     },
     {
       "path": "@semantic-release/exec",
