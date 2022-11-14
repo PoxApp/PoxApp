@@ -43,3 +43,9 @@ custom/**/*
 *.txt
 *.tar
 *.tar.gz
+
+
+# Cypress
+
+cypress/screenshots/
+cypress/videos/
