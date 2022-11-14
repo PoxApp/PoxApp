@@ -23,7 +23,7 @@ jobs:
           PANDEMIC_TRACKING_URL: 'dummy'
 
       - name: Build App for Cypress Tests
-        run: rm -r -f www && npm run prepare-charite && npm run build-charite
+        run: npm run build-example
 
       - name: Save build folder
         uses: actions/upload-artifact@v3
