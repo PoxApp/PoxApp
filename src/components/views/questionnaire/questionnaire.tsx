@@ -83,7 +83,12 @@ export class Questionnaire {
   persistStateToLocalStorage = () => {
     sessionStorage.setItem(
       LOCAL_STORAGE_KEYS.ANSWERS,
-      JSON.stringify(this.answerData)
+      JSON.stringify(
+        stripImageFromAnswers(
+          // Deep clone object before
+          JSON.parse(JSON.stringify(this.answerData))
+        )
+      )
     );
     settings.completed = false;
     version.set();
@@ -369,4 +374,18 @@ export class Questionnaire {
       </div>
     );
   }
+}
+
+/**
+ * Strips 'img' property from answers object in order to not overload local Storage with multiple MBs of Image Data
+ * @param answers
+ * @returns
+ */
+function stripImageFromAnswers(answers) {
+  for (const property in answers) {
+    if (property === 'img') delete answers[property];
+    else if (typeof answers[property] === 'object')
+      stripImageFromAnswers(answers[property]);
+  }
+  return answers;
 }
