@@ -9,6 +9,7 @@
     "generate": "stencil generate",
     "prebuild": "npm run prepare-customization",
     "build": "stencil build && echo $(date) > www/version.txt",
+    "build-example": "npm run prepare-example && npm run build",
     "build-covapp-example": "npm run prepare-example && cross-env 'DATA_DONATION_PUBLIC_KEY=-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn5jt/YIC54/bRjkZlvW6DO1kW1svbdjE4K7FOlK0qv3NRHcS94Ie26WSjNeAg4pM3DEl8nSzP/QqbCd7OZhqMsEGJrZ0as59VOx6PvyClbkTi/FuUxlnPMudwrKIYELHEYTMqubqr81LG45ylrIX2pzXBZ5txas+noBqkbdEaO+3A6e9sgPchk334phTTKQIHptOMmo4V86yVPnHXpGmbo32PX6pG8BZ0jlsUghH0e/B0s5DCI8L1cQs70OSQDDNN4f7kQaQWo4VfjHWLr0EvmlGG9XcEpc8ucup3/WmxT3HdZuUjdttLZ2/6KmbEcAt/wcdxxFKF6cB0dHkBPPubQIDAQAB-----END PUBLIC KEY-----' npm run build",
     "build-covapp-charite": "npm run prepare-charite && cross-env LAYOUT=CHARITE npm run build",
     "build-covapp-bmg": "npm run prepare-bmg && npm run build",
