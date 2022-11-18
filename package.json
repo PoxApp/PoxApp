@@ -1,9 +1,9 @@
 {
-  "name": "infection-risk-assessment-app",
+  "name": "PoxApp",
   "private": true,
-  "version": "0.0.0",
-  "description": "Assessing the risk of contagious viral infections (e.g. COVID-19)",
-  "repository": "https://github.com/OSPRS/QuestionnaireApp",
+  "version": "1.0.0",
+  "description": "Assessing the risk of infection for monkeypox",
+  "repository": "https://github.com/CovOpen/PoxApp",
   "scripts": {
     "analyze": "stencil build",
     "generate": "stencil generate",

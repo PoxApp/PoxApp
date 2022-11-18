@@ -1,7 +1,7 @@
 additionalRepositories:
-  - url: https://github.com/OSPRS/DataDonation.git
+  - url: https://github.com/PoxApp/Data-Donation-Service.git
     checkoutLocation: datadonation
-  - url: https://github.com/OSPRS/QuestionnaireEngine.git
+  - url: https://github.com/PoxApp/PoxApp.git
     checkoutLocation: QuestionnaireEngine
 
 workspaceLocation: QuestionnaireApp/OSPRS.code-workspace

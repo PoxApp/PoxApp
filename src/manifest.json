@@ -1,6 +1,6 @@
 {
-  "name": "CovApp",
-  "short_name": "CovApp",
+  "name": "PoxApp",
+  "short_name": "PoxApp",
   "start_url": "/",
   "display": "standalone",
   "icons": [

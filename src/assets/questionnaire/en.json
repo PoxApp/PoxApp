@@ -1,0 +1,565 @@
+{
+  "id": "",
+  "schemaVersion": "",
+  "version": 1,
+  "language": "en",
+  "title": "PoxApp",
+  "meta": {
+    "availableLanguages": [],
+    "author": "Alexander Thieme",
+    "creationDate": "2022-06-03",
+    "description": "Provide recommendations for monkeypox infections"
+  },
+  "questions": [
+    {
+      "numericOptions": {
+        "max": 99999,
+        "min": 0,
+        "step": 1
+      },
+      "type": "number",
+      "id": "q_zip",
+      "text": "What is your zip code?",
+      "details": "We need your zip code in order to take into account the number of new infection cases in your area and to display health care offers in regards to your location.<br><br>If you do not wish to your share your zip code, please enter '0'."
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 8
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_rash",
+      "text": "Do you have a skin or mucosal rash?",
+      "details": "Please take a closer look in particular at the following locations of your body: Face, palms, soles, genital area and oral cavity.<p>Here are some examples:<p><img src=\"https://poxapp.charite.de/assets/images/monkeypox.jpg\" style=\"max-width: 100%\"><p>Photo source: UK Health Security Agency"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Fever",
+          "value": "fever"
+        },
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Chills",
+          "value": "chills"
+        },
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Headache",
+          "value": "headache"
+        },
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Muscle pain",
+          "value": "muscle"
+        },
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Backpain",
+          "value": "backpain"
+        },
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Exhaustion",
+          "value": "fatigue"
+        },
+        {
+          "scores": {
+            "Symptoms": 1,
+            "Exposition": 0
+          },
+          "text": "Swollen lymph nodes",
+          "value": "lymphnode"
+        }
+      ],
+      "type": "multiselect",
+      "id": "q_symptoms",
+      "text": "What are your current symptoms?",
+      "optional": true,
+      "details": "Select one or more of the symptoms below. If you do not have any of the symptoms, click on \"Next\"."
+    },
+    {
+      "numericOptions": {
+        "defaultValue": 0,
+        "max": 42,
+        "min": 0,
+        "step": 0.1
+      },
+      "type": "number",
+      "id": "q_temperature",
+      "text": "What is your temperature (in °C)?",
+      "enableWhenExpression": {
+        "var": "q_symptoms.option.fever"
+      },
+      "details": "Please measure your temperature with a thermometer.<p>The following types of measurements are possible:<p>In the oral cavity (oral, under the tongue), anus (rectal), armpit (axillary), and ear/forehead (digital thermometer).<p>If you do not have a thermometer, answer with\"0\"."
+    },
+    {
+      "type": "date",
+      "id": "q_symptoms_date",
+      "text": "On which date did the symptoms first appear?",
+      "enableWhenExpression": {
+        ">": [
+          {
+            "var": "score.Symptoms"
+          },
+          0
+        ]
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 3
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_contact",
+      "text": "Have you had close contact with a person confirmed to be infected with monkeypox?",
+      "details": "Close contact with a confirmed case means:<ul><li>Direct, physical contact (touching, shaking hands, kissing).</li><li>Contact with or exchange of body fluids.</li><li>Sharing an apartment.</li><li>Contact with bedding (including \"making the bed\").</li></ul>"
+    },
+    {
+      "type": "date",
+      "id": "q_contact_date",
+      "text": "What was the date of the last contact?",
+      "enableWhenExpression": {
+        "var": "q_contact.option.yes"
+      }
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 1
+          },
+          "text": "Yes",
+          "value": "yes"
+        },
+        {
+          "scores": {},
+          "text": "No",
+          "value": "no"
+        }
+      ],
+      "type": "select",
+      "id": "q_sex",
+      "text": "Have you had intimate contact with people outside of a relationship in the past 21 days?"
+    },
+    {
+      "options": [
+        {
+          "scores": {
+            "Exposition": 1
+          },
+          "text": "West or Central Africa",
+          "value": "africa"
+        },
+        {
+          "scores": {},
+          "text": "None of the above locations",
+          "value": "none"
+        }
+      ],
+      "type": "select",
+      "id": "q_travel",
+      "text": "Have you been in any of the following locations in the past 21 days?",
+      "details": "Please select one of the mentioned locations."
+    }
+  ],
+  "resultCategories": [
+    {
+      "results": [
+        {
+          "expression": {
+            "and": [
+              {
+                ">": [
+                  {
+                    "var": "v_symptoms"
+                  },
+                  8
+                ]
+              },
+              {
+                ">": [
+                  {
+                    "var": "v_exposition"
+                  },
+                  0
+                ]
+              }
+            ]
+          },
+          "id": "rc_test",
+          "text": "<center><h3>%(v_red)s Get tested.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. You report typical symptoms associated with a skin rash and you may have come into contact with the virus. We recommend getting tested for monkeypox. For further clarification, we recommend contacting your primary care physician or an infectious disease or tropical medicine facility by telephone.\n</p>\n<p style=\"text-align:justify\">\nPlease note: Performing a test is a medical decision made by a physician.</p>"
+        },
+        {
+          "expression": {
+            ">=": [
+              {
+                "var": "v_exposition"
+              },
+              3
+            ]
+          },
+          "id": "rc_contact",
+          "text": "<center><h3>%(v_orange)s Get in touch with a local health department.<br></h3></center>\n\n<p style=\"text-align:justify\">Some users with your responses are infected with monkeypox. You have had a risk contact with an infected person. For further clarification, please contact your local health department.\n</p>\n\n<p style=\"text-align:justify\">Please click <a href=\"https://tools.rki.de/PLZTool/\">here</a>, to get contact information regarding your local health department.</p>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                ">": [
+                  {
+                    "var": "v_symptoms"
+                  },
+                  8
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "v_exposition"
+                  },
+                  0
+                ]
+              }
+            ]
+          },
+          "id": "rc_high_symptoms",
+          "text": "<center><h3>%(v_orange)s Contact a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Few users with your responses are infected with monkeypox. You report typical symptoms including a rash, but there is no evidence that you may have been exposed to the monkeypox virus. For further clarification, we recommend contacting your general practitioner by telephone.</p>"
+        },
+        {
+          "expression": {
+            ">": [
+              {
+                "var": "v_symptoms"
+              },
+              0
+            ]
+          },
+          "id": "rc_low_symptoms",
+          "text": "<center><h3>%(v_orange)s If you feel ill, contact a doctor.<br></h3></center>\n<p style=\"text-align:justify\">Most users with your respones are not infected with monkeypox. You have reported symptoms without a rash or a rash without further symptoms. If you develop further symptoms, complete the survey of PoxApp again. If you currently feel ill, we recommend that you contact your primary care physician by phone.</p>"
+        },
+        {
+          "expression": {
+            "and": [
+              {
+                "==": [
+                  {
+                    "var": "v_symptoms"
+                  },
+                  0
+                ]
+              },
+              {
+                ">": [
+                  {
+                    "var": "v_exposition"
+                  },
+                  0
+                ]
+              }
+            ]
+          },
+          "id": "rc_low_exposition_and_no_symptoms",
+          "text": "<center><h3>%(v_green)s Complete PoxApp's survey again if you develop symptoms.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with responses are not infected with monkeypox. If you develop symptoms, complete the survey of PoxApp again.</p>"
+        },
+        {
+          "expression": true,
+          "id": "rc_nothing",
+          "text": "<center><h3>%(v_green)s No further action required.<br></h3></center>\n\n<p style=\"text-align:justify\">Most users with your responses are not infected with monkeypox and do not require further action.</p>\n"
+        }
+      ],
+      "description": "Recommendations",
+      "id": "rc_recommendation"
+    }
+  ],
+  "variables": [
+    {
+      "expression": {
+        ">": [
+          {
+            "var": "q_contact_date"
+          },
+          {
+            "-": [
+              {
+                "var": "now"
+              },
+              {
+                "*": [
+                  21,
+                  86400
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": "v_contact_relevant"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "and": [
+              {
+                "var": "q_contact.option.yes"
+              },
+              {
+                "!": {
+                  "var": "v_contact_relevant"
+                }
+              }
+            ]
+          },
+          {
+            "-": [
+              {
+                "var": "score.Exposition"
+              },
+              3
+            ]
+          },
+          {
+            "var": "score.Exposition"
+          }
+        ]
+      },
+      "id": "v_exposition"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "var": "v_contact_relevant"
+          },
+          {
+            ">": [
+              {
+                "var": "q_symptoms_date"
+              },
+              {
+                "var": "q_contact_date"
+              }
+            ]
+          },
+          false
+        ]
+      },
+      "id": "v_symptoms_after_contact"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "and": [
+              {
+                "var": "q_symptoms.option.fever"
+              },
+              {
+                "<": [
+                  {
+                    "var": "q_temperature"
+                  },
+                  38.5
+                ]
+              }
+            ]
+          },
+          {
+            "-": [
+              {
+                "var": "score.Symptoms"
+              },
+              1
+            ]
+          },
+          {
+            "var": "score.Symptoms"
+          }
+        ]
+      },
+      "id": "v_symptoms2"
+    },
+    {
+      "expression": {
+        "if": [
+          {
+            "and": [
+              {
+                ">=": [
+                  {
+                    "var": "v_symptoms2"
+                  },
+                  8
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "v_exposition"
+                  },
+                  3
+                ]
+              },
+              {
+                "!": {
+                  "var": "v_symptoms_after_contact"
+                }
+              }
+            ]
+          },
+          {
+            "-": [
+              {
+                "var": "v_symptoms2"
+              },
+              8
+            ]
+          },
+          {
+            "var": "v_symptoms2"
+          }
+        ]
+      },
+      "id": "v_symptoms"
+    },
+    {
+      "expression": "<img src=\"https://poxapp.charite.de/assets/images/recommendation-green.svg\" alt=\"green\" width=\"20\" height=\"20\">",
+      "id": "v_green"
+    },
+    {
+      "expression": "<img src=\"https://poxapp.charite.de/assets/images/recommendation-orange.svg\" alt=\"orange\" width=\"20\" height=\"20\">",
+      "id": "v_orange"
+    },
+    {
+      "expression": "<img src=\"https://poxapp.charite.de/assets/images/recommendation-red.svg\" alt=\"red\" width=\"20\" height=\"20\">",
+      "id": "v_red"
+    },
+    {
+      "expression": {
+        "var": "q_rash.option.yes"
+      },
+      "id": "qr_rash"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.fever"
+      },
+      "id": "qr_fever"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.chills"
+      },
+      "id": "qr_chills"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.headache"
+      },
+      "id": "qr_headache"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.muscle"
+      },
+      "id": "qr_muscle"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.backpain"
+      },
+      "id": "qr_backpain"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.fatigue"
+      },
+      "id": "qr_fatigue"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms.option.lymphnode"
+      },
+      "id": "qr_lymphnode"
+    },
+    {
+      "expression": {
+        "var": "q_temperature"
+      },
+      "id": "qr_temperature"
+    },
+    {
+      "expression": {
+        "var": "q_symptoms_date"
+      },
+      "id": "qr_symptoms_date"
+    },
+    {
+      "expression": {
+        "var": "q_contact.option.yes"
+      },
+      "id": "qr_contact"
+    },
+    {
+      "expression": {
+        "var": "q_contact_date"
+      },
+      "id": "qr_contact_date"
+    },
+    {
+      "expression": {
+        "var": "q_sex.option.yes"
+      },
+      "id": "qr_sex"
+    },
+    {
+      "expression": {
+        "!": {
+          "var": "q_travel.option.none"
+        }
+      },
+      "id": "qr_travel"
+    }
+  ]
+}

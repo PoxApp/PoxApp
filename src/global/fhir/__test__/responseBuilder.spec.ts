@@ -12,19 +12,19 @@ import EXAMPLE_COVAPP_QUESTIONNAIRE from './data/example-covapp-questionnaire.js
 import EXAMPLE_COVAPP_RESPONSE_0 from './data/example-covapp-response-0.json';
 import EXAMPLE_COVAPP_RESPONSE_1 from './data/example-covapp-response-1.json';
 
-let exampleCovAppQuestionnaire: FHIRQuestionnaire = {
+let examplePoxAppQuestionnaire: FHIRQuestionnaire = {
   ...EXAMPLE_COVAPP_QUESTIONNAIRE,
   status: EXAMPLE_COVAPP_QUESTIONNAIRE.status as FHIRPublicationStatus,
   item: EXAMPLE_COVAPP_QUESTIONNAIRE.item as FHIRQuestionnaireItem[],
   contained: (EXAMPLE_COVAPP_QUESTIONNAIRE.contained as unknown) as FHIRValueSet[],
 };
 
-let validCovAppResponse0: FHIRQuestionnaireResponse = {
+let validPoxAppResponse0: FHIRQuestionnaireResponse = {
   ...EXAMPLE_COVAPP_RESPONSE_0,
   status: EXAMPLE_COVAPP_RESPONSE_0.status as FHIRQuestionnaireResponseStatus,
 };
 
-let validCovAppResponse1: FHIRQuestionnaireResponse = {
+let validPoxAppResponse1: FHIRQuestionnaireResponse = {
   ...EXAMPLE_COVAPP_RESPONSE_1,
   status: EXAMPLE_COVAPP_RESPONSE_1.status as FHIRQuestionnaireResponseStatus,
 };
@@ -78,24 +78,24 @@ describe('Create FHIR questionnaire response', () => {
   it('should return a valid response', async () => {
     const response = buildQuestionnaireResponse(
       { ...answers0 },
-      { ...exampleCovAppQuestionnaire }
+      { ...examplePoxAppQuestionnaire }
     );
 
     delete response['authored'];
-    delete validCovAppResponse0['authored'];
+    delete validPoxAppResponse0['authored'];
 
-    expect(response).toStrictEqual(validCovAppResponse0);
+    expect(response).toStrictEqual(validPoxAppResponse0);
   });
 
   it('should return a valid response with correctly formated dates', async () => {
     const response = buildQuestionnaireResponse(
       { ...answers1 },
-      { ...exampleCovAppQuestionnaire }
+      { ...examplePoxAppQuestionnaire }
     );
 
     delete response['authored'];
-    delete validCovAppResponse1['authored'];
+    delete validPoxAppResponse1['authored'];
 
-    expect(response).toStrictEqual(validCovAppResponse1);
+    expect(response).toStrictEqual(validPoxAppResponse1);
   });
 });

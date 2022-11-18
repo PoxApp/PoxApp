@@ -32,8 +32,8 @@ export const buildQuestionnaireResponse = (
     'id'
   );
 
-  // The answers that are stored by CovApp include nested answers i.e X0: ['2'].
-  // These are only needed for some CovApp internal calculations and not for creating the FHIR response. So we filter them out.
+  // The answers that are stored by PoxApp include nested answers i.e X0: ['2'].
+  // These are only needed for some PoxApp internal calculations and not for creating the FHIR response. So we filter them out.
   const filteredAnswers: { [key: string]: string } = Object.keys(answers)
     .filter(key => !Array.isArray(answers[key]))
     .reduce((obj, key) => {

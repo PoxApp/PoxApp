@@ -16,7 +16,7 @@
 
 [Node.js](https://nodejs.org/en/) is a JavaScript runtime that runs on the server and your local development machine. You can install it via your package manager of choice or download and install it manually from [nodejs.org](https://nodejs.org). Node.js comes with its own package manager called [npm](https://www.npmjs.com/).
 
-⚠️ git, Node.js and npm are crucial to create your customized CovApp-version. Before you continue, make sure the following commands look similar in your command line/terminal.
+⚠️ git, Node.js and npm are crucial to create your customized PoxApp-version. Before you continue, make sure the following commands look similar in your command line/terminal.
 
 #### Check if Node.js is properly installed by running its `version` command
 
@@ -39,17 +39,17 @@ git --version
 # git version 2.26.0
 ```
 
-## Forking of the CovApp repository
+## Forking of the PoxApp repository
 
-The recommended way of developing your custom CovApp-version is to fork this repository. A GitHub fork gives you the possibility to make a "copy" of the original repository and perform changes while keeping the chance to receive future updates. To find more information about the concept of a fork, visit [GitHub's documentation](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).
+The recommended way of developing your custom PoxApp-version is to fork this repository. A GitHub fork gives you the possibility to make a "copy" of the original repository and perform changes while keeping the chance to receive future updates. To find more information about the concept of a fork, visit [GitHub's documentation](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).
 
 ## Install
 
 After you forked the repository and have a copy of the application code stored in your personal GitHub account, clone your fork to your local machine.
 
 ```sh
-git clone https://github.com/YOUR-USERNAME/covapp
-> Cloning into `covapp`...
+git clone https://github.com/YOUR-USERNAME/onkapp
+> Cloning into `onkapp`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
 > remove: Total 10 (delta 1), reused 10 (delta 1)
@@ -59,10 +59,10 @@ git clone https://github.com/YOUR-USERNAME/covapp
 Navigate into the new directory.
 
 ```sh
-cd covapp
+cd onkapp
 ```
 
-The application heavily relies on dependencies that are served via npm with install-scripts enabled. To install all dependencies run `npm ci` inside of the `covapp` directory.
+The application heavily relies on dependencies that are served via npm with install-scripts enabled. To install all dependencies run `npm ci` inside of the `onkapp` directory.
 
 ```sh
 npm ci
@@ -81,13 +81,13 @@ Its output should look as follows:
 ```sh
 npm start
 
-> infection-risk-assessment-app@1.7.0 prestart /Users/stefan/Sites/infection-risk-assessment
+> onkapp@1.7.0 prestart /Users/Sites/onkapp
 > npm run prepare-customization
 
-> infection-risk-assessment-app@1.7.0 prepare-customization /Users/stefan/Sites/infection-risk-assessment
+> onkapp@1.7.0 prepare-customization /Users/Sites/onkapp
 > node ./scripts/prepare-customization.js
 
-> infection-risk-assessment-app@1.7.0 start /Users/stefan/Sites/infection-risk-assessment
+> onkapp@1.7.0 start /Users/Sites/onkapp
 > stencil build --dev --watch --serve --no-open
 
 [52:54.4]  @stencil/core v1.11.0 🍿
@@ -112,13 +112,13 @@ Its output should look as follows:
 ```sh
 npm run build
 
-> infection-risk-assessment-app@1.7.0 prebuild /Users/stefan/Sites/infection-risk-assessment
+> onkapp@1.7.0 prebuild /Users/Sites/onkapp
 > npm run prepare-customization
 
-> infection-risk-assessment-app@1.7.0 prepare-customization /Users/stefan/Sites/infection-risk-assessment
+> onkapp@1.7.0 prepare-customization /Users/Sites/onkapp
 > node ./scripts/prepare-customization.js
 
-> infection-risk-assessment-app@1.7.0 build /Users/stefan/Sites/infection-risk-assessment
+> onkapp@1.7.0 build /Users/Sites/onkapp
 > stencil build
 
 [54:33.4]  @stencil/core v1.11.0 🍿
@@ -141,7 +141,7 @@ After a successful `npm run build` the `www` directory includes a JavaScript app
 
 There is no additional server-side logic needed and you can upload the directory to any hosting services that support static file hosting and serving the base `index.html` file to all URL paths. Uploading files via FTP works fine as well as using modern hosting services like [Netlify](https://www.netlify.com/).
 
-**After a successful `npm run build` command you can start [customizing your CovApp](./CUSTOMIZATION.md).**
+**After a successful `npm run build` command you can start [customizing your PoxApp](./CUSTOMIZATION.md).**
 
 ---
 

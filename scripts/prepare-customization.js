@@ -6,7 +6,7 @@ const { stringify } = require('javascript-stringify');
 const deepAssign = require('deep-assign');
 const prettier = require('prettier');
 const fs = require('fs-extra');
-
+ 
 const prettierOptions = {
   ...JSON.parse(readFileSync(join(__dirname, '..', '.prettierrc'), 'utf8')),
   parser: 'typescript',
@@ -25,7 +25,9 @@ function tryToReadTranslationFile(filePath) {
       );
     }
     if (error.code === 'MODULE_NOT_FOUND') {
-      console.info(`Info - The translation file '${filePath}' was not provided`);
+      console.info(
+        `Info - The translation file '${filePath}' was not provided`
+      );
     }
     //console.warn(`Something went wrong while reading the Translation file (${error.code})`)
 
@@ -68,7 +70,7 @@ function getTranslationsForLanguageCode(code) {
 }
 
 function getTranslations(supportedLanguages) {
-  return supportedLanguages.map((code) => ({
+  return supportedLanguages.map(code => ({
     code,
     translations: getTranslationsForLanguageCode(code),
   }));

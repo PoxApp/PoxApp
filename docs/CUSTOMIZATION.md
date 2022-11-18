@@ -132,4 +132,4 @@ The folder structure with a custom logo should look as follows:
 
 ---
 
-### ⚠️ Any changes to files that are not the `.env` file or are outside of the `custom` directory will break the possibility to receive future updates of the official CovApp.
+### ⚠️ Any changes to files that are not the `.env` file or are outside of the `custom` directory will break the possibility to receive future updates of the official PoxApp.
