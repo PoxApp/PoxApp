@@ -42,7 +42,7 @@ export class Summary {
   handlePopStateChange() {
     const answerKeys = Object.keys(this.answers);
     delete this.answers[answerKeys[answerKeys.length - 1]];
-    localStorage.setItem(LOCAL_STORAGE_KEYS.ANSWERS, JSON.stringify(this.answers));
+    sessionStorage.setItem(LOCAL_STORAGE_KEYS.ANSWERS, JSON.stringify(this.answers));
     settings.completed = false;
   }
 
@@ -58,7 +58,7 @@ export class Summary {
       return;
     }
     const availableAnswers = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
+      sessionStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
     );
     this.answers = availableAnswers ? availableAnswers : {};
     this.loadSummary();
@@ -122,6 +122,10 @@ export class Summary {
                 </ia-accordion>
               ))}
               <h3 class="u-text-align--center">{i18next.t('summary_next')}</h3>
+              <ia-accordion
+                headline={i18next.t('summary_contact_health_headline')}
+                slotContent={i18next.t('summary_contact_health_content')}
+              />
               <ia-accordion headline={i18next.t('summary_show_doctor_headline')}>
                 <div slot="accordion-children">
                   <div innerHTML={i18next.t('summary_show_doctor_content')} />

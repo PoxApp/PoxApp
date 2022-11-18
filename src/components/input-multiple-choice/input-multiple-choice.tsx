@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   styleUrl: 'input-multiple-choice.css',
@@ -10,10 +10,7 @@ export class InputMultipleChoice {
     value: string;
     text: string;
   }[];
-  @Watch('options')
-  onOptionsChanged() {
-    this.updateFormDataHandler(this.inputId, this.getValue());
-  }
+
   @Prop() value: string[] = undefined;
 
   getValue(): string[] {

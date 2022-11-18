@@ -39,7 +39,7 @@ export class InputDate {
       this.updateFormDataHandler(this.inputId, Date.parse(date));
     };
 
-    return localStorage.getItem('supportsDateElement') === 'true' ? (
+    return sessionStorage.getItem('supportsDateElement') === 'true' ? (
       <div>
         <d4l-input
           name={this.inputId}

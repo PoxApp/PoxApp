@@ -1,19 +1,35 @@
+additionalRepositories:
+  - url: https://github.com/PoxApp/Data-Donation-Service.git
+    checkoutLocation: datadonation
+  - url: https://github.com/PoxApp/PoxApp.git
+    checkoutLocation: QuestionnaireEngine
+
+workspaceLocation: QuestionnaireApp/OSPRS.code-workspace
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: |
+  - name: QuestionnaireApp
+    init: |
       npm install
       npm run prepare-charite
     command: npm start
-  - name: Backend
-    before: | 
-      dotnet tool install --global dotnet-ef
-      export PATH="$PATH:$HOME/.dotnet/tools/"
-#      cp example.env .env
+
+  - name: Database
     command: |
       cd /workspace/datadonation
-      git clone https://github.com/CovOpen/DataDonation.git . 
+      docker-compose up
+      gp sync-done database
+    openMode: tab-after
+
+  - name: Backend
+    init: | 
+      dotnet tool install --global dotnet-ef
+      export PATH="$PATH:$HOME/.dotnet/tools/"
+      cd /workspace/datadonation
       dotnet restore
-      dotnet run
+    command: |
+      gp sync-await database
+      cd /workspace/datadonation/api
+      dotnet watch run
     openMode: split-right
   
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
@@ -33,7 +49,8 @@ vscode:
     - ms-azuretools.vscode-docker
     - esbenp.prettier-vscode
     - k--kato.docomment
-    - https://github.com/OmniSharp/omnisharp-vscode/releases/download/v1.23.12/csharp-1.23.12.vsix
+    - muhammad-sammy.csharp
+    - humao.rest-client
 
 github:
   prebuilds:

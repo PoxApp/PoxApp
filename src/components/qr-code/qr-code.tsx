@@ -99,7 +99,7 @@ export class QRCode {
     })
       .then(response => {
         if (response.ok) {
-          localStorage.setItem(LOCAL_STORAGE_KEYS.DATA_SENT, 'true');
+          sessionStorage.setItem(LOCAL_STORAGE_KEYS.DATA_SENT, 'true');
           trackEvent([...TRACKING_EVENTS.DATA_DONATION_SENT, '1']);
         } else {
           trackEvent([...TRACKING_EVENTS.DATA_DONATION_SENT, '0']);
@@ -111,7 +111,7 @@ export class QRCode {
   };
 
   componentWillLoad = () => {
-    const dataSent = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.DATA_SENT));
+    const dataSent = JSON.parse(sessionStorage.getItem(LOCAL_STORAGE_KEYS.DATA_SENT));
     if (
       PANDEMIC_TRACKING_IS_ENABLED &&
       !dataSent &&

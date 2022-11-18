@@ -19,7 +19,7 @@ export class AnswersOverview {
 
   componentWillLoad = () => {
     const availableAnswers = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
+      sessionStorage.getItem(LOCAL_STORAGE_KEYS.ANSWERS)
     );
     this.answers = availableAnswers ? availableAnswers : {};
     settings.completed = true;
@@ -31,7 +31,7 @@ export class AnswersOverview {
   handlePopStateChange() {
     const answerKeys = Object.keys(this.answers);
     delete this.answers[answerKeys[answerKeys.length - 1]];
-    localStorage.setItem(LOCAL_STORAGE_KEYS.ANSWERS, JSON.stringify(this.answers));
+    sessionStorage.setItem(LOCAL_STORAGE_KEYS.ANSWERS, JSON.stringify(this.answers));
     settings.completed = false;
   }
 

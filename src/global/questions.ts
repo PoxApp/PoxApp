@@ -1,8 +1,7 @@
 import { Questionnaire } from '@covopen/covquestions-js';
-import {
-  QUESTION_SHARE_DATA,
-} from '../components/views/questionnaire/utils';
+import { QUESTION_SHARE_DATA } from '../components/views/questionnaire/utils';
 import { LOCAL_STORAGE_KEYS } from './constants';
+import { DATA_DONATION_URL } from './custom';
 
 export let questionnaire: Questionnaire = undefined;
 export let cacheKey: string = '';
@@ -10,26 +9,33 @@ export let baseUrl = '/assets/questionnaire/';
 export function getQuestionnaire(language = 'de'): Promise<Questionnaire> {
   // TODO implement Update Mechanism
   //   let cachedQuestionnaire = JSON.parse(
-  //     localStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
+  //     sessionStorage.getItem(LOCAL_STORAGE_KEYS.QUESTIONNAIRE)
   //   );
   //   if (cachedQuestionnaire) {
   //     return new Promise(() => cachedQuestionnaire);
   //   }
   if (questionnaire != undefined && cacheKey === language) {
-    return new Promise(resolve => resolve(questionnaire));
+    if (DATA_DONATION_URL) {
+      return new Promise((resolve) =>
+        resolve(addAdditionalQuestions(questionnaire))
+      );
+    }
+    return new Promise((resolve) => resolve(questionnaire));
   }
   // Make sure it is ending with a slash
   if (!baseUrl.endsWith('/')) baseUrl = baseUrl + '/';
   return fetch(`${baseUrl}${language}.json`)
     .then((response: Response) => response.json())
-    .then(response => {
+    .then((response) => {
       localStorage.setItem(
         LOCAL_STORAGE_KEYS.QUESTIONNAIRE,
         JSON.stringify(response)
       );
       questionnaire = { ...response };
       cacheKey = language;
-
+      if (DATA_DONATION_URL) {
+        return addAdditionalQuestions(response);
+      }
       return response;
     });
   // .catch(() => {
@@ -42,10 +48,7 @@ function addAdditionalQuestions(
 ): Questionnaire {
   return {
     ...functionQuestionnaire,
-    questions: [
-      ...functionQuestionnaire.questions,
-      QUESTION_SHARE_DATA(),
-    ],
+    questions: [...functionQuestionnaire.questions, QUESTION_SHARE_DATA()],
   };
 }
 

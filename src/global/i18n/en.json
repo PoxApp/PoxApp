@@ -1,6 +1,9 @@
 {
   "label": "English",
   "keys": {
+    "ai_remove_picture": "Take new picture",
+    "ai_take_picture": "Take picture",
+    "no_camera_support": "Your device does not support taking pictures.",
     "answers_table_headline": "Your answers",
     "answers_table_hide_answers": "Hide answers",
     "answers_table_print": "Print",

@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+video, canvas {
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload {
+  width: 100%;
+  display: block;
+  text-align: center;
+  border: 3px dashed var(--color-border-button-primary-default);
+  border-radius: var(--border-radius-button);
+  padding: 6px 12px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
