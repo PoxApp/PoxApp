@@ -1,7 +1,7 @@
 [![Open Preview of PoxApp-Charite](https://badgen.net/badge/Preview/Poxapp-Charite/blue?icon=github)](https://osprspoxappcharite.z13.web.core.windows.net/)
 [![Open Preview of PoxApp-Stanford](https://badgen.net/badge/Preview/Poxapp-Stanford/blue?icon=github)](https://osprspoxappstanford.z13.web.core.windows.net/)
 
-# 😷 PoxApp - a web-based personalized recommendation system for the monkeypox virus
+# PoxApp - a web-based personalized recommendation system for the monkeypox virus
 
 PoxApp can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or MPXV testing by answering a few questions. 
 
