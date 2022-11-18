@@ -1,3 +1,3 @@
-CNN for monkeypox skin lesion classifiction.
+CNN for monkeypox skin lesion classification.
 
 Copyright (c) by Dr. Alexander Thieme 2022. The files in this folder are not part of PoxApp. Usage only with permission.
