@@ -5,7 +5,11 @@
 
 PoxApp can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or MPXV testing by answering a few questions. 
 
-Additionally, every filled out questionnaire summarizes relevant medical information for future doctor’s consultation in the form of a summary page, printout or a QR code. Institutions with the technical setup can scan the provided QR code and retrieve the patient information quickly and without any physical contact.
+PoxApp was developed by a multidisciplinary planel of physicians, data scientists and researchers at Stanford University, Charité Universitätsmedizin Berlin, Berlin Institute of Health at Charité (BIH), Robert Koch Institute and Hasso Plattner Institute.
+
+PoxApp combines a survey with picture-taking of skin lesions. PoxApp uses artificial intelligence (AI) and medical expert knowledge to assess the risk of a MPXV infection.
+
+Every filled out questionnaire summarizes relevant medical information for future doctor’s consultation in the form of a summary page, printout or a QR code. Institutions with the technical setup can scan the provided QR code and retrieve the patient information quickly and without any physical contact.
 
 By implementing the PoxApp, medical institution can speed up the patient registration process.
 
