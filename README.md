@@ -3,7 +3,7 @@
 
 # PoxApp - a web-based personalized recommendation system for the monkeypox virus
 
-PoxApp can help users to assess their medical condition better, provide recommendations regarding doctor’s visits or MPXV testing by answering a few questions. 
+PoxApp can help users to assess their medical condition better, prepare an appointment with a physician or get information on MPXV testing and post-exposure vaccination. 
 
 PoxApp was developed by a multidisciplinary planel of physicians, data scientists and researchers at Stanford University, Charité Universitätsmedizin Berlin, Berlin Institute of Health at Charité (BIH), Robert Koch Institute and Hasso Plattner Institute.
 
