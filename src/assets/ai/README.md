@@ -8,7 +8,7 @@ Copyright (c) by Dr. Alexander Thieme 2022. The files in this folder are not par
 
 If you use the model, please cite our work:
 
-@article{thieme2022xxx,
+@article{thieme2022xxx,\n
   title={A deep learning algorithm to classify skin lesions from monkeypox virus infection},
   author={Thieme, Alexander Henry, MD, Zheng, Yuanning, Ph.D., Machiraju, Gautam, Sadee, Chris, Mittermaier, Mirja, MD, Gertler, Maximilian, MD, Salinas, Jorge L., MD, Srinivasan, Krithika, MD, Gyawali, Prashnna, PhD, Carrillo-Perez, Francisco, Capodici, Angelo, MD, Uhlig, Maximilian, Habenicht, Daniel, Löser, Anastassia, MD, Kohler, Maja, Schuessler, Maximilian, MD, Kaul, David, MD, PhD, Ma, Jackie, PhD, Lippert, Christoph, Ph.D., Billick, Kendall, MD, Bogoch, Isaac, MD, ‡Geldsetzer, Pascal, Ph.D., ‡Gevaert, Olivier, Ph.D},
   journal={xxx},
